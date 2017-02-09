@@ -1,0 +1,208 @@
+/*selection styles*/
+::selection {
+    background: #212121;
+    color: #9A1144; /* WebKit/Blink Browsers */ 
+}
+::-moz-selection {
+    background: #212121;
+    color: #9A1144; /* Gecko Browsers */
+}
+body {
+    color: #212121;
+    background-color: #F6F6F6;
+	font-family: 'Raleway', sans-serif;
+    font-size: 16px; /*fallback*/
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 300;
+}
+section {
+    padding: 6em 1em;
+    margin: 0 auto;
+}
+
+/*have header start as #9A1144 and scroll into a dark background*/
+header{
+    background: #212121;
+    padding: 0 20px;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: 200;
+}
+
+header .logo>h1{
+    float: left;
+    padding: 13px 0;
+    color: #9A1144;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
+    margin: 0;
+    display: inline-block;
+}
+header .logo-img{
+    float: left;
+    max-height: 35px;
+    max-width: 35px;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+nav{
+    float: right;
+    margin: 0.5em;
+}
+
+.menuItems {
+padding: 0;
+ margin: 0;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.menuItems * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.menuItems li {
+  display: inline-block;
+  float: left;
+  list-style: outside none none;
+  margin: 0.7em 1.5em;
+  padding: 0;
+}
+.menuItems a {
+  padding: 0.3em 0;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  text-decoration: none;
+}
+.menuItems a:before,
+.menuItems a:after {
+  height: 3px;
+  position: absolute;
+  content: '';
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  background-color: #9A1144;
+  width: 0;
+}
+.menuItems a:before {
+  top: 0;
+  right: 0;
+}
+.menuItems a:after {
+  bottom: 0;
+  left: 0;
+}
+.menuItems a:hover,
+.menuItems .current a {
+  color: #ffffff;
+}
+.menuItems a:hover:before,
+.menuItems .current a:before,
+.menuItems a:hover:after,
+.menuItems .current a:after {
+  width: 100%;
+}
+header .toggle-menu{
+    display: none;
+}
+
+#splash{
+	height: 100vh;
+	background-color: #9A1144;
+	color: #fff;
+}
+#splash a{
+	text-decoration: none;
+}
+.btn{
+    display: inline-block;
+    padding: 15px 30px;
+    color: #fff;
+    border: 1px solid #fff;
+    transition: 200ms;
+    background: transparent;
+    cursor: pointer;
+}
+.btn:hover{
+    text-decoration: none;
+    background: rgba(255,255,255,0.1);
+}
+.btn.smaller{
+    padding: 10px 25px;
+}
+.btn .fa{
+    margin-left: 10px;
+}
+.screenshots{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.screenshots img{
+	max-height: 70vh;
+}
+.contact{
+    background: #E6E4E4;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 0;
+}
+.contact div{
+	max-width: 70vw;
+	margin: 0 auto;
+}
+.contact .input{
+    width: 47%;
+    float: left;
+}
+.contact .input:nth-of-type(odd){
+    margin-right: 6%;
+}
+.contact .message{
+    display: block;
+    clear: both;
+    float: none;
+    padding-top: 10px;
+}
+.contact .input input{
+    display: block;
+    width: 100%;
+    background: rgba(154,17,68,0.7);
+    border: 0;
+    padding: 10px 15px;
+}
+.contact .message textarea{
+    display: block;
+    width: 100%;
+    height: 200px;
+    background: rgba(154,17,68,0.7);
+    border: 0;
+    padding: 10px 15px;
+    resize: vertical;
+}
+.contact label{
+    position: relative;
+    z-index: 10;
+}
+.contact label span{
+    display: block;
+    text-align: left;
+    font-size: 14px;
+}
+.contact label span .fa{
+    margin-right: 7px;
+}
+.contact .submit{
+    display: block;
+    text-align: center;
+    padding-top: 40px;
+}
+.contact h2{
+    margin-bottom: 40px;
+}
