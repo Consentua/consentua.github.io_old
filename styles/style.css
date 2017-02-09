@@ -21,14 +21,19 @@ section {
     margin: 0 auto;
 }
 
+.active{
+	background: #212121;
+}
+
 /*have header start as #9A1144 and scroll into a dark background*/
 header{
-    background: #212121;
+    background: rgba(154,17,68,0.0);
     padding: 0 20px;
     position: fixed;
     top: 0; left: 0;
     width: 100%;
     z-index: 200;
+    transition: transform 0.3s ease-out;
 }
 
 header .logo>h1{
@@ -86,7 +91,7 @@ padding: 0;
   content: '';
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
-  background-color: #9A1144;
+  background-color: #fff;
   width: 0;
 }
 .menuItems a:before {
@@ -115,10 +120,34 @@ header .toggle-menu{
 	height: 100vh;
 	background-color: #9A1144;
 	color: #fff;
+    /*height: 700px;*/
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 30;
+    overflow: hidden;
 }
 #splash a{
 	text-decoration: none;
 }
+#logo, #blurb{
+    position: absolute;
+    top: 250px;
+}
+
+#logo{
+    margin-left: 70px;
+    margin-top: 100px;
+}
+
+#blurb{
+    left: 500px;
+    width: 500px;
+    margin: 0 auto 0 auto;
+    padding: 35px 0 0 0;
+    font-size: 1.2em;
+}
+
 .btn{
     display: inline-block;
     padding: 15px 30px;
@@ -137,6 +166,9 @@ header .toggle-menu{
 }
 .btn .fa{
     margin-left: 10px;
+}
+#tbn{
+	margin-top: 100vh;
 }
 .screenshots{
 	display: flex;
