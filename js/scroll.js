@@ -1,55 +1,28 @@
-	// init controller
-	// var controller = new ScrollMagic.Controller({globalSceneOptions: {}});
+//ScrollMagic Script for the scroll animations for consentua.com
 
-	// // build scenes
-	// var scene0 = new ScrollMagic.Scene({triggerElement: "#tbn"})
-	// 				// .setClassToggle("#header", "active") // add class toggle
-	// 				// .addIndicators() // add indicators (requires plugin)
-	// 				// .addTo(controller);
+var controller = new ScrollMagic.Controller();
 
-	// var tweenblurb = new TweenMax().to('#header', 1.5, {backgroundColor: '#212121'});
+// Fade out blurb
+var tweenblurb = new TimelineMax()
+    .to("#blurb", 1, {opacity: 0}, 0);
 
-	// scene0.setTween(tweenblurb);
- //        scene0.addTo(controller);
+var scene0 = new ScrollMagic.Scene({duration: 400, offset: 150});
+scene0.setTween(tweenblurb);
+scene0.addTo(controller);
 
+//change header colour
+var tweenblurb = new TimelineMax()
+    .to("#header", 1, {backgroundColor: '#9A1144'}, 0);
 
-        var controller = new ScrollMagic.Controller();
+var scene0 = new ScrollMagic.Scene({duration: 500, offset: 100});
+scene0.setTween(tweenblurb);
+scene0.addTo(controller);
 
-        // Fade out blurb
-        var tweenblurb = new TimelineMax()
-	        .to("#blurb", 1, {opacity: 0}, 0);
+// Shrinking header logo animation
+var tweenhead = new TimelineMax()
+    .to("#splash", 1, {height: 50, margin:'0', padding: '0'}, 0)
+    .to("#logo", 1, {scale: 0.45, top: 0, marginLeft: '-70', marginTop: '-12'}, 0);
 
-        var scene0 = new ScrollMagic.Scene({duration: 400, offset: 0});
-        scene0.setTween(tweenblurb);
-        scene0.addTo(controller);
-
-        //change header colour
-        var tweenblurb = new TimelineMax()
-	        .to("#header", 1, {backgroundColor: '#9A1144'}, 0);
-
-        var scene0 = new ScrollMagic.Scene({duration: 500, offset: 100});
-        scene0.setTween(tweenblurb);
-        scene0.addTo(controller);
-
-
-
-
-
-       // Shrinking header logo animation
-        var tweenhead = new TimelineMax()
-	        .to("#splash", 1, {height: 0, margin:'0', padding: '0'}, 0)
-	        .to("#logo", 1, {scale: 0.5, top: 0, marginLeft: '-70', marginTop: '-7'}, 0);
-
-        var scene1 = new ScrollMagic.Scene({duration: 700, offset: 0});
-        scene1.setTween(tweenhead);
-        scene1.addTo(controller);
-
-
-        // Put menu in place
-        // var tweenmenu = new TimelineMax()
-        //     .to('#menu', 1, {opacity: 1}, 0);
-            
-        
-        // var scene2 = new ScrollMagic.Scene({duration: 100, offset: 670});
-        // scene2.setTween(tweenmenu);
-        // scene2.addTo(controller);
+var scene1 = new ScrollMagic.Scene({duration: 700, offset: 150});
+scene1.setTween(tweenhead);
+scene1.addTo(controller);

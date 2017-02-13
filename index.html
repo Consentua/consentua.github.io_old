@@ -3,40 +3,70 @@
 <head>
 	<title>Consent Management and Audit | Consentua</title>
 
+	<!-- Icons -->
+	<link rel="shortcut icon" href="imgs/icon/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="imgs/icon/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="imgs/icon/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="imgs/icon/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="imgs/icon/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="imgs/icon/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="imgs/icon/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="imgs/icon/favicon-16.png">
+	<link rel="apple-touch-icon" href="imgs/icon/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="imgs/icon/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="imgs/icon/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="imgs/icon/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="imgs/icon/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="imgs/icon/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="imgs/icon/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="imgs/icon/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="imgs/icon/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="imgs/icon/favicon-144.png">
+	<meta name="msapplication-config" content="imgs/icon/browserconfig.xml">
+
+	<!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#9A1144">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#9A1144">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#9A1144">
+
+    <!-- meta SEO tags -->
 	<meta name="description" content="Consentua is a consent management platform that gives individuals choice and control over how their personal data is used, helps organisations to achieve and demonstrate data protection compliance, and builds trust between service providers and their customers." />
 	<meta name="keywords" content="consent, data protection, gdpr, choice, control, regulation, regtech, EU, european union, privacy" />
 
-	<link rel="icon" type="image/png" href="favicon.png" />
-
+	<!-- fonts / icons-->
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <script type="text/javascript" src="old/template/js/scrollmagic/jquery.min.js"></script>
-    <script type="text/javascript" src="old/template/js/scrollmagic/highlight.pack.js"></script>
-    <script type="text/javascript" src="old/template/js/scrollmagic/modernizr.custom.min.js"></script>
+	<!-- scrollMagic -->
     <script type="text/javascript" src="old/template/js/scrollmagic/TweenMax.min.js"></script>
     <script type="text/javascript" src="old/template/js/scrollmagic/ScrollMagic.js"></script>
     <script type="text/javascript" src="old/template/js/scrollmagic/animation.gsap.js"></script>
     <script type="text/javascript" src="old/template/js/scrollmagic/debug.addIndicators.js"></script>
     <script type="text/javascript" src="old/template/js/scroll.js"></script>
 
-
+    <!-- Styles -->
 	<link rel="stylesheet" type="text/css" href="styles/normalize.css">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/mediaqueries.css">
 </head>
 <body>
 
 <header id="header">
     <div class="container">
         <a class="logo" href="#">
-        <img id="logo" src="imgs/logo/logored.png">
+        <img id="logo" src="imgs/logo/consentua-logo-white.svg">
         </a>
         <i class="fa fa-bars toggle-menu" aria-hidden="true"></i>
         <nav>
             <ul class="menuItems">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
+            <!-- http://scrollmagic.io/examples/advanced/anchor_link_scrolling.html#top -->
+                <li><a href="#about">About</a></li>
+                <li><a href="#how-it-works">How it works</a></li>
+                <li><a href="#contact">Contact</a></li>
+            	<li><a href="#">API</a></li>
                 <li><a href="#">Log In</a></li>
             </ul>
         </nav>
@@ -44,36 +74,82 @@
 </header>
 
 <section id="splash">
-	
-	
-
 	<article id="blurb">
-	<p>Consentua is a <b>consent management system</b> from KnowNow Information that helps organisations to achieve data protection compliance, and gives individuals choice and control over how their personal data is used.</p>
+	<p>Consentua is a <b>consent management system</b> from <a href="http://www.kn-i.com/">KnowNow Information</a> that helps organisations to achieve data protection compliance, and gives individuals choice and control over how their personal data is used.</p>
 	<a class="btn" href="#">Call to action<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 	</article>
 </section>
 
-<section id="tbn">
-	<h2>Problem</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat.</p>
-
-	<h2>Answer</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat.</p>
-
+<section id="about">
+	<h1>What is Consentua?</h1>
+	<p>Consentua is a consent management platform that gives individuals choice and control over how their personal data is used, helps organisations to achieve and demonstrate data protection compliance, and builds trust between service providers and their customers.</p>
+	<p>Consentua is developed and curated by KnowNow Information. It was developed using Innovate UK funding and with help from the European Commission’s citizen focus action cluster.</p>
+	<p>KnowNow Information is an award winning data management company. We provide data analysis, management and development services as well as smart city consultancy to cities across the globe.</p>
+</section>
+<section id="partners">
+	
+</section>
+<section id="GDPR">
+	<h2>GDPR</h2>
+	<p>GDPR asks that organisations collect clear, unambiguous consent before processing personal data, and are able to demonstrate that they have done so.  Data subjects will have the right to change their minds and a right to be forgotten.</p>	
+	<p>Although GDPR is not live till May 2018 changes take time and planning.   First step is to conduct a Privacy Impact Assessment in your organisation.  This will establish your organisation’s personal data requirements, it will identify where that personal data is processed  and it will set out a privacy policy that you then need to ask customers to agree too.</p>
+	<p>Consentua will help organisations meet their GDPR obligations as it will capture the ongoing, clear and unambiguous consent to use personal data.   A report from the Consentua repository can be easily sourced and actioned against as required.  Be that to delete; or perhaps to check consent has been granted for a particular activity; or even changing the consent requirements to then ask consumers to interact with and confirm they give consent.  </p>
+</section>
+<section id="problem-answer">
+	<div>
+		<span>
+		<h2>Why it affects you</h2>
+		<p>GDPR applies to all organisations that use, store or process personal data. It will help your organisation to enjoy a better, more trustful relationship with your customers which will, in turn, lead to more business.</p>
+		<p>The maximum fine for breaches of the new regulations is €20m, or 4% of global turnover.  The GDPR covers all EU citizens irrespective of where their data is processed, and will Impact any organisation that processes personal data.</p>
+		</span>
+	</div>
+	<div>
+	<span>
+		<h2>How Consentua answers the problem</h2>
+		<p>Consentua is an innovative new consent management service. It enables a new relationship between the citizen and the processors of their data. Consentua uses a unique user interface that clearly articulates the equitable exchange between the processor’s use of your data and what the citizen can expect as a result.</p>
+		<p>Users can see their historic consents, data processors can see who has which services and interactions have been consented to and by whom. This improves customer satisfaction through greater trust between customer and provider. Consentua thus delivers two benefits - happy customers and a happy data protection officer.</p>
+		</span>
+	</div>
+</section>
+</section>
+<section id="features">
+	<div class="coloums">
+		<div class="feature">
+			<img src="old/img/control.png">
+			<h2>Across All Platforms</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		</div>
+		<div class="feature">
+			<img src="old/img/control.png">
+			<h2>Subject Control</h2>
+			<p>Consentua gives individual data subjects control over their personal data, allowing them to feel safe when engaging with digital services. Consentua's dynamic tokens, coupled with a user-friendly dashboard, allow consent to be queried, changed and even revoked.</p>
+		</div>
+		<div class="feature">
+			<img src="old/img/collection.png">
+			<h2>feature</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		</div>
+	</div>
 </section>
 
-<section>
+<section id="how-it-works">
 	<h2>How it works</h2>
+	<ul>
+		<li>Consentua is accessed via a simple API (Application Programming Interface)</li>
+		<li> A consent template is created for your organisation - the template describes what information you need to collect from your users.</li>
+		<li>A consent request is presented to your user via an embedded instance of consentua within your application</li>
+		<li>Your user chooses the level of consent they wish to grant.</li>
+		<li>The consent is recorded by Consentua and a consent receipt is made available via the API.</li>
+		<li>Your customer is now free to continue to enjoy your service.</li>
+	</ul>
 	<div class="screenshots">
 		<img src="imgs/screenshot/Screenshot_20161215-132318-1.png">
 		<img src="imgs/screenshot/Screenshot_20161215-132607.png">
 	</div>
+	<div id="video">
+	<span><iframe width="853" height="480" src="https://www.youtube.com/embed/yY1f-VqJ78g?rel=0modestbranding=1" frameborder="0" allowfullscreen></iframe></span>
+	</div>
+	<h2>Consent Template</h2>
 </section>
 
 <section>
@@ -86,8 +162,18 @@
 	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </section>
 
+<section>
+	<h2>Privacy Impact Assessment</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</section>
+
 <!-- probably change to just a sign up form -->
-<section class="contact">
+<section id="contact">
     <div>
         <h1>Get in touch</h1>
 
@@ -102,17 +188,22 @@
             <textarea name="message" required></textarea></label>
 
             <label class="submit">
-            <input type="submit" value="Send Message &#xf105;" class="btn" style="font-family:'Open Sans', 'FontAwesome';">
+            <!-- <input type="submit" value="Send Message &#xf105;" class="btn" style="font-family:'Open Sans', 'FontAwesome';"> -->
             </label>
         </form>
     </div>
 </section>
 
 <footer>
-	
+<div id="copyright">
+     <p> &copy; 2016 KnowNow-Information Limited.  </p>
+     <p>Registered in England and Wales number 8781104. </p>
+     <p>Registered address: Halpern House, 1-2 Hampshire Terrace, Portsmouth, PO1 2QF</p>
+</div>	
 </footer>
 
 <script type="text/javascript" src="js/scroll.js"></script>
+<!-- https://premium.wpmudev.org/forums/topic/embed-blog-posts-into-a-html-site?utm_expid=3606929-97.J2zL7V7mQbSNQDPrXwvBgQ.0&utm_referrer=https%3A%2F%2Fwww.google.co.uk%2F -->
 
 </body>
 </html>
