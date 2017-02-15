@@ -24,15 +24,22 @@
 body {
     color: #212121;
     background-color: #F6F6F6;
-	font-family: 'Raleway', sans-serif;
+	  font-family: 'Raleway', sans-serif;
     font-size: 16px; /*fallback*/
     font-size: 1rem;
     line-height: 1.5;
     font-weight: 300;
+    text-rendering: optimizeLegibility;
+    letter-spacing: .04em;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+}
+h1, h2, h3{
+    text-align: center;  
 }
 section {
     /*padding: 6em 2em;*/
-    text-align: center;
     margin: 0 auto;
 }
 
@@ -205,33 +212,74 @@ header .toggle-menu{
 #about{
 	margin-top: 140vh;
   /*margin-bottom: 300px;*/
-  text-align: center;
+  min-height: 500px;
+  text-align: left;
 }
-#partners{
-  width: 100%;
-  height: 100px;
-  background-color: #d4d4d4;
+#about img{
+  float: right;
+  max-height: 400px;
+  max-width: 500px;
 }
-#GDPR{
-  text-align: center;
+#about article ,#GDPR article{
+  max-width: calc(100vw - 500px);
+  margin:2em auto;
 }
 #about p , #GDPR p{
   max-width: 70vw;
   margin:2em auto; 
 }
+#partners{
+  width: 100%;
+  height: 120px;
+  background-color: #d4d4d4;
+  text-align: center;
+}
+#partner-imgs{
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0.7em auto;
+  padding: 0;
+}
+#partner-imgs li{
+  float: left;
+  margin: 0px 0.5em;
+}
+#partner-imgs li a img{
+  transition: all .13s ease-in-out;
+  max-width: 100px;
+  max-height: 100px;  
+}
+#partner-imgs li a img:hover{
+-webkit-box-shadow: 0px 0px 20px 1px rgba(33,33,33,0.4);
+-moz-box-shadow: 0px 0px 20px 1px rgba(33,33,33,0.4);
+box-shadow: 0px 0px 20px 1px rgba(33,33,33,0.4);
+}
+#GDPR{
+  padding-top: 5em;
+    min-height: 500px;
+}
+#GDPR img{
+  margin: 3.5em;
+  float: left;
+  max-height: 400px;
+  max-width: 500px;
+}
+#GDPR article{
+  max-width: 55vw;
+  /*float: right;*/
+  margin-right: 8em;
+}
 #problem-answer{
   width: 100%;
-  height: 100vh;
-  /*margin-bottom: 200px;*/
+  overflow: hidden;
 }
 #problem-answer div{
   position: relative;
   float: left;
   width: 100%;
   padding: 2em 0;
-  /*margin: 2em 0;*/
   color: #fff;
-  min-height: 70vh;
+  min-height: 65vh;
   background-color: #9A1144;
 }
 #problem-answer div:before{
@@ -252,6 +300,17 @@ header .toggle-menu{
   height: 50px;
   width: 50%;
 }
+#problem-answer div img{
+  /*float: right;*/
+  max-width: 40vw;
+  max-height: 250px;
+  position: absolute;
+  right: 50px; top:0;
+  margin: 3em;
+  opacity: 0;
+  /*top: 50%;*/
+  /*transform: translateY(-50%);*/
+}
 #problem-answer div span{
   float: left;
   max-width: calc(50% - 2em);
@@ -269,6 +328,9 @@ background-color: rgba(154,17,68,0.3);
 top: 0; left: 0;
 background-color: rgba(154,17,68,0.5);
 }
+#problem-answer div:nth-child(2) img{
+  left: 50px; bottom: 0; top: initial;
+}
 #problem-answer div:nth-child(2) span{
   float: right;
   padding-top: 5em;
@@ -276,7 +338,7 @@ background-color: rgba(154,17,68,0.5);
 
 #features{
   background-color: #212121;
-  margin-top: calc(70vh - 4em);
+  /*margin-top: calc(65vh + 65vh + 16em);*/
   padding: 3em;
 }
 #features .coloums{
@@ -393,3 +455,12 @@ footer #copyright p{
   font-size: 0.7em;
   margin:0px;
 }
+
+
+
+/*.panel{
+  width: 100%;
+  height: 50vh;
+}
+.one{background-color: pink}.two{background-color: brown}.three{background-color: red}
+.four{background-color: green}.five{background-color: aqua}.six{background-color: blue}*/

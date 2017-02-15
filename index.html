@@ -41,11 +41,16 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 
 	<!-- scrollMagic -->
+   <!--  <script src="node_modules/gsap/src/minified/TweenMax.min.js"</script>
+	<script src="node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+	<script src="node_modules/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+	<script src="node_modules/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
+
+ -->
     <script type="text/javascript" src="old/template/js/scrollmagic/TweenMax.min.js"></script>
     <script type="text/javascript" src="old/template/js/scrollmagic/ScrollMagic.js"></script>
     <script type="text/javascript" src="old/template/js/scrollmagic/animation.gsap.js"></script>
     <script type="text/javascript" src="old/template/js/scrollmagic/debug.addIndicators.js"></script>
-    <script type="text/javascript" src="old/template/js/scroll.js"></script>
 
     <!-- Styles -->
 	<link rel="stylesheet" type="text/css" href="styles/normalize.css">
@@ -81,30 +86,43 @@
 </section>
 
 <section id="about">
+	<img src="imgs/logo/consentua-lock-pink.svg">
+	<article>
 	<h1>What is Consentua?</h1>
 	<p>Consentua is a consent management platform that gives individuals choice and control over how their personal data is used, helps organisations to achieve and demonstrate data protection compliance, and builds trust between service providers and their customers.</p>
 	<p>Consentua is developed and curated by KnowNow Information. It was developed using Innovate UK funding and with help from the European Commission’s citizen focus action cluster.</p>
 	<p>KnowNow Information is an award winning data management company. We provide data analysis, management and development services as well as smart city consultancy to cities across the globe.</p>
+	</article>
 </section>
 <section id="partners">
-	
+	<ul id="partner-imgs">
+		<li><a href="#"><img src="http://placehold.it/100x100/9A1144/fff"></a></li>
+		<li><a href="#"><img src="http://placehold.it/100x100/9A1144/fff"></a></li>
+		<li><a href="#"><img src="http://placehold.it/100x100/9A1144/fff"></a></li>
+		<li><a href="#"><img src="http://placehold.it/100x100/9A1144/fff"></a></li>
+	</ul>
 </section>
 <section id="GDPR">
-	<h2>GDPR</h2>
+	<img src="old/img/gdpr.png">
+	<article>
+	<h1>GDPR</h1>
 	<p>GDPR asks that organisations collect clear, unambiguous consent before processing personal data, and are able to demonstrate that they have done so.  Data subjects will have the right to change their minds and a right to be forgotten.</p>	
 	<p>Although GDPR is not live till May 2018 changes take time and planning.   First step is to conduct a Privacy Impact Assessment in your organisation.  This will establish your organisation’s personal data requirements, it will identify where that personal data is processed  and it will set out a privacy policy that you then need to ask customers to agree too.</p>
 	<p>Consentua will help organisations meet their GDPR obligations as it will capture the ongoing, clear and unambiguous consent to use personal data.   A report from the Consentua repository can be easily sourced and actioned against as required.  Be that to delete; or perhaps to check consent has been granted for a particular activity; or even changing the consent requirements to then ask consumers to interact with and confirm they give consent.  </p>
+	<article>
 </section>
 <section id="problem-answer">
-	<div>
+	<div id="problem">
+		<img id="problem-img" src="imgs/logo/consentua-lock-white.svg">
 		<span>
 		<h2>Why it affects you</h2>
 		<p>GDPR applies to all organisations that use, store or process personal data. It will help your organisation to enjoy a better, more trustful relationship with your customers which will, in turn, lead to more business.</p>
 		<p>The maximum fine for breaches of the new regulations is €20m, or 4% of global turnover.  The GDPR covers all EU citizens irrespective of where their data is processed, and will Impact any organisation that processes personal data.</p>
 		</span>
 	</div>
-	<div>
-	<span>
+	<div id="answer">
+		<img id="answer-img" src="imgs/logo/consentua-lock-white.svg">
+		<span>
 		<h2>How Consentua answers the problem</h2>
 		<p>Consentua is an innovative new consent management service. It enables a new relationship between the citizen and the processors of their data. Consentua uses a unique user interface that clearly articulates the equitable exchange between the processor’s use of your data and what the citizen can expect as a result.</p>
 		<p>Users can see their historic consents, data processors can see who has which services and interactions have been consented to and by whom. This improves customer satisfaction through greater trust between customer and provider. Consentua thus delivers two benefits - happy customers and a happy data protection officer.</p>
@@ -115,7 +133,7 @@
 <section id="features">
 	<div class="coloums">
 		<div class="feature">
-			<img src="old/img/control.png">
+			<img src="old/img/dashboard.png">
 			<h2>Across All Platforms</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 		</div>
@@ -134,14 +152,23 @@
 
 <section id="how-it-works">
 	<h2>How it works</h2>
-	<ul>
+	<div>
+		<div class="panel one"><h4>Consentua is accessed via a simple API (Application Programming Interface)</h4></div>
+		<div class="panel two"><h4> A consent template is created for your organisation - the template describes what information you need to collect from your users.</h4></div>
+		<div class="panel three"><h4>A consent request is presented to your user via an embedded instance of consentua within your application</h4></div>
+		<div class="panel four"><h4>Your user chooses the level of consent they wish to grant.</h4></div>
+		<div class="panel five"><h4>The consent is recorded by Consentua and a consent receipt is made available via the API.</h4></div>
+		<div class="panel six"><h4>Your customer is now free to continue to enjoy your service.</h4></div>
+	</div>
+
+<!-- 	<ul>
 		<li>Consentua is accessed via a simple API (Application Programming Interface)</li>
 		<li> A consent template is created for your organisation - the template describes what information you need to collect from your users.</li>
 		<li>A consent request is presented to your user via an embedded instance of consentua within your application</li>
 		<li>Your user chooses the level of consent they wish to grant.</li>
 		<li>The consent is recorded by Consentua and a consent receipt is made available via the API.</li>
 		<li>Your customer is now free to continue to enjoy your service.</li>
-	</ul>
+	</ul> -->
 	<div class="screenshots">
 		<img src="imgs/screenshot/Screenshot_20161215-132318-1.png">
 		<img src="imgs/screenshot/Screenshot_20161215-132607.png">
@@ -164,12 +191,9 @@
 
 <section>
 	<h2>Privacy Impact Assessment</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<p>The first step to GDPR compliance is to conduct a Privacy Impact Assessment (PIA) in your organisation.</p>
+	<p>The PIA will establish your organisation’s personal data requirements, it will identify where that personal data is processed and it will set out a privacy policy that you then need to ask customers to agree to.</p>
+	<p>Talk to us today at 02392 160640 to find out if a PIA is suitable for your organisation.</p>
 </section>
 
 <!-- probably change to just a sign up form -->

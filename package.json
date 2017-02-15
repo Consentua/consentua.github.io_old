@@ -12,6 +12,9 @@
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "scrollmagic": "^2.0.5"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.13",
