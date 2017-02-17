@@ -1,0 +1,75 @@
+@media (max-width: 600px){
+    section{
+        padding: 40px 10px;
+    }
+    .splash{
+        height: 90vh;
+        padding: 100px 10px 40px 10px;
+    }
+    .splash h1{
+        font-size: 3em;
+    }
+    .about img{
+        display: none;
+    }
+    .about > div > div{
+        width: 100%;
+        float: none;
+    }
+    header nav{
+        margin: 0px;
+        float: none;
+        position: fixed;
+        top: 56px;
+        left: -100%;
+        bottom: 0;
+        width: 100%;
+        max-width: 300px;
+        background: #9A1144;
+        color: #fff;
+        transition: 200ms;
+    }
+    header nav.visible{
+        left: 0px;
+    }
+    header nav ul li{
+        display: block;
+        float: none;
+        width: 80%;
+    }
+    header nav ul li a{
+        
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .menuItems a {
+      color: #fff;
+    }
+    header .toggle-menu{
+        display: block;
+        color: #fff;
+        float: right;
+/*        position: absolute;
+        right: 0;
+        top: 0;*/
+        font-size: 3.5em;
+    }
+    .contact h2{
+        font-size: 1.5em;
+    }
+    .contact .input{
+        display: block;
+        width: 100%;
+        float: none;
+    }
+    .contact .input:nth-of-type(odd){
+        margin-right: 0;
+    }
+    .contact label{
+        padding-top: 10px;
+    }
+    .contact label:first-of-type{
+        padding-top: 0;
+    }
+}
