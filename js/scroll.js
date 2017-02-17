@@ -43,25 +43,57 @@ scene3.setTween(tweenanswr);
 scene3.addTo(controller);
 
 
+ // define movement of panels
+ var wipeAnimation = new TimelineMax()
+ 	 //.fromTo("div.panel.one", 1, {y: "100%"}, {x: "10%", ease: Linear.easeNone})
+     .fromTo("div.panel.two", 1, {y: "100%"}, {x: "0%", ease: Linear.easeNone}) 
+     .fromTo("div.panel.three",    1, {y:  "100%"}, {y: "10%", ease: Linear.easeNone})  
+     .fromTo("div.panel.four", 1, {y: "100%"}, {y: "20%", ease: Linear.easeNone}) 
+     .fromTo("div.panel.five", 1, {y: "100%"}, {y: "30%", ease: Linear.easeNone})
+     .fromTo("div.panel.six", 1, {y: "100%"}, {y: "40%", ease: Linear.easeNone}); 
+     // create scene to pin and link animation
+ new ScrollMagic.Scene({
+     triggerElement: "#pinContainer",
+     duration: 1000, offset: 200,
+     //triggerHook: "onLeave",
+ })
+ .setPin("#pinContainer")
+ .setTween(wipeAnimation)
+ .addTo(controller);
 
+
+	// get all slides
+		// var slides = document.querySelectorAll("div.panel");
+		// var tweenpanel = new TimelineMax()
+		// 	.to(".panel", 1, {height: '10vh'}, 0);
+
+		// // create scene for every slide
+		// for (var i=0; i<slides.length; i++) {
+		// 	new ScrollMagic.Scene({
+		// 			triggerElement: slides[i],
+		// 			duration: 00, offset: 200
+		// 		})
+		// 		.setTween(tweenpanel)
+		// 		.addIndicators() // add indicators (requires plugin)
+		// 		.addTo(controller);
+		// }
 
 //
 
-var controller2 = new ScrollMagic.Controller({
-			globalSceneOptions: {
-				triggerHook: 'onLeave'
-			}
-		});
+// // var controller2 = new ScrollMagic.Controller();
 
-		// get all slides
-		var slides = document.querySelectorAll("div.panel");
+// 		// get all slides
+// 		var slides = document.querySelectorAll("div.panel");
 
-		// create scene for every slide
-		for (var i=0; i<slides.length; i++) {
-			new ScrollMagic.Scene({
-					triggerElement: slides[i]
-				})
-				.setPin(slides[i])
-				.addIndicators() // add indicators (requires plugin)
-				.addTo(controller2);
-		}
+// 		// create scene for every slide
+// 		for (var i=0; i<slides.length; i++) {
+// 			new ScrollMagic.Scene({
+// 					triggerElement: slides[i],
+// 					triggerHook: 'onLeave',
+// 					pushFollowers: false,
+// 					offset: -200
+// 				})
+// 				.setPin(slides[i])
+// 				.addIndicators() // add indicators (requires plugin)
+// 				.addTo(controller);
+// 		}
