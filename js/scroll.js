@@ -56,39 +56,39 @@ scene3.setTween(tweenanswr);
 scene3.addTo(controller);
 
 
-// Change behavior of controller
-	// to animate scroll instead of jump
-	controller.scrollTo(function(target) {
-	  TweenMax.to(window, 0.5, {
-	    scrollTo : {
-	      y : target, // scroll position of the target along y axis
-	      autoKill : true // allows user to kill scroll action smoothly
-	    },
-	    ease : Cubic.easeInOut
-	  });
-	});
+// // Change behavior of controller
+// 	// to animate scroll instead of jump
+// 	controller.scrollTo(function(target) {
+// 	  TweenMax.to(window, 0.5, {
+// 	    scrollTo : {
+// 	      y : target, // scroll position of the target along y axis
+// 	      autoKill : true // allows user to kill scroll action smoothly
+// 	    },
+// 	    ease : Cubic.easeInOut
+// 	  });
+// 	});
 
-	//  bind scroll to anchor links
-	var anchorLinks = document.getElementsByClassName("anchor");
-	for (i = 0; i < anchorLinks.length; i++) {
-    anchorLinks[i].addEventListener("click", scrollTo);
-	}
-	function scrollTo(e) {
-		var id = this.getAttribute("href");
-		console.log(id);
-		console.log(id.length);
-		if (id.length > 0) {
-			e.preventDefault();
-			controller.scrollTo(id);
+// 	//  bind scroll to anchor links
+// 	var anchorLinks = document.getElementsByClassName("anchor");
+// 	for (i = 0; i < anchorLinks.length; i++) {
+//     anchorLinks[i].addEventListener("click", scrollTo);
+// 	}
+// 	function scrollTo(e) {
+// 		var id = this.getAttribute("href");
+// 		console.log(id);
+// 		console.log(id.length);
+// 		if (id.length > 0) {
+// 			e.preventDefault();
+// 			controller.scrollTo(id);
 
-	    // If supported by the browser we can also update the URL
-	    if (window.history && window.history.pushState) {
-	      history.pushState("", document.title, id);
-	    }
-		} else {
-			console.log("oops");
-		}
-	};
+// 	    // If supported by the browser we can also update the URL
+// 	    if (window.history && window.history.pushState) {
+// 	      history.pushState("", document.title, id);
+// 	    }
+// 		} else {
+// 			console.log("oops");
+// 		}
+// 	};
 
  // // define movement of panels
  // var wipeAnimation = new TimelineMax()
