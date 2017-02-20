@@ -21,11 +21,24 @@ scene0.addTo(controller);
 // Shrinking header logo animation
 var tweenhead = new TimelineMax()
     .to("#splash", 1, {height: 50, margin:'0', padding: '0'}, 0)
-    .to("#logo", 1, {scale: 0.45, top: 0, marginLeft: '-70', marginTop: '-12'}, 0);
 
-var scene1 = new ScrollMagic.Scene({duration: 700, offset: 150});
+var scene1 = new ScrollMagic.Scene({duration: 1000, offset: 150});
 scene1.setTween(tweenhead);
 scene1.addTo(controller);
+
+// Shrinking header logo animation
+var tweenlogo = new TimelineMax()
+    
+    //.to("#logo", 1, {scale: 0.3, top: 0, left: 0, marginLeft: '-5em', marginTop: '-2em'}, 0);
+    // .from("#logo", 0, {x:10, y:100, backgroundColor:'blue'})
+    //.to("#logo", 5, {scale: 0.3, top: 0, left: 0});
+    // .to("#logo", 1, {scale: 0.3, marginLeft: '-5vw', marginTop: '-3vh'});
+     .to("#logo", 1, {height: '5vh', marginLeft: '0px', marginTop: '3px'});
+
+var scene1 = new ScrollMagic.Scene({duration: 1000, offset: 150});
+scene1.setTween(tweenlogo);
+scene1.addTo(controller);
+
 
 //animate images in problems/answers
 var tweenprob = new TimelineMax()
@@ -43,23 +56,23 @@ scene3.setTween(tweenanswr);
 scene3.addTo(controller);
 
 
- // define movement of panels
- var wipeAnimation = new TimelineMax()
- 	 //.fromTo("div.panel.one", 1, {y: "100%"}, {x: "10%", ease: Linear.easeNone})
-     .fromTo("div.panel.two", 1, {y: "100%"}, {x: "0%", ease: Linear.easeNone}) 
-     .fromTo("div.panel.three",    1, {y:  "100%"}, {y: "10%", ease: Linear.easeNone})  
-     .fromTo("div.panel.four", 1, {y: "100%"}, {y: "20%", ease: Linear.easeNone}) 
-     .fromTo("div.panel.five", 1, {y: "100%"}, {y: "30%", ease: Linear.easeNone})
-     .fromTo("div.panel.six", 1, {y: "100%"}, {y: "40%", ease: Linear.easeNone}); 
-     // create scene to pin and link animation
- new ScrollMagic.Scene({
-     triggerElement: "#pinContainer",
-     duration: 1000, offset: 200,
-     //triggerHook: "onLeave",
- })
- .setPin("#pinContainer")
- .setTween(wipeAnimation)
- .addTo(controller);
+ // // define movement of panels
+ // var wipeAnimation = new TimelineMax()
+ // 	 //.fromTo("div.panel.one", 1, {y: "100%"}, {x: "10%", ease: Linear.easeNone})
+ //     .fromTo("div.panel.two", 1, {y: "100%"}, {x: "0%", ease: Linear.easeNone}) 
+ //     .fromTo("div.panel.three",    1, {y:  "100%"}, {y: "10%", ease: Linear.easeNone})  
+ //     .fromTo("div.panel.four", 1, {y: "100%"}, {y: "20%", ease: Linear.easeNone}) 
+ //     .fromTo("div.panel.five", 1, {y: "100%"}, {y: "30%", ease: Linear.easeNone})
+ //     .fromTo("div.panel.six", 1, {y: "100%"}, {y: "40%", ease: Linear.easeNone}); 
+ //     // create scene to pin and link animation
+ // new ScrollMagic.Scene({
+ //     triggerElement: "#pinContainer",
+ //     duration: 1000, offset: 200,
+ //     //triggerHook: "onLeave",
+ // })
+ // .setPin("#pinContainer")
+ // .setTween(wipeAnimation)
+ // .addTo(controller);
 
 
 	// get all slides
