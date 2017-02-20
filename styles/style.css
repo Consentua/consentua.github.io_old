@@ -53,23 +53,18 @@ section {
 
 /*have header start as #9A1144 and scroll into a dark background*/
 header{
+    /*background: #9A1144;*/
     background: rgba(154,17,68,0.0);
     padding: 0 20px;
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 200;
     transition: transform 0.3s ease-out;
+    max-height: 10vh;
 }
 
-header .logo>h1{
-    float: left;
-    padding: 13px 0;
-    color: #9A1144;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 30px;
-    margin: 0;
-    display: inline-block;
+header .toggle-menu{
+    display: none;
 }
 header .logo-img{
     float: left;
@@ -137,22 +132,17 @@ padding: 0;
 .menuItems .current a:after {
   width: 100%;
 }
-header{
-  max-height: 7vh;
-}
-header .toggle-menu{
-    display: none;
-}
 .container{
   position: relative;
 }
 #splash{
 	height: 100vh;
-	background-color: #9A1144;
-	color: #fff;
+  width: 100%;
+  min-height:56px;
+  background-color: #9A1144;
+  color: #fff;
   position: fixed;
   top: 0;
-  width: 100%;
   z-index: 30;
   overflow: hidden;
 }
@@ -167,8 +157,10 @@ header .toggle-menu{
 #logo{
   margin: 0;
   padding: 0.2em;
-  max-width: 25%;
-  min-height: 50px;
+  max-width: 35%;
+  min-height: 40px;
+/*  height: 100%;
+  max-height: 20%;*/
   margin-top: 40vh;
   margin-left: 8vw;
   top:0;
@@ -230,7 +222,7 @@ header .toggle-menu{
     margin-left: 10px;
 }
 #about{
-	margin-top: 140vh;
+	margin-top: 170vh;
   /*margin-bottom: 300px;*/
   min-height: 500px;
   text-align: left;
@@ -241,37 +233,42 @@ header .toggle-menu{
   max-width: 500px;
 }
 #about article ,#GDPR article{
-  max-width: calc(100vw - 500px);
+  /*max-width: calc(100vw - 500px);*/
   margin:2em auto;
+}
+#about h1{
+  max-width: 70vw;
+  margin: 1em auto;
 }
 #about p , #GDPR p{
   max-width: 70vw;
   margin:2em auto; 
 }
 #partners{
-  width: 100%;
+  /*width: 100%;*/
   background-color: #d4d4d4;
   /*text-align: center;*/
 }
-#partners i{
-  visibility: hidden;
-  flex: 2;
-  text-align: center;
-}
 #partner-imgs{
-  height: 140px;
+  /*height: 140px;*/
   display: flex;
   justify-content:center;
   align-content:center;
   align-items:center;
+  flex-wrap: wrap;
   list-style: outside none none;
   margin: 0.7em auto;
   padding: 0 ;
 }
+#partner-imgs i{
+  visibility: hidden;
+  flex: 2;
+  text-align: center;
+}
 #partner-imgs li{
   /*float: left;*/
   flex: 1;
-  margin: 0px 1em;
+  margin:1em;
 }
 #partner-imgs li a img{
   transition: all .13s ease-in-out;
@@ -279,10 +276,10 @@ header .toggle-menu{
   max-height: 100px;  
 }
 #partner-imgs li a img:hover{
-/*-webkit-box-shadow: 0px 0px 20px 1px rgba(33,33,33,0.4);
+/*-webkit-box-shadow: 0px 0px 20px 1px rgba(33,33,33,0.4); 
 -moz-box-shadow: 0px 0px 20px 1px rgba(33,33,33,0.4);
 box-shadow: 0px 0px 20px 1px rgba(33,33,33,0.4);*/
- -webkit-filter: drop-shadow(0px 0px 8px rgba(33,33,33,0.4));
+ -webkit-filter: drop-shadow(0px 0px 8px rgba(33,33,33,0.4)); /*proper shadows for png imgs*/
   filter: drop-shadow(0px 0px 8px rgba(33,33,33,0.4));
 }
 #GDPR{

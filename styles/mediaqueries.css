@@ -1,6 +1,56 @@
+@media (max-width: 800px){
+    #logo{
+        max-width: 500px;
+      margin-top: 30vh;
+    }
+    #about img, #GDPR img{
+        max-width: 100%;
+        max-height: 300px;
+        margin-bottom: 2em;
+    }
+    #blurb{
+        left: 10%;
+         top: initial; 
+        bottom: 2em;
+    }
+    #partner-imgs i{
+        display: none;
+    }
+    #partner-imgs li{
+        flex:0;
+    }
+    #problem-answer div img{
+        display: none;
+    }
+    #problem-answer div span{
+        max-width: 100%;
+        margin: 2em auto 4em auto;
+    }
+    #problem-answer div:before,
+    #problem-answer div:after{
+        width: 100%;
+    }
+    #problem-answer div:nth-child(2) span{
+        padding-top: 0px;
+    }
+    #problem-answer div:nth-child(2):before,
+    #problem-answer div:nth-child(2):after{
+        display: none;
+    }
+    #how-it-works ul{
+        max-width: 100%;
+    }
+    #video span iframe{
+        width: 90%;
+    }
+}
 @media (max-width: 600px){
+    #logo{
+    max-width: 75vw;
+    margin-top: 15vh;
+    }
     section{
-        padding: 40px 10px;
+        /*padding: 40px 10px;*/
     }
     .splash{
         height: 90vh;
@@ -20,7 +70,7 @@
         margin: 0px;
         float: none;
         position: fixed;
-        top: 56px;
+        top: 10vh;
         left: -100%;
         bottom: 0;
         width: 100%;
@@ -30,6 +80,7 @@
         transition: 200ms;
     }
     header nav.visible{
+        z-index: 1;
         left: 0px;
     }
     header nav ul li{
@@ -48,15 +99,37 @@
     }
     header .toggle-menu{
         display: block;
+        margin: 0.2em;
         color: #fff;
         float: right;
 /*        position: absolute;
         right: 0;
         top: 0;*/
-        font-size: 3.5em;
+        font-size: 3em;
     }
-    .contact h2{
-        font-size: 1.5em;
+    #blurb{ 
+    bottom: 5em;
+    }
+
+    #about p, #GDPR p{
+        max-width: 100%;
+    }
+    #about img, #GDPR img{
+    max-height: 250px;
+    margin-bottom: 2em;
+    }
+
+    #GDPR article, #about article{
+        max-width: 88%;
+    }
+    #GDPR article{
+        margin-right: auto; 
+    }
+    #PIA article{
+        max-width: 80vw;
+    }
+    #how-it-works ul{
+      border: none;
     }
     .contact .input{
         display: block;
