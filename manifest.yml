@@ -6,4 +6,4 @@ applications:
   name: ConsentuaWebSite
   host: consentuawebsite
   disk_quota: 1024M
-  buildpack: php_buildpack
+  buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
