@@ -3,7 +3,7 @@
 <head>
 
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
 	<title>Consent Management and Audit | Consentua</title>
 	<!-- Icons -->
 	<link rel="shortcut icon" href="imgs/icon/favicon.ico">
@@ -311,13 +311,21 @@
 
 	<script type="text/javascript" src="js/scroll.js"></script>
 	<script type="text/javascript">
+		// get nav and anchors
+		var nav = document.querySelector('nav');
+		var anchorLinks = document.getElementsByClassName("anchor");
 		//nav toggle for mobile nav bar button
 		document.getElementById("toggle-menu").addEventListener("click",
 			toggleMenu);
-
 		function toggleMenu() {
-			var nav = document.querySelector('nav') // Using a class instead, see note below.
 			nav.classList.toggle('visible');
+		}
+		//for each of the anchors, when clicked close nav
+		for (i = 0; i < anchorLinks.length; i++) {
+	    anchorLinks[i].addEventListener("click", closeDrawer);
+		}
+		function closeDrawer(){
+			nav.classList.remove('visible');
 		}
 	</script>
 	<!-- https://premium.wpmudev.org/forums/topic/embed-blog-posts-into-a-html-site?utm_expid=3606929-97.J2zL7V7mQbSNQDPrXwvBgQ.0&utm_referrer=https%3A%2F%2Fwww.google.co.uk%2F -->

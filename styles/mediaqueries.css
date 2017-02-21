@@ -17,7 +17,11 @@
         display: none;
     }
     #partner-imgs li{
-        flex:0;
+        -webkit-box-flex:0;
+            -ms-flex:0;
+                flex:0;
+/*                flex:initial;
+        overflow: hidden;*/
     }
     #problem-answer div img{
         display: none;
@@ -77,7 +81,8 @@
         max-width: 300px;
         background: #9A1144;
         color: #fff;
-        transition: 200ms;
+        -webkit-transition: 500ms;
+        transition: 500ms;
     }
     header nav.visible{
         z-index: 1;
@@ -92,10 +97,22 @@
         
         display: block;
         width: 100%;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+    .menuItems a:before{
+        display: none;
+    }
+    .menuItems a:after{
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.2);
     }
     .menuItems a {
       color: #fff;
+    }
+    .menuItems li{
+        margin: 0px;
+            padding: 1em 1.5em;
+    width: 100%;
     }
     header .toggle-menu{
         display: block;
@@ -130,6 +147,12 @@
     }
     #how-it-works ul{
       border: none;
+    }
+    .screenshots span{
+        margin: 1.5em;
+    }
+    .screenshots span img{
+        margin: 0px;
     }
     .contact .input{
         display: block;
