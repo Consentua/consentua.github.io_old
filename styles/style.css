@@ -7,6 +7,10 @@
   Darks: #212121, #373737, #000;
 */
 /*selection styles*/
+::-moz-selection {
+    background: #212121;
+    color: #9A1144; /* WebKit/Blink Browsers */ 
+}
 ::selection {
     background: #212121;
     color: #9A1144; /* WebKit/Blink Browsers */ 
@@ -56,9 +60,6 @@ section {
     margin: 0 auto;
 }
 
-.active{
-  background: #212121;
-}
 header{
     /*background: #9A1144;*/
     background: rgba(154,17,68,0.0);
@@ -280,21 +281,31 @@ padding: 0;
   list-style: outside none none;
   margin: 0.7em auto;
   padding: 0 ;
+  overflow: hidden;
 }
 #partner-imgs i{
   visibility: hidden;
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+  -webkit-box-flex: 2  0 auto;
+      -ms-flex: 2  0 auto;
+          flex: 2  0 auto;
   text-align: center;
+
 }
 #partner-imgs li{
   /*float: left;*/
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -webkit-box-flex: 1  0 auto;
+      -ms-flex: 1  0 auto;
+          flex: 1  0 auto;
   margin:1em;
 }
+#partner-imgs i:nth-child(1) {-webkit-box-ordinal-group: 2;-ms-flex-order: 1;order: 1; -webkit-order: 1;}
+#partner-imgs li:nth-child(2) {-webkit-box-ordinal-group: 3;-ms-flex-order: 2;order: 2; -webkit-order: 2;}
+#partner-imgs li:nth-child(3) {-webkit-box-ordinal-group: 5;-ms-flex-order: 4;order: 4; -webkit-order: 4;}
+#partner-imgs li:nth-child(4) {-webkit-box-ordinal-group: 4;-ms-flex-order: 3;order: 3; -webkit-order: 3;}
+#partner-imgs li:nth-child(5) {-webkit-box-ordinal-group: 6;-ms-flex-order: 5;order: 5; -webkit-order: 5;}
+#partner-imgs li:nth-child(6) {-webkit-box-ordinal-group: 7;-ms-flex-order: 6;order: 6; -webkit-order: 6;}
+#partner-imgs i:nth-child(7) {-webkit-box-ordinal-group: 8;-ms-flex-order: 7;order: 7; -webkit-order: 7;}
+
 #partner-imgs li a img{
   -webkit-transition: all .13s ease-in-out;
   transition: all .13s ease-in-out;
@@ -412,9 +423,9 @@ background-color: rgba(154,17,68,0.5);
   margin-right: 40px;
   overflow: hidden;
   color: #fff;
-  -webkit-box-flex:1;
-      -ms-flex:1;
-          flex:1;
+  -webkit-box-flex:1;  0 auto
+      -ms-flex:1;  0 auto
+          flex:1;  0 auto
 }
 #features .feature img{
   max-width: 100%;
@@ -466,8 +477,8 @@ background-color: rgba(154,17,68,0.5);
 .screenshots span{
   max-height: 60vh;
   margin: 2.5em;
-/*  -webkit-flex: 1;
-  flex: 1;*/
+/*  -webkit-flex: 1  0 auto;
+  flex: 1  0 auto;*/
 }
 .screenshots span img{
   max-height: 60vh;
@@ -603,22 +614,97 @@ footer #copyright p{
 }
 
 
-#pinContainer {
+/*#pinContainer {
   width: 100%;
   height: 100vh !important;
   overflow: hidden;
   margin-bottom: 3em;
-}
-.panel {
+}*/
+/*.panel {
   height: 80% ;
   width: 100%;
   position: absolute;
   text-align:center;
-}
+}*/
 /*.panel{
   width: 100%;
   height: 50vh;
   margin-bottom: 500px;
 }*/
-.one{background-color: pink;}.two{background-color: brown;}.three{background-color: red;}
-.four{background-color: green;}.five{background-color: aqua;}.six{background-color: blue;}P
+/*.one{background-color: pink;}.two{background-color: brown;}.three{background-color: red;}
+.four{background-color: green;}.five{background-color: aqua;}.six{background-color: blue;}
+*/
+            /**
+             * (optional) define here the style definitions which should be applied on the slider container
+             * e.g. width including further controls like arrows etc.
+             */
+             #slidersec{
+              min-height: 50vh;
+              background-color: pink;
+             }
+            .slider {
+                  position: relative;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: -moz-none;
+                -o-user-select: none;
+                user-select: none;
+            }
+
+            .frame {
+                /**
+                 * (optional) wrapper width, specifies width of the slider frame.
+                 */
+                width: 80vw;
+                margin: 1em auto;
+
+                position: relative;
+                font-size: 0;
+                line-height: 0;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+        
+
+            .slides {
+                display: inline-block;
+                /*height: 100px;*/
+            }
+
+            .slides li {
+                position: relative;
+                display: inline-block;
+/*                height: 50px;
+                height: 130px;*/
+                /**
+                 * (optional) if the content inside the slide element has a defined size.
+                 */
+                width: 880px;
+                max-width: 80vw;
+            }
+
+            .slides img{
+              max-width: 95%;
+              max-height: 100px;
+              margin: 10px;
+            }
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    display: block;
+    cursor: pointer;
+}
+
+.next {
+    right: 0;
+}
+
+.prev {
+    left: 0;
+}
+
+.next svg, .prev svg {
+    width: 25px;
+}

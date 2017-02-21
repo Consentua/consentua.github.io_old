@@ -56,6 +56,14 @@ scene3.setTween(tweenanswr);
 scene3.addTo(controller);
 
 
+// document.addEventListener('DOMContentLoaded', function () {
+//         var variableWidth = document.querySelector('.js_variablewlidth');
+
+//         lory(variableWidth, {
+//             rewind: true
+//         });
+//     });
+
 // // Change behavior of controller
 // 	// to animate scroll instead of jump
 // 	controller.scrollTo(function(target) {

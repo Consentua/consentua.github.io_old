@@ -78,11 +78,11 @@
         left: -100%;
         bottom: 0;
         width: 100%;
-        max-width: 300px;
+        max-width: 256px;
         background: #9A1144;
         color: #fff;
-        -webkit-transition: 500ms;
-        transition: 500ms;
+        -webkit-transition: all 600ms cubic-bezier(0.97, 0, 0.15, 1.01);
+        transition: all 600ms cubic-bezier(0.97, 0, 0.15, 1.01);
     }
     header nav.visible{
         z-index: 1;
@@ -103,6 +103,7 @@
         display: none;
     }
     .menuItems a:after{
+        display: none;
         height: 100%;
         background-color: rgba(255, 255, 255, 0.2);
     }

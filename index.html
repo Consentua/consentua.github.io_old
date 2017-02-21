@@ -3,7 +3,10 @@
 <head>
 
 	<meta charset="utf-8">
-	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
+<!-- 	<meta name="viewport" content="user-scalable=no, width=device-width, 
+								   initial-scale=1.0, maximum-scale=1.0"> -->
+	<meta name="viewport" content="user-scalable=no, 
+								   initial-scale=1.0, maximum-scale=1.0">								   
 	<title>Consent Management and Audit | Consentua</title>
 	<!-- Icons -->
 	<link rel="shortcut icon" href="imgs/icon/favicon.ico">
@@ -26,6 +29,8 @@
 	<meta name="msapplication-TileColor" content="#FFFFFF">
 	<meta name="msapplication-TileImage" content="imgs/icon/favicon-144.png">
 	<meta name="msapplication-config" content="imgs/icon/browserconfig.xml">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="true">
 
 	<!-- Chrome, Firefox OS and Opera -->
 	<meta name="theme-color" content="#9A1144">
@@ -60,7 +65,9 @@
 	<script type="text/javascript" src="old/template/js/scrollmagic/TweenMax.min.js"></script>
 	<script type="text/javascript" src="old/template/js/scrollmagic/ScrollMagic.js"></script>
 	<script type="text/javascript" src="old/template/js/scrollmagic/animation.gsap.js"></script>
-	<script type="text/javascript" src="old/template/js/scrollmagic/debug.addIndicators.js"></script>
+	<script type="text/javascript" src="js/lory.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lory.js/2.2.0/lory.min.js"></script>
+	<!-- <script type="text/javascript" src="old/template/js/scrollmagic/debug.addIndicators.js"></script> -->
 
 </head>
 
@@ -75,13 +82,13 @@
 		<nav id="nav">
 			<ul class="menuItems">
 				<!-- http://scrollmagic.io/examples/advanced/anchor_link_scrolling.html#top -->
-				<li><a class="anchor" href="#about">About</a>
+				<li><a class="anchor" href="http://consentua.com/#about">About</a>
 				</li>
-				<li><a class="anchor" href="#GDPR">GDPR</a>
+				<li><a class="anchor" href="http://consentua.com/#GDPR">GDPR</a>
 				</li>
-				<li><a class="anchor" href="#how-it-works">How it works</a>
+				<li><a class="anchor" href="http://consentua.com/#how-it-works">How it works</a>
 				</li>
-				<li><a class="anchor" href="#contact">Contact</a>
+				<li><a class="anchor" href="http://consentua.com/#contact">Contact</a>
 				</li>
 				<!-- <li><a href="#">API</a></li> -->
 				<!-- <li><a href="#">Log In</a></li> -->
@@ -94,7 +101,7 @@
 			<p>Consentua is a consent management tool that helps organisations to achieve
 				data protection compliance, and gives individuals choice and control
 				over how their personal data is used.</p>
-			<a class="btn" href="#contact">Try the Demo<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+			<a class="btn" href="http://consentua.com/#contact">Try the Demo<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 		</article>
 	</section>
 
@@ -141,6 +148,62 @@
 			<i class="fa fa-chevron-right" aria-hidden="true"></i>
 		</ul>
 	</section>
+<section id="slidersec">
+<h2>Variable width</h2>
+
+            <div class="slider js_variablewlidth variablewidth">
+                <div class="frame js_frame">
+                    <ul class="slides js_slides">
+                        <li class="js_slide" style="width:350px;"><img src="http://placehold.it/350x100"></li>
+                        <li class="js_slide" style="width:250px;"><img src="http://placehold.it/250x100"></li>
+                        <li class="js_slide" style="width:300px;"><img src="http://placehold.it/300x100"></li>
+                        <li class="js_slide" style="width:350px;"><img src="http://placehold.it/350x100"></li>
+                        <li class="js_slide" style="width:350px;"><img src="http://placehold.it/350x100"></li>
+                    </ul>
+                </div>
+
+                <span class="js_prev prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg>
+                </span>
+
+                <span class="js_next next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg>
+                </span>
+            </div>
+            <script src="js/lory.min.js"></script>
+			<script>
+			    'use strict';
+
+			    document.addEventListener('DOMContentLoaded', function() {
+			        var slider = document.querySelector('.js_variablewlidth');
+
+			        lory(slider, {
+			            rewind: true,
+			            // slidesToScroll: 2
+			        });	
+			    });
+			</script>
+			<!--             <script type="text/javascript">
+            var lory = new Lory;
+
+			document.addEventListener('DOMContentLoaded', function () {
+						 Array.prototype.slice.call(document.querySelectorAll('.js_slide')).forEach(function (element, index) {
+		                lory(variableWidth, {
+			            rewind: true
+			        });		            
+			        });
+		        });
+
+			    //     var variableWidth = document.querySelector('.js_variablewlidth');
+
+			    //     lory(variableWidth, {
+			    //         rewind: true
+			    //     });
+			    // });
+
+            </script> -->
+    </section>
+
 	<section id="GDPR">
 		<img src="imgs/approve-check.svg" alt="Icon made by Freepik from www.flaticon.com ">
 		<article>
@@ -266,7 +329,7 @@
 	</section>
 
 	<section id="CTA">
-		<a class="btn" href="#contact">Try the Demo<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+		<a class="btn" href="http://consentua.com/#contact">Try the Demo<i class="fa fa-angle-right" aria-hidden="true"></i></a>
 	</section>
 
 	<!-- probably change to just a sign up form -->
@@ -327,6 +390,8 @@
 		function closeDrawer(){
 			nav.classList.remove('visible');
 		}
+
+
 	</script>
 	<!-- https://premium.wpmudev.org/forums/topic/embed-blog-posts-into-a-html-site?utm_expid=3606929-97.J2zL7V7mQbSNQDPrXwvBgQ.0&utm_referrer=https%3A%2F%2Fwww.google.co.uk%2F -->
 
