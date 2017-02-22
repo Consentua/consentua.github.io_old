@@ -51,7 +51,8 @@
         width: 90%;
     }
 }
-@media (max-width: 600px){
+@media (max-width: 600px),
+       (max-device-width: 800px) and (orientation: landscape){
     #logo{
     max-width: 75vw;
     margin-top: 15vh;
@@ -150,7 +151,7 @@
         max-width: 80vw;
     }
     #how-it-works #explain-list{
-      border: none;
+     border-width: 50px 0px;
     }
     .screenshots span{
         margin: 1.5em;
