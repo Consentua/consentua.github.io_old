@@ -34,6 +34,74 @@
   100% { -webkit-transform: rotate(210deg); transform: rotate(210deg); }
 }
 
+/*main img slider styles*/
+.slider {
+      position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    -ms-user-select: none;
+        user-select: none;
+}
+.frame {
+    /**
+     * (optional) wrapper width, specifies width of the slider frame.
+     */
+    width: 80vw;
+    margin: 1em auto;
+    position: relative;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.slides {
+    display: inline-block;
+    padding: 0px;
+    /*height: 100px;*/
+}
+.slides .active{}
+.slides li {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 880px;
+    max-width: 80vw;
+}
+.slides li a:after{
+  padding: 15px 10px;
+  width: initial;
+}
+.slides img{
+  max-width: 95%;
+  padding: 5%;
+  max-height: 100px;
+  margin: 10px auto;
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    display: block;
+    cursor: pointer;
+}
+.next {
+    right: 0;
+}
+.prev {
+    left: 0;
+}
+.next svg, .prev svg {
+    width: 35px;
+    fill: #212121;
+    -webkit-transition: 200ms;
+    transition: 200ms;
+}
+.next svg:hover, .prev svg:hover,
+.next svg:focus, .prev svg:focus {
+    fill: #9A1144;
+}
+
 body {
     max-width: 100vw;
     color: #212121;
@@ -263,62 +331,7 @@ padding: 0;
   background-color: #d4d4d4;
   /*text-align: center;*/
 }
-#partner-imgs{
-  /*height: 140px;*/
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack:center;
-      -ms-flex-pack:center;
-          justify-content:center;
-  -ms-flex-line-pack:center;
-      align-content:center;
-  -webkit-box-align:center;
-      -ms-flex-align:center;
-          align-items:center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  list-style: outside none none;
-  margin: 0.7em auto;
-  padding: 0 ;
-  overflow: hidden;
-}
-#partner-imgs i{
-  visibility: hidden;
-  -webkit-box-flex: 2  0 auto;
-      -ms-flex: 2  0 auto;
-          flex: 2  0 auto;
-  text-align: center;
 
-}
-#partner-imgs li{
-  /*float: left;*/
-  -webkit-box-flex: 1  0 auto;
-      -ms-flex: 1  0 auto;
-          flex: 1  0 auto;
-  margin:1em;
-}
-#partner-imgs i:nth-child(1) {-webkit-box-ordinal-group: 2;-ms-flex-order: 1;order: 1; -webkit-order: 1;}
-#partner-imgs li:nth-child(2) {-webkit-box-ordinal-group: 3;-ms-flex-order: 2;order: 2; -webkit-order: 2;}
-#partner-imgs li:nth-child(3) {-webkit-box-ordinal-group: 5;-ms-flex-order: 4;order: 4; -webkit-order: 4;}
-#partner-imgs li:nth-child(4) {-webkit-box-ordinal-group: 4;-ms-flex-order: 3;order: 3; -webkit-order: 3;}
-#partner-imgs li:nth-child(5) {-webkit-box-ordinal-group: 6;-ms-flex-order: 5;order: 5; -webkit-order: 5;}
-#partner-imgs li:nth-child(6) {-webkit-box-ordinal-group: 7;-ms-flex-order: 6;order: 6; -webkit-order: 6;}
-#partner-imgs i:nth-child(7) {-webkit-box-ordinal-group: 8;-ms-flex-order: 7;order: 7; -webkit-order: 7;}
-
-#partner-imgs li a img{
-  -webkit-transition: all .13s ease-in-out;
-  transition: all .13s ease-in-out;
-  max-width: 200px;
-  max-height: 100px;  
-}
-#partner-imgs li a img:hover{
-/*-webkit-box-shadow: 0px 0px 20px 1px rgba(33,33,33,0.4); 
--moz-box-shadow: 0px 0px 20px 1px rgba(33,33,33,0.4);
-box-shadow: 0px 0px 20px 1px rgba(33,33,33,0.4);*/
- -webkit-filter: drop-shadow(0px 0px 8px rgba(33,33,33,0.4)); /*proper shadows for png imgs*/
-  filter: drop-shadow(0px 0px 8px rgba(33,33,33,0.4));
-}
 #GDPR{
   padding-top: 2em;
     min-height: 500px;
@@ -438,14 +451,14 @@ background-color: rgba(154,17,68,0.5);
   /*padding: 6em 0;*/
   padding-top: 2em;
 }
-#how-it-works ul{
+#how-it-works #explain-list{
   border: 50px solid #c7c7c7;
   max-width: 60vw;
   margin: 2em auto;
   list-style: none;
   padding: 0;
 }
-#how-it-works ul li{
+#how-it-works #explain-list li{
   padding: 1em 2em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -455,40 +468,32 @@ background-color: rgba(154,17,68,0.5);
           align-items: center;
   background-color: #eeeeee;
 }
-#how-it-works ul li i{
+#how-it-works #explain-list li i{
   padding: 0 1em;
   height: 100%;
 }
-#how-it-works ul li:nth-child(2n+0) {
+#how-it-works #explain-list li:nth-child(2n+0) {
     background-color: #e1e1e1;
 }
-.screenshots{
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  max-width: 80vw;
-  margin: 13% auto;
+.screenshots li{
+    position: relative;
+    display: inline-block;
+    width: 400px;
+    max-height: 90vh;
+    text-align: center;
+    font-size: 15px;
+    line-height: 30px;
+    background: #fff;
+    margin: 50px;
+    box-shadow: 5px 5px 31px -5px rgba(0,0,0,0.75);
 }
-.screenshots span{
-  max-height: 60vh;
-  margin: 2.5em;
-/*  -webkit-flex: 1  0 auto;
-  flex: 1  0 auto;*/
+.screenshots .active{
+  /*background-color: #d4d4d4;*/
 }
-.screenshots span img{
-  max-height: 60vh;
-  margin: 1em auto;
+.screenshots li img{
+    max-height:70vh;
+    margin: 1em auto 0em auto;
 }
-.screenshots span p{
-  text-align: center;
-  margin-top: 0.3em;
-}
-
 #video{
   max-width: 100vw;
   max-height: 480px;
@@ -634,77 +639,7 @@ footer #copyright p{
 /*.one{background-color: pink;}.two{background-color: brown;}.three{background-color: red;}
 .four{background-color: green;}.five{background-color: aqua;}.six{background-color: blue;}
 */
-            /**
-             * (optional) define here the style definitions which should be applied on the slider container
-             * e.g. width including further controls like arrows etc.
-             */
-             #slidersec{
-              min-height: 50vh;
-              background-color: pink;
-             }
-            .slider {
-                  position: relative;
-                -webkit-user-select: none;
-                -khtml-user-select: none;
-                -moz-user-select: -moz-none;
-                -o-user-select: none;
-                user-select: none;
-            }
+/**
 
-            .frame {
-                /**
-                 * (optional) wrapper width, specifies width of the slider frame.
-                 */
-                width: 80vw;
-                margin: 1em auto;
 
-                position: relative;
-                font-size: 0;
-                line-height: 0;
-                overflow: hidden;
-                white-space: nowrap;
-            }
-
-        
-
-            .slides {
-                display: inline-block;
-                /*height: 100px;*/
-            }
-
-            .slides li {
-                position: relative;
-                display: inline-block;
-/*                height: 50px;
-                height: 130px;*/
-                /**
-                 * (optional) if the content inside the slide element has a defined size.
-                 */
-                width: 880px;
-                max-width: 80vw;
-            }
-
-            .slides img{
-              max-width: 95%;
-              max-height: 100px;
-              margin: 10px;
-            }
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    margin-top: -25px;
-    display: block;
-    cursor: pointer;
-}
-
-.next {
-    right: 0;
-}
-
-.prev {
-    left: 0;
-}
-
-.next svg, .prev svg {
-    width: 25px;
-}
+*/

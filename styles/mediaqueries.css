@@ -41,8 +41,11 @@
     #problem-answer div:nth-child(2):after{
         display: none;
     }
-    #how-it-works ul{
+    #how-it-works #explain-list{
         max-width: 100%;
+    }
+    #how-it-works .tempclass{
+        line-height: initial;
     }
     #video span iframe{
         width: 90%;
@@ -146,7 +149,7 @@
     #PIA article{
         max-width: 80vw;
     }
-    #how-it-works ul{
+    #how-it-works #explain-list{
       border: none;
     }
     .screenshots span{
@@ -155,18 +158,18 @@
     .screenshots span img{
         margin: 0px;
     }
-    .contact .input{
+    #contact .input{
         display: block;
         width: 100%;
         float: none;
     }
-    .contact .input:nth-of-type(odd){
+    #contact .input:nth-of-type(odd){
         margin-right: 0;
     }
-    .contact label{
+    #contact label{
         padding-top: 10px;
     }
-    .contact label:first-of-type{
+    #contact label:first-of-type{
         padding-top: 0;
     }
 }
