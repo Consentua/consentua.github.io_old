@@ -91,6 +91,7 @@
     header nav.visible{
         z-index: 1;
         left: 0px;
+        overflow-y: auto;
     }
     header nav ul li{
         display: block;
@@ -108,15 +109,13 @@
     }
     .menuItems a:after{
         display: none;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.2);
     }
     .menuItems a {
       color: #fff;
     }
     .menuItems li{
-        margin: 0px;
-            padding: 1em 1.5em;
+    margin: 0px;
+    padding: 1em 1.5em;
     width: 100%;
     }
     header .toggle-menu{
@@ -128,6 +127,9 @@
         right: 0;
         top: 0;*/
         font-size: 3em;
+    }
+    header .toggle-menu:active{
+        color: #c7c7c7;
     }
     #blurb{ 
     bottom: 5em;
@@ -153,12 +155,11 @@
     #how-it-works #explain-list{
      border-width: 50px 0px;
     }
-    .screenshots span{
-        margin: 1.5em;
+    .screenshots .next i, 
+    .screenshots .prev i {
+        padding: 0.3em;
     }
-    .screenshots span img{
-        margin: 0px;
-    }
+
     #contact .input{
         display: block;
         width: 100%;
@@ -172,5 +173,12 @@
     }
     #contact label:first-of-type{
         padding-top: 0;
+    }
+}
+@media (max-device-height: 550px) and (orientation: landscape){
+
+    #blurb{
+        bottom: 0.5em;
+        font-size: 1em;
     }
 }

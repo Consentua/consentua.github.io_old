@@ -54,12 +54,21 @@ scene3.addTo(controller);
 var li = document.querySelectorAll(".explain-li");
 // create scene for every slide
 for (var i=0; i<li.length; i++) {
-var tweenli = new TimelineMax() //tween for this li in the loop
-	// to(li[i] , 1, {color: '#fff', fontWeight: 'bold', backgroundColor:'#212121'}, 0);
-	.to(li[i] , 1, {fontWeight: 'bold'}, 0);
+
+ //    if(i % 2 === 0) { // index is even
+	// var tweenli = new TimelineMax() //tween for this li in the loop
+	// 	.to(li[i] , 1, {color: '#fff', fontWeight: 'bold', backgroundColor:'#9A1144'}, 0);
+ //    } else{
+ //    var tweenli = new TimelineMax() //tween for this li in the loop
+	// 	.to(li[i] , 1, {color: '#fff', fontWeight: 'bold', backgroundColor:'#A42856'}, 0);
+ //    }
+
+    var tweenli = new TimelineMax() //tween for this li in the loop
+		.to(li[i] , 1, {color: '#fff', backgroundColor:'#9A1144'}, 0);
 	new ScrollMagic.Scene({
 			triggerElement: li[i],
-			duration: 100, offset: 0
+			duration: 100,
+			offset: 270
 		})
 		.setTween(tweenli)
 		// .addIndicators()   // add indicators (requires plugin)

@@ -1,17 +1,20 @@
-![](imgs/logo/consentua-logo-colour.svg)
-# [consentua.com(http://consentua.com/)
+![](imgs/logo/consentua-logo-colour.png)
+# [consentua.com](http://consentua.com/)
 Development for Consentua.com website
 
 See live version at [consentua.com(http://consentua.com/) or [consentuawebsite.mybluemix.net](https://consentuawebsite.mybluemix.net/)
 
+___
 ## Pages
 
 * `/index.html`
 * `/policy.html`
 
+___
 ## Dependencies / Libraries
 
 All libraries are stores locally in either `js/lib` or `styles/lib`
+
 
 ### Scripts
 * [Scrollmagic](http://scrollmagic.io/) - for scroll based animations
@@ -22,7 +25,25 @@ All libraries are stores locally in either `js/lib` or `styles/lib`
 * [normalize.css](https://necolas.github.io/normalize.css/) - for rendering all elements more consistently across browsers
 * [Balloon.css](https://kazzkiq.github.io/balloon.css/) - for balloon hover effects
 
+___
+## Look and Feel
 
+### Fonts
+
+* [Open Sans](https://fonts.google.com/selection?selection.family=Open+Sans|Raleway)(Medium)- Main font used for text
+* [Raleway](https://fonts.google.com/selection?selection.family=Open+Sans|Raleway)(Medium) - Font used for Headings and nav
+* [fontawesome](http://fontawesome.io/) ver 4.7 - for icons
+
+### Colours
+
+* Main: #9A1144 (154,17,68)
+* Secondary: #A42856 (164,40,86)
+* Text: #212121 / #FFF
+* Whites: #FFF, #F6F6F6
+* Greys: #c7c7c7, #d4d4d4, #e1e1e1, #eeeeee
+* Darks: #212121, #373737, #000
+
+___
 ## Development
 
 To develop on consentua.com:
@@ -41,7 +62,7 @@ $ gulp serve
 ```
 
 
-
+___
 ## Deploy
 
 Firstly install the [Cloud Foundry](https://github.com/cloudfoundry/cli/releases) and [IBM® Bluemix® command line interfaces](http://clis.ng.bluemix.net/ui/home.html)
