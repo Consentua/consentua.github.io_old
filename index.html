@@ -3,7 +3,10 @@
 <head>
 
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 	<meta name="viewport" content="user-scalable=no, width=device-width, 
+								   initial-scale=1.0, maximum-scale=1.0"> -->
+	<meta name="viewport" content="user-scalable=no, 
+								   initial-scale=1.0, maximum-scale=1.0">								   
 	<title>Consent Management and Audit | Consentua</title>
 	<!-- Icons -->
 	<link rel="shortcut icon" href="imgs/icon/favicon.ico">
@@ -26,6 +29,8 @@
 	<meta name="msapplication-TileColor" content="#FFFFFF">
 	<meta name="msapplication-TileImage" content="imgs/icon/favicon-144.png">
 	<meta name="msapplication-config" content="imgs/icon/browserconfig.xml">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="true">
 
 	<!-- Chrome, Firefox OS and Opera -->
 	<meta name="theme-color" content="#9A1144">
@@ -60,7 +65,10 @@
 	<script type="text/javascript" src="old/template/js/scrollmagic/TweenMax.min.js"></script>
 	<script type="text/javascript" src="old/template/js/scrollmagic/ScrollMagic.js"></script>
 	<script type="text/javascript" src="old/template/js/scrollmagic/animation.gsap.js"></script>
-	<script type="text/javascript" src="old/template/js/scrollmagic/debug.addIndicators.js"></script>
+	<!-- lory slider -->
+	<script type="text/javascript" src="js/lory.min.js"></script>
+<!-- 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lory.js/2.2.0/lory.min.js"></script> -->
+	<!-- <script type="text/javascript" src="old/template/js/scrollmagic/debug.addIndicators.js"></script> -->
 
 </head>
 
@@ -75,16 +83,14 @@
 		<nav id="nav">
 			<ul class="menuItems">
 				<!-- http://scrollmagic.io/examples/advanced/anchor_link_scrolling.html#top -->
-				<li><a class="anchor" href="#about">About</a>
+				<li><a class="anchor" href="http://consentua.com/#about">About</a>
 				</li>
-				<li><a class="anchor" href="#GDPR">GDPR</a>
+				<li><a class="anchor" href="http://consentua.com/#GDPR">GDPR</a>
 				</li>
-				<li><a class="anchor" href="#how-it-works">How it works</a>
+				<li><a class="anchor" href="http://consentua.com/#how-it-works">How it works</a>
 				</li>
-				<li><a class="anchor" href="#contact">Contact</a>
+				<li><a class="anchor" href="http://consentua.com/#contact">Contact</a>
 				</li>
-				<!-- <li><a href="#">API</a></li> -->
-				<!-- <li><a href="#">Log In</a></li> -->
 			</ul>
 		</nav>
 	</header>
@@ -94,7 +100,7 @@
 			<p>Consentua is a consent management tool that helps organisations to achieve
 				data protection compliance, and gives individuals choice and control
 				over how their personal data is used.</p>
-			<a class="btn" href="#contact">Try the Demo<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+			<a class="btn" href="http://consentua.com/#contact">Try the Demo<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 		</article>
 	</section>
 
@@ -115,32 +121,49 @@
 				history of their personal data consent transactions.</p>
 		</article>
 	</section>
-	<section id="partners">
-		<ul id="partner-imgs">
-			<i class="fa fa-chevron-left" aria-hidden="true"></i>
-			<li data-balloon-length="medium" data-balloon="Innovate UK" data-balloon-pos="up">
-				<a href="#"><img src="imgs/partners/Innovate UK logo.png">
-				</a>
-			</li>
-			<li data-balloon-length="medium" data-balloon="Vision Consultancy" data-balloon-pos="up">
-				<a href="#"><img src="imgs/partners/VISION-Consultancy-logo.png">
-				</a>
-			</li>
-			<li data-balloon-length="medium" data-balloon="European commission" data-balloon-pos="up">
-				<a href="#"><img src="imgs/partners/LOGO-BRUXELLES.jpg">
-				</a>
-			</li>
-			<li data-balloon-length="medium" data-balloon="PDTN" data-balloon-pos="up">
-				<a href="#"><img src="imgs/partners/logo-pdtn-icon.png">
-				</a>
-			</li>
-			<li data-balloon-length="medium" data-balloon="C2i" data-balloon-pos="up">
-				<a href="#"><img src="imgs/partners/logo-c2i.png">
-				</a>
-			</li>
-			<i class="fa fa-chevron-right" aria-hidden="true"></i>
-		</ul>
-	</section>
+<section id="partners">
+<!-- TODO add baloons -->
+<!--  data-balloon-length="medium" data-balloon="Innovate UK" data-balloon-pos="up" -->
+    <div class="slider js_slider variablewidth">
+        <div class="frame js_frame">
+            <ul class="slides js_slides">
+                <li class="js_slide" style="width:270px;">
+                <a href="#">
+                <img src="imgs/partners/Innovate UK logo.png"></a>
+                </li>
+
+                <li class="js_slide" style="width:200px;">
+                <a href="#">
+                <img src="imgs/partners/VISION-Consultancy-logo.png"></a>
+                </li>
+
+                <li class="js_slide" style="width:200px;">
+                <a href="#">
+                <img src="imgs/partners/LOGO-BRUXELLES.jpg"></a>
+                </li>
+
+                <li class="js_slide" style="width:200px;">
+                <a href="#">
+                <img src="imgs/partners/logo-pdtn-icon.png"></a>
+                </li>
+
+                <li class="js_slide" style="width:200px;">
+                <a href="#">
+                <img src="imgs/partners/logo-c2i.png"></a>
+                </li>
+            </ul>
+        </div>
+
+        <span class="js_prev prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg>
+        </span>
+
+        <span class="js_next next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg>
+        </span>
+    </div>
+    </section>
+
 	<section id="GDPR">
 		<img src="imgs/approve-check.svg" alt="Icon made by Freepik from www.flaticon.com ">
 		<article>
@@ -207,7 +230,7 @@
 		<div class="panel six"><h4>Your customer is now free to continue to enjoy your service.</h4></div>
 	</div> -->
 
-		<ul>
+		<ul id="explain-list">
 			<li><i class="fa fa-circle-thin" aria-hidden="true"></i>Consentua is accessed
 				via a simple API (Application Programming Interface)</li>
 			<li><i class="fa fa-circle-thin" aria-hidden="true"></i> A consent template
@@ -223,29 +246,38 @@
 			<li><i class="fa fa-circle-thin" aria-hidden="true"></i>Your customer is
 				now free to continue to enjoy your service.</li>
 		</ul>
-		<div class="screenshots">
-			<span data-balloon-length="medium" data-balloon="Binary Consent" data-balloon-pos="up">
-		<img src="imgs/screenshot/Screenshot_20161215-132318.png">
-		<p>Binary Consent</p>
-		</span>
-			<span data-balloon-length="medium" data-balloon="Minimal linear Consent"
-			data-balloon-pos="up">
-		<img src="imgs/screenshot/Screenshot_20161215-132530.png">
-		<p>Minimal linear Consent</p>
-		</span>
-			<span data-balloon-length="medium" data-balloon="Medium linear Consent"
-			data-balloon-pos="up">
-		<img src="imgs/screenshot/Screenshot_20161215-132541.png">
-		<p>Medium linear Consent</p>
-		</span>
-			<span data-balloon-length="medium" data-balloon="Full linear Consent" data-balloon-pos="up">
-		<img src="imgs/screenshot/Screenshot_20161215-132607.png">
-		<p>Full linear Consent</p>
-		</span>
-		</div>
 		<!-- 	<div id="video">
 	<span><iframe width="853" height="480" src="?rel=0modestbranding=1" frameborder="0" allowfullscreen></iframe></span>
 	</div> -->
+       <div class="screenshots slider js_slider">
+        <div class="frame js_frame">
+            <ul class="slides js_slides">
+                <li class="js_slide">
+                	<img src="imgs/screenshot/Screenshot_20161215-132541.png">
+					<p>Medium linear Consent</p>
+                </li>
+                <li class="js_slide">
+                	<img src="imgs/screenshot/Screenshot_20161215-132541.png">
+					<p>Medium linear Consent</p>
+                </li>
+                <li class="js_slide">
+                	<img src="imgs/screenshot/Screenshot_20161215-132541.png">
+					<p>Medium linear Consent</p>
+                </li>
+                <li class="js_slide">
+                	<img src="imgs/screenshot/Screenshot_20161215-132541.png">
+					<p>Medium linear Consent</p>
+                </li>
+            </ul>
+        </div>
+        <span class="js_prev prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg>
+        </span>
+        <span class="js_next next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg>
+        </span>
+    </div>
+
 		<!-- <h2>Consent Template</h2> -->
 	</section>
 	<section id="PIA">
@@ -266,16 +298,13 @@
 	</section>
 
 	<section id="CTA">
-		<a class="btn" href="#contact">Try the Demo<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+		<a class="btn" href="http://consentua.com/#contact">Try the Demo<i class="fa fa-angle-right" aria-hidden="true"></i></a>
 	</section>
-
-	<!-- probably change to just a sign up form -->
 	<section id="contact">
 		<div>
 			<h1>Get in touch</h1>
 			<p>Contact us using the form below, or directly at <a href="mailto:contact@consentua.com?Subject=mailto">contact@consentua.com</a>
 			</p>
-
 			<form action="https://formspree.io/contact@consentua.com" method="POST">
 				<label class="input"><span>Name</span>
 					<input type="text" name="name" required>
@@ -310,16 +339,7 @@
 	</footer>
 
 	<script type="text/javascript" src="js/scroll.js"></script>
-	<script type="text/javascript">
-		//nav toggle for mobile nav bar button
-		document.getElementById("toggle-menu").addEventListener("click",
-			toggleMenu);
-
-		function toggleMenu() {
-			var nav = document.querySelector('nav') // Using a class instead, see note below.
-			nav.classList.toggle('visible');
-		}
-	</script>
+	<script type="text/javascript" src="js/script.js"></script>
 	<!-- https://premium.wpmudev.org/forums/topic/embed-blog-posts-into-a-html-site?utm_expid=3606929-97.J2zL7V7mQbSNQDPrXwvBgQ.0&utm_referrer=https%3A%2F%2Fwww.google.co.uk%2F -->
 
 </body>
