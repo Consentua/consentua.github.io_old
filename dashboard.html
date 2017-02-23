@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+<!-- 	<meta name="viewport" content="user-scalable=no, width=device-width, 
+								   initial-scale=1.0, maximum-scale=1.0"> -->
+	<meta name="viewport" content="user-scalable=no, 
+								   initial-scale=1.0, maximum-scale=1.0">								   
+	<title>Dashboard | Consentua</title>
+	<!-- Icons -->
+	<link rel="shortcut icon" href="imgs/icon/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="imgs/icon/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="imgs/icon/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="imgs/icon/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="imgs/icon/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="imgs/icon/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="imgs/icon/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="imgs/icon/favicon-16.png">
+	<link rel="apple-touch-icon" href="imgs/icon/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="imgs/icon/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="imgs/icon/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="imgs/icon/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="imgs/icon/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="imgs/icon/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="imgs/icon/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="imgs/icon/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="imgs/icon/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="imgs/icon/favicon-144.png">
+	<meta name="msapplication-config" content="imgs/icon/browserconfig.xml">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="true">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#9A1144">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#9A1144">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#9A1144">
+
+	<!-- meta SEO tags -->
+	<meta name="description" content="Consentua is a consent management platform that gives individuals choice and control over how their personal data is used, helps organisations to achieve and demonstrate data protection compliance, and builds trust between service providers and their customers."
+	/>
+	<meta name="keywords" content="consent, data protection, gdpr, choice, control, regulation, regtech, EU, european union, privacy"
+	/>
+
+	<!-- fonts / icons-->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	rel="stylesheet">
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="styles/lib/normalize.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/substyle.css">
+	<link rel="stylesheet" type="text/css" href="styles/mediaqueries.css">
+	<link rel="stylesheet" type="text/css" href="styles/lib/balloon.css">
+	<link rel="stylesheet" type="text/css" href="styles/lib/prism.css">
+
+	<!-- scrollMagic -->
+	<script src="js/lib/gsap/minified/TweenMax.min.js"></script>
+	<script src="js/lib/gsap/minified/plugins/ScrollToPlugin.min.js"></script>
+	<script src="js/lib/scrollmagic/minified/ScrollMagic.min.js"></script>
+	<script src="js/lib/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+	<!-- <script src="js/lib/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script> -->
+
+	<!-- lory slider -->
+	<script type="text/javascript" src="js/lib/lory.min.js"></script>
+</head>
+
+<body>
+	<header id="header">
+		<div class="container">
+			<a class="logo anchor small-logo" href="index.html"><img id="logo" src="imgs/logo/consentua-logo-white.svg">
+			</a>
+		</div>
+		<i class="fa fa-fw fa-bars toggle-menu" aria-hidden="true" id="toggle-menu"></i>
+		<nav id="nav">
+			<ul class="menuItems">
+				<!-- http://scrollmagic.io/examples/advanced/anchor_link_scrolling.html#top -->
+				<li><a class="anchor" href="index.html">Home</a></li>
+				<li><a class="anchor" href="index.html">Docs</a></li>
+				<li><a class="anchor" href="index.html">FAQ</a></li>
+				<li><a class="anchor" href="login.html">Logout</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section id="splash" class="small-splash"></section>
+
+<div class="menu">
+  <ul class="main">
+    <li class="main-link"><i class="fa fa-fw fa-tachometer" aria-hidden="true"></i>Dashboard</li>
+    <li><i class="fa fa-fw fa-rocket" aria-hidden="true"></i>My apps <i class="fa fa-fw fa-angle-down" aria-hidden="true"></i></li>
+    	<ul class="sub-menu">
+    		<li><a href="#">App 1</a></li>
+    		<li><a href="#">App 2</a></li>
+    		<li><a href="#">App 3</a></li>
+    		<li><a href="#">App 4</a></li>
+    	</ul>
+    <li class="main-link"><i class="fa fa-fw fa-file-text" aria-hidden="true"></i>Consent Templates</li>
+    <li class="main-link"><i class="fa fa-fw fa-credit-card-alt" aria-hidden="true"></i>Payment</li>
+    <li class="main-link"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i>API &amp; SDK</li>
+  </ul>
+</div>
+
+<div role="page">
+  <section class="panel important">
+    <h2>Consentua Dashboard </h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  	tempor incididunt ut labore et dolore magna aliqua.</p>
+  	<p>Your consentua apps:</p>
+      <table class="clickable-table">
+      <tr>
+        <th>App name</th>
+        <th>Location</th>
+        <th>Users</th>
+        <th>Last change</th>
+      </tr>
+      <tr>
+        <td>App1</td>
+        <td>App1.co.uk/</td>
+        <td>7</td>
+        <td>Oct 10, 2015</td>
+      </tr>
+      <tr>
+        <td>App2</td>
+        <td>App2.co.uk/</td>
+        <td>2517</td>
+        <td>Jan 1, 2014</td>
+      </tr>
+      <tr>
+        <td>App3</td>
+        <td>App3.co.uk/</td>
+        <td>7</td>
+        <td>Oct 10, 2015</td>
+      </tr>
+      <tr>
+        <td>App4</td>
+        <td>App4.co.uk/</td>
+        <td>2517</td>
+        <td>Jan 1, 2014</td>
+      </tr>
+    </table>
+
+  </section>
+  <section class="panel">
+    <h2>Posts</h2>
+    <ul>
+      <li>2458 Published Posts</li>
+      <li>18 Drafts.</li>
+      <li>Most popular post: This is a post title.</li>
+    </ul>
+  </section>
+  <section class="panel">
+    <h2>Table</h2>
+    <table>
+      <tr>
+        <th>Username</th>
+        <th>Posts</th>
+        <th>comments</th>
+        <th>date</th>
+      </tr>
+      <tr>
+        <td>Pete</td>
+        <td>4</td>
+        <td>7</td>
+        <td>Oct 10, 2015</td>
+
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>5769</td>
+        <td>2517</td>
+        <td>Jan 1, 2014</td>
+      </tr>
+      <tr>
+        <td>Pete</td>
+        <td>4</td>
+        <td>7</td>
+        <td>Oct 10, 2015</td>
+
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>5769</td>
+        <td>2517</td>
+        <td>Jan 1, 2014</td>
+      </tr>
+    </table>
+  </section>
+  <section class="panel">
+    <h2>Chart</h2>
+    <ul>
+      <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+      <li>Aliquam tincidunt mauris eu risus.</li>
+      <li>Vestibulum auctor dapibus neque.</li>
+    </ul>
+    <i class="fa fa-area-chart" aria-hidden="true" style="text-align: center; margin: 0.2em auto;
+    font-size: 10em; display: block;"></i>
+  </section>
+
+  <section class="panel">
+    <h2>feedback</h2>
+    <div class="feedback">This is neutral feedback Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, praesentium. Libero perspiciatis quis aliquid iste quam dignissimos, accusamus temporibus ullam voluptatum, tempora pariatur, similique molestias blanditiis at sunt earum neque.</div>
+    <div class="feedback error">This is warning feedback
+<ul>
+  <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+  <li>Aliquam tincidunt mauris eu risus.</li>
+  <li>Vestibulum auctor dapibus neque.</li>
+</ul>  </div>
+    <div class="feedback success">This is positive feedback</div>
+
+  </section>
+    <section class="panel">
+  	<h2>Code example small (wish prism.js)</h2>
+  	<pre><code class="language-css">p { color: red }</code></pre>
+  </section>
+  <section class="panel important">
+  	<h2>Code example large (wish prism.js)</h2>
+  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  	<pre>
+  	<code class="language-javascript">
+	//This is how the scroll animation header works.
+	var controller = new ScrollMagic.Controller();
+	// Shrinking splash section into the header
+	var tweenhead = new TimelineMax()
+	    // .to("#header", 1, {backgroundColor: '#9A1144'}, 0);
+	    .to("#splash", 1, {height: '10vh', margin:'0', padding: '0'}, 0);
+
+	var scene1 = new ScrollMagic.Scene({duration: 100, offset: 10});
+	scene1.setTween(tweenhead);
+	// scene1.addIndicators();  // add indicators (requires plugin) 
+	scene1.addTo(controller);
+
+	// Shrinking header logo animation
+	var tweenlogo = new TimelineMax()
+	     .to("#logo", 1, {height: '7vh', marginLeft: '0px', marginTop: '3px'});
+
+	var scene1 = new ScrollMagic.Scene({duration: 100, offset: 10});
+	scene1.setTween(tweenlogo);
+	// scene1.addIndicators();  // add indicators (requires plugin) 
+	scene1.addTo(controller);
+  	</code>
+  	</pre>
+  </section>
+
+</div>
+
+<div role="page">
+    <section class="panel">
+  	<h2>Code example small (wish prism.js)</h2>
+  	<pre><code class="language-css">p { color: red }</code></pre>
+  </section>
+
+  <section class="panel">
+    <h2>Posts</h2>
+    <ul>
+      <li>2458 Published Posts</li>
+      <li>18 Drafts.</li>
+      <li>Most popular post: This is a post title.</li>
+    </ul>
+  </section>
+</div>
+
+<div role="page">3</div>
+
+<div role="page">4</div>
+
+<!-- 	<footer>
+		<div id="copyright">
+			<p><a href="policy.html">Privacy Policy</a>
+			</p>
+			<p><a href="mailto:contact@consentua.com?Subject=mailto">contact@consentua.com</a>
+			</p>
+			<p> &copy; 2016 KnowNow-Information Limited. </p>
+			<p>Registered in England and Wales number 8781104. </p>
+			<p>Registered address: Halpern House, 1-2 Hampshire Terrace, Portsmouth, PO1 2QF</p>
+		</div>
+	</footer> -->
+
+	<!-- <script type="text/javascript" src="js/scroll.js"></script> -->
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/lib/prism.js"></script>
+	<!-- https://premium.wpmudev.org/forums/topic/embed-blog-posts-into-a-html-site?utm_expid=3606929-97.J2zL7V7mQbSNQDPrXwvBgQ.0&utm_referrer=https%3A%2F%2Fwww.google.co.uk%2F -->
+
+</body>
+
+</html>

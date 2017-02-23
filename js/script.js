@@ -19,6 +19,24 @@ function closeDrawer(){
 	nav.classList.remove('visible');
 }
 
+//dashboard page switch
+var mainLinks = document.getElementsByClassName("main-link");
+console.log(mainLinks);
+var page = document.querySelectorAll("div[role='page']");
+console.log(page);
+//for each of the anchors, when clicked close nav
+var i;
+for (i = 0; i < mainLinks.length; i++) {
+console.log(mainLinks[i]);
+mainLinks[i].addEventListener("onclick", toggleHidden(i), false);
+}
+
+function toggleHidden() {
+    console.log(i);
+    console.log("fire");
+    // page[i].classList.toggle('hidden');
+}
+
 
 //script for all img sliders
 document.addEventListener('DOMContentLoaded', function () {
