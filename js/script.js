@@ -19,22 +19,27 @@ function closeDrawer(){
 	nav.classList.remove('visible');
 }
 
-//dashboard page switch
-var mainLinks = document.getElementsByClassName("main-link");
-console.log(mainLinks);
-var page = document.querySelectorAll("div[role='page']");
-console.log(page);
-//for each of the anchors, when clicked close nav
-var i;
-for (i = 0; i < mainLinks.length; i++) {
-console.log(mainLinks[i]);
-mainLinks[i].addEventListener("onclick", toggleHidden(i), false);
-}
+// //dashboard page switch
+document.getElementById("defaultOpen").click();
+function openTab(evt, tabName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
 
-function toggleHidden() {
-    console.log(i);
-    console.log("fire");
-    // page[i].classList.toggle('hidden');
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
 }
 
 
