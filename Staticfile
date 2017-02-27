@@ -1,4 +1,4 @@
-root: .
+root: dist
 pushstate: enabled
 ssi: enabled
 FORCE_HTTPS: true

@@ -100,7 +100,8 @@ nav {
   transition-duration: 100ms;
 }
 
-.menu li a, .menu li label {
+.menu li a,
+.menu li label {
   color: #ddd;
   text-decoration: none;
   display: block;
@@ -287,11 +288,13 @@ td {
   padding: 0 10px;
 }
 
-.important td:nth-child(3), .important th:nth-child(3) {
+.important td:nth-child(3),
+.important th:nth-child(3) {
   text-align: center;
 }
 
-.important td:nth-child(4), .important th:nth-child(4) {
+.important td:nth-child(4),
+.important th:nth-child(4) {
   text-align: right;
 }
 
@@ -318,7 +321,8 @@ pre {
     bottom: 0px;
     margin-top: 0px;
   }
-  .menu li a, .menu li label {
+  .menu li a,
+  .menu li label {
     padding: 0.6em;
   }
   .tabcontent {
@@ -339,7 +343,9 @@ pre {
     display: table;
     clear: both;
   }
-  .box, .onethird, .twothirds {
+  .box,
+  .onethird,
+  .twothirds {
     padding: 1rem;
   }
   .onethird {

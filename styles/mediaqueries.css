@@ -1,80 +1,86 @@
-@media (max-width: 800px){
-    #logo{
+@media (max-width: 800px) {
+    #logo {
         max-width: 500px;
-      margin-top: 30vh;
+        margin-top: 30vh;
     }
-    #about img, #GDPR img{
+    #about img,
+    #GDPR img {
         max-width: 100%;
         max-height: 300px;
         margin-bottom: 2em;
     }
-    #blurb{
+    #blurb {
         left: 10%;
-         top: initial; 
+        top: initial;
         bottom: 2em;
     }
-    #partner-imgs i{
+    #partner-imgs i {
         display: none;
     }
-    #partner-imgs li{
-        -webkit-box-flex:0;
-            -ms-flex:0;
-                flex:0;
-/*                flex:initial;
+    #partner-imgs li {
+        -webkit-box-flex: 0;
+        -ms-flex: 0;
+        flex: 0;
+        /*                flex:initial;
         overflow: hidden;*/
     }
-    #problem-answer div img{
+    #problem-answer div img {
         display: none;
     }
-    #problem-answer div span{
+    #problem-answer div span {
         max-width: 100%;
         margin: 2em auto 4em auto;
     }
     #problem-answer div:before,
-    #problem-answer div:after{
+    #problem-answer div:after {
         width: 100%;
     }
-    #problem-answer div:nth-child(2) span{
+    #problem-answer div:nth-child(2) span {
         padding-top: 0px;
     }
     #problem-answer div:nth-child(2):before,
-    #problem-answer div:nth-child(2):after{
+    #problem-answer div:nth-child(2):after {
         display: none;
     }
-    #how-it-works #explain-list{
+    #how-it-works #explain-list {
         max-width: 100%;
     }
-    #how-it-works .tempclass{
+    #how-it-works .tempclass {
         line-height: initial;
     }
-    #video span iframe{
+    #video span iframe {
         width: 90%;
     }
 }
+
 @media (max-width: 600px),
-       (max-device-width: 800px) and (orientation: landscape){
-    #logo{
-    max-width: 75vw;
-    margin-top: 15vh;
+(max-device-width: 800px) and (orientation: landscape) {
+    #logo {
+        max-width: 75vw;
+        margin-top: 15vh;
     }
-    section{
+    section {
         /*padding: 40px 10px;*/
     }
-    .splash{
+    .next i,
+    .prev i {
+        padding: 0.3em;
+    }
+    .splash {
         height: 90vh;
         padding: 100px 10px 40px 10px;
     }
-    .splash h1{
+    .splash h1 {
         font-size: 3em;
     }
-    .about img{
+    .about img {
         display: none;
     }
-    .about > div > div{
+    .about>div>div {
         width: 100%;
         float: none;
     }
-    header nav{
+    header nav {
         margin: 0px;
         float: none;
         position: fixed;
@@ -88,7 +94,7 @@
         -webkit-transition: all 600ms cubic-bezier(0.97, 0, 0.15, 1.01);
         transition: all 600ms cubic-bezier(0.97, 0, 0.15, 1.01);
     }
-    header nav.visible{
+    header nav.visible {
         z-index: 1;
         left: 0px;
         overflow-y: auto;
@@ -100,91 +106,86 @@
         height: 100vw;
         background: limegreen;
     }
-    header nav ul li{
+    header nav ul li {
         display: block;
         float: none;
         width: 80%;
     }
-    header nav ul li a{
-        
+    header nav ul li a {
         display: block;
         width: 100%;
-        border-bottom: 1px solid rgba(255,255,255,0.3);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     }
-    .menuItems a:before{
+    .menuItems a:before {
         display: none;
     }
-    .menuItems a:after{
+    .menuItems a:after {
         display: none;
     }
     .menuItems a {
-      color: #fff;
+        color: #fff;
     }
-    .menuItems li{
-    margin: 0px;
-    padding: 1em 1.5em;
-    width: 100%;
+    .menuItems li {
+        margin: 0px;
+        padding: 1em 1.5em;
+        width: 100%;
     }
-    header .toggle-menu{
+    header .toggle-menu {
         display: block;
         margin: 0.2em;
         color: #fff;
         float: right;
-/*        position: absolute;
+        /*        position: absolute;
         right: 0;
         top: 0;*/
         font-size: 3em;
     }
-    header .toggle-menu:active{
+    header .toggle-menu:active {
         color: #c7c7c7;
     }
-    #blurb{ 
-    bottom: 5em;
+    #blurb {
+        bottom: 5em;
     }
-
-    #about p, #GDPR p{
+    #about p,
+    #GDPR p {
         max-width: 100%;
     }
-    #about img, #GDPR img{
-    max-height: 250px;
-    margin-bottom: 2em;
+    #about img,
+    #GDPR img {
+        max-height: 250px;
+        margin-bottom: 2em;
     }
-
-    #GDPR article, #about article{
+    #GDPR article,
+    #about article {
         max-width: 88%;
     }
-    #GDPR article{
-        margin-right: auto; 
+    #GDPR article {
+        margin-right: auto;
     }
-    #PIA article{
+    #PIA article {
         max-width: 80vw;
     }
-    #how-it-works #explain-list{
-     border-width: 50px 0px;
+    #how-it-works #explain-list {
+        border-width: 50px 0px;
     }
-    .screenshots .next i, 
-    .screenshots .prev i {
-        padding: 0.3em;
-    }
-
-    #contact .input{
+    #contact .input {
         display: block;
         width: 100%;
         float: none;
     }
-    #contact .input:nth-of-type(odd){
+    #contact .input:nth-of-type(odd) {
         margin-right: 0;
     }
-    #contact label{
+    #contact label {
         padding-top: 10px;
     }
-    #contact label:first-of-type{
+    #contact label:first-of-type {
         padding-top: 0;
     }
 }
-@media (max-device-height: 550px) and (orientation: landscape){
 
-    #blurb{
+@media (max-device-height: 550px) and (orientation: landscape) {
+    #blurb {
         bottom: 0.5em;
         font-size: 1em;
     }

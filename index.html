@@ -1,322 +1,365 @@
 <!DOCTYPE html>
 <html>
-<head>
-
-	<meta charset="utf-8">
-	<meta name="viewport" content="user-scalable=no, 
-								   initial-scale=1.0, maximum-scale=1.0">								   
-	<title>Consent Management and Audit | Consentua</title>
-	<!-- Icons -->
-	<link rel="shortcut icon" href="imgs/icon/favicon.ico">
-	<link rel="icon" sizes="16x16 32x32 64x64" href="imgs/icon/favicon.ico">
-	<link rel="icon" type="image/png" sizes="196x196" href="imgs/icon/favicon-192.png">
-	<link rel="icon" type="image/png" sizes="160x160" href="imgs/icon/favicon-160.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="imgs/icon/favicon-96.png">
-	<link rel="icon" type="image/png" sizes="64x64" href="imgs/icon/favicon-64.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="imgs/icon/favicon-32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="imgs/icon/favicon-16.png">
-	<link rel="apple-touch-icon" href="imgs/icon/favicon-57.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="imgs/icon/favicon-114.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="imgs/icon/favicon-72.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="imgs/icon/favicon-144.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="imgs/icon/favicon-60.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="imgs/icon/favicon-120.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="imgs/icon/favicon-76.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="imgs/icon/favicon-152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="imgs/icon/favicon-180.png">
-	<meta name="msapplication-TileColor" content="#FFFFFF">
-	<meta name="msapplication-TileImage" content="imgs/icon/favicon-144.png">
-	<meta name="msapplication-config" content="imgs/icon/browserconfig.xml">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="HandheldFriendly" content="true">
-
-	<!-- Chrome, Firefox OS and Opera -->
-	<meta name="theme-color" content="#9A1144">
-	<!-- Windows Phone -->
-	<meta name="msapplication-navbutton-color" content="#9A1144">
-	<!-- iOS Safari -->
-	<meta name="apple-mobile-web-app-status-bar-style" content="#9A1144">
-
-	<!-- meta SEO tags -->
-	<meta name="description" content="Consentua is a consent management platform that gives individuals choice and control over how their personal data is used, helps organisations to achieve and demonstrate data protection compliance, and builds trust between service providers and their customers."
-	/>
-	<meta name="keywords" content="consent, data protection, gdpr, choice, control, regulation, regtech, EU, european union, privacy"
-	/>
-
-	<!-- fonts / icons-->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-	rel="stylesheet">
-
-	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="styles/lib/normalize.css">
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
-	<link rel="stylesheet" type="text/css" href="styles/mediaqueries.css">
-	<link rel="stylesheet" type="text/css" href="styles/lib/balloon.css">
-
-	<!-- scrollMagic -->
-	<script src="js/lib/gsap/minified/TweenMax.min.js"></script>
-	<script src="js/lib/gsap/minified/plugins/ScrollToPlugin.min.js"></script>
-	<script src="js/lib/scrollmagic/minified/ScrollMagic.min.js"></script>
-	<script src="js/lib/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
-	<!-- <script src="js/lib/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script> -->
-
-	<!-- lory slider -->
-	<script type="text/javascript" src="js/lib/lory.min.js"></script>
-</head>
-
-<body>
-
-	<header id="header">
-		<div class="container">
-			<a class="logo anchor" href="#about"><img id="logo" src="imgs/logo/consentua-logo-white.svg">
-			</a>
-		</div>
-		<i class="fa fa-fw fa-bars toggle-menu" aria-hidden="true" id="toggle-menu"></i>
-		<nav id="nav">
-			<ul class="menuItems">
-				<li><a class="anchor" href="#about">About</a></li>
-				<li><a class="anchor" href="#GDPR">GDPR</a></li>
-				<li><a class="anchor" href="#how-it-works">How it works</a></li>
-				<li><a class="anchor" href="#contact">Contact</a></li>
-			</ul>
-		</nav>
-	</header>
-
-	<section id="splash">
-		<article id="blurb">
-			<p>Consentua is a consent management tool that helps organisations to achieve
-				data protection compliance, and gives individuals choice and control
-				over how their personal data is used.</p>
-			<a class="btn anchor" href="#contact">Try the Demo<i class="fa fa-fw fa-angle-down" aria-hidden="true"></i></a>
-		</article>
-	</section>
-
-	<section id="about">
-		<img src="imgs/logo/consentua-lock-pink.svg">
-		<article>
-			<h1>What is Consentua?</h1>
-			<p>Consentua is a consent management platform. It gives individuals choice
-				and control over how their personal data is used, helps organisations
-				to achieve and demonstrate data protection compliance, and builds trust
-				between service providers and their customers.</p>
-			<p>Organisations deploy Consentua within their own applications via some
-				easy to use APIs to capture the consent of their own users. Individuals
-				use Consentua enabled mobile apps to manage the consents they have
-				given.</p>
-			<p>The laws around consent are changing. Consentua gives organisations
-				the ability to keep ahead of these changes and provide a fully audited
-				history of their personal data consent transactions.</p>
-		</article>
-	</section>
-<section id="partners">
-<!-- TODO add baloons -->
-<!--  data-balloon-length="medium" data-balloon="Innovate UK" data-balloon-pos="up" -->
-    <div class="slider js_slider variablewidth">
-        <div class="frame js_frame">
-            <ul class="slides js_slides">
-                <li class="js_slide" style="width:270px;" data-balloon-length="small" data-balloon="Innovate UK" data-balloon-pos="up">
-                <img src="imgs/partners/Innovate UK logo.png">
-                </li>
-
-                <li class="js_slide" style="width:120px;" data-balloon-length="medium" data-balloon="Vision Consultancy" data-balloon-pos="up">
-                <img src="imgs/partners/VISION-Consultancy-logo.png">
-                </li>
-
-                <li class="js_slide" style="width:120px;" data-balloon-length="large" data-balloon="European Innovation Partnership" data-balloon-pos="up" >
-                <img src="imgs/partners/LOGO-BRUXELLES.jpg">
-                </li>
-
-                <li class="js_slide" style="width:120px;" data-balloon-length="large" data-balloon="Personal Data & Trust Network" data-balloon-pos="up">
-                <img src="imgs/partners/logo-pdtn-icon.png">
-                </li>
-
-                <li class="js_slide" style="width:120px;" data-balloon-length="large" data-balloon="Co-fund and Collaborate to Innovate" data-balloon-pos="up">
-                <img src="imgs/partners/logo-cc2i.png">
-                </li>
-            </ul>
-        </div>
-
-        <span class="js_prev prev">
-            <i class="fa fa-fw fa-angle-left" aria-hidden="true"></i>
-        </span>
-
-        <span class="js_next next">
-            <i class="fa fa-fw fa-angle-right" aria-hidden="true"></i>
-        </span>
-    </div>
-    </section>
-
-	<section id="GDPR">
-		<img src="imgs/approve-check.svg" alt="Icon made by Freepik from www.flaticon.com ">
-		<article>
-			<h1>GDPR</h1>
-			<p>The General Data Protection Regulation (GDPR) is European legislation
-				to control the use of personal data. Although the legislation is European,
-				it will affect all companies globally that market to European citizens.</p>
-			<p>The GDPR requires organisations collect clear, unambiguous consent before
-				processing personal data, and to keep records of the consent interactions.
-				Individuals have the right to change their minds and also have the
-				right to be forgotten.</p>
-			<p>The UK government have confirmed that GDPR will be adopted in full irrespective
-				of the decision to leave the European Union.</p>
-			<p>Consentua helps manage these requirements and fully adheres to the GDPR.</p>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="user-scalable=no,  initial-scale=1.0, maximum-scale=1.0"/>
+		<title>Consent Management and Audit | Consentua</title>
+		<!-- Icons -->
+		<link rel="shortcut icon" href="imgs/icon/favicon.ico"/>
+		<link rel="icon" sizes="16x16 32x32 64x64" href="imgs/icon/favicon.ico"/>
+		<link rel="icon" type="image/png" sizes="196x196" href="imgs/icon/favicon-192.png"/>
+		<link rel="icon" type="image/png" sizes="160x160" href="imgs/icon/favicon-160.png"/>
+		<link rel="icon" type="image/png" sizes="96x96" href="imgs/icon/favicon-96.png"/>
+		<link rel="icon" type="image/png" sizes="64x64" href="imgs/icon/favicon-64.png"/>
+		<link rel="icon" type="image/png" sizes="32x32" href="imgs/icon/favicon-32.png"/>
+		<link rel="icon" type="image/png" sizes="16x16" href="imgs/icon/favicon-16.png"/>
+		<link rel="apple-touch-icon" href="imgs/icon/favicon-57.png"/>
+		<link rel="apple-touch-icon" sizes="114x114" href="imgs/icon/favicon-114.png"/>
+		<link rel="apple-touch-icon" sizes="72x72" href="imgs/icon/favicon-72.png"/>
+		<link rel="apple-touch-icon" sizes="144x144" href="imgs/icon/favicon-144.png"/>
+		<link rel="apple-touch-icon" sizes="60x60" href="imgs/icon/favicon-60.png"/>
+		<link rel="apple-touch-icon" sizes="120x120" href="imgs/icon/favicon-120.png"/>
+		<link rel="apple-touch-icon" sizes="76x76" href="imgs/icon/favicon-76.png"/>
+		<link rel="apple-touch-icon" sizes="152x152" href="imgs/icon/favicon-152.png"/>
+		<link rel="apple-touch-icon" sizes="180x180" href="imgs/icon/favicon-180.png"/>
+		<meta name="msapplication-TileColor" content="#FFFFFF"/>
+		<meta name="msapplication-TileImage" content="imgs/icon/favicon-144.png"/>
+		<meta name="msapplication-config" content="imgs/icon/browserconfig.xml"/>
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="HandheldFriendly" content="true"/>
+		<!-- Chrome, Firefox OS and Opera -->
+		<meta name="theme-color" content="#9A1144"/>
+		<!-- Windows Phone -->
+		<meta name="msapplication-navbutton-color" content="#9A1144"/>
+		<!-- iOS Safari -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="#9A1144"/>
+		<!-- meta SEO tags -->
+		<meta name="description" content="Consentua is a consent management platform that gives individuals choice and control over how their personal data is used, helps organisations to achieve and demonstrate data protection compliance, and builds trust between service providers and their customers."/>
+		<meta name="keywords" content="consent, data protection, gdpr, choice, control, regulation, regtech, EU, european union, privacy"/>
+		<!-- fonts / icons-->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet"/>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+		<!-- Styles -->
+		<link rel="stylesheet" type="text/css" href="styles/lib/normalize.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/style.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/mediaqueries.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/lib/balloon.css"/>
+		<!-- scrollMagic -->
+		<script src="js/lib/gsap/minified/TweenMax.min.js"></script>
+		<script src="js/lib/gsap/minified/plugins/ScrollToPlugin.min.js"></script>
+		<script src="js/lib/scrollmagic/minified/ScrollMagic.min.js"></script>
+		<script src="js/lib/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+		<!-- <script src="js/lib/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script> -->
+		<!-- lory slider -->
+		<script type="text/javascript" src="js/lib/lory.min.js"></script>
+	</head>
+	<body>
+		<header id="header">
+			<div class="container">
+				<a class="logo anchor" href="#about">
+					<img id="logo" src="imgs/logo/consentua-logo-white.svg"/>
+				</a>
+			</div>
+			<i class="fa fa-fw fa-bars toggle-menu" aria-hidden="true" id="toggle-menu"></i>
+			<nav id="nav">
+				<ul class="menuItems">
+					<li>
+						<a class="anchor" href="#about">About</a>
+					</li>
+					<li>
+						<a class="anchor" href="#GDPR">GDPR</a>
+					</li>
+					<li>
+						<a class="anchor" href="#how-it-works">How it works</a>
+					</li>
+					<li>
+						<a class="anchor" href="#contact">Contact</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<section id="splash">
+			<article id="blurb">
+				<p>
+					Consentua is a consent management tool that helps organisations to achieve
+					data protection compliance, and gives individuals choice and control
+					over how their personal data is used.
+				</p>
+				<a class="btn anchor" href="#contact">
+					Try the Demo
+					<i class="fa fa-fw fa-angle-down" aria-hidden="true"></i>
+				</a>
+			</article>
+		</section>
+		<section id="about">
+			<img src="imgs/logo/consentua-lock-pink.svg"/>
 			<article>
-	</section>
-	<section id="problem-answer">
-		<div id="problem">
-			<img id="problem-img" src="imgs/gavel.svg">
-			<span>
-		<h2>Why it affects you</h2>
-		<p>GDPR applies to all organisations that use, store or process personal data. It enables your organisation to enjoy a better, more trustful relationship with your customers which, in turn, leads to more business.</p>
-		<p>The maximum fine for breaches of the new regulations is €20m, or 4% of global turnover. The GDPR covers all EU citizens irrespective of where their data is processed, and impacts any organisation that processes personal data.</p>
-		</span>
-		</div>
-		<div id="answer">
-			<img id="answer-img" src="imgs/logo/consentua-lock-white.svg">
-			<span>
-		<h2>How Consentua answers the problem</h2>
-		<p>Consentua is a consent management service. It enables a more trusting relationship between the citizen and the processors of their data. Consentua uses a unique user interface that clearly articulates the equitable exchange between the processor’s use of your data and what the citizen can expect as a result.</p>
-		<p>Users can see their historic consents. Data processors can see who can access services and which interactions have been consented to. This improves customer satisfaction through greater trust between customer and provider. Consentua thus delivers two benefits - happy customers and a happy data protection officer.</p>
-		</span>
-		</div>
-	</section>
-	</section>
-	<!-- <section id="features">
-	<div class="coloums">
-		<div class="feature">
-			<img src="old/img/dashboard.png">
-			<h2>Across All Platforms</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-		</div>
-		<div class="feature">
-			<img src="old/img/control.png">
-			<h2>Subject Control</h2>
-			<p>Consentua gives individual data subjects control over their personal data, allowing them to feel safe when engaging with digital services. Consentua's dynamic tokens, coupled with a user-friendly dashboard, allow consent to be queried, changed and even revoked.</p>
-		</div>
-		<div class="feature">
-			<img src="old/img/collection.png">
-			<h2>feature</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-		</div>
-	</div>
-</section> -->
-
-	<section id="how-it-works">
-		<h1>How it works<i class="fa fa-fw fa-cogs" aria-hidden="true"></i></h1>
-		<div id="explain-container">
-		<ul id="explain-list">
-			<li class="explain-li"><i class="fa fa-fw fa-angle-double-right" aria-hidden="true"></i><p>Consentua is accessed
-				via a simple API (Application Programming Interface).</p></li>
-			<li class="explain-li"><i class="fa fa-fw fa-angle-double-right" aria-hidden="true"></i><p> A consent template
-				is created for your organisation - the template describes what information
-				you need to collect from your users.</p></li>
-			<li class="explain-li"><i class="fa fa-fw fa-angle-double-right" aria-hidden="true"></i><p>A consent request
-				is presented to your user via an embedded instance of consentua within
-				your application.</p></li>
-			<li class="explain-li"><i class="fa fa-fw fa-angle-double-right" aria-hidden="true"></i><p>Your user chooses
-				the level of consent they wish to grant.</p></li>
-			<li class="explain-li"><i class="fa fa-fw fa-angle-double-right" aria-hidden="true"></i><p>The consent is recorded
-				by Consentua and a consent receipt is made available via the API.</li>
-			<li class="explain-li"><i class="fa fa-fw fa-angle-double-right" aria-hidden="true"></i><p>Your customer is
-				now free to continue to enjoy your service.</p></li>
-		</ul>
-		</div>
-		<!-- 	<div id="video">
-	<span><iframe width="853" height="480" src="?rel=0modestbranding=1" frameborder="0" allowfullscreen></iframe></span>
-	</div> -->
-       <div class="screenshots slider js_slider">
-        <div class="frame js_frame">
-            <ul class="slides js_slides">
-                <li class="js_slide" data-balloon-length="medium" data-balloon="Binary Consent" data-balloon-pos="up">
-                	<img src="imgs/screenshot/Screenshot_20161215-132318.png">
-					<p>Binary Consent</p>
-                </li>
-                <li class="js_slide" data-balloon-length="medium" data-balloon="Minimal linear Consent" data-balloon-pos="up">
-                	<img src="imgs/screenshot/Screenshot_20161215-132530.png">
-					<p>Minimal linear Consent</p>
-                </li>
-                <li class="js_slide" data-balloon-length="medium" data-balloon="Medium linear Consent" data-balloon-pos="up">
-                	<img src="imgs/screenshot/Screenshot_20161215-132541.png">
-					<p>Medium linear Consent</p>
-                </li>
-                <li class="js_slide" data-balloon-length="medium" data-balloon="Full linear Consent" data-balloon-pos="up">
-                	<img src="imgs/screenshot/Screenshot_20161215-132607.png">
-					<p>Full linear Consent</p>
-                </li>
-            </ul>
-        </div>
-        <span class="js_prev prev">
-            <i class="fa fa-fw fa-angle-left" aria-hidden="true"></i>
-        </span>
-
-        <span class="js_next next">
-            <i class="fa fa-fw fa-angle-right" aria-hidden="true"></i>
-        </span>
-    </div>
-
-		<!-- <h2>Consent Template</h2> -->
-	</section>
-	<section id="PIA">
-		<article>
-			<h1>Consentua consultancy services<i class="fa fa-fw fa-handshake-o" aria-hidden="true"></i></h1>
-			<p>If you need help to prepare for <a href="#GDPR">GDPR</a> or would like
-				advice about privacy we provide several relevant services.</p>
-			<p>Use the form below for more information</p>
-
-			<ul>
-				<li>GDPR Readiness Assessment</li>
-				<li>Privacy Impact Assessment</li>
-				<li>Privacy Policy Development or Review</li>
-				<li>Privacy Training</li>
-				<li>Privacy Audit</li>
-			</ul>
-		</article>
-	</section>
-
-	<section id="CTA">
-		<span id="cir"></span>
-		<a class="btn anchor" href="#contact">Try the Demo<i class="fa fa-fw fa-angle-right" aria-hidden="true"></i></a>
-	</section>
-	<section id="contact">
-		<div>
-			<h1>Get in touch<i class="fa fa-fw fa-envelope-o" aria-hidden="true"></i></h1>
-			<p>Contact us using the form below, or directly at <a href="mailto:contact@consentua.com?Subject=mailto">contact@consentua.com</a>
-			</p>
-			<form action="https://formspree.io/contact@consentua.com" method="POST">
-				<label class="input"><span>Name</span>
-					<input type="text" name="name" required>
-				</label>
-
-				<label class="input"><span>Email Address</span>
-					<input type="email" name="_replyto" required>
-				</label>
-
-				<label class="message"><span>Message</span>
-					<textarea name="message" required></textarea>
-				</label>
-
-				<label class="submit">
-					<input type="submit" value="Send Message &#xf1d8;" class="btn" style="font-family:'Raleway', 'FontAwesome';">
-				</label>
-			</form>
-		</div>
-	</section>
-
-	<footer>
-		<div id="copyright">
-			<p><a href="policy.html">Privacy Policy</a></p>
-			<p><a href="mailto:contact@consentua.com?Subject=mailto">contact@consentua.com</a></p>
-			<p>&copy; 2016 KnowNow-Information Limited.</p>
-			<p>Registered in England and Wales number 8781104.</p>
-			<p>Registered address: Halpern House, 1-2 Hampshire Terrace, Portsmouth, PO1 2QF</p>
-		</div>
-	</footer>
-
-	<script type="text/javascript" src="js/scroll.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
-	<!-- https://premium.wpmudev.org/forums/topic/embed-blog-posts-into-a-html-site?utm_expid=3606929-97.J2zL7V7mQbSNQDPrXwvBgQ.0&utm_referrer=https%3A%2F%2Fwww.google.co.uk%2F -->
-
-</body>
-
-</html>
+				<h1>What is Consentua?</h1>
+				<p>
+					Consentua is a consent management platform. It gives individuals choice
+					and control over how their personal data is used, helps organisations
+					to achieve and demonstrate data protection compliance, and builds trust
+					between service providers and their customers.
+				</p>
+				<p>
+					Organisations deploy Consentua within their own applications via some
+					easy to use APIs to capture the consent of their own users. Individuals
+					use Consentua enabled mobile apps to manage the consents they have
+					given.
+				</p>
+				<p>
+					The laws around consent are changing. Consentua gives organisations
+					the ability to keep ahead of these changes and provide a fully audited
+					history of their personal data consent transactions.
+				</p>
+			</article>
+		</section>
+		<section id="partners">
+			<!-- TODO add baloons -->
+			<!--  data-balloon-length="medium" data-balloon="Innovate UK" data-balloon-pos="up" -->
+			<div class="slider js_slider variablewidth">
+				<div class="frame js_frame">
+					<ul class="slides js_slides">
+						<li class="js_slide" style="width:270px;" data-balloon-length="small" data-balloon="Innovate UK" data-balloon-pos="up">
+							<img src="imgs/partners/Innovate UK logo.png"/>
+						</li>
+						<li class="js_slide" style="width:120px;" data-balloon-length="medium" data-balloon="Vision Consultancy" data-balloon-pos="up">
+							<img src="imgs/partners/VISION-Consultancy-logo.png"/>
+						</li>
+						<li class="js_slide" style="width:120px;" data-balloon-length="large" data-balloon="European Innovation Partnership" data-balloon-pos="up">
+							<img src="imgs/partners/LOGO-BRUXELLES.jpg"/>
+						</li>
+						<li class="js_slide" style="width:120px;" data-balloon-length="large" data-balloon="Personal Data & Trust Network" data-balloon-pos="up">
+							<img src="imgs/partners/logo-pdtn-icon.png"/>
+						</li>
+						<li class="js_slide" style="width:120px;" data-balloon-length="large" data-balloon="Co-fund and Collaborate to Innovate" data-balloon-pos="up">
+							<img src="imgs/partners/logo-cc2i.png"/>
+						</li>
+					</ul>
+				</div>
+				<span class="js_prev prev">
+					<i class="fa fa-fw fa-angle-left" aria-hidden="true"></i>
+				</span>
+				<span class="js_next next">
+					<i class="fa fa-fw fa-angle-right" aria-hidden="true"></i>
+				</span>
+			</div>
+		</section>
+		<section id="GDPR">
+			<img src="imgs/approve-check.svg" alt="Icon made by Freepik from www.flaticon.com "/>
+			<article>
+				<h1>GDPR</h1>
+				<p>
+					The General Data Protection Regulation (GDPR) is European legislation
+					to control the use of personal data. Although the legislation is European,
+					it will affect all companies globally that market to European citizens.
+				</p>
+				<p>
+					The GDPR requires organisations collect clear, unambiguous consent before
+					processing personal data, and to keep records of the consent interactions.
+					Individuals have the right to change their minds and also have the
+					right to be forgotten.
+				</p>
+				<p>
+					The UK government have confirmed that GDPR will be adopted in full irrespective
+					of the decision to leave the European Union.
+				</p>
+				<p>Consentua helps manage these requirements and fully adheres to the GDPR.</p>
+				<article>
+				</section>
+				<section id="problem-answer">
+					<div id="problem">
+						<img id="problem-img" src="imgs/gavel.svg"/>
+						<span>
+							<h2>Why it affects you</h2>
+							<p>GDPR applies to all organisations that use, store or process personal data. It enables your organisation to enjoy a better, more trustful relationship with your customers which, in turn, leads to more business.</p>
+							<p>The maximum fine for breaches of the new regulations is €20m, or 4% of global turnover. The GDPR covers all EU citizens irrespective of where their data is processed, and impacts any organisation that processes personal data.</p>
+						</span>
+					</div>
+					<div id="answer">
+						<img id="answer-img" src="imgs/logo/consentua-lock-white.svg"/>
+						<span>
+							<h2>How Consentua answers the problem</h2>
+							<p>Consentua is a consent management service. It enables a more trusting relationship between the citizen and the processors of their data. Consentua uses a unique user interface that clearly articulates the equitable exchange between the processor’s use of your data and what the citizen can expect as a result.</p>
+							<p>Users can see their historic consents. Data processors can see who can access services and which interactions have been consented to. This improves customer satisfaction through greater trust between customer and provider. Consentua thus delivers two benefits - happy customers and a happy data protection officer.</p>
+						</span>
+					</div>
+				</section>
+			</section>
+			<!-- <section id="features">
+				<div class="coloums">
+					<div class="feature">
+						<img src="old/img/dashboard.png">
+						<h2>Across All Platforms</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<div class="feature">
+						<img src="old/img/control.png">
+						<h2>Subject Control</h2>
+						<p>Consentua gives individual data subjects control over their personal data, allowing them to feel safe when engaging with digital services. Consentua's dynamic tokens, coupled with a user-friendly dashboard, allow consent to be queried, changed and even revoked.</p>
+					</div>
+					<div class="feature">
+						<img src="old/img/collection.png">
+						<h2>feature</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+				</div>
+			</section> -->
+			<section id="how-it-works">
+				<h1>
+					How it works
+					<i class="fa fa-fw fa-cogs" aria-hidden="true"></i>
+				</h1>
+				<div id="explain-container">
+					<ul id="explain-list">
+						<li class="explain-li">
+							<i class="fa fa-fw fa-angle-double-right" aria-hidden="true"></i>
+							<p>
+								Consentua is accessed
+								via a simple API (Application Programming Interface).
+							</p>
+						</li>
+						<li class="explain-li">
+							<i class="fa fa-fw fa-angle-double-right" aria-hidden="true"></i>
+							<p>
+								A consent template
+								is created for your organisation - the template describes what information you need to collect from your users.
+							</p>
+						</li>
+						<li class="explain-li">
+							<i class="fa fa-fw fa-angle-double-right" aria-hidden="true"></i>
+							<p>
+								A consent request
+								is presented to your user via an embedded instance of consentua within your application.
+							</p>
+						</li>
+						<li class="explain-li">
+							<i class="fa fa-fw fa-angle-double-right" aria-hidden="true"></i>
+							<p>
+								Your user chooses
+								the level of consent they wish to grant.
+							</p>
+						</li>
+						<li class="explain-li">
+							<i class="fa fa-fw fa-angle-double-right" aria-hidden="true"></i>
+							<p>
+								The consent is recorded by Consentua and a consent receipt is made available via the API.
+							</li>
+							<li class="explain-li">
+								<i class="fa fa-fw fa-angle-double-right" aria-hidden="true"></i>
+								<p>
+									Your customer is
+									now free to continue to enjoy your service.
+								</p>
+							</li>
+						</ul>
+					</div>
+					<!-- 	<div id="video">
+					<span><iframe width="853" height="480" src="?rel=0modestbranding=1" frameborder="0" allowfullscreen></iframe></span>
+					</div> -->
+					<div class="screenshots slider js_slider">
+						<div class="frame js_frame">
+							<ul class="slides js_slides">
+								<li class="js_slide" data-balloon-length="medium" data-balloon="Binary Consent" data-balloon-pos="up">
+									<img src="imgs/screenshot/Screenshot_20161215-132318.png"/>
+									<p>Binary Consent</p>
+								</li>
+								<li class="js_slide" data-balloon-length="medium" data-balloon="Minimal linear Consent" data-balloon-pos="up">
+									<img src="imgs/screenshot/Screenshot_20161215-132530.png"/>
+									<p>Minimal linear Consent</p>
+								</li>
+								<li class="js_slide" data-balloon-length="medium" data-balloon="Medium linear Consent" data-balloon-pos="up">
+									<img src="imgs/screenshot/Screenshot_20161215-132541.png"/>
+									<p>Medium linear Consent</p>
+								</li>
+								<li class="js_slide" data-balloon-length="medium" data-balloon="Full linear Consent" data-balloon-pos="up">
+									<img src="imgs/screenshot/Screenshot_20161215-132607.png"/>
+									<p>Full linear Consent</p>
+								</li>
+							</ul>
+						</div>
+						<span class="js_prev prev">
+							<i class="fa fa-fw fa-angle-left" aria-hidden="true"></i>
+						</span>
+						<span class="js_next next">
+							<i class="fa fa-fw fa-angle-right" aria-hidden="true"></i>
+						</span>
+					</div>
+					<!-- <h2>Consent Template</h2> -->
+				</section>
+				<section id="PIA">
+					<article>
+						<h1>
+							Consentua consultancy services
+							<i class="fa fa-fw fa-handshake-o" aria-hidden="true"></i>
+						</h1>
+						<p>
+							If you need help to prepare for
+							<a href="#GDPR">GDPR</a>
+							or would like
+							advice about privacy we provide several relevant services.
+						</p>
+						<p>Use the form below for more information</p>
+						<ul>
+							<li>GDPR Readiness Assessment</li>
+							<li>Privacy Impact Assessment</li>
+							<li>Privacy Policy Development or Review</li>
+							<li>Privacy Training</li>
+							<li>Privacy Audit</li>
+						</ul>
+					</article>
+				</section>
+				<section id="CTA">
+					<span id="cir"></span>
+					<a class="btn anchor" href="#contact">
+						Try the Demo
+						<i class="fa fa-fw fa-angle-right" aria-hidden="true"></i>
+					</a>
+				</section>
+				<section id="contact">
+					<div>
+						<h1>
+							Get in touch
+							<i class="fa fa-fw fa-envelope-o" aria-hidden="true"></i>
+						</h1>
+						<p>
+							Contact us using the form below, or directly at
+							<a href="mailto:contact@consentua.com?Subject=mailto">contact@consentua.com</a>
+						</p>
+						<form action="https://formspree.io/contact@consentua.com" method="POST">
+							<label class="input">
+								<span>Name</span>
+								<input type="text" name="name" required/>
+							</label>
+							<label class="input">
+								<span>Email Address</span>
+								<input type="email" name="_replyto" required/>
+							</label>
+							<label class="message">
+								<span>Message</span>
+								<textarea name="message" required></textarea>
+							</label>
+							<label class="submit">
+								<input type="submit" value="Send Message &#xf1d8;" class="btn" style="font-family:'Raleway', 'FontAwesome';"/>
+							</label>
+						</form>
+					</div>
+				</section>
+				<footer>
+					<div id="copyright">
+						<p>
+							<a href="policy.html">Privacy Policy</a>
+						</p>
+						<p>
+							<a href="mailto:contact@consentua.com?Subject=mailto">contact@consentua.com</a>
+						</p>
+						<p>&copy; 2016 KnowNow-Information Limited.</p>
+						<p>Registered in England and Wales number 8781104.</p>
+						<p>Registered address: Halpern House, 1-2 Hampshire Terrace, Portsmouth, PO1 2QF</p>
+					</div>
+				</footer>
+				<script type="text/javascript" src="js/scroll.js"></script>
+				<script type="text/javascript" src="js/script.js"></script>
+				<!-- https://premium.wpmudev.org/forums/topic/embed-blog-posts-into-a-html-site?utm_expid=3606929-97.J2zL7V7mQbSNQDPrXwvBgQ.0&utm_referrer=https%3A%2F%2Fwww.google.co.uk%2F -->
+			</body>
+		</html>

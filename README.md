@@ -8,10 +8,14 @@ See live version at [consentua.com](http://consentua.com/) or [consentuawebsite.
 
 * `/index.html`
 * `/policy.html`
+* `/policy-cont.html`
+* `/404.html`
+* `/login.html` (WIP not pulicly linked)
+* `/dashboard.html` (WIP not pulicly linked)
 
 ## Dependencies / Libraries
 
-All libraries are stores locally in either `js/lib` or `styles/lib`
+All libraries (with exceptions of fonts and icons) are stores locally in either `js/lib` or `styles/lib`
 
 
 ### Scripts
@@ -52,10 +56,19 @@ $ npm install
 ```
 
 
-You may then run this to view the application running locally on `localhost:8080`  with live reload to develop.
+You may then run this to view the application running locally on [localhost:8080](http://localhost:8080/)  with live reload to develop.
 
 ```
 $ gulp serve
+```
+
+
+## Build
+
+The `gulpfile.js` contains a build script for minifying all files and images before deploying it to bluemix.
+Just run: 
+```
+$ gulp build
 ```
 
 
@@ -70,6 +83,22 @@ Make sure you are connected and logged into blumix/cf:
 $ cf api https://api.ng.bluemix.net
 $ cf login -u <BLUEMIX-EMAIL> -o KnowNowInfo -s Consentua
 ```
+
+### via gulp script
+
+IF you are logged into bluemix just run:
+
+```
+$ gulp deploy
+```
+
+This will run the build script and when finished, deploy to bluemix (you might not see the deploy logs until the entire process is finished)
+
+>The site should now be deployed 
+
+### Manually
+
+MAKE SURE YOU HAVE RUN THE BUILD SCRIPT `$ gulp build`
 
 Then to push the code to bluemix run:
 ```
