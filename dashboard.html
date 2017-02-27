@@ -294,8 +294,29 @@
 	</footer> -->
 
 	<!-- <script type="text/javascript" src="js/scroll.js"></script> -->
-	<script type="text/javascript" src="js/script.js"></script>
-	<script type="text/javascript" src="js/lib/prism.js"></script>
+  <script type="text/javascript">
+    // //dashboard page switch
+document.getElementById("defaultOpen").click();
+function openTab(evt, tabName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+  </script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="js/lib/prism.js"></script>
 	<!-- https://premium.wpmudev.org/forums/topic/embed-blog-posts-into-a-html-site?utm_expid=3606929-97.J2zL7V7mQbSNQDPrXwvBgQ.0&utm_referrer=https%3A%2F%2Fwww.google.co.uk%2F -->
 
 </body>
