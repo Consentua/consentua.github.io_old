@@ -13,8 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lory.js": "^2.2.1",
-    "scrollmagic": "^2.0.5"
+    // "lory.js": "^2.2.1",
+    // "scrollmagic": "^2.0.5"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

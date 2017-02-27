@@ -1,0 +1,4 @@
+root: .
+pushstate: enabled
+ssi: enabled
+FORCE_HTTPS: true

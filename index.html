@@ -3,8 +3,6 @@
 <head>
 
 	<meta charset="utf-8">
-<!-- 	<meta name="viewport" content="user-scalable=no, width=device-width, 
-								   initial-scale=1.0, maximum-scale=1.0"> -->
 	<meta name="viewport" content="user-scalable=no, 
 								   initial-scale=1.0, maximum-scale=1.0">								   
 	<title>Consent Management and Audit | Consentua</title>
@@ -46,51 +44,41 @@
 	/>
 
 	<!-- fonts / icons-->
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 	rel="stylesheet">
 
 	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="styles/normalize.css">
+	<link rel="stylesheet" type="text/css" href="styles/lib/normalize.css">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<link rel="stylesheet" type="text/css" href="styles/mediaqueries.css">
-	<link rel="stylesheet" type="text/css" href="styles/balloon.css">
+	<link rel="stylesheet" type="text/css" href="styles/lib/balloon.css">
 
 	<!-- scrollMagic -->
-	<!-- 	<script src="node_modules/gsap/TweenMax.js"></script>
-	<script src="node_modules/gsap/ScrollToPlugin.js"></script>
-	<script src="node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
-	<script src="node_modules/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
-	<script src="node_modules/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script> -->
-	<script type="text/javascript" src="old/template/js/scrollmagic/TweenMax.min.js"></script>
-	<script type="text/javascript" src="old/template/js/scrollmagic/ScrollMagic.js"></script>
-	<script type="text/javascript" src="old/template/js/scrollmagic/animation.gsap.js"></script>
-	<!-- lory slider -->
-	<script type="text/javascript" src="js/lory.min.js"></script>
-<!-- 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lory.js/2.2.0/lory.min.js"></script> -->
-	<!-- <script type="text/javascript" src="old/template/js/scrollmagic/debug.addIndicators.js"></script> -->
+	<script src="js/lib/gsap/minified/TweenMax.min.js"></script>
+	<script src="js/lib/gsap/minified/plugins/ScrollToPlugin.min.js"></script>
+	<script src="js/lib/scrollmagic/minified/ScrollMagic.min.js"></script>
+	<script src="js/lib/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+	<!-- <script src="js/lib/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script> -->
 
+	<!-- lory slider -->
+	<script type="text/javascript" src="js/lib/lory.min.js"></script>
 </head>
 
 <body>
 
 	<header id="header">
 		<div class="container">
-			<a class="logo" href="#"><img id="logo" src="imgs/logo/consentua-logo-white.svg">
+			<a class="logo anchor" href="#about"><img id="logo" src="imgs/logo/consentua-logo-white.svg">
 			</a>
 		</div>
-		<i class="fa fa-bars toggle-menu" aria-hidden="true" id="toggle-menu"></i>
+		<i class="fa fa-fw fa-bars toggle-menu" aria-hidden="true" id="toggle-menu"></i>
 		<nav id="nav">
 			<ul class="menuItems">
-				<!-- http://scrollmagic.io/examples/advanced/anchor_link_scrolling.html#top -->
-				<li><a class="anchor" href="http://consentua.com/#about">About</a>
-				</li>
-				<li><a class="anchor" href="http://consentua.com/#GDPR">GDPR</a>
-				</li>
-				<li><a class="anchor" href="http://consentua.com/#how-it-works">How it works</a>
-				</li>
-				<li><a class="anchor" href="http://consentua.com/#contact">Contact</a>
-				</li>
+				<li><a class="anchor" href="#about">About</a></li>
+				<li><a class="anchor" href="#GDPR">GDPR</a></li>
+				<li><a class="anchor" href="#how-it-works">How it works</a></li>
+				<li><a class="anchor" href="#contact">Contact</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -100,7 +88,7 @@
 			<p>Consentua is a consent management tool that helps organisations to achieve
 				data protection compliance, and gives individuals choice and control
 				over how their personal data is used.</p>
-			<a class="btn" href="http://consentua.com/#contact">Try the Demo<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+			<a class="btn anchor" href="#contact">Try the Demo<i class="fa fa-fw fa-angle-down" aria-hidden="true"></i></a>
 		</article>
 	</section>
 
@@ -113,7 +101,7 @@
 				to achieve and demonstrate data protection compliance, and builds trust
 				between service providers and their customers.</p>
 			<p>Organisations deploy Consentua within their own applications via some
-				easy to use API’s to capture the consent of their own users. Individuals
+				easy to use APIs to capture the consent of their own users. Individuals
 				use Consentua enabled mobile apps to manage the consents they have
 				given.</p>
 			<p>The laws around consent are changing. Consentua gives organisations
@@ -127,39 +115,39 @@
     <div class="slider js_slider variablewidth">
         <div class="frame js_frame">
             <ul class="slides js_slides">
-                <li class="js_slide" style="width:270px;">
-                <a href="#">
+                <li class="js_slide" style="width:270px;" data-balloon-length="small" data-balloon="Innovate UK" data-balloon-pos="up">
+                <a href="">
                 <img src="imgs/partners/Innovate UK logo.png"></a>
                 </li>
 
-                <li class="js_slide" style="width:200px;">
-                <a href="#">
+                <li class="js_slide" style="width:120px;" data-balloon-length="medium" data-balloon="Vision Consultancy" data-balloon-pos="up">
+                <a href="">
                 <img src="imgs/partners/VISION-Consultancy-logo.png"></a>
                 </li>
 
-                <li class="js_slide" style="width:200px;">
-                <a href="#">
+                <li class="js_slide" style="width:120px;" data-balloon-length="large" data-balloon="European Innovation Partnership" data-balloon-pos="up" >
+                <a href="">
                 <img src="imgs/partners/LOGO-BRUXELLES.jpg"></a>
                 </li>
 
-                <li class="js_slide" style="width:200px;">
-                <a href="#">
+                <li class="js_slide" style="width:120px;" data-balloon-length="large" data-balloon="Personal Data & Trust Network" data-balloon-pos="up">
+                <a href="">
                 <img src="imgs/partners/logo-pdtn-icon.png"></a>
                 </li>
 
-                <li class="js_slide" style="width:200px;">
-                <a href="#">
-                <img src="imgs/partners/logo-c2i.png"></a>
+                <li class="js_slide" style="width:120px;" data-balloon-length="large" data-balloon="Co-fund and Collaborate to Innovate" data-balloon-pos="up">
+                <a href="">
+                <img src="imgs/partners/logo-cc2i.png"></a>
                 </li>
             </ul>
         </div>
 
         <span class="js_prev prev">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg>
+            <i class="fa fa-fw fa-angle-left" aria-hidden="true"></i>
         </span>
 
         <span class="js_next next">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg>
+            <i class="fa fa-fw fa-angle-right" aria-hidden="true"></i>
         </span>
     </div>
     </section>
@@ -220,61 +208,55 @@
 </section> -->
 
 	<section id="how-it-works">
-		<h1>How it works</h1>
-		<!-- 	<div id="pinContainer">
-		<div class="panel one"><h4>Consentua is accessed via a simple API (Application Programming Interface)</h4></div>
-		<div class="panel two"><h4> A consent template is created for your organisation - the template describes what information you need to collect from your users.</h4></div>
-		<div class="panel three"><h4>A consent request is presented to your user via an embedded instance of consentua within your application</h4></div>
-		<div class="panel four"><h4>Your user chooses the level of consent they wish to grant.</h4></div>
-		<div class="panel five"><h4>The consent is recorded by Consentua and a consent receipt is made available via the API.</h4></div>
-		<div class="panel six"><h4>Your customer is now free to continue to enjoy your service.</h4></div>
-	</div> -->
-
+		<h1>How it works<i class="fa fa-fw fa-cogs" aria-hidden="true"></i></h1>
+		<div id="explain-container">
 		<ul id="explain-list">
-			<li><i class="fa fa-circle-thin" aria-hidden="true"></i>Consentua is accessed
-				via a simple API (Application Programming Interface)</li>
-			<li><i class="fa fa-circle-thin" aria-hidden="true"></i> A consent template
+			<li class="explain-li"><i class="fa fa-fw fa-angle-double-right" aria-hidden="true"></i><p>Consentua is accessed
+				via a simple API (Application Programming Interface).</p></li>
+			<li class="explain-li"><i class="fa fa-fw fa-angle-double-right" aria-hidden="true"></i><p> A consent template
 				is created for your organisation - the template describes what information
-				you need to collect from your users.</li>
-			<li><i class="fa fa-circle-thin" aria-hidden="true"></i>A consent request
+				you need to collect from your users.</p></li>
+			<li class="explain-li"><i class="fa fa-fw fa-angle-double-right" aria-hidden="true"></i><p>A consent request
 				is presented to your user via an embedded instance of consentua within
-				your application</li>
-			<li><i class="fa fa-circle-thin" aria-hidden="true"></i>Your user chooses
-				the level of consent they wish to grant.</li>
-			<li><i class="fa fa-circle-thin" aria-hidden="true"></i>The consent is recorded
+				your application.</p></li>
+			<li class="explain-li"><i class="fa fa-fw fa-angle-double-right" aria-hidden="true"></i><p>Your user chooses
+				the level of consent they wish to grant.</p></li>
+			<li class="explain-li"><i class="fa fa-fw fa-angle-double-right" aria-hidden="true"></i><p>The consent is recorded
 				by Consentua and a consent receipt is made available via the API.</li>
-			<li><i class="fa fa-circle-thin" aria-hidden="true"></i>Your customer is
-				now free to continue to enjoy your service.</li>
+			<li class="explain-li"><i class="fa fa-fw fa-angle-double-right" aria-hidden="true"></i><p>Your customer is
+				now free to continue to enjoy your service.</p></li>
 		</ul>
+		</div>
 		<!-- 	<div id="video">
 	<span><iframe width="853" height="480" src="?rel=0modestbranding=1" frameborder="0" allowfullscreen></iframe></span>
 	</div> -->
        <div class="screenshots slider js_slider">
         <div class="frame js_frame">
             <ul class="slides js_slides">
-                <li class="js_slide">
+                <li class="js_slide" data-balloon-length="medium" data-balloon="Binary Consent" data-balloon-pos="up">
+                	<img src="imgs/screenshot/Screenshot_20161215-132318.png">
+					<p>Binary Consent</p>
+                </li>
+                <li class="js_slide" data-balloon-length="medium" data-balloon="Minimal linear Consent" data-balloon-pos="up">
+                	<img src="imgs/screenshot/Screenshot_20161215-132530.png">
+					<p>Minimal linear Consent</p>
+                </li>
+                <li class="js_slide" data-balloon-length="medium" data-balloon="Medium linear Consent" data-balloon-pos="up">
                 	<img src="imgs/screenshot/Screenshot_20161215-132541.png">
 					<p>Medium linear Consent</p>
                 </li>
-                <li class="js_slide">
-                	<img src="imgs/screenshot/Screenshot_20161215-132541.png">
-					<p>Medium linear Consent</p>
-                </li>
-                <li class="js_slide">
-                	<img src="imgs/screenshot/Screenshot_20161215-132541.png">
-					<p>Medium linear Consent</p>
-                </li>
-                <li class="js_slide">
-                	<img src="imgs/screenshot/Screenshot_20161215-132541.png">
-					<p>Medium linear Consent</p>
+                <li class="js_slide" data-balloon-length="medium" data-balloon="Full linear Consent" data-balloon-pos="up">
+                	<img src="imgs/screenshot/Screenshot_20161215-132607.png">
+					<p>Full linear Consent</p>
                 </li>
             </ul>
         </div>
         <span class="js_prev prev">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg>
+            <i class="fa fa-fw fa-angle-left" aria-hidden="true"></i>
         </span>
+
         <span class="js_next next">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg>
+            <i class="fa fa-fw fa-angle-right" aria-hidden="true"></i>
         </span>
     </div>
 
@@ -282,7 +264,7 @@
 	</section>
 	<section id="PIA">
 		<article>
-			<h1>Consentua consultancy services</h1>
+			<h1>Consentua consultancy services<i class="fa fa-fw fa-handshake-o" aria-hidden="true"></i></h1>
 			<p>If you need help to prepare for <a href="#GDPR">GDPR</a> or would like
 				advice about privacy we provide several relevant services.</p>
 			<p>Use the form below for more information</p>
@@ -298,11 +280,12 @@
 	</section>
 
 	<section id="CTA">
-		<a class="btn" href="http://consentua.com/#contact">Try the Demo<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+		<span id="cir"></span>
+		<a class="btn anchor" href="#contact">Try the Demo<i class="fa fa-fw fa-angle-right" aria-hidden="true"></i></a>
 	</section>
 	<section id="contact">
 		<div>
-			<h1>Get in touch</h1>
+			<h1>Get in touch<i class="fa fa-fw fa-envelope-o" aria-hidden="true"></i></h1>
 			<p>Contact us using the form below, or directly at <a href="mailto:contact@consentua.com?Subject=mailto">contact@consentua.com</a>
 			</p>
 			<form action="https://formspree.io/contact@consentua.com" method="POST">
@@ -327,14 +310,11 @@
 
 	<footer>
 		<div id="copyright">
-			<p><a href="policy.html">Privacy Policy</a>
-			</p>
-			<p><a href="mailto:contact@consentua.com?Subject=mailto">contact@consentua.com</a>
-			</p>
-			<p> &copy; 2016 KnowNow-Information Limited. </p>
-			<p>Registered in England and Wales number 8781104. </p>
-			<p>Registered address: Halpern House, 1-2 Hampshire Terrace, Portsmouth,
-				PO1 2QF</p>
+			<p><a href="policy.html">Privacy Policy</a></p>
+			<p><a href="mailto:contact@consentua.com?Subject=mailto">contact@consentua.com</a></p>
+			<p>&copy; 2016 KnowNow-Information Limited.</p>
+			<p>Registered in England and Wales number 8781104.</p>
+			<p>Registered address: Halpern House, 1-2 Hampshire Terrace, Portsmouth, PO1 2QF</p>
 		</div>
 	</footer>
 
