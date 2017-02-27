@@ -2,7 +2,7 @@
 # [consentua.com](http://consentua.com/)
 Development for Consentua.com website
 
-See live version at [consentua.com(http://consentua.com/) or [consentuawebsite.mybluemix.net](https://consentuawebsite.mybluemix.net/)
+See live version at [consentua.com](http://consentua.com/) or [consentuawebsite.mybluemix.net](https://consentuawebsite.mybluemix.net/)
 
 ## Pages
 
