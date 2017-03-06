@@ -4,7 +4,7 @@
   Text: #212121 / #FFF;
   Whites: #FFF, #F6F6F6;
   Greys: #c7c7c7, #d4d4d4, #e1e1e1, #eeeeee;
-  Darks: #212121, #373737, #000;
+  Darks:  #373737, #212121, #000;
 */
 
 
@@ -619,7 +619,7 @@ nav {
   border: solid #9A1144;
   border-width: 0px 50px;
   max-width: 60vw;
-  margin: 2em auto;
+  margin: 0em auto;
   list-style: none;
   padding: 0;
   font-size: 1.2em;
@@ -677,9 +677,10 @@ nav {
 #video {
   max-width: 100vw;
   max-height: 480px;
-  background-color: #ddd;
+  background-color: #9A1144;
   text-align: center;
-  margin: 6em 0;
+  margin: 0em auto;
+  padding: 4em 0px;
 }
 
 #video span iframe {

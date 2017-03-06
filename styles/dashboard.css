@@ -97,7 +97,8 @@ nav {
 .menu li {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   list-style: none;
-  transition-duration: 100ms;
+  -webkit-transition-duration: 100ms;
+          transition-duration: 100ms;
 }
 
 .menu li a,
@@ -131,7 +132,8 @@ nav {
   position: relative;
   overflow: hidden;
   opacity: 1;
-  transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
   background-color: #A42856;
   line-height: 0.5em;
   padding-left: 15%;
@@ -151,7 +153,8 @@ nav {
   max-height: 0;
   opacity: 0;
   display: none;
-  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
 }
 
 .menu label:after {
@@ -175,9 +178,6 @@ nav {
 .panel {
   background-color: #fff;
   color: #212121;
-  -webkit-border-radius: .3rem;
-  -moz-border-radius: .3rem;
-  -ms-border-radius: .3rem;
   border-radius: .3rem;
   margin: 2%;
   padding: 1%;
