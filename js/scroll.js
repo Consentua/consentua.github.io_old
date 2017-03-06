@@ -88,7 +88,7 @@ for (var i = 0; i < li.length; i++) {
 
 	var tweenli = new TimelineMax() //tween for this li in the loop
 		.to(li[i], 1, {
-			color: '#fff',
+			color: '#9A1144',
 			backgroundColor: '#9A1144'
 		}, 0);
 	new ScrollMagic.Scene({
