@@ -145,7 +145,7 @@ function scrollTo(e) {
 		e.preventDefault();
 		controller.scrollTo(id);
 	}
-	// If supported by the browser we can also update the URL
+	// If supported by the browser update the URL
 	if (window.history && window.history.pushState) {
 		history.pushState("", document.title, id);
 	} else {
