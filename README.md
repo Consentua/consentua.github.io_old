@@ -38,18 +38,12 @@ All libraries (with exceptions of fonts and icons) are stores locally in either 
 
 ### Colours
 
-<<<<<<< HEAD
+
 ![](https://coolors.co/export/png/212121-7f0e38-9a1144-e1e1e1-FFC021)
 
 * Main: #9A1144 (154,17,68)
 * Secondary: #A42856 (164,40,86)
 * Highlight: #FFC021
-=======
-![](https://coolors.co/export/png/212121-7f0e38-9a1144-e1e1e1-ffffff)
-
-* Main: #9A1144 (154,17,68)
-* Secondary: #7f0e38
->>>>>>> master
 * Text: #212121 / #FFF
 * Whites: #FFF, #F6F6F6
 * Greys: #c7c7c7, #d4d4d4, #e1e1e1, #eeeeee
