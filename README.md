@@ -22,11 +22,12 @@ All libraries (with exceptions of fonts and icons) are stores locally in either 
 * [Scrollmagic](http://scrollmagic.io/) - for scroll based animations
 * [gsap](https://greensock.com/gsap) - for scrollmagic plug-ins
 * [Lory](http://meandmax.github.io/lory/) - for image sliders
-* [Prism.js](http://prismjs.com/) - for code examples on the admin dashboard
+* [Prism.js](http://prismjs.com/) - for code examples
 
 ### Styles
 * [normalize.css](https://necolas.github.io/normalize.css/) - for rendering all elements more consistently across browsers
 * [Balloon.css](https://kazzkiq.github.io/balloon.css/) - for balloon hover effects
+* [Prism.css](http://prismjs.com/download.html?themes=prism-okaidia) - Colour theme for the prisim.js code examples.
 
 ## Look and Feel
 
