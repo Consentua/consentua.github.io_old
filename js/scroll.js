@@ -121,10 +121,10 @@ scene0.addTo(controller);
 
 // Change behavior of controller
 // to animate scroll instead of jump
-controller.scrollTo(function(target) {
+controller.crollTo(function(id) {
 	TweenMax.to(document.body, 0.5, {
 		scrollTo: {
-			y: target, // scroll position of the target along y axis
+			y: id, // scroll position of the target along y axis
 			autoKill: true // allows user to kill scroll action smoothly
 		},
 		ease: Cubic.easeInOut
@@ -135,17 +135,17 @@ controller.scrollTo(function(target) {
 //  bind scroll to anchor links
 var anchorLinks = document.getElementsByClassName("anchor");
 for (i = 0; i < anchorLinks.length; i++) {
-	anchorLinks[i].addEventListener("click", scrollTo);
+	anchorLinks[i].addEventListener("click", scrollToFunc);
 }
 
-function scrollTo(e) {
+function scrollToFunc(e) {
 	var id = this.getAttribute("href");
+	e.preventDefault();
 	// console.log(id);
 	if (id.length > 0) {
-		e.preventDefault();
 		controller.scrollTo(id);
 	}
-	// If supported by the browser we can also update the URL
+	// If supported by the browser update the URL
 	if (window.history && window.history.pushState) {
 		history.pushState("", document.title, id);
 	} else {
