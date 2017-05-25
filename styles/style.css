@@ -205,6 +205,10 @@ section {
   border-radius: 0% 50% 50% 0%;
 }
 
+#top{
+  position: absolute;
+  top: 0;
+}
 header {
   /*background: var(--main-color, #9A1144);*/
   background: rgba(154, 17, 68, 0.0);
@@ -445,13 +449,29 @@ nav {
   max-width: 70vw;
   margin: 1em auto;
 }
+#about .about-link{
+
+}
+#about .about-link p{
+
+}
+#about .btn {
+    margin: 1em auto;
+    color: var(--main-color, #9A1144);
+    border-color: var(--main-color, #9A1144);
+    display: block;
+    max-width: 165px;
+}
+
+#about .btn:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
 
 #about p,
 #GDPR p {
   max-width: 70vw;
   margin: 2em auto;
 }
-
 #partners {
   /*width: 100%;*/
   background-color: var(--grey-3-color, #d4d4d4);
@@ -491,9 +511,12 @@ nav {
   background-color: #eeeeee;
   background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d2d2d2' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
+#compare .table-container{
+  max-width: 97vw;
+  overflow-x: auto;
+}
 #compare table {
     border-collapse: collapse;
-    max-width: 60%;
     margin: 2em auto;
 }
 
@@ -504,12 +527,16 @@ nav {
 #compare td .fa{
   font-size: 1.7em;
 }
-#compare td .fa-check-circle-o{
+#compare td .fa-check-circle{
   color: var(--green-color);
 }
 
-#compare td .fa-times-circle-o{
+#compare td .fa-times-circle{
   color: var(--red-color);
+}
+
+#compare td .fa-minus-circle{
+  color: var(--grey-4-color, #c7c7c7);
 }
 
 #compare tr:nth-child(odd){background-color:var(--white-2-color, #F6F6F6)}
@@ -874,7 +901,21 @@ nav {
 #contact .btn:hover {
   background: rgba(0, 0, 0, 0.2);
 }
-
+#contact .to-top{
+ background-color: var(--dark-2-color, #212121);
+     position: absolute;
+    bottom: 0;
+    right: 3vw;
+    border-radius: 50% 50% 0% 0%;
+}
+#contact .to-top i{
+ color: #fff;
+ font-size: 3em;
+}
+#contact .to-top i:hover,
+#contact .to-top i:focus{
+  color: var(--accent-color);
+}
 footer {
   background-color: var(--dark-2-color, #212121);
   color: #fff;

@@ -54,9 +54,10 @@
 		<script type="text/javascript" src="js/lib/lory.min.js"></script>
 	</head>
 	<body>
+		<div id="top"></div>
 		<header id="header">
 			<div class="container">
-				<a class="logo anchor" href="#about">
+				<a class="logo anchor" href="#top">
 					<img id="logo" src="imgs/logo/consentua-logo-white.svg"/>
 				</a>
 			</div>
@@ -64,7 +65,7 @@
 			<nav id="nav">
 				<ul class="menuItems">
 					<li>
-						<a class="anchor" href="#about">About</a>
+						<a href="http://blog.consentua.com/">Blog</a>
 					</li>
 					<li>
 						<a class="anchor" href="#how-it-works">How it works</a>
@@ -113,6 +114,14 @@
 					history of their personal data consent transactions.
 				</p>
 			</article>
+			<article class="about-link">
+				<p>Want to know more news about Consentua? Check out the blog ..</p>
+				<a class="btn" href="#">
+					Consentua Blog
+					<i class="fa fa-fw fa-external-link" aria-hidden="true"></i>
+				</a>
+
+			</article>
 		</section>
 		<section id="partners">
 			<div class="slider js_slider variablewidth">
@@ -143,9 +152,10 @@
 				</span>
 			</div>
 		</section>
-<!-- 		<section id="compare">
+		<section id="compare">
 			<h1>How Consentua measures up
 			<i class="fa fa-check-circle" aria-hidden="true"></i></h1>
+			<div class="table-">
 			<table>
 			  <tr>
 			    <th>Features</th>
@@ -154,27 +164,28 @@
 			  </tr>
 			  <tr>
 			    <td>Consentua is better</td>
-			    <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
-			    <td><i class="fa fa-times-circle-o" aria-hidden="true"></i></td>
+			    <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
+			    <td><i class="fa fa-times-circle" aria-hidden="true"></i></td>
 			  </tr>
 			  <tr>
 			    <td>Has a cool ruby colour</td>
-			    <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
-			    <td><i class="fa fa-times-circle-o" aria-hidden="true"></i></td>
+			    <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
+			    <td><i class="fa fa-times-circle" aria-hidden="true"></i></td>
 			  </tr>
 			  <tr>
 			    <td>Starts with a 'C'</td>
-			    <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
-			    <td><i class="fa fa-times-circle-o" aria-hidden="true"></i></td>
+			    <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
+			    <td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
 			  </tr>
 			  <tr>
 			    <td>Is made by knownow</td>
-			    <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
-			    <td><i class="fa fa-times-circle-o" aria-hidden="true"></i></td>
+			    <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
+			    <td><i class="fa fa-times-circle" aria-hidden="true"></i></td>
 			</tr>
 			</table>
+			</div>
 			<p>This is a line of text, under the table</p>
-		</section> -->
+		</section>
 				<section id="problem-answer">
 					<div id="problem">
 						<img id="problem-img" src="imgs/gavel.svg"/>
@@ -376,6 +387,9 @@
 							</label>
 						</form>
 					</div>
+				<a class="anchor to-top" href="#top">
+							<i class="fa fa-fw fa-angle-up" aria-hidden="true"></i>
+				</a>
 				</section>
 				<footer>
 					<div id="copyright">
@@ -391,6 +405,7 @@
 					</div>
 				</footer>
 				<script type="text/javascript" src="js/scroll.js"></script>
+				<script type="text/javascript" src="js/anchorScroll.js"></script>
 				<script type="text/javascript" src="js/script.js"></script>
 			</body>
 		</html>

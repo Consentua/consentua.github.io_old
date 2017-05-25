@@ -10,8 +10,8 @@ See live version at [consentua.com](http://consentua.com/) or [consentuawebsite.
 * `/policy.html`
 * `/policy-cont.html`
 * `/404.html`
-* `/login.html` (WIP not publicly linked)
-* `/dashboard.html` (WIP not publicly linked)
+
+> Dashboard is located at [app.consentua.com](https://app.consentua.com/)
 
 ## Dependencies / Libraries
 
@@ -45,6 +45,8 @@ All libraries (with exceptions of fonts and icons) are stores locally in either 
 * Main: #9A1144 (154,17,68)
 * Secondary: #A42856 (164,40,86)
 * Highlight: #FFC021
+* Red (error/danger): #F44336
+* Green (ok/success): #4CAF50
 * Text: #212121 / #FFF
 * Whites: #FFF, #F6F6F6
 * Greys: #c7c7c7, #d4d4d4, #e1e1e1, #eeeeee
