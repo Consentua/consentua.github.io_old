@@ -567,6 +567,9 @@ nav {
 #problem-answer {
   width: 100%;
   overflow: hidden;
+  background-image:
+  linear-gradient( to top left, #9a1144 50%, #212121 50% )
+
 }
 
 #problem-answer div {
@@ -576,18 +579,18 @@ nav {
   padding: 2em 0;
   color: #fff;
   min-height: 45vh;
-  background-color: var(--main-color, #9A1144);
+  /*background-color: var(--main-color, #9A1144);*/
+  /*background-color: #9a1144;*/
+/*background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23212121' fill-opacity='0.17'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");*/
 }
 
-#problem-answer div:before {
+/*#problem-answer div:before {
   content: '';
   display: block;
   background-color: rgba(164, 40, 86, 0.5);
   position: absolute;
-  /*top: 0; */
   right: 0;
   bottom: 50px;
-  /* left: 0;*/
   height: 50px;
   width: 50%;
 }
@@ -597,14 +600,12 @@ nav {
   display: block;
   background-color: rgba(164, 40, 86, 0.8);
   position: absolute;
-  /*top: 0; */
   right: 0;
   bottom: 0;
-  /* left: 0;*/
   height: 50px;
   width: 50%;
 }
-
+*/
 #problem-answer div img {
   /*float: right;*/
   width: 100%;
@@ -623,15 +624,15 @@ nav {
   float: left;
   /*max-width: calc(50% - 2em);*/
   max-width: 40vw;
-  padding: 0px 2em;
+  padding: 0px 5em;
 }
 
 #problem-answer div:nth-child(2) {
   float: right;
-  background-color: var(--secondary-color, #A32655);
+  /*background-color: var(--secondary-color, #A32655);*/
 }
 
-#problem-answer div:nth-child(2):before {
+/*#problem-answer div:nth-child(2):before {
   top: 50px;
   left: 0;
   background-color: rgba(154, 17, 68, 0.3);
@@ -641,7 +642,7 @@ nav {
   top: 0;
   left: 0;
   background-color: rgba(154, 17, 68, 0.5);
-}
+}*/
 
 #problem-answer div:nth-child(2) img {
   left: 50px;
@@ -656,41 +657,65 @@ nav {
 
 #features {
   background-color: var(--dark-2-color, #212121);
+ /* background-image: url("data:image/svg+xml,%3Csvg width='38' height='38' viewBox='0 0 38 38' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='bevel-circle' fill='%23212121' fill-opacity='0.17'%3E%3Cpath d='M10.414 29l-8 8h33.172l-8-8H10.414zM9 27.586l-8 8V2.414l8 8v17.172zM10.414 9l-8-8h33.172l-8 8H10.414zM29 10.414l8-8v33.172l-8-8V10.414zM11 11h16v16H11V11zm8 14c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM0 0h38v38H0V0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), 
+  linear-gradient(
+    to bottom,
+    #212121 80%,
+    #9A1144
+  );*/
   /*margin-top: calc(65vh + 65vh + 16em);*/
-  padding: 3em;
+  padding: 15vh 0px;
 }
 
 #features .coloums {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
-  max-width: 900px;
+  max-width: 60vw;
   margin: 0 auto;
 }
 
 #features .feature {
   margin-right: 40px;
+  flex: 1;
+  min-width: 150px;
   overflow: hidden;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #features .feature img {
   max-width: 100%;
+  max-height: 200px;
 }
 
 #features .feature h2 {
   border-bottom: 1px solid var(--main-color, #9A1144);
+  width: 100%;
+  margin: 0px;
+}
+
+#features .feature p{
+  flex: 1;
 }
 
 #how-it-works {
+  background-color: var(--main-color, #9A1144);
   /*padding: 6em 0;*/
   padding-top: 2em;
 }
 
+#how-it-works h1,
+#how-it-works h1 .fa{
+  color: #fff;
+}
 #how-it-works #explain-container {
   /*width: 100vw;*/
   background-color: var(--main-color, #9A1144);
@@ -731,6 +756,7 @@ nav {
   max-width: 100vw;
   overflow: hidden;
   padding: 10vh 0px;
+  background-color: var(--white-2-color, #F6F6F6);
 }
 
 .screenshots li {

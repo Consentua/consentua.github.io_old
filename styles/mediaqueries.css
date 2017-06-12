@@ -24,6 +24,9 @@
         /*                flex:initial;
         overflow: hidden;*/
     }
+    #problem-answer {
+        background: var(--secondary-color, #A32655);
+    }
     #problem-answer div img {
         display: none;
     }
