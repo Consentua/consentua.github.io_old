@@ -102,6 +102,9 @@ a {
   color: var(--main-color, #9A1144);
 }
 
+b {
+  font-weight: 800;
+}
 section {
   /*padding: 6em 2em;*/
   margin: 0 auto;
@@ -670,28 +673,30 @@ nav {
 }
 
 #features .coloums {
-    display: grid;
+/*    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-column-gap: 0.5em;
     grid-row-gap: 0.5em;
     justify-items: stretch;
-    align-items: stretch;
-/*  display: -webkit-box;
+    align-items: stretch;*/
+  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
-  flex-direction: row;*/
+  flex-direction: row;
+  justify-content: space-between;
   max-width: 60vw;
   margin: 0 auto;
 }
 
 #features .feature {
-/*  margin: 0px 20px;
-  flex: 1;*/
+  margin: 0px 2em;
+  flex: 1;
+  /*width: 16%;*/
   border-radius: 5px;
   padding: 0.5em;
   min-width: 150px;
@@ -739,6 +744,9 @@ nav {
   color: #fff;
   max-width: 60vw;
   margin: 0 auto;
+  background-color: #363636;
+  box-shadow: 0 0 10px 0px black;
+  border-radius: 5px;
 }
 
 .featureArticle{
@@ -756,40 +764,13 @@ nav {
 #how-it-works h1 .fa{
   color: #fff;
 }
-#how-it-works #explain-container {
-  /*width: 100vw;*/
-  background-color: var(--main-color, #9A1144);
-}
-
-#how-it-works #explain-list {
-  color: var(--dark-2-color, #212121);
-  border: solid var(--main-color, #9A1144);
-  border-width: 0px 50px;
-  max-width: 60vw;
-  margin: 0em auto;
-  list-style: none;
-  padding: 0;
-  font-size: 1.2em;
-}
-
-#how-it-works #explain-list li {
-  padding: 1.5em 2em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: var(--grey-1-color, #eeeeee);
-}
-
-#how-it-works #explain-list li i {
-  padding: 0 1em;
-  height: 100%;
-}
-
-#how-it-works #explain-list li:nth-child(2n+0) {
-  background-color: var(--grey-2-color, #e1e1e1);
+#how-it-works article {
+  max-width: 40vw;
+  margin: 0px auto;
+  padding: 2.5em 10%;
+ border-radius: 5px 5px 0px 0px;
+ background-color: var(--white-2-color, #F6F6F6);
+ line-height: 2;
 }
 
 .screenshots {
@@ -838,8 +819,8 @@ nav {
 
 #social{
   display: flex;
-  justify-content: space-evenly;
-  align-content: center;
+  justify-content: space-around;
+    align-content: center;
     align-items: center;
     margin-bottom: 2em;
         flex-wrap: wrap;
@@ -870,7 +851,6 @@ nav {
   display: flex;
   align-items: start;
   width: 100%;
-  min-height: 50px;
   text-decoration: none;
   margin-bottom: 1.5em;
   border-top: 1px solid #eee;

@@ -17,6 +17,15 @@ function closeDrawer() {
 	nav.classList.remove('visible');
 }
 
+function replaceFeatureTxt(show) {
+  var divsToHide = document.getElementsByClassName("featureArticle"); //divsToHide is an array
+    for(var i = 0; i < divsToHide.length; i++){
+        divsToHide[i].style.display = "none"; // depending on what you're doing
+    }
+    var divToShow = "article-" + show;
+  document.getElementById(divToShow).style.display="block";
+}
+
 
 //script for all img sliders
 document.addEventListener('DOMContentLoaded', function() {

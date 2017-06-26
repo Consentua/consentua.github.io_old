@@ -4,7 +4,6 @@ var controller = new ScrollMagic.Controller();
 // Change behavior of controller
 // to animate scroll instead of jump
 controller.scrollTo(function(target) {
-
   TweenMax.to(window, 1, {
     scrollTo : {
       y : target, // scroll position of the target along y axis
