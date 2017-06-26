@@ -118,37 +118,3 @@ scene0.setTween(tweencta);
 // scene0.addIndicators();  // add indicators (requires plugin) 
 scene0.addTo(controller);
 
-
-// Change behavior of controller
-// to animate scroll instead of jump
-controller.crollTo(function(id) {
-	TweenMax.to(document.body, 0.5, {
-		scrollTo: {
-			y: id, // scroll position of the target along y axis
-			autoKill: true // allows user to kill scroll action smoothly
-		},
-		ease: Cubic.easeInOut
-	});
-	return false;
-});
-
-//  bind scroll to anchor links
-var anchorLinks = document.getElementsByClassName("anchor");
-for (i = 0; i < anchorLinks.length; i++) {
-	anchorLinks[i].addEventListener("click", scrollToFunc);
-}
-
-function scrollToFunc(e) {
-	var id = this.getAttribute("href");
-	e.preventDefault();
-	// console.log(id);
-	if (id.length > 0) {
-		controller.scrollTo(id);
-	}
-	// If supported by the browser update the URL
-	if (window.history && window.history.pushState) {
-		history.pushState("", document.title, id);
-	} else {
-		console.error("could not update url");
-	}
-};
