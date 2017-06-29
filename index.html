@@ -71,6 +71,9 @@
 					<a class="anchor" href="#how-it-works">How it works</a>
 				</li>
 				<li>
+					<a class="anchor" href="#events">Events</a>
+				</li>
+				<li>
 					<a class="anchor" href="#contact">Contact</a>
 				</li>
 				<li>
@@ -93,7 +96,7 @@
 		</article>
 	</section>
 	<section id="about">
-		<img src="imgs/logo/consentua-lock-pink.svg"/>
+		<img id="aboutLogo" src="imgs/logo/consentua-lock-pink.svg"/>
 		<article>
 			<h1>What is Consentua?</h1>
 			<p>
@@ -122,6 +125,34 @@
 			</a>
 
 		</article>
+		<div class="screenshots slider js_slider">
+			<div class="frame js_frame">
+				<ul class="slides js_slides">
+					<li class="js_slide" data-balloon-length="medium" data-balloon="Binary Consent" data-balloon-pos="up">
+						<img src="imgs/screenshot/Screenshot_20161215-132318.png"/>
+						<p>Binary Consent</p>
+					</li>
+					<li class="js_slide" data-balloon-length="medium" data-balloon="Minimal linear Consent" data-balloon-pos="up">
+						<img src="imgs/screenshot/Screenshot_20161215-132530.png"/>
+						<p>Minimal linear Consent</p>
+					</li>
+					<li class="js_slide" data-balloon-length="medium" data-balloon="Medium linear Consent" data-balloon-pos="up">
+						<img src="imgs/screenshot/Screenshot_20161215-132541.png"/>
+						<p>Medium linear Consent</p>
+					</li>
+					<li class="js_slide" data-balloon-length="medium" data-balloon="Full linear Consent" data-balloon-pos="up">
+						<img src="imgs/screenshot/Screenshot_20161215-132607.png"/>
+						<p>Full linear Consent</p>
+					</li>
+				</ul>
+			</div>
+			<span class="js_prev prev">
+				<i class="fa fa-fw fa-angle-left" aria-hidden="true"></i>
+			</span>
+			<span class="js_next next">
+				<i class="fa fa-fw fa-angle-right" aria-hidden="true"></i>
+			</span>
+		</div>
 	</section>
 <!-- 		<section id="compare">
 		<h1>How Consentua measures up
@@ -158,43 +189,72 @@
 		<p>This is a line of text, under the table</p>
 	</section> -->
 		<section id="features">
-			<div class="coloums">
-				<a class="feature" onclick="replaceFeatureTxt(1)">
-					<img src="imgs/features/001-lock.svg">
-					<h2>Secure &amp; lightweight API</h2>
-				</a>
-				<a class="feature" onclick="replaceFeatureTxt(2)">
-					<img src="imgs/features/003-paper-plane.svg">
-					<h2>Quick To Install</h2>
-				</a>
-				<a class="feature" onclick="replaceFeatureTxt(3)">
-					<img src="imgs/features/002-global.svg">
-					<h2>Any Language</h2>
-				</a>
-				<a class="feature" onclick="replaceFeatureTxt(4)">
-					<img src="imgs/features/001-puzzle.svg">
-					<h2>Standards Based</h2>
-				</a>
-				<a class="feature" onclick="replaceFeatureTxt(5)">
-					<img src="imgs/features/005-balance.svg">
-					<h2>Balanced Benefits</h2>
-				</a>
-				<a class="feature" onclick="replaceFeatureTxt(6)">
-					<img src="imgs/features/002-like.svg">
-					<h2>Ongoing Consent</h2>
-				</a>
-				<a class="feature" onclick="replaceFeatureTxt(7)">
-					<img src="imgs/features/003-piggy-bank.svg">
-					<h2>Reduces Cost</h2>
-				</a>
-				<a class="feature" onclick="replaceFeatureTxt(8)">
-					<img src="imgs/features/004-handshake.svg">
-					<h2>Increases Trust</h2>
-				</a>
-				<a class="feature" onclick="replaceFeatureTxt(9)">
-					<img src="imgs/features/004-approve.svg">
-					<h2>GDPR Compliant</h2>
-				</a>
+			<h1>Consentua Features<i class="fa fa-fw fa-puzzle-piece" aria-hidden="true"></i></h1>
+			<div class="slider js_slider">
+				<div class="frame js_frame">
+				<ul class="slides js_slides">
+					<li class="js_slide">
+						<a class="feature" onclick="replaceFeatureTxt(1)">
+							<img src="imgs/features/001-lock.svg">
+							<h2>Secure &amp; lightweight API</h2>
+						</a>
+					</li>
+					<li class="js_slide">
+						<a class="feature" onclick="replaceFeatureTxt(2)">
+							<img src="imgs/features/003-paper-plane.svg">
+							<h2>Quick To Install</h2>
+						</a>
+					</li>
+					<li class="js_slide">
+						<a class="feature" onclick="replaceFeatureTxt(3)">
+							<img src="imgs/features/002-global.svg">
+							<h2>Any Language</h2>
+						</a>
+					</li>
+					<li class="js_slide">
+						<a class="feature" onclick="replaceFeatureTxt(4)">
+							<img src="imgs/features/001-puzzle.svg">
+							<h2>Standards Based</h2>
+						</a>
+					</li>
+					<li class="js_slide">
+						<a class="feature" onclick="replaceFeatureTxt(5)">
+							<img src="imgs/features/005-balance.svg">
+							<h2>Balanced Benefits</h2>
+						</a>
+					</li>
+					<li class="js_slide">
+						<a class="feature" onclick="replaceFeatureTxt(6)">
+							<img src="imgs/features/002-like.svg">
+							<h2>Ongoing Consent</h2>
+						</a>
+					</li>
+					<li class="js_slide">
+						<a class="feature" onclick="replaceFeatureTxt(7)">
+							<img src="imgs/features/003-piggy-bank.svg">
+							<h2>Reduces Cost</h2>
+						</a>
+					</li>
+					<li class="js_slide">
+						<a class="feature" onclick="replaceFeatureTxt(8)">
+							<img src="imgs/features/004-handshake.svg">
+							<h2>Increases Trust</h2>
+						</a>
+					</li>
+					<li class="js_slide">
+						<a class="feature" onclick="replaceFeatureTxt(9)">
+							<img src="imgs/features/004-approve.svg">
+							<h2>GDPR Compliant</h2>
+						</a>
+					</li>
+				</ul>
+				<span class="js_prev prev">
+					<i class="fa fa-fw fa-angle-left" aria-hidden="true"></i>
+				</span>
+				<span class="js_next next">
+					<i class="fa fa-fw fa-angle-right" aria-hidden="true"></i>
+				</span>
+			</div>
 			</div>
 			<div id="featureTxt">
 				<article id="article-1" class="featureArticle">
@@ -268,7 +328,7 @@
 			</h1>
 			<div id="video">
 				<span>
-				<iframe width="853" height="480" src="https://www.youtube.com/embed/9HeM8HCm_NQ?rel=0modestbranding=1" frameborder="0" allowfullscreen></iframe>
+				<iframe width="850" height="600" src="https://www.youtube.com/embed/9HeM8HCm_NQ?rel=0modestbranding=1" frameborder="0" allowfullscreen></iframe>
 				</span>
 			</div>
 			<article>
@@ -280,35 +340,6 @@
 			<p>Your system admins have complete control over your Consentua service. They can add &amp; remove users/systems, edit and change consent templates.</p>
 			<p>Consentua will solve of a key component of GDPR compliance. Easy for dev teams to install. With full control over the language of consent your brand uses.</p>
 			</article>
-				<div class="screenshots slider js_slider">
-					<div class="frame js_frame">
-						<ul class="slides js_slides">
-							<li class="js_slide" data-balloon-length="medium" data-balloon="Binary Consent" data-balloon-pos="up">
-								<img src="imgs/screenshot/Screenshot_20161215-132318.png"/>
-								<p>Binary Consent</p>
-							</li>
-							<li class="js_slide" data-balloon-length="medium" data-balloon="Minimal linear Consent" data-balloon-pos="up">
-								<img src="imgs/screenshot/Screenshot_20161215-132530.png"/>
-								<p>Minimal linear Consent</p>
-							</li>
-							<li class="js_slide" data-balloon-length="medium" data-balloon="Medium linear Consent" data-balloon-pos="up">
-								<img src="imgs/screenshot/Screenshot_20161215-132541.png"/>
-								<p>Medium linear Consent</p>
-							</li>
-							<li class="js_slide" data-balloon-length="medium" data-balloon="Full linear Consent" data-balloon-pos="up">
-								<img src="imgs/screenshot/Screenshot_20161215-132607.png"/>
-								<p>Full linear Consent</p>
-							</li>
-						</ul>
-					</div>
-					<span class="js_prev prev">
-						<i class="fa fa-fw fa-angle-left" aria-hidden="true"></i>
-					</span>
-					<span class="js_next next">
-						<i class="fa fa-fw fa-angle-right" aria-hidden="true"></i>
-					</span>
-				</div>
-				<!-- <h2>Consent Template</h2> -->
 			</section>
 			<section id="social">
 				<a class="twitter-timeline" data-width="500" data-height="600" data-link-color="#9a1144" href="https://twitter.com/Consentua">Tweets by Consentua</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -395,19 +426,19 @@
 		<div class="slider js_slider variablewidth">
 			<div class="frame js_frame">
 				<ul class="slides js_slides">
-					<li class="js_slide" style="width:270px;" data-balloon-length="small" data-balloon="Innovate UK" data-balloon-pos="up">
+					<li class="js_slide" style="width:400px;" data-balloon-length="small" data-balloon="Innovate UK" data-balloon-pos="up">
 						<img src="imgs/partners/Innovate UK logo.png"/>
 					</li>
-					<li class="js_slide" style="width:120px;" data-balloon-length="medium" data-balloon="Vision Consultancy" data-balloon-pos="up">
+					<li class="js_slide" style="width:250px;" data-balloon-length="medium" data-balloon="Vision Consultancy" data-balloon-pos="up">
 						<img src="imgs/partners/VISION-Consultancy-logo.png"/>
 					</li>
-					<li class="js_slide" style="width:120px;" data-balloon-length="large" data-balloon="European Innovation Partnership" data-balloon-pos="up">
+					<li class="js_slide" style="width:250px;" data-balloon-length="large" data-balloon="European Innovation Partnership" data-balloon-pos="up">
 						<img src="imgs/partners/LOGO-BRUXELLES.jpg"/>
 					</li>
-					<li class="js_slide" style="width:120px;" data-balloon-length="large" data-balloon="Personal Data & Trust Network" data-balloon-pos="up">
+					<li class="js_slide" style="width:250px;" data-balloon-length="large" data-balloon="Personal Data & Trust Network" data-balloon-pos="up">
 						<img src="imgs/partners/logo-pdtn-icon.png"/>
 					</li>
-					<li class="js_slide" style="width:120px;" data-balloon-length="large" data-balloon="Co-fund and Collaborate to Innovate" data-balloon-pos="up">
+					<li class="js_slide" style="width:250px;" data-balloon-length="large" data-balloon="Co-fund and Collaborate to Innovate" data-balloon-pos="up">
 						<img src="imgs/partners/logo-cc2i.png"/>
 					</li>
 				</ul>
@@ -463,7 +494,7 @@
 					<p>&copy; 2016 KnowNow-Information Limited.</p>
 					<p>Registered in England and Wales number 8781104.</p>
 					<p>Registered address: Halpern House, 1-2 Hampshire Terrace, Portsmouth, PO1 2QF</p>
-					<p>Icons provided by Font Awesome by Dave Gandy - <a href="">http://fontawesome.io</a> &amp; <a href="http://www.flaticon.com/authors/freepik">Freepik</a> from <a href="http://www.flaticon.com">www.flaticon.com</a></p>
+					<p>Icons provided by Font Awesome by Dave Gandy - <a href="http://fontawesome.io">http://fontawesome.io</a> &amp; <a href="http://www.flaticon.com/authors/freepik">Freepik</a> from <a href="http://www.flaticon.com">www.flaticon.com</a></p>
 				</div>
 			</footer>
 			<script type="text/javascript" src="js/scroll.js"></script>
