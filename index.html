@@ -35,7 +35,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="#9A1144"/>
 	<!-- meta SEO tags -->
 	<meta name="description" content="Consentua is a consent management platform that gives individuals choice and control over how their personal data is used, helps organisations to achieve and demonstrate data protection compliance, and builds trust between service providers and their customers."/>
-	<meta name="keywords" content="consent, data protection, gdpr, choice, control, regulation, regtech, EU, european union, privacy"/>
+	<meta name="keywords" content="consent, data protection, gdpr, choice, control, regulation, regtech, EU, european union, privacy, consent management, consent management software, software, api, solution, framework, tool, android, ios, app, General  Data  Protection  Regulation"/>
 	<!-- fonts / icons-->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet"/>
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -52,6 +52,9 @@
 	<script src="js/lib/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
 	<!-- lory slider -->
 	<script type="text/javascript" src="js/lib/lory.min.js"></script>
+	<!-- flicktiy -->
+	<script type="text/javascript" src="js/lib/flickity.pkgd.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/lib/flickity.css">
 </head>
 <body>
 	<div id="top"></div>
@@ -77,7 +80,7 @@
 					<a class="anchor" href="#contact">Contact</a>
 				</li>
 				<li>
-					<a class="dash-link" href="https://app.consentua.com/">Dashboard</a>
+					<a class="dash-link" href="https://app.consentua.com/">Login</a>
 				</li>
 			</ul>
 		</nav>
@@ -125,33 +128,41 @@
 			</a>
 
 		</article>
-		<div class="screenshots slider js_slider">
-			<div class="frame js_frame">
-				<ul class="slides js_slides">
-					<li class="js_slide" data-balloon-length="medium" data-balloon="Binary Consent" data-balloon-pos="up">
-						<img src="imgs/screenshot/Screenshot_20161215-132318.png"/>
-						<p>Binary Consent</p>
-					</li>
-					<li class="js_slide" data-balloon-length="medium" data-balloon="Minimal linear Consent" data-balloon-pos="up">
-						<img src="imgs/screenshot/Screenshot_20161215-132530.png"/>
-						<p>Minimal linear Consent</p>
-					</li>
-					<li class="js_slide" data-balloon-length="medium" data-balloon="Medium linear Consent" data-balloon-pos="up">
-						<img src="imgs/screenshot/Screenshot_20161215-132541.png"/>
-						<p>Medium linear Consent</p>
-					</li>
-					<li class="js_slide" data-balloon-length="medium" data-balloon="Full linear Consent" data-balloon-pos="up">
-						<img src="imgs/screenshot/Screenshot_20161215-132607.png"/>
-						<p>Full linear Consent</p>
-					</li>
-				</ul>
+		<div class="screenshots main-carousel" data-flickity='{ "cellAlign": "center",
+												 "contain": "true",
+												 "autoPlay": 5000,
+												 "adaptiveHeight": "true",
+												 "pageDots": "false"}'>
+			<div class="carousel-cell" data-balloon-length="medium" data-balloon="Binary Consent" data-balloon-pos="up">
+				<article>
+					<img src="imgs/screenshot/Screenshot_1.png"/>
+					<p>Binary Consent</p>
+				</article>
 			</div>
-			<span class="js_prev prev">
-				<i class="fa fa-fw fa-angle-left" aria-hidden="true"></i>
-			</span>
-			<span class="js_next next">
-				<i class="fa fa-fw fa-angle-right" aria-hidden="true"></i>
-			</span>
+			<div class="carousel-cell" data-balloon-length="medium" data-balloon="Minimal linear Consent" data-balloon-pos="up">
+				<article>
+					<img src="imgs/screenshot/Screenshot_2.png"/>
+					<p>Linear Consent</p>
+				</article>
+			</div>
+			<div class="carousel-cell" data-balloon-length="medium" data-balloon="Medium linear Consent" data-balloon-pos="up">
+				<article>
+					<img src="imgs/screenshot/Screenshot_3.png"/>
+					<p>Grouped linear Consent</p>
+				</article>
+			</div>
+			<div class="carousel-cell" data-balloon-length="medium" data-balloon="Full linear Consent" data-balloon-pos="up">
+				<article>
+					<img src="imgs/screenshot/Screenshot_4.png"/>
+					<p>Grouped binary Consent</p>
+				</article>
+			</div>
+			<div class="carousel-cell" data-balloon-length="medium" data-balloon="Full linear Consent" data-balloon-pos="up">
+				<article>
+					<img src="imgs/screenshot/Screenshot_5.png"/>
+					<p>Grouped Mixed Consent</p>
+				</article>
+			</div>
 		</div>
 	</section>
 <!-- 		<section id="compare">
@@ -190,71 +201,64 @@
 	</section> -->
 		<section id="features">
 			<h1>Consentua Features<i class="fa fa-fw fa-puzzle-piece" aria-hidden="true"></i></h1>
-			<div class="slider js_slider">
-				<div class="frame js_frame">
-				<ul class="slides js_slides">
-					<li class="js_slide">
-						<a class="feature" onclick="replaceFeatureTxt(1)">
-							<img src="imgs/features/001-lock.svg">
-							<h2>Secure &amp; lightweight API</h2>
-						</a>
-					</li>
-					<li class="js_slide">
-						<a class="feature" onclick="replaceFeatureTxt(2)">
-							<img src="imgs/features/003-paper-plane.svg">
-							<h2>Quick To Install</h2>
-						</a>
-					</li>
-					<li class="js_slide">
-						<a class="feature" onclick="replaceFeatureTxt(3)">
-							<img src="imgs/features/002-global.svg">
-							<h2>Any Language</h2>
-						</a>
-					</li>
-					<li class="js_slide">
-						<a class="feature" onclick="replaceFeatureTxt(4)">
-							<img src="imgs/features/001-puzzle.svg">
-							<h2>Standards Based</h2>
-						</a>
-					</li>
-					<li class="js_slide">
-						<a class="feature" onclick="replaceFeatureTxt(5)">
-							<img src="imgs/features/005-balance.svg">
-							<h2>Balanced Benefits</h2>
-						</a>
-					</li>
-					<li class="js_slide">
-						<a class="feature" onclick="replaceFeatureTxt(6)">
-							<img src="imgs/features/002-like.svg">
-							<h2>Ongoing Consent</h2>
-						</a>
-					</li>
-					<li class="js_slide">
-						<a class="feature" onclick="replaceFeatureTxt(7)">
-							<img src="imgs/features/003-piggy-bank.svg">
-							<h2>Reduces Cost</h2>
-						</a>
-					</li>
-					<li class="js_slide">
-						<a class="feature" onclick="replaceFeatureTxt(8)">
-							<img src="imgs/features/004-handshake.svg">
-							<h2>Increases Trust</h2>
-						</a>
-					</li>
-					<li class="js_slide">
-						<a class="feature" onclick="replaceFeatureTxt(9)">
-							<img src="imgs/features/004-approve.svg">
-							<h2>GDPR Compliant</h2>
-						</a>
-					</li>
-				</ul>
-				<span class="js_prev prev">
-					<i class="fa fa-fw fa-angle-left" aria-hidden="true"></i>
-				</span>
-				<span class="js_next next">
-					<i class="fa fa-fw fa-angle-right" aria-hidden="true"></i>
-				</span>
-			</div>
+			<div class="main-carousel" data-flickity='{ "cellAlign": "center",
+										"wrapAround": true,
+										 "contain": "true",
+										 "pageDots": false}'>
+				<article class="carousel-cell">
+					<a class="feature" onclick="replaceFeatureTxt(1)">
+						<img src="imgs/features/001-lock.svg">
+						<h2>Secure &amp; lightweight API</h2>
+					</a>
+				</article>
+				<article class="carousel-cell">
+					<a class="feature" onclick="replaceFeatureTxt(2)">
+						<img src="imgs/features/003-paper-plane.svg">
+						<h2>Quick To Install</h2>
+					</a>
+				</article>
+				<article class="carousel-cell">
+					<a class="feature" onclick="replaceFeatureTxt(3)">
+						<img src="imgs/features/002-global.svg">
+						<h2>Any Language</h2>
+					</a>
+				</article>
+				<article class="carousel-cell">
+					<a class="feature" onclick="replaceFeatureTxt(4)">
+						<img src="imgs/features/001-puzzle.svg">
+						<h2>Standards Based</h2>
+					</a>
+				</article>
+				<article class="carousel-cell">
+					<a class="feature" onclick="replaceFeatureTxt(5)">
+						<img src="imgs/features/005-balance.svg">
+						<h2>Balanced Benefits</h2>
+					</a>
+				</article>
+				<article class="carousel-cell">
+					<a class="feature" onclick="replaceFeatureTxt(6)">
+						<img src="imgs/features/002-like.svg">
+						<h2>Ongoing Consent</h2>
+					</a>
+				</article>
+				<article class="carousel-cell">
+					<a class="feature" onclick="replaceFeatureTxt(7)">
+						<img src="imgs/features/003-piggy-bank.svg">
+						<h2>Reduces Cost</h2>
+					</a>
+				</article>
+				<article class="carousel-cell">
+					<a class="feature" onclick="replaceFeatureTxt(8)">
+						<img src="imgs/features/004-handshake.svg">
+						<h2>Increases Trust</h2>
+					</a>
+				</article>
+				<article class="carousel-cell">
+					<a class="feature" onclick="replaceFeatureTxt(9)">
+						<img src="imgs/features/004-approve.svg">
+						<h2>GDPR Compliant</h2>
+					</a>
+				</article>
 			</div>
 			<div id="featureTxt">
 				<article id="article-1" class="featureArticle">
@@ -263,15 +267,15 @@
 				</article>
 				<article id="article-2" class="featureArticle">
 					<h3>Quick to Install</h3>
-					<p>Your developers and system administrators can be up and running with a version of Consentua installed in minutes.  Firstly identity the data to be consented to.  Then set up the Consentua widget in your app’s. Release to users and you are live on Consentua!</p>
+					<p>Your developers and system administrators can be up and running with a version of Consentua installed in minutes.  Firstly identify the data to be consented to.  Then set up the Consentua widget in your app’s. Release to users and you are live on Consentua!</p>
 				</article>
 				<article id="article-3" class="featureArticle">
 					<h3>Any Language</h3>
-					<p>Consentua can inherit the language setting on the browser or the mobile device. As long as a translation for that consent service is available, the API will provide the right language for that user.</p>
+					<p>Consentua inherits the language setting on the browser or the mobile device. As long as a translation for that consent service is available, the API will provide the right language for that user.</p>
 				</article>
 				<article id="article-4" class="featureArticle">
 					<h3>Standards Based</h3>
-					<p>Consentua is adopting the Kantara Initiatives Consent Receipt Standard. Consentua is a leading proponent in the use and adoption of open standards. </p> 
+					<p>Consentua has adopted the Kantara Initiatives Consent Receipt Standard. Consentua is a leading proponent in the use and adoption of open standards. </p> 
 				</article>
 				<article id="article-5" class="featureArticle">
 					<h3>Balanced Benefits</h3>
@@ -283,7 +287,7 @@
 				</article>
 				<article id="article-7" class="featureArticle">
 					<h3>Reduces Cost</h3>
-					<p>Reducing waste and increasing operational efficiency are one of the positive secondary benefits of Consentua. Because your business will be in a position to provide a specific service quality to customers, as it will know more about those customers.</p>
+					<p>Reducing waste and increasing operational efficiency are one of the positive secondary benefits of Consentua. Your business will be in a position to provide a specific service quality to customers, as it will know more about those customers.</p>
 				</article>
 				<article id="article-8" class="featureArticle">
 					<h3>Increases Trust</h3>
@@ -297,11 +301,12 @@
 						<li>Article 6, 53 : Capture &amp; log user consent</li>
 						<li>Article 15:  Users have ability to see what data is being used</li>
 						<li>Article 17: Users can revoke consent</li>
-						<li>Article 34: Timely notification of a breach</li>
+						<!-- <li>Article 34: Timely notification of a breach</li> -->
 					</ul>
 				</article>
 			</div>
 		</section>
+			<h1 id="probansTitle">GDPR compliant for consent <i class="fa fa-check-square-o" aria-hidden="true"></i></h1>
 			<section id="problem-answer">
 				<div id="problem">
 					<img id="problem-img" src="imgs/gavel.svg"/>
@@ -331,6 +336,9 @@
 				<iframe width="850" height="600" src="https://www.youtube.com/embed/9HeM8HCm_NQ?rel=0modestbranding=1" frameborder="0" allowfullscreen></iframe>
 				</span>
 			</div>
+		  <input id="techToggle" type="checkbox">
+		  <label for="techToggle">&nbsp; The techie details...</label>
+		  <div class="hidden-tech">
 			<article>
 			<b>Consentua is an API and a widget that drops into your existing mobile or browser app.</b>
 			<p>Your users can quickly save their preferred PII data exchange setting. Which is then stored as a consent receipt.</p>
@@ -340,6 +348,7 @@
 			<p>Your system admins have complete control over your Consentua service. They can add &amp; remove users/systems, edit and change consent templates.</p>
 			<p>Consentua will solve of a key component of GDPR compliance. Easy for dev teams to install. With full control over the language of consent your brand uses.</p>
 			</article>
+			</div>
 			</section>
 			<section id="social">
 				<a class="twitter-timeline" data-width="500" data-height="600" data-link-color="#9a1144" href="https://twitter.com/Consentua">Tweets by Consentua</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -357,17 +366,6 @@
 								<p>Participating in the Interoperability Track.</p>
 							</article>
 						</a>
-						<a href="https://www.eema.org/event/privacy-v-identity/">
-							<span>
-								<p>July</p>
-								<p>4 - 5</p>
-							</span>
-							<article>
-								<h4>EEMA Conference</h4>
-								<b>London, UK</b>
-								<p>Richard Gomer is speaking.</p>
-							</article>
-						</a>
 					</div>
 				</div>
 			</section>
@@ -378,7 +376,7 @@
 					<i class="fa fa-fw fa-angle-right" aria-hidden="true"></i>
 				</a>
 			</section>
-			<section id="PIA">
+<!-- 			<section id="PIA">
 				<article>
 					<h1>
 						Consentua consultancy services
@@ -399,7 +397,7 @@
 						<li>Privacy Audit</li>
 					</ul>
 				</article>
-			</section>
+			</section> -->
 		<!-- <section id="GDPR">
 			<img src="imgs/approve-check.svg" alt="Icon made by Freepik from www.flaticon.com "/>
 			<article>
@@ -423,7 +421,7 @@
 				<article>
 				</section> -->
 	<section id="partners">
-		<div class="slider js_slider variablewidth">
+<!-- 		<div class="slider js_slider variablewidth">
 			<div class="frame js_frame">
 				<ul class="slides js_slides">
 					<li class="js_slide" style="width:400px;" data-balloon-length="small" data-balloon="Innovate UK" data-balloon-pos="up">
@@ -449,6 +447,29 @@
 			<span class="js_next next">
 				<i class="fa fa-fw fa-angle-right" aria-hidden="true"></i>
 			</span>
+		</div> -->
+		<div class="main-carousel" data-flickity='{ "cellAlign": "center",
+													 "wrapAround": true,
+													 "freeScroll": true,
+													 "autoPlay": 3000,
+													 "adaptiveHeight": false,
+													 "pageDots": false,
+													 "prevNextButtons": false}'>
+			<article class="carousel-cell" data-balloon-length="small" data-balloon="Innovate UK" data-balloon-pos="up">
+				<img src="imgs/partners/Innovate UK logo.png"/>
+			</article>
+			<article class="carousel-cell" data-balloon-length="medium" data-balloon="Vision Consultancy" data-balloon-pos="up">
+				<img src="imgs/partners/VISION-Consultancy-logo.png"/>
+			</article>
+			<article class="carousel-cell" data-balloon-length="large" data-balloon="European Innovation Partnership" data-balloon-pos="up">
+				<img src="imgs/partners/LOGO-BRUXELLES.jpg"/>
+			</article>
+			<article class="carousel-cell" data-balloon-length="large" data-balloon="Personal Data & Trust Network" data-balloon-pos="up">
+				<img src="imgs/partners/logo-pdtn-icon.png"/>
+			</article>
+			<article class="carousel-cell" data-balloon-length="large" data-balloon="Co-fund and Collaborate to Innovate" data-balloon-pos="up">
+				<img src="imgs/partners/logo-cc2i.png"/>
+			</article>
 		</div>
 	</section>
 			<section id="contact">

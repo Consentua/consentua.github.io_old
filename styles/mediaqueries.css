@@ -1,3 +1,10 @@
+@media (max-width: 1250px) {
+    .screenshots .carousel-cell,
+    #partners .carousel-cell{
+      width: 35%;
+    }
+
+}
 @media (max-width: 800px) {
     #logo {
         max-width: 500px;
@@ -45,6 +52,10 @@
     #problem-answer div:nth-child(2):after {
         display: none;
     }
+    .screenshots .carousel-cell,
+    #partners .carousel-cell{
+      width: 50%;
+    }
     #how-it-works #explain-list {
         max-width: 100%;
     }
@@ -86,8 +97,9 @@
         width: 100%;
         float: none;
     }
-    .screenshots li{
-        margin: 1em;
+    .screenshots .carousel-cell,
+    #partners .carousel-cell{
+      width: 100%;
     }
     header nav {
         margin: 0px;

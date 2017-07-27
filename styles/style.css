@@ -111,104 +111,6 @@ section {
 }
 
 
-/*main img slider styles*/
-
-.slider {
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: -moz-none;
-  -o-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.frame {
-  /**
-     * (optional) wrapper width, specifies width of the slider frame.
-     */
-  width: 100vw;
-  margin: 1em auto;
-  position: relative;
-  line-height: 0;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.slides {
-  display: inline-block;
-  padding: 0px 5em;
-  /*max-width: 100vw;*/
-  /*height: 100px;*/
-}
-
-.slides .active {}
-
-.slides li {
-  position: relative;
-  display: inline-block;
-  height: 100%;
-  width: 880px;
-  max-width: 80vw;
-}
-
-.slides li a:after {
-  padding: 15px 10px;
-  width: initial;
-}
-
-.slides img {
-  max-width: 95%;
-  padding: 5%;
-  max-height: 100px;
-  margin: 10px auto;
-}
-
-.prev,
-.next {
-  position: absolute;
-  top: 50%;
-  margin-top: calc(-25px - 1em);
-  display: block;
-  cursor: pointer;
-}
-
-.next {
-  right: 0;
-}
-
-.prev {
-  left: 0;
-}
-
-.next i,
-.prev i {
-  text-align: center;
-  padding: 0.5em;
-  background: var(--main-color, #9A1144);
-  width: 15vw;
-  height: 100%;
-  max-width: 35px;
-  font-size: 2.5em;
-  color: var(--white-1-color, #fff);
-  -webkit-transition: 200ms;
-  transition: 200ms;
-}
-
-.next i:hover,
-.prev i:hover,
-.next i:focus,
-.prev i:focus {
-  background-color: var(--dark-2-color, #212121);
-}
-
-.next i {
-  border-radius: 50% 0% 0% 50%;
-}
-
-.prev i {
-  border-radius: 0% 50% 50% 0%;
-}
-
 #top{
   position: absolute;
   top: 0;
@@ -485,12 +387,18 @@ nav {
   /*padding-top: 7vh;*/
 }
 
-#partners .slides{
-  padding: 0px 3.5em;
+#partners .carousel-cell{
+  width: 20%;
 }
-#partners li {
-  margin: 10px 30px;
-  vertical-align: middle;
+#partners .carousel-cell{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 5vh 0px;
+}
+#partners .carousel-cell img {
+  height: 100px;
 }
 
 #partners li:after {
@@ -498,19 +406,6 @@ nav {
   text-align: center;
 }
 
-#partners .prev i,
-#partners .next i {
-  background-color: var(--grey-3-color, #d4d4d4);
-  color: var(--dark-2-color, #212121);
-}
-
-#partners .next i:hover,
-#partners .prev i:hover,
-#partners .next i:focus,
-#partners .prev i:focus {
-  background-color: var(--dark-3-color, #373737);
-  color: #fff;
-}
 
 #compare{
   text-align: center;
@@ -577,7 +472,14 @@ nav {
   background-image:  linear-gradient( to top left, #9a1144 50%, #212121 50% );
 
 }
-
+#probansTitle {
+  background-color: var(--dark-2-color, #212121);
+  color: #fff;
+  margin: 0px;
+}
+#probansTitle .fa{
+  color: #fff;
+}
 #problem-answer div {
   position: relative;
   float: left;
@@ -686,6 +588,9 @@ nav {
 #features li{
   width: 350px;
 }
+#features .carousel-cell{
+  width: 350px;
+}
 #features .feature {
   border-radius: 5px;
   padding: 0.5em;
@@ -764,23 +669,59 @@ nav {
  background-color: var(--white-2-color, #F6F6F6);
  line-height: 2;
 }
-
-.screenshots {
-  max-width: 100vw;
+.hidden-tech{
+  height: 0px;
+  /*display: none;*/
   overflow: hidden;
+  transition: 600ms;
+}
+#techToggle{
+  display: none;
+}
+#techToggle ~ label{
+    color: #000;
+    display: block;
+    cursor: pointer;
+    max-width: 185px;
+    padding: 1em;
+    background-color: var(--accent-color, #FFC021);
+    border-radius: 5px;
+    text-align: center;
+    margin: 1em auto;
+}
+#techToggle ~ label:hover{
+  box-shadow: 0 0 10px 2px var(--accent-color, #ffc021);
+}
+#techToggle ~ label::before {
+  content: "\f0d7";
+  font-family: FontAwesome;
+}
+#techToggle:checked ~ .hidden-tech {
+  height: 608px;
+  /*display: initial;*/
+}
+#techToggle:checked ~ label::before {
+  content: "\f0d8";
+}
+.screenshots {
+  /*max-width: 100vw;*/
+  /*overflow: hidden;*/
+  /*max-height: 500px;*/
   padding: 10vh 0px;
   background-color: var(--white-2-color, #F6F6F6);
 }
 
-.screenshots li {
-  position: relative;
-  display: inline-block;
+
+.screenshots .carousel-cell{
+  width: 28%;
+}
+.screenshots .carousel-cell article{
   width: 300px;
   text-align: center;
   font-size: 15px;
   line-height: 30px;
   background: #fff;
-  margin: 50px;
+  /*margin: 50px;*/
   box-shadow: 0px 0px 31px -5px rgba(0, 0, 0, 0.5);
 }
 
@@ -788,7 +729,7 @@ nav {
   /*background-color: var(--grey-3-color, #d4d4d4);*/
 }
 
-.screenshots li img {
+.screenshots .carousel-cell img {
   max-height: 100%;
   max-width: 100%;
   padding: 0px;
