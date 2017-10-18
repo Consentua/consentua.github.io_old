@@ -55,6 +55,7 @@
 	<!-- flicktiy -->
 	<script type="text/javascript" src="js/lib/flickity.pkgd.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles/lib/flickity.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/1.5.1/fingerprint2.min.js"></script>
 </head>
 <body>
 	<div id="top"></div>
@@ -525,7 +526,13 @@
 			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 			  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-			  ga('create', 'UA-74260509-3', 'auto');
+			  ga('create', 'UA-74260509-3', {
+			  'storage': 'none',
+			  'clientId': new Fingerprint2().get(function(result, components){
+				  return result; //a hash, representing your device fingerprint
+				})
+			  });
+			  ga('set', 'anonymizeIp', true);
 			  ga('send', 'pageview');
 
 			</script>
