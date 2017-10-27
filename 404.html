@@ -53,24 +53,28 @@
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<link rel="stylesheet" type="text/css" href="styles/mediaqueries.css">
 	<link rel="stylesheet" type="text/css" href="styles/lib/balloon.css">
-
+	<!-- fingerprint2 -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/1.5.1/fingerprint2.min.js"></script>
 
 	<style type="text/css">
 		header{
 			position: initial;
+			z-index: 2;
 		}
 		#blurb{
 			overflow: hidden;
+			z-index: 2;
 		}
 		#blurb:after{
 		    position: fixed;
-		    z-index: 1;
+		    z-index: -1;
 		}
 		#blurb h1{
 			text-align: left;
 		}
 		#splash{
 			position: initial;
+			z-index: 2;
 		}
 		footer{
 		    position: relative;
@@ -83,7 +87,7 @@
 
 	<header id="header">
 		<div class="container">
-			<a class="logo anchor" href="index.html"><img id="logo" src="imgs/logo/consentua-logo-white.svg">
+			<a class="logo" href="index.html"><img id="logo" src="imgs/logo/consentua-logo-white.svg">
 			</a>
 		</div>
 	</header>
@@ -92,7 +96,7 @@
 		<article id="blurb">
 			<h1>Something went wrong</h1>
 			<p>404 - not found</p>
-			<a class="btn anchor" href="index.html">Return to home<i class="fa fa-fw fa-undo" aria-hidden="true"></i></a>
+			<a class="btn" href="index.html">Return to home<i class="fa fa-fw fa-undo" aria-hidden="true"></i></a>
 		</article>
 	</section>
 
@@ -110,6 +114,22 @@
 	</footer>
 
 	<script type="text/javascript" src="js/script.js"></script>
+	<script>
+		// ga with no cookie
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-74260509-3', {
+	  'storage': 'none',
+	  'clientId': new Fingerprint2().get(function(result, components){
+		  return result; //a hash, representing your device fingerprint
+		})
+	  });
+	  ga('set', 'anonymizeIp', true);
+	  ga('send', 'pageview');
+	</script>
 </body>
 
 </html>
