@@ -1,0 +1,30 @@
+# Site settings
+
+# Setup
+title:            Consentua
+tagline:          'Consent Choice and Control'
+description:      'Consentua is a consent management platform that gives individuals choice and control over how their personal data is used, helps organisations to achieve and demonstrate data protection compliance, and builds trust between service providers and their customers.'
+keywords:         'consent, data protection, gdpr, choice, control, regulation, regtech, EU, european union, privacy, consent management, consent management software, software, tool, api, solution, framework, tool, android, ios, app, General  Data  Protection  Regulation'
+url:              ''
+baseurl:          ''
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
