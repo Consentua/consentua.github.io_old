@@ -1,14 +1,100 @@
 <style>
 	footer {
 		width: 100%;
+		flex-shrink: 0;
 		padding: 1rem 0rem;
 		background-color: var(--dark-2-color, #212121);
-		color: #fff;
+		color: var(--white-2-color, #F6F6F6);
+	}
+
+	footer>div {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	footer>div>.col>ul {
+		list-style: none;
+	}
+
+	footer>div>.col>ul>li>a {
+		color: var(--white-2-color, #F6F6F6);
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	footer>div>.col>ul>li>a:hover,
+	footer>div>.col>ul>li>a:focus {
+		color: var(--main-color, #9A1144);
+		text-decoration: none;
 	}
 </style>
 <footer>
 	<div class="container">
-	footer Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt commodi, ipsam ullam alias delectus quo molestias
-	nobis sunt officiis quasi ab consequatur aperiam magnam, inventore ipsum laudantium, accusamus cumque rem?
+		<span class="col">
+			<ul>
+				<li>
+					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+				</li>
+				<li>
+					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+				</li>
+				<li>
+					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+				</li>
+				<li>
+					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+				</li>
+			</ul>
+		</span>
+		<span class="col">
+			<ul>
+				<li>
+					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+				</li>
+				<li>
+					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+				</li>
+				<li>
+					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+				</li>
+				<li>
+					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+				</li>
+			</ul>
+		</span>
+		<span class="col">
+			<ul>
+				<li>
+					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+				</li>
+				<li>
+					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+				</li>
+				<li>
+					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+				</li>
+				<li>
+					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+				</li>
+			</ul>
+		</span>
+		<span class="col">
+			<ul>
+				<li>
+					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+				</li>
+				<li>
+					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+				</li>
+				<li>
+					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+				</li>
+				<li>
+					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+				</li>
+			</ul>
+		</span>
 	</div>
 </footer>

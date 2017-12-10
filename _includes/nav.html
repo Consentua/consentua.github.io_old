@@ -1,5 +1,6 @@
 <style>
   .navbar{
+    width: 100%;
     padding: 2rem;
     display: flex;
     flex-direction: row;
@@ -11,9 +12,10 @@
   }
   .main-logo{
     fill: var(--main-color, #9A1144);
+    width: 200px;
     cursor: pointer;
   }
-  nav{
+  #widenav{
     flex:1;
     display: flex;
     flex-direction: row;
@@ -101,7 +103,7 @@
 
     </a>
   </div>
-	<nav>
+	<nav id="widenav">
   {% assign pages_list = site.pages | sort: 'order' %}
       {% for node in pages_list %}
         {% if node.title != null %}

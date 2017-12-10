@@ -47,8 +47,8 @@ title: home
     color: var(--white-2-color, #F6F6F6);
   } */
   .splash #app-illustration {
-    max-width: 300px;
-    max-height: 600px;
+    
+    padding: 3rem 0.6rem;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
@@ -59,10 +59,18 @@ title: home
     background: var(--grey-3-color ,#d4d4d4);
     box-shadow: inset 0 4px 7px 1px #fff, inset 0 -5px 20px rgba(173, 186, 204, .25), 0 2px 6px rgba(0, 21, 64, .14), 0 10px 20px rgba(0, 21, 64, .05);
   }
-  .splash #app-illustration{
-    padding: 3rem 0.6rem;
+  .splash #app-illustration > *{
+    max-width: 300px; 
+    max-height: 600px;
   }
-
+  .bit{
+    width: 100%;
+    max-width: 900px;
+    padding: 3rem;
+    margin: 3rem auto 0px auto;
+    border-radius: 50px 50px 0px 0px;
+    background-color: var(--white-2-color, #F6F6F6);
+  }
   .stuff {
     background-color: var(--white-2-color, #F6F6F6);
   }
@@ -86,13 +94,16 @@ title: home
     </span>
   </div>
   <div id="app-illustration">
-    <img src="{{ site.url }}/imgs/screenshot/Screenshot_1.png">
-    <!-- <video>
+    <!-- <img src="{{ site.url }}/imgs/screenshot/Screenshot_1.png"> -->
+    <video autoplay loop muted>
       <source src="{{ site.url }}/video/android_demo.mp4" type="video/mp4">Your browser does not support the video tag.
-    </video> -->
+    </video>
   </div>
 </section>
 
+<section class="bit">
+  things
+</section>
 <section class="stuff">
   <div class="container">
     stuffLorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt commodi, ipsam ullam alias delectus quo molestias

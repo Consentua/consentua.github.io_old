@@ -1,0 +1,53 @@
+<style>
+  .sidenavbar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 256px;
+    background-color: var(--main-color, #9A1144);
+    box-shadow: 0 0 20px black;
+  }
+  #closeSideNavBtn{
+      color: #fff;
+      text-align: right;
+      font-size: 2rem;
+      margin: 1rem 1rem 1rem auto;
+      cursor: pointer;
+  }
+  #sidenav{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+  }
+  .sidenavbar-nav-item{
+    color: var(--white-1-color, #fff);
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    width: calc(100% - 2rem);
+    display: block;
+    padding: 0.3rem 1rem;
+  }
+  .sidenavbar-nav-item:focus,
+  .sidenavbar-nav-item:hover{
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+</style>
+<section class="container sidenavbar">
+    <a id="closeSideNavBtn"><i class="fal fa-times"></i></a>
+	<nav id="sidenav">
+  {% assign pages_list = site.pages | sort: 'order' %}
+      {% for node in pages_list %}
+        {% if node.title != null %}
+         {% if node.nav %}
+          {% if node.layout == "page" %}
+            <a class="sidenavbar-nav-item {% if page.url == node.url %} active{% endif %}" href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a>
+          {% endif %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+  <a class="sidenavbar-nav-item" href="http://blog.consentua.com">Blog</a>
+  <a class="sidenavbar-nav-item" href="https://app.consentua.com/login/">Sign in <i class="far fa-sign-in"></i></a>
+	</nav>
+</section>
