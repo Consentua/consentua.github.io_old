@@ -1,19 +1,31 @@
 <style>
   .sidenavbar{
     position: fixed;
-    left: 0;
+    left: -260px;
     top: 0;
     bottom: 0;
     width: 256px;
     background-color: var(--main-color, #9A1144);
     box-shadow: 0 0 20px black;
+    transition: 300ms;
   }
   #closeSideNavBtn{
-      color: #fff;
-      text-align: right;
-      font-size: 2rem;
-      margin: 1rem 1rem 1rem auto;
-      cursor: pointer;
+    display: block;
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    width: 50px;
+    margin: 0.5rem 0.5rem 0.5rem auto;
+    cursor: pointer;
+  }
+  #navOverlay{
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.2);
   }
   #sidenav{
     display: flex;
@@ -25,18 +37,20 @@
     color: var(--white-1-color, #fff);
     font-family: 'Raleway', sans-serif;
     text-decoration: none;
-    width: calc(100% - 2rem);
+    width: calc(100% - 4rem);
     display: block;
-    padding: 0.3rem 1rem;
+    padding: 0.3rem 2rem;
   }
   .sidenavbar-nav-item:focus,
   .sidenavbar-nav-item:hover{
     background-color: rgba(255, 255, 255, 0.4);
   }
 </style>
-<section class="container sidenavbar">
-    <a id="closeSideNavBtn"><i class="fal fa-times"></i></a>
+<div id="navOverlay" onclick="closeSideNav()"></div>
+<section class="container sidenavbar" id="sidenavbar">
+  <a id="closeSideNavBtn" onclick="closeSideNav()"><i class="fal fa-times"></i></a>
 	<nav id="sidenav">
+  <a class="sidenavbar-nav-item" href="{{ site.baseurl }}/index.html">Home</a>
   {% assign pages_list = site.pages | sort: 'order' %}
       {% for node in pages_list %}
         {% if node.title != null %}

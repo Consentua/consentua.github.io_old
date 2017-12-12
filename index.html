@@ -10,15 +10,13 @@ title: home
   body:after {
   content: "";
   display: block;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   top: -400px;
   right: -400px;
   bottom: -400px;
   left: -400px;
-  /*top: 0; right: 0; bottom: 0; left: 0;*/
-  /*background: rgba(255,255,255,0.08);*/
   border: 80px solid rgba(255, 255, 255, 0.08);
   border-radius: 50px;
   -webkit-transform: rotate(-30deg);
@@ -43,9 +41,10 @@ title: home
     flex-direction: column;
     align-items: flex-start;
   }
-  /* .splash #blurb .btn{
-    color: var(--white-2-color, #F6F6F6);
-  } */
+  .splash #blurb .btn.accent,
+  .bottom-cta .btn.accent{
+    margin-right: 1rem;
+  }
   .splash #app-illustration {
     
     padding: 3rem 0.6rem;
@@ -94,9 +93,9 @@ title: home
     </span>
   </div>
   <div id="app-illustration">
-    <!-- <img src="{{ site.url }}/imgs/screenshot/Screenshot_1.png"> -->
     <video autoplay loop muted>
-      <source src="{{ site.url }}/video/android_demo.mp4" type="video/mp4">Your browser does not support the video tag.
+      <source src="{{ site.url }}/video/android_demo.mp4" type="video/mp4">
+      <img src="{{ site.url }}/imgs/screenshot/Screenshot_1.png">
     </video>
   </div>
 </section>

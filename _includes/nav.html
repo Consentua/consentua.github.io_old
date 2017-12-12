@@ -7,6 +7,14 @@
     justify-content: space-between;
     align-items: center;
   }
+  #openSideNavBtn{
+    display: none;
+    color: #fff;
+    text-align: right;
+    font-size: 2rem;
+    margin: 1rem 1rem 1rem auto;
+    cursor: pointer;
+  }
   .main-logo-contain{
     max-width: 200px;
   }
@@ -26,11 +34,20 @@
     color: var(--dark-2-color, #212121);
     font-family: 'Raleway', sans-serif;
     text-decoration: none;
-    margin: 0px 0.8rem;
+    display: block;
+    padding: 1rem;
   }
   .navbar-nav-item:hover{
     color: var(--dark-2-color, #212121);
     text-decoration: underline;
+  }
+  @media only screen and (max-width: 800px){
+    #openSideNavBtn{
+      display: block
+    }
+    #widenav{
+      display: none;
+    }
   }
   /* if page is on home/dark */
   {% if page.title == "home" %}
@@ -116,5 +133,6 @@
       {% endfor %}
   <a class="navbar-nav-item" href="http://blog.consentua.com">Blog</a>
   <a class="navbar-nav-item" href="https://app.consentua.com/login/">Sign in <i class="far fa-sign-in"></i></a>
-	</nav>
+</nav>
+<a id="openSideNavBtn" onclick="openSideNav()"><i  class="far fa-bars"></i></a>
 </section>
