@@ -73,6 +73,15 @@ title: home
   .stuff {
     background-color: var(--white-2-color, #F6F6F6);
   }
+  #consentTypes{
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-between;
+    margin: 2rem 0;
+  }
+  #consentTypes > div{
+    max-width: 50%;
+  }
   .bottom-cta{
     padding: 2rem 0px;
     display: flex;
@@ -88,8 +97,8 @@ title: home
     <p>Consentua is a consent management tool that helps organisations to achieve data protection compliance, and gives individuals
     choice and control over how their personal data is used.</p>
     <span>
-      <a class="btn accent">Create an Account</a>
-      <a class="btn">Contact Sales</a>
+      <a class="btn btn-accent">Create an Account</a>
+      <a class="btn" href="{{ site.url }}/contact.html">Contact Sales</a>
     </span>
   </div>
   <div id="app-illustration">
@@ -101,20 +110,15 @@ title: home
 </section>
 
 <section class="bit">
-  things
 </section>
 <section class="stuff">
   <div class="container">
-    stuffLorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt commodi, ipsam ullam alias delectus quo molestias
-    nobis sunt officiis quasi ab consequatur aperiam magnam, inventore ipsum laudantium, accusamus cumque rem?Lorem ipsum
-    dolor sit amet consectetur, adipisicing elit. Deserunt commodi, ipsam ullam alias delectus quo molestias nobis sunt officiis
-    quasi ab consequatur aperiam magnam, inventore ipsum laudantium, accusamus cumque rem?Lorem ipsum dolor sit amet consectetur,
-    adipisicing elit. Deserunt commodi, ipsam ullam alias delectus quo molestias nobis sunt officiis quasi ab consequatur
-    aperiam magnam, inventore ipsum laudantium, accusamus cumque rem?Lorem ipsum dolor sit amet consectetur, adipisicing
-    elit. Deserunt commodi, ipsam ullam alias delectus quo molestias nobis sunt officiis quasi ab consequatur aperiam magnam,
-    inventore ipsum laudantium, accusamus cumque rem?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt commodi,
+    
+    
+    this is how it works
 
 
+    
     <script src="https://embed.runkit.com"></script>
     <div id="my-element"></div>
     <script>var notebook = RunKit.createNotebook({
@@ -125,8 +129,8 @@ title: home
       })
     </script>
 
-    ipsam ullam alias delectus quo molestias nobis sunt officiis quasi ab consequatur aperiam magnam, inventore ipsum laudantium,
-    accusamus cumque rem?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt commodi, ipsam ullam alias delectus
+ipsam ullam alias delectus quo molestias nobis sunt officiis quasi ab consequatur aperiam magnam, inventore ipsum laudantium,
+accusamus cumque rem?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt commodi, ipsam ullam alias delectus
     quo molestias nobis sunt officiis quasi ab consequatur aperiam magnam, inventore ipsum laudantium, accusamus cumque rem?Lorem
     ipsum dolor sit amet consectetur, adipisicing elit. Deserunt commodi, ipsam ullam alias delectus quo molestias nobis
     sunt officiis quasi ab consequatur aperiam magnam, inventore ipsum laudantium, accusamus cumque rem?Lorem ipsum dolor
@@ -134,16 +138,41 @@ title: home
     quasi ab consequatur aperiam magnam, inventore ipsum laudantium, accusamus cumque rem?Lorem ipsum dolor sit amet consectetur,
     adipisicing elit. Deserunt commodi, ipsam ullam alias delectus quo molestias nobis sunt officiis quasi ab consequatur
     aperiam magnam, inventore ipsum laudantium, accusamus cumque rem?
+    <section id="consentTypes">
+      <div style="padding: 2rem 2rem 2rem 0; border-right: 1px solid lightgrey;
+    border-top: 1px solid lightgrey;">
+        <div class="fa-4x">
+          <span class="fa-layers fa-fw">
+            <i class="fas fa-circle" style="color:#9A1144"></i>
+            <i class="fal fa-toggle-off" style="color:#fff" data-fa-transform="shrink-6"></i>
+          </span>
+        </div>
+        <h1>Binery Consent</h1>
+        <p>ipsam ullam alias delectus quo molestias nobis sunt officiis quasi ab consequatur aperiam magnam, inventore ipsum laudantium,</p>
+        <a>link <i class="fal fa-arrow-alt-right"></i></a>
+      </div>
+      <div style="padding: 2rem 0 2rem 2rem; border-top: 1px solid lightgrey;">
+        <div class="fa-4x">
+          <span class="fa-layers fa-fw">
+            <i class="fas fa-circle" style="color:#9A1144"></i>
+            <i class="fal fa-sliders-h" style="color:#fff" data-fa-transform="shrink-6"></i>
+          </span>
+        </div>
+        <h1>Linear Consent</h1>
+        <p>ipsam ullam alias delectus quo molestias nobis sunt officiis quasi ab consequatur aperiam magnam, inventore ipsum laudantium,</p>
+        <a>link <i class="fal fa-arrow-alt-right"></i></a>
+      </div>
+    </section>
 
     <div class="bottom-cta">
-    <span>
-    <h1>Ready to get started?</h1>
-    <h2>Get in touch, or create an account.</h2>
+      <span>
+        <h1>Ready to get started?</h1>
+        <h2>Get in touch, or create an account.</h2>
+      </span>
+      <span>
+        <a class="btn btn-accent">Create an Account</a>
+        <a class="btn btn-black">Contact Sales</a>
     </span>
-    <span>
-      <a class="btn accent">Create an Account</a>
-      <a class="btn black">Contact Sales</a>
-    </span>
-    </div>
+  </div>
   </div>
 </section>

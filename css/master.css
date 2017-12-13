@@ -139,11 +139,23 @@ a {
 
 /* 
    ==========================================================================
+   form
+   ========================================================================== 
+*/
+input:focus,
+button:focus,
+textarea:focus{
+    outline: none !important;
+    border-color: var(--main-color, #9A1144);
+    box-shadow: 0 0 0 1px var(--main-color, #9A1144)
+}
+/* 
+   ==========================================================================
    site wide styles
    ========================================================================== 
 */
 .btn {
-    font-family: 'Raleway', sans-serif;
+    font-family:'Raleway', 'FontAwesome';
     display: inline-block;
     padding: 0.8rem;
     color: var(--white-2-color, #F6F6F6);
@@ -164,17 +176,17 @@ a {
 .btn .fa {
     margin-left: 10px;
 }
-.btn.black {
+.btn.btn-black {
     color: var(--white-2-color, #F6F6F6);
     background: var(--dark-2-color, #212121);
     border-color: var(--dark-2-color, #212121);
 }
-.btn.accent{
+.btn.btn-accent {
     color: var(--dark-2-color, #212121);
     background: var(--accent-color, #FFC021);
     border-color: var(--accent-color, #FFC021);
 }
-.btn.accent:hover {
+.btn.btn-accent:hover {
     background: rgb(192, 142, 25);
     border-color: rgb(192, 142, 25);
 }
