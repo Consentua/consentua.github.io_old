@@ -1,0 +1,117 @@
+--- 
+layout: page
+title: Contact Sales
+nav: true
+---
+<style>
+    body:after {
+        content: "";
+        display: block;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 520px;
+        right: 0;
+        bottom: 0;
+        left: -95px;
+        background-color: var(--main-color);
+        border: 80px solid var(--main-color);
+        border-radius: 50px;
+        -webkit-transform: rotate(-30deg);
+        transform: rotate(-30deg);
+        z-index: -1;
+    }
+
+    #contact {
+        overflow: hidden;
+    }
+
+    #contact .headline {
+        text-align: center;
+    }
+
+    #contact form {
+        background-color: var(--white-2-color, #F6F6F6);
+        max-width: 60%; 
+        margin-top: 4rem;
+        padding: 2rem;
+        border-radius: 10px;
+    }
+
+    #contact fieldset {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        border: none;
+    }
+
+    #contact fieldset > .form-row {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 0.5rem;
+    }
+
+    #contact fieldset label {
+        font-weight: 500;
+        letter-spacing: normal;
+        line-height: 26px;
+        margin-right: 20px;
+        flex: 33%;
+    }
+
+    #contact fieldset input,
+    #contact fieldset textarea {
+        flex: 60%;
+        padding: 0.5rem;
+        align-self: center;
+        border: none;
+        background-color: var(--grey-3-color);
+        border-radius: 5px;
+    }
+    #contact fieldset textarea{
+        height: 5rem;
+    }
+    #contact .btn {
+        display: block; 
+        margin-top: 0.5rem;
+        margin-left: auto;
+    }
+</style>
+<section id="contact">
+    <div class="headline">
+        <h1>
+            Get in touch
+        </h1>
+        <p>
+            Contact us using the form below, or directly at
+            <a href="mailto:contact@consentua.com?Subject=mailto">contact@consentua.com</a>
+        </p>
+    </div>
+    <form action="https://formspree.io/jack.mason@kn-i.com" method="POST">
+    <fieldset>
+        <input type="hidden" name="_subject" value="Sales enquiry form" required/>
+        <input type="hidden" name="_next" value="{{ site.url }}/thanks.html" required/>
+        <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="Sam" required/>
+        </div>
+        <div class="form-row">
+            <label>Email Address</label>
+            <input type="email" name="_replyto" placeholder="Sam@example.com" required/>
+        </div>
+        <div class="form-row">
+            <label>Website</label>
+            <input type="text" name="website" placeholder="example.com"/>
+        </div>
+        <div class="form-row">
+            <label>Message</label>
+            <textarea name="message" placeholder="Let us know how we can help." required></textarea>
+        </div>
+    </fieldset>
+    <button type="submit" class="btn btn-accent">
+    Send Message 
+    <i class="fal fa-envelope"></i>
+    </button>
+    </form>
+    </div>
+</section>
