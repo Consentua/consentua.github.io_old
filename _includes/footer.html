@@ -3,94 +3,135 @@
 		width: 100%;
 		flex-shrink: 0;
 		padding: 1rem 0rem;
-		background-color: var(--dark-2-color, #212121);
+		background-color: var(--dark-3-color);
 		color: var(--white-2-color, #F6F6F6);
-		text-align: center;
 	}
-
-	footer>div {
+	 /* if page is not on home */
+	{% if page.title == "Pricing" or page.title == "Contact Sales" %}
+	footer {
+		background-color: transparent;
+	}
+	{% endif %}
+	footer>.cols {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: space-between;
 	}
 
-	footer>div>.col>ul {
+	footer>.cols>.col>ul {
+		text-transform: capitalize;
 		list-style: none;
+		min-width: 200px;
 	}
 
-	footer>div>.col>ul>li>a {
+	footer a {
 		color: var(--white-2-color, #F6F6F6);
+		font-size: 0.9rem;
 		text-decoration: none;
 		cursor: pointer;
 	}
 
-	footer>div>.col>ul>li>a:hover,
-	footer>div>.col>ul>li>a:focus {
-		color: var(--main-color, #9A1144);
+	footer>.cols>.col>ul>li>a:hover,
+	footer>.cols>.col>ul>li>a:focus {
+		color: var(--grey-4-color);
 		text-decoration: none;
+	}
+	footer>.cols>.col .col-tile{
+		font-weight: 600;
+		line-height: 2rem;
+	}
+	footer > article{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+	footer > article  p{
+		margin: 0;
+		font-size: 0.8rem;
+	}
+	footer > article aside>a{
+		font-size: 1.5rem;
+		padding: 0.5rem;
+	}
+	@media only screen and (max-height: 1000px){
+		footer{
+			margin-top: 2rem;
+			background-color: var(--dark-3-color);
+		}
+	}
+	@media only screen and (max-width: 1000px){
+		footer > article,
+		footer > .cols{
+			margin: 0 1rem !important;
+		}
+		footer>.cols {
+		justify-content: space-around;
+		}
 	}
 </style>
 <footer>
-	<div class="container">
+	<div class="cols container">
 		<span class="col">
 			<ul>
 				<li>
-					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+					<span class="col-tile">Product</span>
 				</li>
 				<li>
-					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+					<a href="{{ site.url }}/pricing.html">Pricing</a>
 				</li>
 				<li>
-					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+					<a href="{{ site.url }}/privacy-policy.html">Why Consentua</a>
 				</li>
 				<li>
-					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+					<a href="{{ site.url }}/privacy-policy.html">How it works</a>
 				</li>
 			</ul>
 		</span>
 		<span class="col">
 			<ul>
 				<li>
-					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+					<span class="col-tile">Developers</span>
 				</li>
 				<li>
-					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+					<a href="{{ site.url }}/">Documentation</a>
 				</li>
 				<li>
-					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+					<a href="http://api.consentua.com/swagger/ui/index">API reference</a>
 				</li>
 				<li>
-					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
-				</li>
-			</ul>
-		</span>
-		<span class="col">
-			<ul>
-				<li>
-					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
-				</li>
-				<li>
-					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
-				</li>
-				<li>
-					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
-				</li>
-				<li>
-					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+					<a href="https://github.com/Consentua/Documentation">Guides</a>
 				</li>
 			</ul>
 		</span>
 		<span class="col">
 			<ul>
 				<li>
-					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+					<span class="col-tile">Company</span>
 				</li>
 				<li>
-					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+					<a href="{{ site.url }}/">About us</a>
 				</li>
 				<li>
-					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+					<a href="http://blog.consentua.com">Blog</a>
+				</li>
+				<li>
+					<a href="{{ site.url }}/">Partners</a>
+				</li>
+				<li>
+					<a href="{{ site.url }}/">Customers</a>
+				</li>
+			</ul>
+		</span>
+		<span class="col">
+			<ul>
+				<li>
+					<span class="col-tile">Resources</span>
+				</li>
+				<li>
+					<a href="{{ site.url }}/contact.html">Contact</a>
 				</li>
 				<li>
 					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
@@ -98,5 +139,16 @@
 			</ul>
 		</span>
 	</div>
-	<p>text text text</p>
+	<article class="container">
+		<div>
+		<p>© 2016 KnowNow-Information Limited.</p>
+		<p>Registered in England and Wales number 8781104.</p>
+		<p>Registered address: Halpern House, 1-2 Hampshire Terrace, Portsmouth, PO1 2QF</p>
+		</div>
+		<aside>
+			<a href="https://twitter.com/Consentua"><i class="fab fa-twitter"></i></a>
+			<a href="https://vimeo.com/channels/consentua"><i class="fab fa-vimeo-v"></i></a>
+			<a href="https://github.com/Consentua"><i class="fab fa-github"></i></a>
+		</aside>
+	</article>
 </footer>

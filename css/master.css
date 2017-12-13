@@ -109,7 +109,7 @@ body {
     flex: 1 0 auto;
 }
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
 }
 /* 
@@ -171,6 +171,12 @@ textarea:focus{
 .btn:hover {
     text-decoration: none;
     background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+.btn:focus {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(0);
 }
 
 .btn .fa {

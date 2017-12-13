@@ -1,7 +1,7 @@
 <style>
   .navbar{
     width: 100%;
-    padding: 2rem;
+    margin: 2rem auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -9,19 +9,23 @@
   }
   #openSideNavBtn{
     display: none;
-    color: #fff;
+    color: var(--main-color, #9A1144);
     text-align: right;
     font-size: 2rem;
-    margin: 1rem 1rem 1rem auto;
+    margin: 1rem 2rem 1rem auto;
     cursor: pointer;
   }
   .main-logo-contain{
     max-width: 200px;
+    margin-left: 2rem;
   }
   .main-logo{
     fill: var(--main-color, #9A1144);
     width: 200px;
     cursor: pointer;
+  }
+  .main-logo:hover{
+    fill: var(--dark-3-color);
   }
   #widenav{
     flex:1;
@@ -29,6 +33,7 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    margin-right: 2rem;
   }
   .navbar-nav-item{
     color: var(--dark-2-color, #212121);
@@ -38,8 +43,8 @@
     padding: 1rem;
   }
   .navbar-nav-item:hover{
-    color: var(--dark-2-color, #212121);
-    text-decoration: underline;
+    color: var(--main-color, #9A1144);
+    /* text-decoration: underline; */
   }
   @media only screen and (max-width: 800px){
     #openSideNavBtn{
@@ -50,12 +55,21 @@
     }
   }
   /* if page is on home/dark */
-  {% if page.title == "home" %}
+  {% if page.title == "home" or page.title == "Pricing"%}
   .main-logo{
     fill: #fff;
   }
+  .main-logo:hover{
+    fill: var(--grey-3-color);
+  }
   .navbar-nav-item{
-    color: var(--white-1-color, #fff);
+    color: var(--white-1-color);
+  }
+  .navbar-nav-item:hover{
+    color: var(--grey-3-color);
+  }
+  #openSideNavBtn{
+    color: #fff;
   }
   {% endif %}
 </style>

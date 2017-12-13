@@ -64,14 +64,17 @@ title: home
   }
   .bit{
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
     padding: 3rem;
     margin: 3rem auto 0px auto;
     border-radius: 50px 50px 0px 0px;
     background-color: var(--white-2-color, #F6F6F6);
   }
-  .stuff {
+  .with-bg {
     background-color: var(--white-2-color, #F6F6F6);
+  }
+  .with-bg > .container > article{
+    padding: 2rem 0;
   }
   #consentTypes{
     display: flex;
@@ -104,22 +107,36 @@ title: home
   <div id="app-illustration">
     <video autoplay loop muted>
       <source src="{{ site.url }}/video/android_demo.mp4" type="video/mp4">
+      <source src="{{ site.url }}/video/android_demo.webm" type="video/webm">
       <img src="{{ site.url }}/imgs/screenshot/Screenshot_1.png">
     </video>
   </div>
 </section>
 
 <section class="bit">
+  <img style="max-height: 100px; margin: auto; display: block;" src="{{ site.url }}/imgs/logo/consentua-logo.png">
 </section>
-<section class="stuff">
+<section class="with-bg">
   <div class="container">
+    <article>
+      <h1>What is Consentua?</h1>
+      <p>
+        Consentua is a consent management platform. It gives individuals choice and control over how their personal data is used,
+        helps organisations to achieve and demonstrate data protection compliance, and builds trust between service providers
+        and their customers.
+      </p>
+      <p>
+        Organisations deploy Consentua within their own applications via some easy to use APIs to capture the consent of their own
+        users. Individuals use Consentua enabled mobile apps to manage the consents they have given.
+      </p>
+      <p>
+        The laws around consent are changing. Consentua gives organisations the ability to keep ahead of these changes and provide
+        a fully auditable history of their personal data consent transactions.
+      </p>
+    </article>
     
-    
-    this is how it works
 
-
-    
-    <script src="https://embed.runkit.com"></script>
+    <!-- <script src="https://embed.runkit.com"></script>
     <div id="my-element"></div>
     <script>var notebook = RunKit.createNotebook({
         // the parent element for the new notebook
@@ -127,17 +144,15 @@ title: home
         // specify the source of the notebook
         source: "// GeoJSON!\nvar getJSON = require(\"async-get-json\");\n\nawait getJSON(\"https://storage.googleapis.com/maps-devrel/google.json\");"
       })
-    </script>
-
-ipsam ullam alias delectus quo molestias nobis sunt officiis quasi ab consequatur aperiam magnam, inventore ipsum laudantium,
-accusamus cumque rem?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt commodi, ipsam ullam alias delectus
-    quo molestias nobis sunt officiis quasi ab consequatur aperiam magnam, inventore ipsum laudantium, accusamus cumque rem?Lorem
-    ipsum dolor sit amet consectetur, adipisicing elit. Deserunt commodi, ipsam ullam alias delectus quo molestias nobis
-    sunt officiis quasi ab consequatur aperiam magnam, inventore ipsum laudantium, accusamus cumque rem?Lorem ipsum dolor
-    sit amet consectetur, adipisicing elit. Deserunt commodi, ipsam ullam alias delectus quo molestias nobis sunt officiis
-    quasi ab consequatur aperiam magnam, inventore ipsum laudantium, accusamus cumque rem?Lorem ipsum dolor sit amet consectetur,
-    adipisicing elit. Deserunt commodi, ipsam ullam alias delectus quo molestias nobis sunt officiis quasi ab consequatur
-    aperiam magnam, inventore ipsum laudantium, accusamus cumque rem?
+    </script> -->
+    
+  </div>
+<!-- </section>
+<section>
+  empty section
+</section> -->
+<section class="with-bg">
+  <div class="container">
     <section id="consentTypes">
       <div style="padding: 2rem 2rem 2rem 0; border-right: 1px solid lightgrey;
     border-top: 1px solid lightgrey;">
@@ -163,7 +178,6 @@ accusamus cumque rem?Lorem ipsum dolor sit amet consectetur, adipisicing elit. D
         <a>link <i class="fal fa-arrow-alt-right"></i></a>
       </div>
     </section>
-
     <div class="bottom-cta">
       <span>
         <h1>Ready to get started?</h1>
@@ -171,8 +185,8 @@ accusamus cumque rem?Lorem ipsum dolor sit amet consectetur, adipisicing elit. D
       </span>
       <span>
         <a class="btn btn-accent">Create an Account</a>
-        <a class="btn btn-black">Contact Sales</a>
+        <a href="{{ site.url }}/contact.html" class="btn btn-black">Contact Sales</a>
     </span>
   </div>
-  </div>
+</div>
 </section>
