@@ -1,5 +1,5 @@
---- 
-layout: default 
+---
+layout: default
 title: home 
 ---
 
@@ -7,24 +7,25 @@ title: home
   body {
     background-color: var(--main-color);
   }
+
   body:after {
-  content: "";
-  display: block;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: -400px;
-  right: -400px;
-  bottom: -400px;
-  left: -400px;
-  border: 80px solid rgba(255, 255, 255, 0.08);
-  border-radius: 50px;
-  -webkit-transform: rotate(-30deg);
-  transform: rotate(-30deg);
-  -webkit-animation: spin 60s infinite linear;
-  animation: spin 60s infinite linear;
-  z-index: -1;
-}
+    content: "";
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: -400px;
+    right: -400px;
+    bottom: -400px;
+    left: -400px;
+    border: 80px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+    -webkit-animation: spin 60s infinite linear;
+    animation: spin 60s infinite linear;
+    z-index: -1;
+  }
 
   .splash {
     width: 100%;
@@ -35,18 +36,21 @@ title: home
     align-items: center;
     justify-content: space-between;
   }
-  .splash #blurb{
+
+  .splash #blurb {
     max-width: 500px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
+
   .splash #blurb .btn.accent,
-  .bottom-cta .btn.accent{
+  .bottom-cta .btn.accent {
     margin-right: 1rem;
   }
+
   .splash #app-illustration {
-    
+
     padding: 3rem 0.6rem;
     display: -ms-flexbox;
     display: flex;
@@ -55,14 +59,16 @@ title: home
     -ms-flex-align: center;
     align-items: center;
     border-radius: 38px;
-    background: var(--grey-3-color ,#d4d4d4);
+    background: var(--grey-3-color, #d4d4d4);
     box-shadow: inset 0 4px 7px 1px #fff, inset 0 -5px 20px rgba(173, 186, 204, .25), 0 2px 6px rgba(0, 21, 64, .14), 0 10px 20px rgba(0, 21, 64, .05);
   }
-  .splash #app-illustration > *{
-    max-width: 300px; 
-    max-height: 600px;
+
+  .splash #app-illustration>* {
+    max-width: 300px;
+    max-height: 64vh;
   }
-  .bit{
+
+  .bit {
     width: 100%;
     max-width: 1000px;
     padding: 3rem;
@@ -70,22 +76,47 @@ title: home
     border-radius: 50px 50px 0px 0px;
     background-color: var(--white-2-color, #F6F6F6);
   }
+
   .with-bg {
     background-color: var(--white-2-color, #F6F6F6);
   }
-  .with-bg > .container > article{
+
+  .with-bg>.container>article {
     padding: 2rem 0;
   }
-  #consentTypes{
+
+  #consentTypes {
     display: flex;
-    flex-direction: row;  
+    flex-direction: row;
     justify-content: space-between;
     margin: 2rem 0;
   }
-  #consentTypes > div{
+
+  #consentTypes>div {
     max-width: 50%;
   }
-  .bottom-cta{
+
+  #consentTypes>div:nth-child(1) {
+    padding: 2rem 2rem 2rem 0;
+    border-right: 1px solid lightgrey;
+    border-top: 1px solid lightgrey;
+  }
+
+  #consentTypes>div:nth-child(2) {
+    padding: 2rem 0 2rem 2rem;
+    border-top: 1px solid lightgrey;
+  }
+
+  .fa-circle {
+    color: #9A1144;
+  }
+
+  .fa-toggle-off,
+  .fa-sliders-h {
+    color: #fff;
+  }
+
+  .bottom-cta {
     padding: 2rem 0px;
     display: flex;
     flex-direction: row;
@@ -98,7 +129,7 @@ title: home
   <div id="blurb">
     <h1>{{ site.tagline }}</h1>
     <p>Consentua is a consent management tool that helps organisations to achieve data protection compliance, and gives individuals
-    choice and control over how their personal data is used.</p>
+      choice and control over how their personal data is used.</p>
     <span>
       <a class="btn btn-accent">Create an Account</a>
       <a class="btn" href="{{ site.url }}/contact.html">Contact Sales</a>
@@ -121,10 +152,17 @@ title: home
     <article>
       <h1>What is Consentua?</h1>
       <p>
+        Consentua is an API and a widget that drops into your existing mobile or browser app.
+      </p>
+      <p>
         Consentua is a consent management platform. It gives individuals choice and control over how their personal data is used,
         helps organisations to achieve and demonstrate data protection compliance, and builds trust between service providers
         and their customers.
       </p>
+    </article>
+
+    {% include feature_slides.html %}
+    <article>
       <p>
         Organisations deploy Consentua within their own applications via some easy to use APIs to capture the consent of their own
         users. Individuals use Consentua enabled mobile apps to manage the consents they have given.
@@ -134,59 +172,63 @@ title: home
         a fully auditable history of their personal data consent transactions.
       </p>
     </article>
-    
-
-    <!-- <script src="https://embed.runkit.com"></script>
+    <script src="https://embed.runkit.com"></script>
     <div id="my-element"></div>
-    <script>var notebook = RunKit.createNotebook({
+    <script>
+      var notebook = RunKit.createNotebook({
         // the parent element for the new notebook
         element: document.getElementById("my-element"),
         // specify the source of the notebook
         source: "// GeoJSON!\nvar getJSON = require(\"async-get-json\");\n\nawait getJSON(\"https://storage.googleapis.com/maps-devrel/google.json\");"
       })
-    </script> -->
-    
+    </script>
+
   </div>
-<!-- </section>
+  <!-- </section>
 <section>
   empty section
 </section> -->
-<section class="with-bg">
-  <div class="container">
-    <section id="consentTypes">
-      <div style="padding: 2rem 2rem 2rem 0; border-right: 1px solid lightgrey;
-    border-top: 1px solid lightgrey;">
-        <div class="fa-4x">
-          <span class="fa-layers fa-fw">
-            <i class="fas fa-circle" style="color:#9A1144"></i>
-            <i class="fal fa-toggle-off" style="color:#fff" data-fa-transform="shrink-6"></i>
-          </span>
+  <section class="with-bg">
+    <div class="container">
+      <section id="consentTypes">
+        <div>
+          <div class="fa-4x">
+            <span class="fa-layers fa-fw">
+              <i class="fas fa-circle"></i>
+              <i class="fal fa-toggle-off" data-fa-transform="shrink-6"></i>
+            </span>
+          </div>
+          <h1>Binery Consent</h1>
+          <p>ipsam ullam alias delectus quo molestias nobis sunt officiis quasi ab consequatur aperiam magnam, inventore ipsum
+            laudantium,</p>
+          <a>link
+            <i class="fal fa-arrow-alt-right"></i>
+          </a>
         </div>
-        <h1>Binery Consent</h1>
-        <p>ipsam ullam alias delectus quo molestias nobis sunt officiis quasi ab consequatur aperiam magnam, inventore ipsum laudantium,</p>
-        <a>link <i class="fal fa-arrow-alt-right"></i></a>
-      </div>
-      <div style="padding: 2rem 0 2rem 2rem; border-top: 1px solid lightgrey;">
-        <div class="fa-4x">
-          <span class="fa-layers fa-fw">
-            <i class="fas fa-circle" style="color:#9A1144"></i>
-            <i class="fal fa-sliders-h" style="color:#fff" data-fa-transform="shrink-6"></i>
-          </span>
+        <div>
+          <div class="fa-4x">
+            <span class="fa-layers fa-fw">
+              <i class="fas fa-circle"></i>
+              <i class="fal fa-sliders-h" data-fa-transform="shrink-6"></i>
+            </span>
+          </div>
+          <h1>Linear Consent</h1>
+          <p>ipsam ullam alias delectus quo molestias nobis sunt officiis quasi ab consequatur aperiam magnam, inventore ipsum
+            laudantium,</p>
+          <a>link
+            <i class="fal fa-arrow-alt-right"></i>
+          </a>
         </div>
-        <h1>Linear Consent</h1>
-        <p>ipsam ullam alias delectus quo molestias nobis sunt officiis quasi ab consequatur aperiam magnam, inventore ipsum laudantium,</p>
-        <a>link <i class="fal fa-arrow-alt-right"></i></a>
+      </section>
+      <div class="bottom-cta">
+        <span>
+          <h1>Ready to get started?</h1>
+          <h2>Get in touch, or create an account.</h2>
+        </span>
+        <span>
+          <a class="btn btn-accent">Create an Account</a>
+          <a href="{{ site.url }}/contact.html" class="btn btn-black">Contact Sales</a>
+        </span>
       </div>
-    </section>
-    <div class="bottom-cta">
-      <span>
-        <h1>Ready to get started?</h1>
-        <h2>Get in touch, or create an account.</h2>
-      </span>
-      <span>
-        <a class="btn btn-accent">Create an Account</a>
-        <a href="{{ site.url }}/contact.html" class="btn btn-black">Contact Sales</a>
-    </span>
-  </div>
-</div>
-</section>
+    </div>
+  </section>

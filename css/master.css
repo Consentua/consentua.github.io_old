@@ -187,6 +187,15 @@ textarea:focus{
     background: var(--dark-2-color, #212121);
     border-color: var(--dark-2-color, #212121);
 }
+.btn.btn-black-line {
+    color: var(--dark-2-color, #212121);
+    border-color: var(--dark-2-color, #212121);
+}
+.btn.btn-main {
+    color: var(--white-2-color, #F6F6F6);
+    background: var(--main-color, #9A1144);
+    border-color: var(--main-color, #9A1144);
+}
 .btn.btn-accent {
     color: var(--dark-2-color, #212121);
     background: var(--accent-color, #FFC021);

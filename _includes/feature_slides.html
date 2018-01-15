@@ -1,0 +1,118 @@
+<style>
+    #featureSlides{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .feature-button-wrap{
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        margin-top: 2em;
+        background: var(--grey-3-color);
+        max-width: 200px;
+        align-items: center;
+    }
+    a.feature-button {
+        display: inline-block;
+        width: 200px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        color: var(--dark-2-color);
+    }
+
+    .feature-button.active {
+        background-color: #fff;
+        border: 2px solid var(--main-color, #9A1144);
+        color: var(--secondary-color);
+        border-radius: 5px;
+        padding: 0.2rem;
+    }
+
+    .feature-content {
+        padding: 0px 30px;
+        display: none;
+    }
+
+    .feature-content.active {
+        display: block;
+    }
+
+    .feature-content img{
+        max-width: 725px;
+        max-height: 300px;
+        margin: auto;
+        border-radius: 5px;
+    }
+</style>
+<section id="featureSlides">
+<div class="feature-button-wrap">
+    <a class="feature-button" data-pos="0">
+        Binery Consent
+    </a>
+    <a class="feature-button" data-pos="1">
+        Linear Consent
+    </a>
+    <a class="feature-button" data-pos="2">
+         GDPR Compliant
+    </a>
+    <a class="feature-button" data-pos="3">
+        Secure API
+    </a>
+</div>
+
+<div>
+    <div class="feature-content">
+        <h1>Binary Consent</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore impedit maxime, error consequuntur nihil optio nisi reiciendis esse velit, expedita temporibus pariatur excepturi. Impedit vel molestias fugiat, libero dolore consectetur.</p>
+        <img src="http://via.placeholder.com/700x250">
+    </div>
+    <div class="feature-content">
+        <h1>Linear Consent</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore impedit maxime, error consequuntur nihil optio nisi reiciendis esse velit, expedita temporibus pariatur excepturi. Impedit vel molestias fugiat, libero dolore consectetur.</p>
+        <img src="http://via.placeholder.com/700x250">
+    </div>
+    <div class="feature-content">
+        <h1>GDPR Compliant</h1>
+        <p>Users want transparency and honesty in what will happen with their personal data. Consentua provides a vehicle for this transparency to be demonstrated for the Trust to be established.</p>
+        <p>Consentua will help organisations with the following aspects of GDPR:</p>
+        <ul>
+            <li>Article 7: Clear understandable notice </li>
+            <li>Article 6, 53 : Capture & log user consent</li>
+            <li>Article 15: Users have ability to see what data is being used</li>
+            <li>Article 17: Users can revoke consent</li>
+        </ul>
+        <img src="http://via.placeholder.com/700x250">
+    </div>
+    <div class="feature-content">
+        <h1>Secure Lightweight Consent API</h1>
+        <p>The API is encrypted, hashed and requires a specific access token per instance of the API. Only with the right access token
+        assigned to the specific customer API will access to the Consentua registry be granted. The API payload is measured in bytes!
+        Fast and efficient processing.</p>
+        <img src="http://via.placeholder.com/700x250">
+    </div>
+</div>
+</section>
+<script>
+    let btn = document.querySelectorAll('.feature-button'),
+        content = document.querySelectorAll('.feature-content');
+
+    btn[0].classList.add('active');
+    content[0].classList.add('active');
+    for (let i = 0; i < btn.length; i++) {
+        btn[i].addEventListener("click", function () {
+            let pos = this.dataset.pos;
+            content.forEach(function (item) {
+                item.classList.remove('active');
+            })
+            btn.forEach(function (item) {
+                item.classList.remove('active');
+            });
+            content[pos].classList.add('active');
+            this.classList.add('active');
+        });
+    }
+</script>
