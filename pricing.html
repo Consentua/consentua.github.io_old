@@ -15,117 +15,120 @@ nav: true
   position: fixed;
   width: 100vw;
   height: 100vh;
-  top: -200px;
+  top: -150px;
     right: 0;
     bottom: 0;
     left: 300px;
-  border: 80px solid rgba(255, 255, 255, 0.08);
+  border: 80px solid rgba(255, 255, 255, 1);
   border-radius: 50px;
   -webkit-transform: rotate(-30deg);
   transform: rotate(-30deg);
   z-index: -1;
+  background-color: #fff;
 }
 #pricing .cols{
+    margin: 5rem 0;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     /* flex-wrap: wrap; */
 }
-#pricing .cols > div{
+#pricing .cols .plan{
     border-radius: 10px;
-    padding: 0.6rem;
+    /* padding: 0.6rem; */
     text-align: center;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
 }
-#pricing .cols > div:nth-child(1){
+#pricing .cols .plan .plan-header{
+    border-radius: 10px 10px 0 0;
+    background: #fff;
+    padding-bottom: 0.6rem;
 }
-#pricing .cols > div:nth-child(2){
-    background: var(--accent-color);
+#pricing .cols .plan .plan-header > span{
+    font-size: 1.6rem;
 }
-#pricing .cols > div:nth-child(3){
-    background: var(--grey-4-color);
-}
-#pricing .cols > div > ul{
-    text-align: left;
-}
-#pricing > #enterprise{
-    border-radius: 10px;
-    padding: 1rem;
-    text-align: center;
-    color: #fff;
-    background-color: var(--dark-3-color);
-    margin-top: 2rem;
-}
-.plan-cost > span{
+#pricing .cols .plan .plan-header > span:nth-child(2){
     font-size: 2rem;
 }
-.plan-cost > span:nth-child(1){
-    font-size: 3.5rem;
+#pricing .cols .plan:nth-child(2) .plan-header{
+    background: var(--accent-color);
+}
+#pricing .cols .plan:nth-child(3) .plan-header{
+    background: var(--main-color);
+    color: #fff
+}
+#pricing .cols .plan ul{
+    list-style: none;
+    padding: 0px 0.6rem 0.6rem 0.6rem;
+}
+#pricing #enterprise{
+    background: var(--dark-3-color);
+    color: #fff;
+    max-width: 500px;
+    text-align: center;
+    padding: 1rem;
+    margin: 0 auto 3rem auto;
+    border-radius: 10px;
 }
 </style>
 
 <section id="pricing">
     <div class="cols">
-        <div>
-            <i class="fal fa-code fa-3x"></i>
+        <div class="plan">
+            <div class="plan-header">
             <h1>Basic</h1>
-            <div class="plan-cost">
-                <span>$10</span>/mo<br>
-                <span>$99</span>/yr
-                
+            <span>£10</span>/mo<br>
+            <span>£99</span>/yr                
             </div>
             <p>Includes:</p>
             <ul>
+                <li>Up to <b>50,000</b> API calls per anum</li>
                 <li>Umlimited end user API calls</li>
-                <li>50,000 API calls per anum</li>
                 <li>Unlimited total consents</li>
-                <li>2 Admin Accounts</li>
-                <li>Community Support</li>
-            </ul>
-            <a class="btn btn-accent">Create an account</a>
-        </div>
-        <div>
-            <i class="fal fa-users fa-3x"></i>
-            <h1>Plus</h1>
-            <div class="plan-cost">
-                <span>$99</span>/mo<br>
-                <span>$949</span>/yr
-            </div>
-            <p>Includes:</p>
-            <ul>
-                <li>Umlimited end user API calls</li>
-                <li>500,000 API calls per anum</li>
-                <li>Unlimited total consents</li>
-                <li>5 Admin Accounts</li>
+                <li><b>2</b> Admin Accounts</li>
                 <li>Community Support</li>
             </ul>
             <a class="btn btn-black-line">Create an account</a>
         </div>
-        <div>
-            <i class="fal fa-briefcase fa-3x"></i>
-            <h1>Pro</h1>
-            <div class="plan-cost">
-                <span>$899</span>/mo<br>
-                <span>$8999</span>/yr
+        <div class="plan">
+            <div class="plan-header">
+                <h1>Plus</h1>
+                <span>£99</span>/mo<br>
+                <span>£949</span>/yr
             </div>
             <p>Includes:</p>
             <ul>
+                <li>Up to <b>500,000</b> API calls per anum</li>
                 <li>Umlimited end user API calls</li>
-                <li>10,000,000 API calls per anum</li>
                 <li>Unlimited total consents</li>
-                <li>12 Admin Accounts</li>
+                <li><b>5</b> Admin Accounts</li>
+                <li>Community Support</li>
+            </ul>
+            <a class="btn btn-accent">Create an account</a>
+        </div>
+        <div class="plan">
+            <div class="plan-header">
+                <h1>Pro</h1>
+                <span>£899</span>/mo<br>
+                <span>£8999</span>/yr
+            </div>
+            <p>Includes:</p>
+            <ul>
+                <li>Up to <b>10,000,000</b> API calls per anum</li>
+                <li>Umlimited end user API calls</li>
+                <li>Unlimited total consents</li>
+                <li><b>12</b> Admin Accounts</li>
                 <li>Office hour Support</li>
             </ul>
             <a class="btn btn-main">Create an account</a>
         </div>
     </div>
     <div id="enterprise">
-        <i class="fal fa-server fa-3x"></i>
         <h1>Enterprise</h1>
         <p>Need more with 24/7 support? Talk to sales to see how we can fit your needs.</p>
         <a class="btn">Contact sales</a>

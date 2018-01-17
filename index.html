@@ -84,38 +84,6 @@ title: home
   .with-bg>.container>article {
     padding: 2rem 0;
   }
-
-  #consentTypes {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 2rem 0;
-  }
-
-  #consentTypes>div {
-    max-width: 50%;
-  }
-
-  #consentTypes>div:nth-child(1) {
-    padding: 2rem 2rem 2rem 0;
-    border-right: 1px solid lightgrey;
-    border-top: 1px solid lightgrey;
-  }
-
-  #consentTypes>div:nth-child(2) {
-    padding: 2rem 0 2rem 2rem;
-    border-top: 1px solid lightgrey;
-  }
-
-  .fa-circle {
-    color: #9A1144;
-  }
-
-  .fa-toggle-off,
-  .fa-sliders-h {
-    color: #fff;
-  }
-
   .bottom-cta {
     padding: 2rem 0px;
     display: flex;
@@ -128,8 +96,9 @@ title: home
 <section class="container splash">
   <div id="blurb">
     <h1>{{ site.tagline }}</h1>
-    <p>Consentua is a consent management tool that helps organisations to achieve data protection compliance, and gives individuals
-      choice and control over how their personal data is used.</p>
+    <!-- <p>Consentua™ is a consent management tool that helps organisations to achieve data protection compliance, and gives individuals
+      choice and control over how their personal data is used.</p> -->
+    <p>Consentua helps build trust.  Giving users choice and control over their personal data.   Enabling a more trusted and transparent relationship between the customer and the service provider.</p>
     <span>
       <a class="btn btn-accent">Create an Account</a>
       <a class="btn" href="{{ site.url }}/contact.html">Contact Sales</a>
@@ -145,7 +114,7 @@ title: home
 </section>
 
 <section class="bit">
-  <img style="max-height: 100px; margin: auto; display: block;" src="{{ site.url }}/imgs/logo/consentua-logo.png">
+  <img style="max-height: 100px; margin: auto; display: block;" src="{{ site.url }}/imgs/logo/consentua-logo-tm512x512.png">
 </section>
 <section class="with-bg">
   <div class="container">
@@ -155,9 +124,14 @@ title: home
         Consentua is an API and a widget that drops into your existing mobile or browser app.
       </p>
       <p>
-        Consentua is a consent management platform. It gives individuals choice and control over how their personal data is used,
-        helps organisations to achieve and demonstrate data protection compliance, and builds trust between service providers
-        and their customers.
+         Consentua is a consent management platform. It gives individuals choice and control over how their personal data is used,
+        helps organisations to achieve and demonstrate data protection compliance, and builds trust between service providers and
+        their customers.
+      </p>
+      <p>
+         Users can see their historic consents. Data processors can see who can access services and which interactions have been
+        consented to. This improves customer satisfaction through greater trust between customer and provider. Consentua thus delivers
+        two benefits - happy customers and a happy data protection officer.
       </p>
     </article>
 
@@ -172,17 +146,6 @@ title: home
         a fully auditable history of their personal data consent transactions.
       </p>
     </article>
-    <script src="https://embed.runkit.com"></script>
-    <div id="my-element"></div>
-    <script>
-      var notebook = RunKit.createNotebook({
-        // the parent element for the new notebook
-        element: document.getElementById("my-element"),
-        // specify the source of the notebook
-        source: "// GeoJSON!\nvar getJSON = require(\"async-get-json\");\n\nawait getJSON(\"https://storage.googleapis.com/maps-devrel/google.json\");"
-      })
-    </script>
-
   </div>
   <!-- </section>
 <section>
@@ -193,37 +156,6 @@ title: home
 
        {% include social.html %}
 
-
-      <section id="consentTypes">
-        <div>
-          <div class="fa-4x">
-            <span class="fa-layers fa-fw">
-              <i class="fas fa-circle"></i>
-              <i class="fal fa-toggle-off" data-fa-transform="shrink-6"></i>
-            </span>
-          </div>
-          <h1>Binery Consent</h1>
-          <p>ipsam ullam alias delectus quo molestias nobis sunt officiis quasi ab consequatur aperiam magnam, inventore ipsum
-            laudantium,</p>
-          <a>link
-            <i class="fal fa-arrow-alt-right"></i>
-          </a>
-        </div>
-        <div>
-          <div class="fa-4x">
-            <span class="fa-layers fa-fw">
-              <i class="fas fa-circle"></i>
-              <i class="fal fa-sliders-h" data-fa-transform="shrink-6"></i>
-            </span>
-          </div>
-          <h1>Linear Consent</h1>
-          <p>ipsam ullam alias delectus quo molestias nobis sunt officiis quasi ab consequatur aperiam magnam, inventore ipsum
-            laudantium,</p>
-          <a>link
-            <i class="fal fa-arrow-alt-right"></i>
-          </a>
-        </div>
-      </section>
       <div class="bottom-cta">
         <span>
           <h1>Ready to get started?</h1>
