@@ -1,0 +1,55 @@
+<style>
+#events{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    max-width: 450px;
+}
+#events .event{
+    display: flex;
+    flex-direction: row;
+    background: var(--grey-3-color, #d4d4d4);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    align-items: center;
+        text-decoration: none;
+}
+#events .event:hover,
+#events .event:focus{
+    background-color: #9a1144;
+    color: white;
+}
+#events .event .event-date{
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--main-color);
+    color: #fff;
+    border-radius: 5px 0 0 5px;
+    margin-right: 5px;
+    padding: 0.3rem;
+    min-width: 100px;
+}
+#events .event .event-date p{
+    display: block;
+    margin: 0px;
+}
+</style>
+<section id="events">
+
+    <h3>Events</h3>
+     {% for event in site.data.events %}
+
+        <a class="event" href="https://{{ event.link }}">
+            <span class="event-date">
+                <p>{{ event.date }}</p>
+                <p>{{ event.location }}</p>
+            </span>
+            <span class="event-location"></span>
+            {{ event.name }} 
+        </a>
+
+    {% endfor %}
+</section>
