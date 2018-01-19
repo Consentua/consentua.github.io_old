@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Company
 order: 3
 nav: true
@@ -9,9 +9,31 @@ nav: true
     background: url('{{ site.url }}/imgs/office.jpg') no-repeat center center, var(--main-color);
     background-size: cover;
     background-blend-mode: soft-light;
+    /* background: var(--main-color); */
     position: relative;
     overflow: hidden;
     padding: 3.5rem;
+    border-radius: 10px 10px 0 0;
+    margin-top: 4rem;
+}
+/* #about .head:after{
+    content: "";
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: -400px;
+    right: -400px;
+    bottom: -400px;
+    left: -400px;
+    background: rgba(255, 255, 255, 0.08);
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+    z-index: -1;
+} */
+#about .head h2{
+    text-align: center;
+    color: #fff;
 }
 #about .head svg{
     fill: var(--white-1-color);
@@ -20,6 +42,11 @@ nav: true
     margin: auto; 
     display: block;
 
+}
+#about h1.tagline{
+    text-align: center;
+    margin: 4rem auto;
+    max-width: 500px;
 }
   #aboutLinks {
     display: flex;
@@ -53,6 +80,7 @@ nav: true
 </style>
 <section id="about">
     <div class="head">
+        <h2>About our Company</h2>
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
             y="0px" viewBox="0 0 751.3 116.7" xml:space="preserve">
             <path d="M51.1,87.9c-0.5,3.1-1.5,6.1-3,8.8c-1,1.9-2.6,3.3-4.6,4.2c-1.8,0.7-3.7,1-5.7,1c-2.3,0-4.5-0.5-6.5-1.5
@@ -112,13 +140,17 @@ nav: true
         <!-- <img style="" src="{{ site.url }}/imgs/logo/consentua-logo-tm512x512.png"> -->
     </div>
     <section class="container">
+        <h1 class="tagline">
+             Built by developers, trusted by global enterprises.
+        </h1>
+        <h2>Who we are</h2>
         <p>Consentua originates from the 2015 Cognicity Challenge, Canary Wharf Groups Smart City Accelerator.   KnowNow were invited participants and although not winners of their section, one element of their smart city app.  The TRUST API, caught the audiences imagination.</p>
 
-<p>As a citizen you can see in a transparent manner the choices you have over what personal data to share with a requestor; as well as having control over that data as per GDPR.</p>
+        <p>As a citizen you can see in a transparent manner the choices you have over what personal data to share with a requestor; as well as having control over that data as per GDPR.</p>
 
-<p>After two years of development, including a commission from Innovate UK and a successful soft launch at VivaTech Paris, Consentua is now available on general release.</p>  
+        <p>After two years of development, including a commission from Innovate UK and a successful soft launch at VivaTech Paris, Consentua is now available on general release.</p>  
 
-<p>KnowNow Information is an award winning digital innovation company, specialising in finding those ‘eureka’ moments, delivering new products and services for our customers and ourselves.</p>
+        <p>KnowNow Information is an award winning digital innovation company, specialising in finding those ‘eureka’ moments, delivering new products and services for our customers and ourselves.</p>
             <section id="aboutLinks">
                 <div>
                     <div class="fa-4x">
@@ -127,10 +159,8 @@ nav: true
                             <i class="fal fa-rss" data-fa-transform="shrink-6"></i>
                         </span>
                     </div>
-                    <h1>Consentua Blog</h1>
-                    <p>ipsam ullam alias delectus quo molestias nobis sunt officiis quasi ab consequatur aperiam magnam, inventore ipsum
-                        laudantium,
-                    </p>
+                    <h2>Consentua Blog</h2>
+                    <p>Want to know more news about Consentua? Check out the blog!</p>
                     <a href="">Blog
                         <i class="fal fa-arrow-alt-right"></i>
                     </a>
@@ -142,10 +172,8 @@ nav: true
                             <i class="fab fa-twitter" data-fa-transform="shrink-6"></i>
                         </span>
                     </div>
-                    <h1>Follow Consentua</h1>
-                    <p>ipsam ullam alias delectus quo molestias nobis sunt officiis quasi ab consequatur aperiam magnam, inventore ipsum
-                        laudantium,
-                    </p>
+                    <h2>Follow Consentua</h2>
+                    <p>Keep up to date with Consentua and the world of data privacy.</p>
                     <a href="">Follow us on Twitter
                         <i class="fal fa-arrow-alt-right"></i>
                     </a>

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: home 
+title: home
 ---
 
 <style type="text/css" media="screen">
@@ -71,10 +71,17 @@ title: home
   .bit {
     width: 100%;
     max-width: 1000px;
-    padding: 3rem;
+    padding: 3rem 0;
     margin: 3rem auto 0px auto;
     border-radius: 50px 50px 0px 0px;
     background-color: var(--white-2-color, #F6F6F6);
+  }
+
+  .bit img {
+    max-height: 100px;
+    max-width: 80vw;
+    margin: auto;
+    display: block;
   }
 
   .with-bg {
@@ -84,6 +91,7 @@ title: home
   .with-bg>.container>article {
     padding: 2rem 0;
   }
+
   .bottom-cta {
     padding: 2rem 0px;
     display: flex;
@@ -91,14 +99,24 @@ title: home
     align-items: center;
     justify-content: space-between;
   }
+  @media only screen and (max-width: 800px){
+    body{
+      background: darkkhaki;
+    }
+    .splash{
+      flex-direction: column;
+    }
+    .bit{
+      border-radius: 20px 20px 0 0;
+    }
+  }
 </style>
 
 <section class="container splash">
   <div id="blurb">
     <h1>{{ site.tagline }}</h1>
-    <!-- <p>Consentua™ is a consent management tool that helps organisations to achieve data protection compliance, and gives individuals
-      choice and control over how their personal data is used.</p> -->
-    <p>Consentua helps build trust.  Giving users choice and control over their personal data.   Enabling a more trusted and transparent relationship between the customer and the service provider.</p>
+    <p>Consentua™ helps build trust. Giving users choice and control over their personal data. Enabling a more trusted and transparent
+      relationship between the customer and the service provider.</p>
     <span>
       <a class="btn btn-accent">Create an Account</a>
       <a class="btn" href="{{ site.url }}/contact.html">Contact Sales</a>
@@ -114,23 +132,23 @@ title: home
 </section>
 
 <section class="bit">
-  <img style="max-height: 100px; margin: auto; display: block;" src="{{ site.url }}/imgs/logo/consentua-logo-tm512x512.png">
+  <img src="{{ site.url }}/imgs/logo/consentua-logo-tm512x512.png">
 </section>
 <section class="with-bg">
   <div class="container">
-    <article>
+    <article id="what">
       <h1>What is Consentua?</h1>
       <p>
         Consentua is an API and a widget that drops into your existing mobile or browser app.
       </p>
       <p>
-         Consentua is a consent management platform. It gives individuals choice and control over how their personal data is used,
-        helps organisations to achieve and demonstrate data protection compliance, and builds trust between service providers and
-        their customers.
+        Consentua is a consent management platform. It gives individuals choice and control over how their personal data is used,
+        helps organisations to achieve and demonstrate data protection compliance, and builds trust between service providers
+        and their customers.
       </p>
       <p>
-         Users can see their historic consents. Data processors can see who can access services and which interactions have been
-        consented to. This improves customer satisfaction through greater trust between customer and provider. Consentua thus delivers
+        Users can see their historic consents. Data processors can see who can access services and which interactions have been consented
+        to. This improves customer satisfaction through greater trust between customer and provider. Consentua thus delivers
         two benefits - happy customers and a happy data protection officer.
       </p>
     </article>
@@ -147,14 +165,13 @@ title: home
       </p>
     </article>
   </div>
-  <!-- </section>
+</section>
 <section>
-  empty section
-</section> -->
+    {% include social.html %}
+</section>
   <section class="with-bg">
     <div class="container">
 
-       {% include social.html %}
 
       <div class="bottom-cta">
         <span>
