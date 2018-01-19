@@ -205,3 +205,9 @@ textarea:focus{
     background: rgb(192, 142, 25);
     border-color: rgb(192, 142, 25);
 }
+@media only screen and (max-width: 800px) {
+
+.container {
+    max-width: 94vw;
+}
+}
