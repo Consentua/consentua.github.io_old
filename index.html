@@ -92,7 +92,9 @@ title: home
     margin: auto;
     display: block;
   }
-
+  #what img{
+    max-width: 40%;
+  }
   .with-bg {
     background-color: var(--white-2-color, #F6F6F6);
   }
@@ -114,14 +116,15 @@ title: home
       flex-direction: column;
     }
     .splash #app-illustration{
-        position: absolute;
+      display: none;
+        /* position: absolute;
         bottom: -44vh;
-    z-index: -1;
+    z-index: -1; */
 
     }
-    .splash #app-illustration>* {
+    /* .splash #app-illustration>* {
       max-height: 80vh;
-    }
+    } */
     .bit{
       border-radius: 20px 20px 0 0;
     }
@@ -157,11 +160,13 @@ title: home
       <p>
         Consentua is an API and a widget that drops into your existing mobile or browser app.
       </p>
+      <img src="{{ site.url }}/imgs/undraw_setup_obqo.svg">
       <p>
         Consentua is a consent management platform. It gives individuals choice and control over how their personal data is used,
         helps organisations to achieve and demonstrate data protection compliance, and builds trust between service providers
         and their customers.
       </p>
+      <img src="{{ site.url }}/imgs/undraw_server_q2pb.svg">
       <p>
         Users can see their historic consents. Data processors can see who can access services and which interactions have been consented
         to. This improves customer satisfaction through greater trust between customer and provider. Consentua thus delivers
@@ -180,6 +185,7 @@ title: home
         a fully auditable history of their personal data consent transactions.
       </p>
     </article>
+    {% include consentua-sdk-demo.html %}
   </div>
 </section>
 <section>

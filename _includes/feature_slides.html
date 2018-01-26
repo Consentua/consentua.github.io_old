@@ -1,7 +1,13 @@
 <style>
     #featureSlides {
-        display: flex;
+        /* display: flex;
         flex-direction: row;
+        align-items: flex-start; */
+            display: grid;
+        grid-template-columns: 20% auto;
+        grid-column-gap: 1rem;
+        grid-row-gap: 1rem;
+        justify-items: stretch;
         align-items: flex-start;
     }
 
@@ -11,8 +17,8 @@
         border-radius: 5px;
         margin-top: 2em;
         background: var(--grey-3-color);
-        max-width: 200px;
-        min-width: 200px;
+        /* max-width: 200px; */
+        /* min-width: 200px; */
         align-items: center;
     }
 
@@ -36,8 +42,8 @@
     }
 
     .feature-button-wrap {
-        flex: 1;
-        min-width: 20vw;
+        /* flex: 1;
+        min-width: 20vw; */
     }
 
     .feature-content {
@@ -53,10 +59,15 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        max-width: 80vw;
     }
-
+    .feature-content span{
+        max-width: 100%;
+        min-width: 50%;
+        flex: 1;
+    }
     .feature-content img {
+        flex:1;
+        object-fit: contain;
         max-width: 725px;
         max-height: 500px;
          /* width: 100%;
@@ -68,11 +79,7 @@
 
     @media only screen and (max-width: 800px) {
         #featureSlides{
-            flex-wrap: wrap;
-        }
-        .feature-button-wrap {
-            max-width: 100vw;
-            flex: 1;
+            grid-template-columns: auto;
         }
     }
 </style>
@@ -96,9 +103,11 @@
         <div class="feature-content">
             <h1>Binary Consent</h1>
             <div>
+                <span>
                 <p>A binary consent is the classic yes/no option. Great for simple consent requests, with a single type of personal
                     data and a single purpose. For example, please can I use your email address to send you marketing information.
                     Yes or No.</p>
+                </span>
                 <img src="{{ site.url}}/imgs/screenshot/binary.png">
             </div>
         </div>
@@ -120,7 +129,6 @@
         </div>
         <div class="feature-content">
             <h1>Builds User Trust</h1>
-            <div>
                 <span>
                     <p>Users want transparency and honesty in what will happen with their personal data. Consentua provides
                         a vehicle for this transparency to be demonstrated for the Trust to be established.</p>
@@ -133,18 +141,15 @@
                     </ul>
                 </span>
                 <img src="{{ site.url}}/imgs/Consentua_checkbox.jpg">
-            </div>
         </div>
         <div class="feature-content">
             <h1>Secure Lightweight Consent API</h1>
-            <div>
                 <span>
                     <p>The API is encrypted, hashed and requires a specific access token per instance of the API. Only with
                         the right access token assigned to the specific customer API will access to the Consentua registry
                         be granted. The API payload is measured in bytes! Fast and efficient processing.</p>
                 </span>
                 <img src="{{ site.url}}/imgs/api.jpg">
-            </div>
         </div>
     </div>
 </section>
