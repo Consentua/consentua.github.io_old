@@ -1,0 +1,213 @@
+/* 
+   ==========================================================================
+   Colours
+   ========================================================================== 
+*/
+
+:root {
+    --main-color: #9A1144;
+    --secondary-color: #A32655;
+    --accent-color: #FFC021;
+    --red-color: #F44336;
+    --green-color: #4CAF50;
+    --white-1-color: #FFF;
+    --white-2-color: #F6F6F6;
+    --grey-1-color: #eeeeee;
+    --grey-2-color: #E1E1E1;
+    --grey-3-color: #d4d4d4;
+    --grey-4-color: #c7c7c7;
+    --dark-1-color: #000;
+    --dark-2-color: #212121;
+    --dark-3-color: #373737;
+}
+
+
+/* 
+   ==========================================================================
+   selection styles
+   ========================================================================== 
+*/
+
+::-moz-selection {
+    background: var(--dark-2-color, #212121);
+    color: var(--main-color, #9A1144);
+    /* WebKit/Blink Browsers */
+}
+
+::selection {
+    background: var(--dark-2-color, #212121);
+    color: var(--main-color, #9A1144);
+    /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+    background: var(--dark-2-color, #212121);
+    color: var(--main-color, #9A1144);
+    /* Gecko Browsers */
+}
+
+/* 
+   ==========================================================================
+   animations
+   ========================================================================== 
+*/
+
+@-ms-viewport {
+    width: device-width;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(30deg);
+        transform: rotate(30deg);
+    }
+    100% {
+        -webkit-transform: rotate(210deg);
+        transform: rotate(210deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(30deg);
+        transform: rotate(30deg);
+    }
+    100% {
+        -webkit-transform: rotate(210deg);
+        transform: rotate(210deg);
+    }
+}
+
+/* 
+   ==========================================================================
+   sections
+   ========================================================================== 
+*/
+
+body {
+    max-width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--dark-2-color, #212121);
+    background-color: var(--white-2-color, #F6F6F6);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    /*fallback*/
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    letter-spacing: .04em;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+}
+
+.content{
+    flex: 1 0 auto;
+}
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+/* 
+   ==========================================================================
+   text
+   ========================================================================== 
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Raleway', sans-serif;
+}
+
+p {}
+
+b {
+    font-weight: 800;
+}
+
+a {
+    color: var(--main-color, #9A1144);
+}
+
+/* 
+   ==========================================================================
+   form
+   ========================================================================== 
+*/
+input:focus,
+button:focus,
+textarea:focus{
+    outline: none !important;
+    border-color: var(--main-color, #9A1144);
+    box-shadow: 0 0 0 1px var(--main-color, #9A1144)
+}
+/* 
+   ==========================================================================
+   site wide styles
+   ========================================================================== 
+*/
+.btn {
+    font-family:'Raleway', 'FontAwesome';
+    display: inline-block;
+    padding: 0.8rem;
+    color: var(--white-2-color, #F6F6F6);
+    border: 1px solid var(--white-2-color, #F6F6F6);
+    -webkit-transition: 200ms;
+    transition: 200ms;
+    background: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+.btn:focus {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(0);
+}
+
+.btn .fa {
+    margin-left: 10px;
+}
+.btn.btn-black {
+    color: var(--white-2-color, #F6F6F6);
+    background: var(--dark-2-color, #212121);
+    border-color: var(--dark-2-color, #212121);
+}
+.btn.btn-black-line {
+    color: var(--dark-2-color, #212121);
+    border-color: var(--dark-2-color, #212121);
+}
+.btn.btn-main {
+    color: var(--white-2-color, #F6F6F6);
+    background: var(--main-color, #9A1144);
+    border-color: var(--main-color, #9A1144);
+}
+.btn.btn-accent {
+    color: var(--dark-2-color, #212121);
+    background: var(--accent-color, #FFC021);
+    border-color: var(--accent-color, #FFC021);
+}
+.btn.btn-accent:hover {
+    background: rgb(192, 142, 25);
+    border-color: rgb(192, 142, 25);
+}
+@media only screen and (max-width: 800px) {
+
+.container {
+    max-width: 94vw;
+}
+}

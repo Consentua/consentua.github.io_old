@@ -1,0 +1,161 @@
+<style>
+	footer {
+		width: 100%;
+		flex-shrink: 0;
+		padding: 1rem 0rem;
+		background-color: var(--dark-3-color);
+		background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23212121' fill-opacity='0.11' fill-rule='evenodd'/%3E%3C/svg%3E");
+		color: var(--white-2-color, #F6F6F6);
+	}
+	footer>.cols {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	
+	footer>.cols>.col>ul {
+		text-transform: capitalize;
+		list-style: none;
+		min-width: 140px;
+		padding: 0;
+	}
+	
+	footer a {
+		color: var(--white-2-color, #F6F6F6);
+		font-size: 0.9rem;
+		text-decoration: none;
+		cursor: pointer;
+	}
+	footer>.cols>.col{
+		max-width: 200px;
+	}
+	footer>.cols>.col>ul>li>a:hover,
+	footer>.cols>.col>ul>li>a:focus {
+		color: var(--grey-4-color);
+		text-decoration: none;
+	}
+	footer>.cols>.col .col-tile{
+		font-weight: 600;
+		line-height: 2rem;
+	}
+	footer > article{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+	footer > article  p{
+		margin: 0;
+		font-size: 0.8rem;
+	}
+	footer > article aside>a{
+		font-size: 1.5rem;
+		padding: 0.5rem;
+	}
+	/* if page is not on home */
+   {% if  page.title == "Contact Sales" %}
+   footer {
+	   background: transparent;
+   }
+   {% endif %}
+   {% if page.title == "Pricing" %}
+   footer, footer a{
+	   background: transparent;
+	   color: var(--dark-3-color);
+   }
+   {% endif %}
+	@media only screen and (max-height: 900px){
+		footer, footer a{
+			/* margin-top: 2rem; */
+			color: var(--white-2-color, #F6F6F6);
+			background-color: var(--dark-3-color);
+
+		}
+	}
+	@media only screen and (max-width: 1000px){
+		footer > article,
+		footer > .cols{
+			margin: 0 1rem !important;
+		}
+		footer>.cols {
+		justify-content: space-around;
+		}
+	}
+</style>
+<footer>
+	<div class="cols container">
+		<span class="col">
+			<ul>
+				<li>
+					<span class="col-tile">Product</span>
+				</li>
+				<li>
+					<a href="{{ site.url }}/pricing.html">Pricing</a>
+				</li>
+				<li>
+					<a href="{{ site.url }}/index.html#what">What is Consentua</a>
+				</li>
+				<li>
+					<a href="https://app.consentua.com">Dashboard</a>
+				</li>
+			</ul>
+		</span>
+		<span class="col">
+			<ul>
+				<li>
+					<span class="col-tile">Developers</span>
+				</li>
+				<li>
+					<a href="http://api.consentua.com/swagger/ui/index">API reference</a>
+				</li>
+				<li>
+					<a href="https://github.com/Consentua/Documentation">Guides</a>
+				</li>
+				<li>
+					<a href="{{ site.url }}/demo.html">Demo</a>
+				</li>
+			</ul>
+		</span>
+		<span class="col">
+			<ul>
+				<li>
+					<span class="col-tile">Company</span>
+				</li>
+				<li>
+					<a href="{{ site.url }}/about.html">About us</a>
+				</li>
+				<li>
+					<a href="http://blog.consentua.com">Blog</a>
+				</li>
+			</ul>
+		</span>
+		<span class="col">
+			<ul>
+				<li>
+					<span class="col-tile">Resources</span>
+				</li>
+				<li>
+					<a href="{{ site.url }}/contact.html">Contact</a>
+				</li>
+				<li>
+					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>
+				</li>
+			</ul>
+		</span>
+	</div>
+	<article class="container">
+		<div>
+			<p>© 2016 KnowNow-Information Limited.</p>
+			<p>Registered in England and Wales number 8781104.</p>
+			<p>Registered address: Halpern House, 1-2 Hampshire Terrace, Portsmouth, PO1 2QF</p>
+			<p>Consentua and the 'Consentua Choice and Control' logo are registered trademarks of KnowNow-Information Limited.</p>
+		</div>
+		<aside>
+			<a href="https://twitter.com/{{ site.twitter_username }}"><i class="fab fa-twitter"></i></a>
+			<a href="https://vimeo.com/channels/{{ site.vimeo_username }}"><i class="fab fa-vimeo-v"></i></a>
+			<a href="https://github.com/{{ site.github_username }}"><i class="fab fa-github"></i></a>
+		</aside>
+	</article>
+</footer>

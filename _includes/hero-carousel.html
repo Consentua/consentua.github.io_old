@@ -1,0 +1,89 @@
+<script src="{{ site.url}}/js/flickity.pkgd.min.js"></script>
+<link rel="stylesheet" href="{{ site.url}}/css/flickity.css" media="screen">
+<style>
+    .main-carousel {
+        margin: 1rem auto;
+        max-width: 90%;
+    }
+    .carousel-cell {
+    width: 95%;
+    }
+    .flickity-prev-next-button{
+        background-color: var(--accent-color);
+    }
+    .cell {
+            display: flex;
+    justify-content: space-around;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    width: 90%;
+        margin: auto;
+    }
+    .cell div{
+        padding: 1rem;
+    }
+    .cell img {
+        /* width: 40%; */
+        height: 400px;
+        max-width: 300px;
+    }
+    .cell .cell-text{
+        flex: auto;
+    }
+    @media only screen and (max-width: 800px) {
+        .cell {
+    flex-wrap: wrap;
+    }
+    }
+</style>
+<div class="main-carousel" data-flickity='{"wrapAround": true, "imagesLoaded":true, "autoPlay": true }'>
+    <div class="carousel-cell">
+        <div class="cell">
+            <div>
+                <img src="{{ site.url }}/imgs/undraw_choose_80qg.svg">
+            </div>
+            <div class="cell-text">
+                <p>User Consent Choice and Control, sit amet consectetur adipisicing elit. Vero harum vitae suscipit exercitationem, quis
+                    saepe quae ex quo? Suscipit ipsum minima voluptatibus. Numquam ex debitis facere rerum voluptatibus nostrum
+                    dolorem?
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-cell">
+        <div class="cell">
+            <div>
+                <img src="{{ site.url }}/imgs/undraw_server_q2pb.svg">
+            </div>
+            <div class="cell-text">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero harum vitae suscipit exercitationem, quis saepe
+                    quae ex quo? Suscipit ipsum minima voluptatibus. Numquam ex debitis facere rerum voluptatibus nostrum dolorem?
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-cell">
+        <div class="cell">
+            <div>
+                <img src="{{ site.url }}/imgs/undraw_customer_survey_f9ur.svg">
+            </div>
+            <div class="cell-text">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero harum vitae suscipit exercitationem, quis saepe
+                    quae ex quo? Suscipit ipsum minima voluptatibus. Numquam ex debitis facere rerum voluptatibus nostrum dolorem?
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-cell">
+        <div class="cell">
+            <div>
+                <img src="{{ site.url }}/imgs/undraw_setup_obqo.svg">
+            </div>
+            <div class="cell-text">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero harum vitae suscipit exercitationem, quis saepe
+                    quae ex quo? Suscipit ipsum minima voluptatibus. Numquam ex debitis facere rerum voluptatibus nostrum dolorem?
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

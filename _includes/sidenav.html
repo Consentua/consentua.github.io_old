@@ -1,0 +1,69 @@
+<style>
+  .sidenavbar{
+    position: fixed;
+    left: -260px;
+    top: 0;
+    bottom: 0;
+    width: 256px;
+    background-color: var(--main-color, #9A1144);
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    box-shadow: 0 0 20px black;
+    transition: 300ms;
+    z-index: 2;
+  }
+  #closeSideNavBtn{
+    display: block;
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    width: 50px;
+    margin: 0.5rem 0.5rem 0.5rem auto;
+    cursor: pointer;
+  }
+  #navOverlay{
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  #sidenav{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+  }
+  .sidenavbar-nav-item{
+    color: var(--white-1-color, #fff);
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    width: calc(100% - 4rem);
+    display: block;
+    padding: 0.3rem 2rem;
+  }
+  .sidenavbar-nav-item:focus,
+  .sidenavbar-nav-item:hover{
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+</style>
+<div id="navOverlay" onclick="closeSideNav()"></div>
+<section class="container sidenavbar" id="sidenavbar">
+  <a id="closeSideNavBtn" onclick="closeSideNav()"><i class="fal fa-times"></i></a>
+	<nav id="sidenav">
+  <a class="sidenavbar-nav-item" href="{{ site.baseurl }}/index.html">Home</a>
+  {% assign pages_list = site.pages | sort: 'order' %}
+      {% for node in pages_list %}
+        {% if node.title != null %}
+         {% if node.nav %}
+          {% if node.layout == "page" %}
+            <a class="sidenavbar-nav-item {% if page.url == node.url %} active{% endif %}" href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a>
+          {% endif %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+  <a class="sidenavbar-nav-item" href="http://blog.consentua.com">Blog</a>
+  <a class="sidenavbar-nav-item" href="https://app.consentua.com/login/">Sign in <i class="far fa-sign-in"></i></a>
+	</nav>
+</section>

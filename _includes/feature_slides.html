@@ -1,0 +1,179 @@
+<style>
+    #featureSlides {
+        /* display: flex;
+        flex-direction: row;
+        align-items: flex-start; */
+            display: grid;
+        grid-template-columns: 20% auto;
+        grid-column-gap: 1rem;
+        grid-row-gap: 1rem;
+        justify-items: stretch;
+        align-items: flex-start;
+    }
+
+    .feature-button-wrap {
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        margin-top: 2em;
+        background: var(--grey-3-color);
+            width: 90%;
+    margin: 0 auto;
+        align-items: center;
+    }
+
+    a.feature-button {
+        display: inline-block;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        color: var(--dark-2-color);
+    }
+
+    .feature-button.active {
+        background-color: #fff;
+        border: 2px solid var(--main-color, #9A1144);
+        color: var(--secondary-color);
+        border-radius: 5px;
+        padding: 0.2rem;
+    }
+
+    .feature-button-wrap {
+        /* flex: 1;
+        min-width: 20vw; */
+    }
+
+    .feature-content {
+        display: none;
+        overflow: auto;
+    }
+
+    .feature-content.active {
+        display: block;
+    }
+
+    .feature-content>div {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .feature-content span{
+        max-width: 100%;
+        min-width: 50%;
+        flex: 1;
+    }
+    .feature-content img {
+        flex:1;
+        object-fit: contain;
+        max-width: 725px;
+        max-height: 500px;
+         /* width: 100%;
+  height: auto;
+        flex: 1; */
+        margin: 1rem;
+        border-radius: 5px;
+    }
+
+    @media only screen and (max-width: 800px) {
+        #featureSlides{
+            grid-template-columns: auto;
+        }
+            .feature-content img {
+        max-width: 90vw;
+        margin: 0;
+    }
+    }
+</style>
+<section id="featureSlides">
+    <div class="feature-button-wrap">
+        <a class="feature-button" data-pos="0">
+            Binery Consent
+        </a>
+        <a class="feature-button" data-pos="1">
+            Linear Consent
+        </a>
+        <a class="feature-button" data-pos="2">
+            User Trust
+        </a>
+        <a class="feature-button" data-pos="3">
+            Secure API
+        </a>
+    </div>
+
+    <div class="feature-content-wrap">
+        <div class="feature-content">
+            <h1>Binary Consent</h1>
+            <div>
+                <span>
+                <p>A binary consent is the classic yes/no option. Great for simple consent requests, with a single type of personal
+                    data and a single purpose. For example, please can I use your email address to send you marketing information.
+                    Yes or No.</p>
+                </span>
+                <img src="{{ site.url}}/imgs/screenshot/binary.png">
+            </div>
+        </div>
+        <div class="feature-content">
+            <h1>Linear Consent</h1>
+            <div>
+                <span>
+                    <p>A linear consent service is where a consent request is built up over a number of layers. Represented
+                        in Consentua by our ‘slider’. The more personal data willing to be shared, the better the experience
+                        provided.
+                    </p>
+                    <p>For example, level 1 is a simple request for a minimal amount of personal data in return for a simple
+                        service offering. Through to level 5 which is a richer service experience facilitated by a greater
+                        amount of personal data being shared. Levels 2 to 4 are varying in their service quality for data
+                        exchange. Consentua does not fix the levels of consent interchange, that is up to you.</p>
+                </span>
+                <img src="{{ site.url}}/imgs/screenshot/linear.png">
+            </div>
+        </div>
+        <div class="feature-content">
+            <h1>Builds User Trust</h1>
+                <span>
+                    <p>Users want transparency and honesty in what will happen with their personal data. Consentua provides
+                        a vehicle for this transparency to be demonstrated for the Trust to be established.</p>
+                    <p>Consentua will help organisations with the following aspects of GDPR:</p>
+                    <ul>
+                        <li>Article 7: Clear understandable notice </li>
+                        <li>Article 6, 53 : Capture & log user consent</li>
+                        <li>Article 15: Users have ability to see what data is being used</li>
+                        <li>Article 17: Users can revoke consent</li>
+                    </ul>
+                </span>
+                <img src="{{ site.url}}/imgs/Consentua_checkbox.jpg">
+        </div>
+        <div class="feature-content">
+            <h1>Secure Lightweight Consent API</h1>
+                <span>
+                    <p>The API is encrypted, hashed and requires a specific access token per instance of the API. Only with
+                        the right access token assigned to the specific customer API will access to the Consentua registry
+                        be granted. The API payload is measured in bytes! Fast and efficient processing.</p>
+                </span>
+                <img src="{{ site.url}}/imgs/api.jpg">
+        </div>
+    </div>
+</section>
+<script>
+    let btn = document.querySelectorAll('.feature-button'),
+        content = document.querySelectorAll('.feature-content');
+
+    btn[0].classList.add('active');
+    content[0].classList.add('active');
+    for (let i = 0; i < btn.length; i++) {
+        btn[i].addEventListener("click", function () {
+            let pos = this.dataset.pos;
+            content.forEach(function (item) {
+                item.classList.remove('active');
+            })
+            btn.forEach(function (item) {
+                item.classList.remove('active');
+            });
+            content[pos].classList.add('active');
+            this.classList.add('active');
+        });
+    }
+</script>

@@ -1,9 +1,0 @@
-applications:
-- path: .
-  memory: 128M
-  instances: 1
-  domain: mybluemix.net
-  name: ConsentuaWebSite
-  host: consentuawebsite
-  disk_quota: 1024M
-  buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
