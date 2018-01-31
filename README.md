@@ -1,30 +1,16 @@
-![](imgs/logo/consentua-logo-colour.png)
+![](http://consentua.com/imgs/logo/consentua-logo-colour.png)
 # [consentua.com](http://consentua.com/)
 Development for Consentua.com website
 
 See live version at [consentua.com](http://consentua.com/)
 
-## Pages
-
-* `/index.html`
-* `/contact.html`
-* `/pricing.html`
-* `/privacy-policy.html`
-* `/privacy-policy-cont.html`
-* `/404.html`
-
 > Dashboard is located at [app.consentua.com](https://app.consentua.com/)
 
 ## Dependencies / Libraries
 
-All libraries (with exceptions of fonts and icons) are stores locally in either `js/lib` or `styles/lib`
-
-
-### Scripts
-* [Fingerprint2JS](http://scrollmagic.io/) - for ga tracking without cookies
-
-### Styles
 * [normalize.css](https://necolas.github.io/normalize.css/) - for rendering all elements more consistently across browsers
+* [Fingerprint2JS](http://scrollmagic.io/) - for ga tracking without cookies
+* [flickity](https://flickity.metafizzy.co) - for carousels
 
 ## Look and Feel
 
@@ -68,4 +54,4 @@ $ bundle exec jekyll serve
 
 ## How do I deploy?
 
-To deploy, just commit and push your changes to github pages (master branch of this repo).
+To deploy, just commit and push your changes to github pages (~~master~~ gh-pages branch of this repo).

@@ -7,8 +7,9 @@ description:      'Consentua is a consent management platform that gives individ
 keywords:         'consent, data protection, gdpr, choice, control, regulation, regtech, EU, european union, privacy, consent management, consent management software, software, tool, api, solution, framework, tool, android, ios, app, General  Data  Protection  Regulation'
 url:              ''
 baseurl:          ''
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: Consentua
+github_username:  consentua
+vimeo_username: consentua
 
 # Build settings
 markdown: kramdown

@@ -10,28 +10,26 @@ nav: true
     background-color: var(--main-color);
   }
   body:after {
-  content: "";
-  display: block;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: -150px;
+    content: "";
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 130vh;
+    top: -150px;
     right: 0;
     bottom: 0;
-    left: 200px;
-  border: 80px solid rgba(255, 255, 255, 1);
-  border-radius: 50px;
-  -webkit-transform: rotate(-30deg);
-  transform: rotate(-30deg);
-  z-index: -1;
-  background-color: #fff;
+    left: 254px;
+    border-radius: 50px;
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+    z-index: -1;
+    background-color: #fff;
 }
 #pricing .cols{
-    margin: 5rem 0;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 #pricing .cols .plan{
@@ -43,6 +41,7 @@ nav: true
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
+    margin: 2rem 0;
 }
 #pricing .cols .plan .plan-header{
     border-radius: 10px 10px 0 0;
@@ -78,6 +77,12 @@ nav: true
     margin: 0 auto 3rem auto;
     border-radius: 10px;
 }
+
+@media only screen and (max-width: 800px){
+    body:after{
+        background-color: rgba(255, 255 ,255, 0.1);
+    }
+  }
 </style>
 
 <section id="pricing">

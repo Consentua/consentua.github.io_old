@@ -17,7 +17,8 @@
 	footer>.cols>.col>ul {
 		text-transform: capitalize;
 		list-style: none;
-		min-width: 200px;
+		min-width: 140px;
+		padding: 0;
 	}
 	
 	footer a {
@@ -62,11 +63,11 @@
    {% if page.title == "Pricing" %}
    footer, footer a{
 	   background: transparent;
-	   background-color: var(--dark-3-color);
+	   color: var(--dark-3-color);
    }
    {% endif %}
-	@media only screen and (max-height: 1000px){
-		footer{
+	@media only screen and (max-height: 900px){
+		footer, footer a{
 			/* margin-top: 2rem; */
 			color: var(--white-2-color, #F6F6F6);
 			background-color: var(--dark-3-color);
@@ -112,6 +113,9 @@
 				<li>
 					<a href="https://github.com/Consentua/Documentation">Guides</a>
 				</li>
+				<li>
+					<a href="{{ site.url }}/demo.html">Demo</a>
+				</li>
 			</ul>
 		</span>
 		<span class="col">
@@ -149,9 +153,9 @@
 			<p>Consentua and the 'Consentua Choice and Control' logo are registered trademarks of KnowNow-Information Limited.</p>
 		</div>
 		<aside>
-			<a href="https://twitter.com/Consentua"><i class="fab fa-twitter"></i></a>
-			<a href="https://vimeo.com/channels/consentua"><i class="fab fa-vimeo-v"></i></a>
-			<a href="https://github.com/Consentua"><i class="fab fa-github"></i></a>
+			<a href="https://twitter.com/{{ site.twitter_username }}"><i class="fab fa-twitter"></i></a>
+			<a href="https://vimeo.com/channels/{{ site.vimeo_username }}"><i class="fab fa-vimeo-v"></i></a>
+			<a href="https://github.com/{{ site.github_username }}"><i class="fab fa-github"></i></a>
 		</aside>
 	</article>
 </footer>

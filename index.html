@@ -52,24 +52,11 @@ title: home
   .splash #app-illustration {
         padding: 2.4rem 0.6rem;
     display: -ms-flexbox;
-    /* display: flex; */
     -ms-flex-pack: center;
-    /* justify-content: center; */
     -ms-flex-align: center;
-    /* align-items: center; */
     border-radius: 38px;
     background: var(--grey-3-color, #d4d4d4);
     box-shadow: inset 0 4px 7px 1px #fff, inset 0 -5px 20px rgba(173, 186, 204, .25), 0 2px 6px rgba(0, 21, 64, .14), 0 10px 20px rgba(0, 21, 64, .05);
-    /* padding: 3rem 0.6rem;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -ms-flex-align: center;
-    align-items: center;
-    border-radius: 38px;
-    background: var(--grey-3-color, #d4d4d4);
-    box-shadow: inset 0 4px 7px 1px #fff, inset 0 -5px 20px rgba(173, 186, 204, .25), 0 2px 6px rgba(0, 21, 64, .14), 0 10px 20px rgba(0, 21, 64, .05); */
   }
 
   .splash #app-illustration>* {
@@ -87,10 +74,13 @@ title: home
   }
 
   .bit img {
-    max-height: 100px;
+    /* max-height: 100px; */
     max-width: 80vw;
     margin: auto;
     display: block;
+  }
+  #what{
+    padding: 5rem 0;
   }
   #what img{
     max-width: 40%;
@@ -114,17 +104,11 @@ title: home
 
     .splash{
       flex-direction: column;
+      height: auto;
     }
     .splash #app-illustration{
       display: none;
-        /* position: absolute;
-        bottom: -44vh;
-    z-index: -1; */
-
     }
-    /* .splash #app-illustration>* {
-      max-height: 80vh;
-    } */
     .bit{
       border-radius: 20px 20px 0 0;
     }
@@ -137,7 +121,7 @@ title: home
     <p>Consentua™ helps build trust. Giving users choice and control over their personal data. Enabling a more trusted and transparent
       relationship between the customer and the service provider.</p>
     <span>
-      <a class="btn btn-accent">Create an Account</a>
+      <a class="btn btn-accent" href="{{ site.url }}/demo.html">View Demo <i class="far fa-laptop"></i></a>
       <a class="btn" href="{{ site.url }}/contact.html">Contact Sales</a>
     </span>
   </div>
@@ -150,8 +134,10 @@ title: home
   </div>
 </section>
 
+
 <section class="bit">
   <img src="{{ site.url }}/imgs/logo/consentua-logo-tm512x512.png">
+  {% include hero-carousel.html %}
 </section>
 <section class="with-bg">
   <div class="container">
@@ -160,22 +146,16 @@ title: home
       <p>
         Consentua is an API and a widget that drops into your existing mobile or browser app.
       </p>
-      <img src="{{ site.url }}/imgs/undraw_setup_obqo.svg">
       <p>
         Consentua is a consent management platform. It gives individuals choice and control over how their personal data is used,
         helps organisations to achieve and demonstrate data protection compliance, and builds trust between service providers
         and their customers.
       </p>
-      <img src="{{ site.url }}/imgs/undraw_server_q2pb.svg">
       <p>
         Users can see their historic consents. Data processors can see who can access services and which interactions have been consented
         to. This improves customer satisfaction through greater trust between customer and provider. Consentua thus delivers
         two benefits - happy customers and a happy data protection officer.
       </p>
-    </article>
-
-    {% include feature_slides.html %}
-    <article>
       <p>
         Organisations deploy Consentua within their own applications via some easy to use APIs to capture the consent of their own
         users. Individuals use Consentua enabled mobile apps to manage the consents they have given.
@@ -185,7 +165,7 @@ title: home
         a fully auditable history of their personal data consent transactions.
       </p>
     </article>
-    {% include consentua-sdk-demo.html %}
+    {% include feature_slides.html %}
   </div>
 </section>
 <section>
@@ -201,7 +181,7 @@ title: home
           <h2>Get in touch, or create an account.</h2>
         </span>
         <span>
-          <a class="btn btn-accent">Create an Account</a>
+          <a class="btn btn-accent" href="{{ site.url }}/demo.html">View Demo</a>
           <a href="{{ site.url }}/contact.html" class="btn btn-black">Contact Sales</a>
         </span>
       </div>

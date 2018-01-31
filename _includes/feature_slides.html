@@ -17,8 +17,8 @@
         border-radius: 5px;
         margin-top: 2em;
         background: var(--grey-3-color);
-        /* max-width: 200px; */
-        /* min-width: 200px; */
+            width: 90%;
+    margin: 0 auto;
         align-items: center;
     }
 
@@ -47,8 +47,8 @@
     }
 
     .feature-content {
-        padding: 0px 30px;
         display: none;
+        overflow: auto;
     }
 
     .feature-content.active {
@@ -81,6 +81,10 @@
         #featureSlides{
             grid-template-columns: auto;
         }
+            .feature-content img {
+        max-width: 90vw;
+        margin: 0;
+    }
     }
 </style>
 <section id="featureSlides">
