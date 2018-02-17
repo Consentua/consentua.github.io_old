@@ -1,104 +1,137 @@
+--- 
+layout: page 
+title: Pricing 
+order: 1 
+nav: true 
 ---
-layout: page
-title: Pricing
-order: 1
-nav: true
----
-
 <style type="text/css" media="screen">
-  body {
-    background-color: var(--main-color);
-  }
-  body:after {
-    content: "";
-    display: block;
-    position: fixed;
-    width: 100vw;
-    height: 130vh;
-    top: -150px;
-    right: 0;
-    bottom: 0;
-    left: 254px;
-    border-radius: 50px;
-    -webkit-transform: rotate(-30deg);
-    transform: rotate(-30deg);
-    z-index: -1;
-    background-color: #fff;
-}
-#pricing .cols{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-#pricing .cols .plan{
-    border-radius: 10px;
-    /* padding: 0.6rem; */
-    text-align: center;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
-    margin: 2rem 0;
-}
-#pricing .cols .plan .plan-header{
-    border-radius: 10px 10px 0 0;
-    background: #fff;
-    padding-bottom: 0.6rem;
-}
-#pricing .cols .plan .plan-header > span{
-    font-size: 1.6rem;
-}
-#pricing .cols .plan .plan-header > span:nth-child(2){
-    font-size: 2rem;
-}
-#pricing .cols .plan:nth-child(2) .plan-header{
-    background: var(--accent-color);
-}
-#pricing .cols .plan:nth-child(3) .plan-header{
-    background: var(--main-color);
-    color: #fff
-}
-#pricing .cols .plan ul{
-    list-style: none;
-    padding: 0px 0.6rem 0.6rem 0.6rem;
-}
-#pricing .cols .plan .btn{
-    margin: 0.6rem;
-}
-#pricing #enterprise{
-    background: var(--dark-3-color);
-    color: #fff;
-    max-width: 500px;
-    text-align: center;
-    padding: 1rem;
-    margin: 0 auto 3rem auto;
-    border-radius: 10px;
-}
-
-@media only screen and (max-width: 800px){
-    body:after{
-        background-color: rgba(255, 255 ,255, 0.1);
+    body {
+        background-color: var(--main-color);
     }
-  }
+
+    body:after {
+        content: "";
+        display: block;
+        position: fixed;
+        width: 100vw;
+        height: 130vh;
+        top: -150px;
+        right: 0;
+        bottom: 0;
+        left: 254px;
+        border-radius: 50px;
+        -webkit-transform: rotate(-30deg);
+        -ms-transform: rotate(-30deg);
+        transform: rotate(-30deg);
+        z-index: -1;
+        background-color: #fff;
+    }
+
+    #pricing .cols {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+        justify-content: space-evenly;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    #pricing .cols .plan {
+        border-radius: 10px;
+        /* padding: 0.6rem; */
+        text-align: center;
+        background-color: #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+        margin: 2rem 0;
+    }
+
+    #pricing .cols .plan .plan-header {
+        border-radius: 10px 10px 0 0;
+        background: #fff;
+        padding-bottom: 0.6rem;
+    }
+
+    #pricing .cols .plan .plan-header>span {
+        font-size: 1.6rem;
+    }
+
+    #pricing .cols .plan .plan-header>span:nth-child(2) {
+        font-size: 2rem;
+    }
+
+    #pricing .cols .plan:nth-child(2) .plan-header {
+        background: var(--accent-color);
+    }
+
+    #pricing .cols .plan:nth-child(3) .plan-header {
+        background: var(--main-color);
+        color: #fff
+    }
+
+    #pricing .cols .plan ul {
+        list-style: none;
+        padding: 0px 0.6rem 0.6rem 0.6rem;
+    }
+
+    #pricing .cols .plan .btn {
+        margin: 0.6rem;
+    }
+
+    #pricing #enterprise {
+        background: var(--dark-3-color);
+        color: #fff;
+        max-width: 500px;
+        text-align: center;
+        padding: 1rem;
+        margin: 0 auto 3rem auto;
+        border-radius: 10px;
+    }
+
+    @media only screen and (max-width: 800px) {
+        body:after {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    }
 </style>
 
 <section id="pricing">
     <div class="cols">
         <div class="plan">
             <div class="plan-header">
-            <h1>Basic</h1>
-            <span>£10</span>/mo<br>
-            <span>£99</span>/yr                
+                <h1>Basic</h1>
+                <span>£10</span>/mo
+                <br>
+                <span>£99</span>/yr
             </div>
             <p>Includes:</p>
             <ul>
-                <li>Up to <b>50,000</b> API calls per anum</li>
+                <li>Up to
+                    <b>50,000</b> API calls per anum</li>
                 <li>Umlimited end user API calls</li>
                 <li>Unlimited total consents</li>
-                <li><b>2</b> Admin Accounts</li>
+                <li>
+                    <b>2</b> Admin Accounts</li>
                 <li>Community Support</li>
             </ul>
             <a class="btn btn-black" href="{{ site.url }}/contact.html">Contact Sales</a>
@@ -106,15 +139,18 @@ nav: true
         <div class="plan">
             <div class="plan-header">
                 <h1>Plus</h1>
-                <span>£99</span>/mo<br>
+                <span>£99</span>/mo
+                <br>
                 <span>£949</span>/yr
             </div>
             <p>Includes:</p>
             <ul>
-                <li>Up to <b>500,000</b> API calls per anum</li>
+                <li>Up to
+                    <b>500,000</b> API calls per anum</li>
                 <li>Umlimited end user API calls</li>
                 <li>Unlimited total consents</li>
-                <li><b>5</b> Admin Accounts</li>
+                <li>
+                    <b>5</b> Admin Accounts</li>
                 <li>Community Support</li>
             </ul>
             <a class="btn btn-accent" href="{{ site.url }}/contact.html">Contact Sales</a>
@@ -122,15 +158,18 @@ nav: true
         <div class="plan">
             <div class="plan-header">
                 <h1>Pro</h1>
-                <span>£899</span>/mo<br>
+                <span>£899</span>/mo
+                <br>
                 <span>£8999</span>/yr
             </div>
             <p>Includes:</p>
             <ul>
-                <li>Up to <b>10,000,000</b> API calls per anum</li>
+                <li>Up to
+                    <b>10,000,000</b> API calls per anum</li>
                 <li>Umlimited end user API calls</li>
                 <li>Unlimited total consents</li>
-                <li><b>12</b> Admin Accounts</li>
+                <li>
+                    <b>12</b> Admin Accounts</li>
                 <li>Office hour Support</li>
             </ul>
             <a class="btn btn-main" href="{{ site.url }}/contact.html">Contact Sales</a>

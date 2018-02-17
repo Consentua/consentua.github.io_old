@@ -3,23 +3,34 @@
         /* display: flex;
         flex-direction: row;
         align-items: flex-start; */
-            display: grid;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 20% auto;
         grid-template-columns: 20% auto;
         grid-column-gap: 1rem;
         grid-row-gap: 1rem;
         justify-items: stretch;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
         align-items: flex-start;
         padding: 2rem 0;
     }
 
     .feature-button-wrap {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         border-radius: 5px;
         margin-top: 2em;
         background: var(--grey-3-color);
-            width: 90%;
-    margin: 0 auto;
+        width: 90%;
+        margin: 0 auto;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
     }
 
@@ -57,21 +68,34 @@
     }
 
     .feature-content>div {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
     }
-    .feature-content span{
+
+    .feature-content span {
         max-width: 100%;
         min-width: 50%;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
         flex: 1;
     }
+
     .feature-content img {
-        flex:1;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        -o-object-fit: contain;
         object-fit: contain;
         max-width: 725px;
         max-height: 500px;
-         /* width: 100%;
+        /* width: 100%;
   height: auto;
         flex: 1; */
         margin: 1rem;
@@ -79,13 +103,14 @@
     }
 
     @media only screen and (max-width: 800px) {
-        #featureSlides{
+        #featureSlides {
+            -ms-grid-columns: auto;
             grid-template-columns: auto;
         }
-            .feature-content img {
-        max-width: 90vw;
-        margin: 0;
-    }
+        .feature-content img {
+            max-width: 90vw;
+            margin: 0;
+        }
     }
 </style>
 <section id="featureSlides">
@@ -109,10 +134,9 @@
             <h1>Binary Consent</h1>
             <div>
                 <span>
-                <p>A binary consent is the classic yes/no option. Great for simple consent requests, with a single type of personal
-                    data and a single purpose.</p>
-                    <p> For example, please can I use your email address to send you marketing information.
-                    Yes or No.</p>
+                    <p>A binary consent is the classic yes/no option. Great for simple consent requests, with a single type
+                        of personal data and a single purpose.</p>
+                    <p> For example, please can I use your email address to send you marketing information. Yes or No.</p>
                 </span>
                 <img src="{{ site.url}}/imgs/screenshot/binary.png">
             </div>
@@ -135,27 +159,27 @@
         </div>
         <div class="feature-content">
             <h1>Builds User Trust</h1>
-                <span>
-                    <p>Users want transparency and honesty in what will happen with their personal data. Consentua provides
-                        a vehicle for this transparency to be demonstrated for the Trust to be established.</p>
-                    <p>Consentua will help organisations with the following aspects of GDPR:</p>
-                    <ul>
-                        <li>Article 7: Clear understandable notice </li>
-                        <li>Article 6, 53 : Capture & log user consent</li>
-                        <li>Article 15: Users have ability to see what data is being used</li>
-                        <li>Article 17: Users can revoke consent</li>
-                    </ul>
-                </span>
-                <img src="{{ site.url}}/imgs/Consentua_checkbox.jpg">
+            <span>
+                <p>Users want transparency and honesty in what will happen with their personal data. Consentua provides a vehicle
+                    for this transparency to be demonstrated for the Trust to be established.</p>
+                <p>Consentua will help organisations with the following aspects of GDPR:</p>
+                <ul>
+                    <li>Article 7: Clear understandable notice </li>
+                    <li>Article 6, 53 : Capture & log user consent</li>
+                    <li>Article 15: Users have ability to see what data is being used</li>
+                    <li>Article 17: Users can revoke consent</li>
+                </ul>
+            </span>
+            <img src="{{ site.url}}/imgs/Consentua_checkbox.jpg">
         </div>
         <div class="feature-content">
             <h1>Secure Lightweight Consent API</h1>
-                <span>
-                    <p>The API is encrypted, hashed and requires a specific access token per instance of the API. Only with
-                        the right access token assigned to the specific customer API will access to the Consentua registry
-                        be granted. The API payload is measured in bytes! Fast and efficient processing.</p>
-                </span>
-                <img src="{{ site.url}}/imgs/api.jpg">
+            <span>
+                <p>The API is encrypted, hashed and requires a specific access token per instance of the API. Only with the
+                    right access token assigned to the specific customer API will access to the Consentua registry be granted.
+                    The API payload is measured in bytes! Fast and efficient processing.</p>
+            </span>
+            <img src="{{ site.url}}/imgs/api.jpg">
         </div>
     </div>
 </section>

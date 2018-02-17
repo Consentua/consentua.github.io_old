@@ -1,8 +1,7 @@
+--- 
+layout: default 
+title: home 
 ---
-layout: default
-title: home
----
-
 <style type="text/css" media="screen">
   body {
     background-color: var(--main-color);
@@ -21,6 +20,7 @@ title: home
     border: 80px solid rgba(255, 255, 255, 0.08);
     border-radius: 50px;
     -webkit-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
     transform: rotate(-30deg);
     -webkit-animation: spin 60s infinite linear;
     animation: spin 60s infinite linear;
@@ -31,16 +31,32 @@ title: home
     width: 100%;
     height: 80vh;
     color: var(--white-2-color, #F6F6F6);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
   }
 
   .splash #blurb {
     max-width: 500px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
   }
 
@@ -50,12 +66,13 @@ title: home
   }
 
   .splash #app-illustration {
-        padding: 2.4rem 0.6rem;
+    padding: 2.4rem 0.6rem;
     display: -ms-flexbox;
     -ms-flex-pack: center;
     -ms-flex-align: center;
     border-radius: 38px;
     background: var(--grey-3-color, #d4d4d4);
+    -webkit-box-shadow: inset 0 4px 7px 1px #fff, inset 0 -5px 20px rgba(173, 186, 204, .25), 0 2px 6px rgba(0, 21, 64, .14), 0 10px 20px rgba(0, 21, 64, .05);
     box-shadow: inset 0 4px 7px 1px #fff, inset 0 -5px 20px rgba(173, 186, 204, .25), 0 2px 6px rgba(0, 21, 64, .14), 0 10px 20px rgba(0, 21, 64, .05);
   }
 
@@ -79,12 +96,15 @@ title: home
     margin: auto;
     display: block;
   }
-  #what{
+
+  #what {
     padding: 5rem 0;
   }
-  #what img{
+
+  #what img {
     max-width: 40%;
   }
+
   .with-bg {
     background-color: var(--white-2-color, #F6F6F6);
   }
@@ -95,21 +115,34 @@ title: home
 
   .bottom-cta {
     padding: 2rem 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
   }
-  @media only screen and (max-width: 800px){
 
-    .splash{
+  @media only screen and (max-width: 800px) {
+
+    .splash {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
       height: auto;
     }
-    .splash #app-illustration{
+    .splash #app-illustration {
       display: none;
     }
-    .bit{
+    .bit {
       border-radius: 20px 20px 0 0;
     }
   }
@@ -121,23 +154,23 @@ title: home
     <p>Consentua™ helps build trust. Giving users choice and control over their personal data. Enabling a more trusted and transparent
       relationship between the customer and the service provider.</p>
     <span>
-      <a class="btn btn-accent" href="{{ site.url }}/demo.html">View Demo <i class="far fa-laptop"></i></a>
+      <a class="btn btn-accent" href="{{ site.url }}/demo.html">View Demo
+        <i class="far fa-laptop"></i>
+      </a>
       <a class="btn" href="{{ site.url }}/contact.html">Contact Sales</a>
     </span>
   </div>
   <div id="app-illustration">
-    <video autoplay loop muted>
+    <video autoplay loop muted controls="false">
       <source src="{{ site.url }}/video/android_demo.mp4" type="video/mp4">
       <source src="{{ site.url }}/video/android_demo.webm" type="video/webm">
-      <img src="{{ site.url }}/imgs/screenshot/Screenshot_1.png">
     </video>
   </div>
 </section>
 
 
 <section class="bit">
-  <img src="{{ site.url }}/imgs/logo/consentua-logo-tm512x512.png">
-  {% include hero-carousel.html %}
+  <img src="{{ site.url }}/imgs/logo/consentua-logo-tm512x512.png"> {% include hero-carousel.html %}
 </section>
 <section class="with-bg">
   <div class="container">
@@ -169,21 +202,21 @@ title: home
   </div>
 </section>
 <section>
-    {% include social.html %}
+  {% include social.html %}
 </section>
-  <section class="with-bg">
-    <div class="container">
+<section class="with-bg">
+  <div class="container">
 
 
-      <div class="bottom-cta">
-        <span>
-          <h1>Ready to get started?</h1>
-          <h2>Get in touch, or view the web demo.</h2>
-        </span>
-        <span>
-          <a class="btn btn-accent" href="{{ site.url }}/demo.html">View Demo</a>
-          <a href="{{ site.url }}/contact.html" class="btn btn-black">Contact Sales</a>
-        </span>
-      </div>
+    <div class="bottom-cta">
+      <span>
+        <h1>Ready to get started?</h1>
+        <h2>Get in touch, or view the web demo.</h2>
+      </span>
+      <span>
+        <a class="btn btn-accent" href="{{ site.url }}/demo.html">View Demo</a>
+        <a href="{{ site.url }}/contact.html" class="btn btn-black">Contact Sales</a>
+      </span>
     </div>
-  </section>
+  </div>
+</section>

@@ -25,7 +25,7 @@ nav: true
 
     #contact {
         background-color: var(--white-2-color, #F6F6F6);
-        max-width: 60%; 
+        max-width: 60%;
         margin: 4rem 0;
         padding: 2rem;
         border-radius: 10px;
@@ -44,7 +44,7 @@ nav: true
         border: none;
     }
 
-    #contact fieldset > .form-row {
+    #contact fieldset>.form-row {
         display: flex;
         flex-direction: row;
         padding-bottom: 0.5rem;
@@ -67,19 +67,22 @@ nav: true
         background-color: var(--grey-3-color);
         border-radius: 5px;
     }
-    #contact fieldset textarea{
+
+    #contact fieldset textarea {
         height: 5rem;
     }
+
     #contact .btn {
-        display: block; 
+        display: block;
         margin-top: 0.5rem;
         margin-left: auto;
     }
-    @media only screen and (max-width: 900px){
-		#contact{
-			max-width: 95%;
-		}
-	}
+
+    @media only screen and (max-width: 900px) {
+        #contact {
+            max-width: 95%;
+        }
+    }
 </style>
 <section id="contact">
     <div class="headline">
@@ -92,30 +95,30 @@ nav: true
         </p>
     </div>
     <form action="https://formspree.io/jack.mason@kn-i.com" method="POST">
-    <fieldset>
-        <input type="hidden" name="_subject" value="Sales enquiry form" required/>
-        <input type="hidden" name="_next" value="{{ site.url }}/thanks.html" required/>
-        <div class="form-row">
-            <label for="name">Name</label>
-            <input type="text" name="name" placeholder="Sam" required/>
-        </div>
-        <div class="form-row">
-            <label>Email Address</label>
-            <input type="email" name="_replyto" placeholder="Sam@example.com" required/>
-        </div>
-        <div class="form-row">
-            <label>Website</label>
-            <input type="text" name="website" placeholder="example.com"/>
-        </div>
-        <div class="form-row">
-            <label>Message</label>
-            <textarea name="message" placeholder="Let us know how we can help." required></textarea>
-        </div>
-    </fieldset>
-    <button type="submit" class="btn btn-accent">
-    Send Message 
-    <i class="fal fa-envelope"></i>
-    </button>
+        <fieldset>
+            <input type="hidden" name="_subject" value="Sales enquiry form" required/>
+            <input type="hidden" name="_next" value="{{ site.url }}/thanks.html" required/>
+            <div class="form-row">
+                <label for="name">Name</label>
+                <input type="text" name="name" placeholder="Sam" required/>
+            </div>
+            <div class="form-row">
+                <label>Email Address</label>
+                <input type="email" name="_replyto" placeholder="Sam@example.com" required/>
+            </div>
+            <div class="form-row">
+                <label>Website</label>
+                <input type="text" name="website" placeholder="example.com" />
+            </div>
+            <div class="form-row">
+                <label>Message</label>
+                <textarea name="message" placeholder="Let us know how we can help." required></textarea>
+            </div>
+        </fieldset>
+        <button type="submit" class="btn btn-accent">
+            Send Message
+            <i class="fal fa-envelope"></i>
+        </button>
     </form>
     </div>
 </section>
