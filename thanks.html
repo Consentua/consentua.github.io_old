@@ -1,7 +1,7 @@
 --- 
-layout: page
-title: Thanks
-nav: false
+layout: page 
+title: Thanks 
+nav: false 
 ---
 <style>
     body {
@@ -25,27 +25,32 @@ nav: false
         transform: rotate(-30deg);
         z-index: -1;
     }
-#thanks{
-   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60vh;
-}
-#thanks > div{
-background-color: var(--white-2-color, #F6F6F6);
-border-radius: 10px;
-padding: 2rem;
-text-align: center;
-}
-#thanks > div > .btn{
-    margin-top: 2rem;
-}
+
+    #thanks {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60vh;
+    }
+
+    #thanks>div {
+        background-color: var(--white-2-color, #F6F6F6);
+        border-radius: 10px;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    #thanks>div>.btn {
+        margin-top: 2rem;
+    }
 </style>
 <section id="thanks">
     <div>
-        <h1>Thanks <i class="fal fa-thumbs-up"></i></h1>
+        <h1>Thanks
+            <i class="fal fa-thumbs-up"></i>
+        </h1>
         <p>We have your message, and will respond as soon as we can.</p>
         <a class="btn btn-accent" href="{{ site.url }}/">Return Home</a>
     </div>
-    
+
 </section>
