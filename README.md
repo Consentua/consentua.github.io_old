@@ -30,6 +30,7 @@ See live version at [consentua.com](http://consentua.com/)
 * Highlight: #FFC021
 * Red (error/danger): #F44336
 * Green (ok/success): #4CAF50
+* Blue (info/alert): #429BE9
 * Text: #212121 / #FFF
 * Whites: #FFF, #F6F6F6
 * Greys: #c7c7c7, #d4d4d4, #e1e1e1, #eeeeee
