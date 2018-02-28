@@ -5,7 +5,7 @@ nav: false
 ---
 <style>
     body {
-        background: #E1E1E1;
+        background: var(--white-2-color);
     }
 
     body:after {
@@ -14,11 +14,11 @@ nav: false
         position: fixed;
         width: 100vw;
         height: 100vh;
-        top: -400px;
+        top: 0;
         right: -400px;
         bottom: -400px;
         left: -400px;
-        border: 80px solid rgba(163, 38, 85, 0.5);
+        border: 80px solid rgba(163, 38, 85, 1);
         border-radius: 50px;
         -webkit-transform: rotate(44deg);
         transform: rotate(44deg);
@@ -58,25 +58,14 @@ nav: false
         font-weight: 600;
         color: var(--secondary-color);
     }
-</style>
+    </style>
 <section id="sdkDemo">
-    <!-- <h1>Consentua Web Demo</h1>
-    <iframe id="consentua-widget"></iframe>
-    <script src="https://websdk.mybluemix.net/websdk/consentua-embed.js"></script>
-    <script>
-        var cid = '2'; // Customer ID
-        var sid = '1'; // Consentua service ID
-        var skey = '19fb13ab-d6f2-42dc-a41c-42249450b5b6'; // Consentua service key
-        var tid = '1'; // Template ID
-        var uid = new Fingerprint2().get(function (result, components) {
-            document.getElementById("userId").innerHTML = result;
-            return result; //a hash, representing your device fingerprint
-        });
-
-        var iframe = document.getElementById('consentua-widget');
-        var cwrap = new ConsentuaUIWrapper(iframe, cid, uid, tid, sid, skey, function () {});
-    </script>
-     -->
+        <span id="demoTxt">
+            <p>The demo accessible below is of the Consentua Web SDK. Running a public template, in binary consent layout for using personal
+                data for marketing purposes.
+            </p>
+            <p>Run the Pen to see Consentua working. Any questions get in touch via <a href="{{ site.url }}/contact.html">contact@consentua.com</a></p>
+        </span>
     <div id="consentuaCodepen">
         <p data-height="600" data-theme-id="dark" data-slug-hash="bayjGb" data-default-tab="js,result" data-user="sideshowjack" data-embed-version="2"
             data-pen-title="Consentua websdk demo" data-preview="true" class="codepen">See the Pen
@@ -85,9 +74,4 @@ nav: false
             <a href="https://codepen.io">CodePen</a>.</p>
         <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
     </div>
-    <span id="demoTxt">
-        <p>The demo above is of the Consentua Web SDK. Running a public template, in binary consent layout for using personal
-            data for marketing purposes.
-        </p>
-    </span>
 </section>
