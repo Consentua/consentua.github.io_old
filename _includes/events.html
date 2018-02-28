@@ -5,9 +5,7 @@
     flex:1;
     max-width: 450px;
     min-width: 250px;
-}
-#events h3{
-    color: #fff;
+    margin: 1rem
 }
 #events .event{
     display: flex;
@@ -42,10 +40,9 @@
 }
 </style>
 <section id="events">
-
     <h3>Events</h3>
-     {% for event in site.data.events %}
 
+     {% for event in site.data.events %}
         <a class="event" href="https://{{ event.link }}">
             <span class="event-date">
                 <p>{{ event.date }}</p>
