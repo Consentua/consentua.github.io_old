@@ -1,8 +1,5 @@
 <style>
     #featureSlides {
-        /* display: flex;
-        flex-direction: row;
-        align-items: flex-start; */
         display: -ms-grid;
         display: grid;
         -ms-grid-columns: 20% auto;
@@ -26,7 +23,6 @@
         flex-direction: column;
         border-radius: 5px;
         margin-top: 2em;
-        background: var(--grey-3-color);
         width: 90%;
         margin: 0 auto;
         -webkit-box-align: center;
@@ -42,15 +38,27 @@
         text-align: center;
         text-decoration: none;
         cursor: pointer;
+        background: var(--grey-3-color);
+        margin-bottom: 1.5rem;
         color: var(--dark-2-color);
+        border-radius: 5px;
+        border: 2px solid transparent;
+        padding: 0.4rem;
+    }
+
+    a.feature-button:hover,
+    a.feature-button:focus {
+        background: var(--accent-color);
+    }
+
+    a.feature-button:active {
+        border: 2px solid #212121;
     }
 
     .feature-button.active {
         background-color: #fff;
         border: 2px solid var(--main-color, #9A1144);
         color: var(--secondary-color);
-        border-radius: 5px;
-        padding: 0.2rem;
     }
 
     .feature-button-wrap {
@@ -82,7 +90,6 @@
 
     .feature-content span {
         max-width: 100%;
-        /* min-width: 50%; */
         -webkit-box-flex: 1;
         -ms-flex: 1;
         flex: 1;
@@ -96,9 +103,6 @@
         object-fit: contain;
         max-width: 725px;
         max-height: 500px;
-        /* width: 100%;
-  height: auto;
-        flex: 1; */
         margin: 1rem;
         border-radius: 5px;
     }

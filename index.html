@@ -161,9 +161,9 @@ title: home
     </span>
   </div>
   <div id="app-illustration">
-    <video autoplay loop muted>
-      <source src="{{ site.url }}/video/android_demo.mp4" type="video/mp4">
-      <source src="{{ site.url }}/video/android_demo.webm" type="video/webm">
+    <video autoplay loop muted poster="{{ site.url }}/imgs/vid-poster.gif" preload="none">
+      <source media="(max-width: 800px)" src="{{ site.url }}/video/android_demo.mp4" type="video/mp4">
+      <source media="(max-width: 800px)" src="{{ site.url }}/video/android_demo.webm" type="video/webm">
     </video>
   </div>
 </section>
