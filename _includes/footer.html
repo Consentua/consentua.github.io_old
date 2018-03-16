@@ -55,7 +55,7 @@
 		margin: 0.5rem;
 	}
 	/* if page is not on home */
-   {% if  page.title == "Contact Sales" %}
+   {% if  page.title == "Contact Sales" or page.title == "FAQ"%}
    footer {
 	   background: transparent;
    }
@@ -96,6 +96,9 @@
 				</li>
 				<li>
 					<a href="https://testdashboard.consentua.com">Dashboard</a>
+				</li>
+				<li>
+					<a href="{{ site.url }}/faq.html">FAQ</a>
 				</li>
 			</ul>
 		</span>

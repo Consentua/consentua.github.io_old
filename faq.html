@@ -1,0 +1,91 @@
+--- 
+layout: page 
+title: FAQ 
+order: 4 
+nav: false 
+---
+<style>
+body:after {
+    content: "";
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 520px;
+    right: 0;
+    bottom: 0;
+    left: -95px;
+    background-color: var(--main-color);
+    border: 80px solid var(--main-color);
+    border-radius: 50px;
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+    z-index: -1;
+}
+#faq{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+}
+#faq label{
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    margin-bottom: 1.6rem;
+}
+#faq label:hover{
+    background-color: var(--accent-color);
+}
+#faq input{
+    display: none;
+}
+{% for faq in site.data.faq %}
+#faq #expand{{ faq.id }} {
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  background: white;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+#faq #expand{{ faq.id }} p{
+    padding: 0 1rem;
+}
+#faq #toggle{{ faq.id }}:checked ~ #expand{{ faq.id }} {
+  height: 250px;
+  overflow: auto;
+}
+#faq #toggle{{ faq.id }} ~ label .icon{{ faq.id }} {
+  transition: all 0.3s ease;
+  transform: rotate(0deg);
+}
+#faq #toggle{{ faq.id }}:checked ~ label .icon{{ faq.id }} {
+  transform: rotate(90deg);
+}
+{% endfor %}
+</style>
+<section id="faq">
+{% for faq in site.data.faq %}
+<input id="toggle{{ faq.id }}" type="checkbox">
+<label for="toggle{{ faq.id }}">{{ faq.question }} <i class="far fa-chevron-right icon{{ faq.id }}"></i></label>
+<div id="expand{{ faq.id }}">
+    <section>
+        <p>{{ faq.p1 }}</p>
+        <p>{{ faq.p2 }}</p>
+        <p>{{ faq.p3 }}</p>
+        <p>{{ faq.p4 }}</p>
+        <p>{{ faq.p5 }}</p>
+        <img src="{{ faq.imageURL }}"/>
+    </section>
+</div>
+{% endfor %}
+</section>
