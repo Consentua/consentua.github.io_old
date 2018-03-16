@@ -112,6 +112,9 @@
             -ms-grid-columns: auto;
             grid-template-columns: auto;
         }
+        .feature-content span{
+            flex-grow: 1;
+        }
         .feature-content img {
             max-width: 90vw;
             margin: 0;
@@ -135,7 +138,7 @@
     </div>
 
     <div class="feature-content-wrap">
-        <div class="feature-content">
+        <div id="featureBinary" class="feature-content">
             <h1>Binary Consent</h1>
             <div>
                 <span>
@@ -146,7 +149,7 @@
                 <img class="feature-img" src="{{ site.url}}/imgs/screenshot/binary.png">
             </div>
         </div>
-        <div class="feature-content">
+        <div id="featureLinear" class="feature-content">
             <h1>Linear Consent</h1>
             <div>
                 <span>
@@ -162,7 +165,7 @@
                 <img class="feature-img" data-src="{{ site.url}}/imgs/screenshot/linear.png">
             </div>
         </div>
-        <div class="feature-content">
+        <div id="featureTrust" class="feature-content">
             <h1>Builds User Trust</h1>
             <span>
                 <p>Users want transparency and honesty in what will happen with their personal data. Consentua provides a vehicle
@@ -177,12 +180,14 @@
             </span>
             <img class="feature-img" data-src="{{ site.url}}/imgs/Consentua_checkbox.jpg">
         </div>
-        <div class="feature-content">
+        <div id="featureAPI" class="feature-content">
             <h1>Secure Lightweight Consent API</h1>
             <span>
                 <p>The API is encrypted, hashed and requires a specific access token per instance of the API. Only with the
                     right access token assigned to the specific customer API will access to the Consentua registry be granted.
                     The API payload is measured in bytes! Fast and efficient processing.</p>
+                <p> Consentua is based on the <a href="https://kantarainitiative.org/confluence/display/infosharing/Consent+Receipt+Specification">Kantara Initiatives Consent Receipt</a></p>
+                <p><a href="http://test.consentua.com/swagger">Checkout out the API referance</a></p>
             </span>
             <img class="feature-img" data-src="{{ site.url}}/imgs/api.jpg">
         </div>
@@ -211,6 +216,7 @@
                 imgs[pos].src = imgs[pos].getAttribute('data-src');
             }
             
+            location.hash = "#" + content[pos].id;
         });
     }
 </script>

@@ -5,39 +5,41 @@ nav: false
 ---
 <style>
     body {
-        background: var(--white-2-color);
+        background: var(--secondary-color);
     }
 
     body:after {
         content: "";
         display: block;
         position: fixed;
-        width: 100vw;
+        width: 110vw;
         height: 100vh;
         top: 0;
         right: -400px;
         bottom: -400px;
         left: -400px;
-        border: 80px solid rgba(163, 38, 85, 1);
         border-radius: 50px;
         -webkit-transform: rotate(44deg);
         transform: rotate(44deg);
         z-index: -1;
+            background-color: #e1e1e1;
     }
 
     #consentuaCodepen {
-        border-radius: 10px;
+        flex: 2;
         margin: 2rem 0;
     }
 
     #demoTxt {
-        margin: 2rem 0;
+        flex: 1;
+        margin-left: 1rem;
     }
 
     #sdkDemo {
         text-align: center;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        align-items: center;
     }
 
     #sdkDemo span {
@@ -60,18 +62,40 @@ nav: false
     }
     </style>
 <section id="sdkDemo">
-        <span id="demoTxt">
-            <p>The demo accessible below is of the Consentua Web SDK. Running a public template, in binary consent layout for using personal
-                data for marketing purposes.
-            </p>
-            <p>Run the Pen to see Consentua working. Any questions get in touch via <a href="{{ site.url }}/contact.html">contact@consentua.com</a></p>
-        </span>
     <div id="consentuaCodepen">
-        <p data-height="600" data-theme-id="dark" data-slug-hash="bayjGb" data-default-tab="js,result" data-user="sideshowjack" data-embed-version="2"
-            data-pen-title="Consentua websdk demo" data-preview="true" class="codepen">See the Pen
+        <!-- <script src="http://localhost:3000/websdk/consentua-embed.js" type="text/javascript"></script>
+        <iframe id="consentua-widget" src="" style="box-model: border-box; width: 100%; max-width: 600px; min-height: 700px;"></iframe>
+        <script>
+        var cid = '2'; // Customer ID
+        var sid = '1'; // Consentua service ID
+        var skey = '19fb13ab-d6f2-42dc-a41c-42249450b5b6'; // Consentua service key
+        var tid = '4'; // Template ID
+        var uid = 'chris@consentua.com';
+
+        var cb = function (msg) {
+            console.log("Consent received from Consentua", msg);
+            // You'll probably want to store parts of this message, and update page state to
+            // (for instance) allow form submission to take place
+        };
+
+        var iframe = document.getElementById('consentua-widget');
+        var cwrap = new ConsentuaUIWrapper(iframe, cid, uid, tid, sid, skey, cb);
+        </script> -->
+        <p data-height="700" data-theme-id="32866" data-slug-hash="bayjGb" data-default-tab="result" data-user="sideshowjack"
+            data-embed-version="2" data-pen-title="Consentua websdk demo" class="codepen">See the Pen
             <a href="https://codepen.io/sideshowjack/pen/bayjGb/">Consentua websdk demo</a> by sideshowjack (
             <a href="https://codepen.io/sideshowjack">@sideshowjack</a>) on
             <a href="https://codepen.io">CodePen</a>.</p>
-        <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-    </div>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+        </div>
+        <span id="demoTxt">
+            <p>This demo demonstrates Consentua running in your website. It shows the obtaining of consent for
+            direct marketing purposes. Which is one of our most popular use cases.
+            </p>
+            <p>
+                You can click through the HTML, CSS & JS tabs, to see how simple Consentua is to embed into your site.
+            </p>
+            <p>Any questions get in touch</p>
+            <a class="btn btn-accent" href="{{ site.url }}/contact.html">Contact Sales</a>
+        </span>
 </section>
