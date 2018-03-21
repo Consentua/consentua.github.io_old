@@ -47,6 +47,9 @@ body:after {
 #faq input{
     display: none;
 }
+#faq .faq-img{
+    max-width: 500px;
+}
 {% for faq in site.data.faq %}
 #faq #expand{{ faq.id }} {
   height: 0px;
@@ -56,6 +59,11 @@ body:after {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 1rem;
+}
+#faq #expand{{ faq.id }} section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #faq #expand{{ faq.id }} p{
     padding: 0 1rem;
@@ -81,10 +89,10 @@ body:after {
     <section>
         <p>{{ faq.p1 }}</p>
         <p>{{ faq.p2 }}</p>
+        <img class="faq-img" src="{{ faq.imageURL }}"/>
         <p>{{ faq.p3 }}</p>
         <p>{{ faq.p4 }}</p>
         <p>{{ faq.p5 }}</p>
-        <img src="{{ faq.imageURL }}"/>
     </section>
 </div>
 {% endfor %}
