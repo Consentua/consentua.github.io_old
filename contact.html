@@ -1,8 +1,8 @@
 --- 
-layout: page
-title: Contact Sales
-order: 2
-nav: true
+layout: page 
+title: Contact Sales 
+order: 2 
+nav: true 
 ---
 <style>
     body:after {
@@ -78,12 +78,172 @@ nav: true
         margin-left: auto;
     }
 
+    @-moz-keyframes dothabottomcheck {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: 50px;
+        }
+    }
+
+    @-webkit-keyframes dothabottomcheck {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: 50px;
+        }
+    }
+
+    @keyframes dothabottomcheck {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: 50px;
+        }
+    }
+
+    @keyframes dothatopcheck {
+        0% {
+            height: 0;
+        }
+        50% {
+            height: 0;
+        }
+        100% {
+            height: 120px;
+        }
+    }
+
+    @-webkit-keyframes dothatopcheck {
+        0% {
+            height: 0;
+        }
+        50% {
+            height: 0;
+        }
+        100% {
+            height: 120px;
+        }
+    }
+
+    @-moz-keyframes dothatopcheck {
+        0% {
+            height: 0;
+        }
+        50% {
+            height: 0;
+        }
+        100% {
+            height: 120px;
+        }
+    }
+
+    .consent-check-contain input[type=checkbox] {
+        display: none;
+    }
+
+    .consent-check-contain {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .consent-check-contain .check-box {
+        transform: scale(0.3);
+        flex: initial !important;
+        height: 100px;
+        width: 100px;
+        background-color: transparent;
+        border: 10px solid #000;
+        border-radius: 5px;
+        position: relative;
+        display: inline-block;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -moz-transition: border-color ease 0.2s;
+        -o-transition: border-color ease 0.2s;
+        -webkit-transition: border-color ease 0.2s;
+        transition: border-color ease 0.2s;
+        cursor: pointer;
+    }
+
+    .check-box::before,
+    .check-box::after {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        position: absolute;
+        height: 0;
+        width: 20px;
+        background-color: #34b93d;
+        display: inline-block;
+        -moz-transform-origin: left top;
+        -ms-transform-origin: left top;
+        -o-transform-origin: left top;
+        -webkit-transform-origin: left top;
+        transform-origin: left top;
+        border-radius: 5px;
+        content: ' ';
+        -webkit-transition: opacity ease .5;
+        -moz-transition: opacity ease .5;
+        transition: opacity ease .5;
+    }
+
+    .check-box::before {
+        top: 72px;
+        left: 41px;
+        box-shadow: 0 0 0 5px #F6F6F6;
+        -moz-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+        -o-transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+    }
+
+    .check-box::after {
+        top: 37px;
+        left: 5px;
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    .consent-check-contain input[type=checkbox]:checked+.check-box,
+    .check-box.checked {
+        border-color: #34b93d;
+    }
+
+    .consent-check-contain input[type=checkbox]:checked+.check-box::after,
+    .check-box.checked::after {
+        height: 50px;
+        -moz-animation: dothabottomcheck 0.2s ease 0s forwards;
+        -o-animation: dothabottomcheck 0.2s ease 0s forwards;
+        -webkit-animation: dothabottomcheck 0.2s ease 0s forwards;
+        animation: dothabottomcheck 0.2s ease 0s forwards;
+    }
+
+    .consent-check-contain input[type=checkbox]:checked+.check-box::before,
+    .check-box.checked::before {
+        height: 120px;
+        -moz-animation: dothatopcheck 0.4s ease 0s forwards;
+        -o-animation: dothatopcheck 0.4s ease 0s forwards;
+        -webkit-animation: dothatopcheck 0.4s ease 0s forwards;
+        animation: dothatopcheck 0.4s ease 0s forwards;
+    }
+
     @media only screen and (max-width: 900px) {
         #contact {
             max-width: 95%;
         }
     }
 </style>
+<script src="./js/md5.js"></script>
 <section id="contact">
     <div class="headline">
         <h1>
@@ -94,17 +254,18 @@ nav: true
             <a href="mailto:contact@consentua.com?Subject=mailto">contact@consentua.com</a>
         </p>
     </div>
-    <form action="https://formspree.io/contact@consentua.com" method="POST">
+    <p id="errTxt"></p>
+    <form id="contactForm" action="https://formspree.io/contact@consentua.com" method="POST">
         <fieldset>
             <input type="hidden" name="_subject" value="Sales enquiry form" required/>
-            <input type="hidden" name="_next" value="{{ site.url }}/thanks.html" required/>
+            <input type="hidden" name="_next" value="{{ site.url }}/contact-success.html" required/>
             <div class="form-row">
                 <label for="name">Name</label>
                 <input type="text" name="name" placeholder="Sam" required/>
             </div>
             <div class="form-row">
                 <label>Email Address</label>
-                <input type="email" name="_replyto" placeholder="Sam@example.com" required/>
+                <input id="emailInput" type="email" name="_replyto" placeholder="Sam@example.com" required/>
             </div>
             <div class="form-row">
                 <label>Website</label>
@@ -114,6 +275,11 @@ nav: true
                 <label>Message</label>
                 <textarea name="message" placeholder="Let us know how we can help." required></textarea>
             </div>
+            <!-- <div class="consent-check-contain">
+                <label for="cbtest" class="check-label">I want to get the email (using consentua)</label>
+                <input type="checkbox" id="cbtest" />
+                <label for="cbtest" class="check-box"></label>
+            </div> -->
         </fieldset>
         <button type="submit" class="btn btn-accent">
             Send Message
@@ -122,3 +288,129 @@ nav: true
     </form>
     </div>
 </section>
+<script>
+    function consentChange(e) {
+        // let f = document.getElementById('contactForm');
+        e.preventDefault;
+        // if (f.va) {
+            
+        // }
+        // Service Id:25
+        // Service Name: Consentua 
+        // Service Key: 4d58ba73-1dec-4724-b040-df0b0caf38c5
+        // Service Client Id: 1
+        // Service Jurisdiction: GB
+        // Templates
+        // Id: 20 
+        // Name: Consentua 
+        // Public: False
+        //serviceuser/GetServiceUser
+        httpServiceLogin();
+    };
+
+    function httpServiceLogin(params) {
+        var loginHttp = new XMLHttpRequest(),
+            key = '4d58ba73-1dec-4724-b040-df0b0caf38c5',
+            loginBody = {
+                "ServiceId": "25",
+                "ClientId": "1",
+                "LoginToken": generateToken(key),
+            };
+
+        loginHttp.open("POST", 'https://test.consentua.com/login/Service', true);
+        loginHttp.setRequestHeader("Content-type", "application/json");
+        loginHttp.onreadystatechange = function () { //Call a function when the state changes.
+            if (loginHttp.readyState == 4 && loginHttp.status == 200) {
+                let res = JSON.parse(loginHttp.responseText);
+                var generatedToken = res.Token;
+                httpGetServiceuser(res);
+            }
+        }
+        loginHttp.send(JSON.stringify(loginBody));
+    }
+
+    function generateToken(token) {
+        //remove any spaces from token
+        token = token.replace(/\s+/g, '');
+        //get date and it to the token, then hash
+        var date = new Date().getDate();
+        var month = new Date().getMonth() + 1; //add 1 to month, as it starts from 0, not 1
+        var year = new Date().getFullYear();
+        var fullDate = "_" + date + "_" + month + "_" + year;
+        var hash = CryptoJS.MD5(token + fullDate).toString().toUpperCase();
+        return hash;
+    };
+
+
+    function httpGetServiceuser(res) {
+        let serviceHttp = new XMLHttpRequest();
+        let userIdentifier = document.getElementById('emailInput').value;
+        let token = res.Token;
+        let serviceUrl = "https://test.consentua.com/serviceuser/GetServiceUser?identifier=" + userIdentifier +
+            "&clientId=1&serviceId=25&token=" + token + "&language=en";
+        serviceHttp.open("GET", serviceUrl, true);
+        serviceHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        serviceHttp.onreadystatechange = function () { //Call a function when the state changes.
+            if (serviceHttp.readyState == 4 && serviceHttp.status == 200) {
+                let res = JSON.parse(serviceHttp.responseText);
+                httpSetConsent(res, token);
+            } else if (serviceHttp.readyState == 4 && serviceHttp.status == 404) {
+                httpCreateServiceuser(res, token)
+            }
+        }
+        serviceHttp.send();
+    };
+
+    function httpCreateServiceuser(res) {
+        let createServiceHttp = new XMLHttpRequest();
+        let userIdentifier = document.getElementById('emailInput').value;
+        let token = res.Token;
+        let body = {
+            "identifier": userIdentifier,
+            "serviceId": 25,
+            "token": res.Token
+        };
+        createServiceHttp.open("POST", 'https://test.consentua.com/serviceuser/AddUserToService', true);
+        createServiceHttp.setRequestHeader("Content-type", "application/json");
+        createServiceHttp.onreadystatechange = function () { //Call a function when the state changes.
+            if (createServiceHttp.readyState == 4 && createServiceHttp.status == 200) {
+                let res = JSON.parse(createServiceHttp.responseText);
+                httpSetConsent(res, token);
+            }
+        }
+        createServiceHttp.send(JSON.stringify(body));
+    };
+
+    function httpSetConsent(res, token) {
+        let consentHttp = new XMLHttpRequest();
+        let checked = document.getElementById('cbtest').checked;
+        let body = {
+            "Consent": {
+                "ClientId": "1",
+                "ServiceId": "25",
+                "UserId": res.UserId,
+                "Purposes": [{
+                    "ConsentTemplateId": "20",
+                    "PurposeId": "97",
+                    "Consent": checked
+                }]
+            },
+            "ClientId": 1,
+            "ServiceId": 25,
+            "Token": token
+        };
+        consentHttp.open("POST", 'https://test.consentua.com/userconsent/SetConsents', true);
+        consentHttp.setRequestHeader("Content-type", "application/json");
+        consentHttp.onreadystatechange = function () {
+            if (consentHttp.readyState == 4 && consentHttp.status == 200) {
+                let res = JSON.parse(consentHttp.responseText);
+                alert(consentHttp.responseText);
+            }
+        }
+        consentHttp.send(JSON.stringify(body));
+    };
+
+    function err(err) {
+        document.getElementById('errTxt').innerHTML = "There was an error"
+    }
+</script>
