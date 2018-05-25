@@ -35,7 +35,50 @@ nav: true
         text-align: center;
         margin-bottom: 4rem;
     }
+    #contact #errTxt {
+        width: 80%;
+        display: none;
+        color: #fff;
+        background-color: var(--red-color);
+        padding: 1rem;
+        margin: 1.5rem auto;
+        text-align: center;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    #contact #consentuaStatus{
+        width: 80%;
+        display: none;
+        position: relative;
+        color: #fff;
+        background-color: var(--main-color);
+        padding: 1rem;
+        margin: 1.5rem auto;
+        text-align: center;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    #contact #consentuaStatus:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.4);;
+        -webkit-animation: loadBar 2s cubic-bezier(.09,.89,.7,.71) infinite;
+        -moz-animation: loadBar 2s cubic-bezier(.09,.89,.7,.71) infinite;
+        animation: loadBar 2s cubic-bezier(.09,.89,.7,.71) infinite;
+    }
 
+    @keyframes loadBar {
+    0% {
+        left: -110%;
+    }
+    100% {
+        left: 110%;
+    }
+    }
     #contact fieldset {
         padding: 0px;
         display: flex;
@@ -145,7 +188,7 @@ nav: true
         display: none;
     }
 
-    .consent-check-contain {
+    .consent-check-contain #cbtestLab {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -236,14 +279,23 @@ nav: true
         -webkit-animation: dothatopcheck 0.4s ease 0s forwards;
         animation: dothatopcheck 0.4s ease 0s forwards;
     }
-
+    #consentuaLabel{
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    #consentuaLabel img{
+        margin-left:  1rem;
+    }
     @media only screen and (max-width: 900px) {
         #contact {
             max-width: 95%;
         }
     }
 </style>
-<script src="./js/md5.js"></script>
+<script src="{{ site.url }}/js/md5.js"></script>
 <section id="contact">
     <div class="headline">
         <h1>
@@ -255,6 +307,7 @@ nav: true
         </p>
     </div>
     <p id="errTxt"></p>
+    <p id="consentuaStatus"></p>
     <form id="contactForm" action="https://formspree.io/contact@consentua.com" method="POST">
         <fieldset>
             <input type="hidden" name="_subject" value="Sales enquiry form" required/>
@@ -275,142 +328,22 @@ nav: true
                 <label>Message</label>
                 <textarea name="message" placeholder="Let us know how we can help." required></textarea>
             </div>
-            <!-- <div class="consent-check-contain">
-                <label for="cbtest" class="check-label">I want to get the email (using consentua)</label>
-                <input type="checkbox" id="cbtest" />
+            <div class="consent-check-contain">
+                <label id="cbtestLab" for="cbtest" class="check-label"><p>I consent my email address to be added to the mailing list, for the purpose of recieving marketing emails</p><label>
+                <input type="checkbox" id="cbtest" name="consent"/>
                 <label for="cbtest" class="check-box"></label>
-            </div> -->
+            </div>
         </fieldset>
         <button type="submit" class="btn btn-accent">
             Send Message
             <i class="fal fa-envelope"></i>
         </button>
     </form>
+    <div id="consentuaLabel">
+        Powered by 
+        <a href="{{ site.url }}"><img src="{{ site.url }}/imgs/logo/include.jpg"></a>
+    </div>
     </div>
 </section>
-<script>
-    function consentChange(e) {
-        // let f = document.getElementById('contactForm');
-        e.preventDefault;
-        // if (f.va) {
-            
-        // }
-        // Service Id:25
-        // Service Name: Consentua 
-        // Service Key: 4d58ba73-1dec-4724-b040-df0b0caf38c5
-        // Service Client Id: 1
-        // Service Jurisdiction: GB
-        // Templates
-        // Id: 20 
-        // Name: Consentua 
-        // Public: False
-        //serviceuser/GetServiceUser
-        httpServiceLogin();
-    };
 
-    function httpServiceLogin(params) {
-        var loginHttp = new XMLHttpRequest(),
-            key = '4d58ba73-1dec-4724-b040-df0b0caf38c5',
-            loginBody = {
-                "ServiceId": "25",
-                "ClientId": "1",
-                "LoginToken": generateToken(key),
-            };
-
-        loginHttp.open("POST", 'https://test.consentua.com/login/Service', true);
-        loginHttp.setRequestHeader("Content-type", "application/json");
-        loginHttp.onreadystatechange = function () { //Call a function when the state changes.
-            if (loginHttp.readyState == 4 && loginHttp.status == 200) {
-                let res = JSON.parse(loginHttp.responseText);
-                var generatedToken = res.Token;
-                httpGetServiceuser(res);
-            }
-        }
-        loginHttp.send(JSON.stringify(loginBody));
-    }
-
-    function generateToken(token) {
-        //remove any spaces from token
-        token = token.replace(/\s+/g, '');
-        //get date and it to the token, then hash
-        var date = new Date().getDate();
-        var month = new Date().getMonth() + 1; //add 1 to month, as it starts from 0, not 1
-        var year = new Date().getFullYear();
-        var fullDate = "_" + date + "_" + month + "_" + year;
-        var hash = CryptoJS.MD5(token + fullDate).toString().toUpperCase();
-        return hash;
-    };
-
-
-    function httpGetServiceuser(res) {
-        let serviceHttp = new XMLHttpRequest();
-        let userIdentifier = document.getElementById('emailInput').value;
-        let token = res.Token;
-        let serviceUrl = "https://test.consentua.com/serviceuser/GetServiceUser?identifier=" + userIdentifier +
-            "&clientId=1&serviceId=25&token=" + token + "&language=en";
-        serviceHttp.open("GET", serviceUrl, true);
-        serviceHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        serviceHttp.onreadystatechange = function () { //Call a function when the state changes.
-            if (serviceHttp.readyState == 4 && serviceHttp.status == 200) {
-                let res = JSON.parse(serviceHttp.responseText);
-                httpSetConsent(res, token);
-            } else if (serviceHttp.readyState == 4 && serviceHttp.status == 404) {
-                httpCreateServiceuser(res, token)
-            }
-        }
-        serviceHttp.send();
-    };
-
-    function httpCreateServiceuser(res) {
-        let createServiceHttp = new XMLHttpRequest();
-        let userIdentifier = document.getElementById('emailInput').value;
-        let token = res.Token;
-        let body = {
-            "identifier": userIdentifier,
-            "serviceId": 25,
-            "token": res.Token
-        };
-        createServiceHttp.open("POST", 'https://test.consentua.com/serviceuser/AddUserToService', true);
-        createServiceHttp.setRequestHeader("Content-type", "application/json");
-        createServiceHttp.onreadystatechange = function () { //Call a function when the state changes.
-            if (createServiceHttp.readyState == 4 && createServiceHttp.status == 200) {
-                let res = JSON.parse(createServiceHttp.responseText);
-                httpSetConsent(res, token);
-            }
-        }
-        createServiceHttp.send(JSON.stringify(body));
-    };
-
-    function httpSetConsent(res, token) {
-        let consentHttp = new XMLHttpRequest();
-        let checked = document.getElementById('cbtest').checked;
-        let body = {
-            "Consent": {
-                "ClientId": "1",
-                "ServiceId": "25",
-                "UserId": res.UserId,
-                "Purposes": [{
-                    "ConsentTemplateId": "20",
-                    "PurposeId": "97",
-                    "Consent": checked
-                }]
-            },
-            "ClientId": 1,
-            "ServiceId": 25,
-            "Token": token
-        };
-        consentHttp.open("POST", 'https://test.consentua.com/userconsent/SetConsents', true);
-        consentHttp.setRequestHeader("Content-type", "application/json");
-        consentHttp.onreadystatechange = function () {
-            if (consentHttp.readyState == 4 && consentHttp.status == 200) {
-                let res = JSON.parse(consentHttp.responseText);
-                alert(consentHttp.responseText);
-            }
-        }
-        consentHttp.send(JSON.stringify(body));
-    };
-
-    function err(err) {
-        document.getElementById('errTxt').innerHTML = "There was an error"
-    }
-</script>
+<script src="{{ site.url }}/js/consentua.js"></script>
