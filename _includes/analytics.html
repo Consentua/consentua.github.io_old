@@ -1,22 +1,26 @@
 <script>
-      // ga with no cookie
-      (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-          (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-          m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-      ga('create', 'UA-74260509-3', {
-        'storage': 'none',
-        'clientId': new Fingerprint2().get(function (result, components) {
-          return result; //a hash, representing your device fingerprint
-        })
-      });
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
+  if (typeof Fingerprint2 === "function") {
+    // ga with no cookie
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-74260509-3', {
+      'storage': 'none',
+      'clientId': new Fingerprint2().get(function (result, components) {
+        return result; //a hash, representing your device fingerprint
+      })
+    });
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+  } else{
+    console.log('Please enable adblock for Consentua.com. We don\'t server ads, and only tack an anonymous user ID (Fingerprint2.js) in google analytics')
+  }
 </script>

@@ -51,7 +51,7 @@ function generateToken(token) {
     //get date and it to the token, then hash
     var d = new Date();
     var loginStr = token + '_' + (d.getUTCDate()) + '_' + (d.getUTCMonth() + 1) + '_' + (d.getUTCFullYear());
-    var hash =  CryptoJS.MD5(loginStr).toString().toUpperCase();
+    var hash = CryptoJS.MD5(loginStr).toString().toUpperCase();
     return hash;
 };
 
@@ -147,10 +147,42 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
             }
         })
         .then(function (cb) {
+            cb = JSON.parse(cb);
+            if (cb.Success) {
+                return cb;
+            } else if (cb.UserId) {
+                userId = cb.UserId;
+                let opts = {
+                    method: 'POST',
+                    url: url + '/userconsent/SetConsents',
+                    params: {
+                        "Consent": {
+                            "ClientId": "1",
+                            "ServiceId": "25",
+                            "UserId": userId,
+                            "Purposes": [{
+                                "ConsentTemplateId": "20",
+                                "PurposeId": "97",
+                                "Consent": form['consent'].checked
+                            }]
+                        },
+                        "ClientId": 1,
+                        "ServiceId": 25,
+                        "Token": token
+                    },
+                    headers: {
+                        "Content-type": "application/json"
+                    }
+                };
+                status.innerHTML = "Setting user conset";
+                return makeRequest(opts);
+            } else {
+                throw cb;
+            }
+        }).then(function (cb) {
             //consentua successfully setup, submit form
             status.innerHTML = "Consent set successfully, submitting form";
-            alert('consent set')
-            // document.getElementById("contactForm").submit();
+            document.getElementById("contactForm").submit();
         })
         .catch(function (err) {
             console.error('Augh, there was an error!', err);

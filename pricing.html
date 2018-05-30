@@ -45,7 +45,8 @@ nav: true
         flex-wrap: wrap;
     }
 
-    #pricing .cols .plan {
+    #pricing .plan {
+        min-width: 320px;
         border-radius: 10px;
         /* padding: 0.6rem; */
         text-align: center;
@@ -64,37 +65,43 @@ nav: true
         -ms-flex-align: stretch;
         align-items: stretch;
         margin: 2rem 0;
+        border-bottom: 1.5rem solid #fff;
     }
 
-    #pricing .cols .plan .plan-header {
+    #pricing .plan .plan-header {
         border-radius: 10px 10px 0 0;
         background: #fff;
         padding-bottom: 0.6rem;
     }
 
-    #pricing .cols .plan .plan-header>span {
+    #pricing .plan .plan-header .price>div {
         font-size: 1.6rem;
+        margin: 1rem auto;
     }
 
-    #pricing .cols .plan .plan-header>span:nth-child(2) {
-        font-size: 2rem;
-    }
-
-    #pricing .cols .plan:nth-child(2) .plan-header {
+    #pricing .plan:nth-child(2) .plan-header {
         background: var(--accent-color);
     }
 
-    #pricing .cols .plan:nth-child(3) .plan-header {
+    #pricing .plan:nth-child(2) {
+        border-color: var(--accent-color);
+    }
+
+    #pricing .plan:nth-child(3) .plan-header {
         background: var(--main-color);
         color: #fff
     }
 
-    #pricing .cols .plan ul {
+    #pricing .plan:nth-child(3) {
+        border-color: var(--main-color);
+    }
+
+    #pricing .plan ul {
         list-style: none;
         padding: 0px 0.6rem 0.6rem 0.6rem;
     }
 
-    #pricing .cols .plan .btn {
+    #pricing .plan .btn {
         margin: 0.6rem;
     }
 
@@ -108,6 +115,31 @@ nav: true
         border-radius: 10px;
     }
 
+    #pricing .plan .tabs .tab {
+        width: 49%;
+        padding: 1rem 0px;
+        background: transparent;
+        border: none;
+    }
+
+    #pricing .plan .tabs .tab.active {
+        background: rgba(0, 0, 0, 0.15);
+    }
+
+    #pricing .plan .tabs.dark .tab {
+        color: #fff;
+    }
+
+    #pricing .plan .price>div,
+    #pricing .plan .plan-body>div {
+        display: none;
+    }
+
+    #pricing .plan .price>div.active,
+    #pricing .plan .plan-body>div.active {
+        display: initial;
+    }
+
     @media only screen and (max-width: 800px) {
         body:after {
             background-color: rgba(255, 255, 255, 0.1);
@@ -117,62 +149,143 @@ nav: true
 
 <section id="pricing">
     <div class="cols">
-        <div class="plan">
+        <div class="plan basic">
             <div class="plan-header">
                 <h1>Basic</h1>
-                <span>£10</span>/mo
-                <br>
-                <span>£99</span>/yr
+                <div class="tabs">
+                    <button class="tab active" onclick="_tabChange('m', 'basic')">Monthly</button>
+                    <button class="tab" onclick="_tabChange('y', 'basic')">Yearly</button>
+                </div>
+                <section class="price">
+                    <div class="m active">
+                        <span>£10</span>/mo
+                    </div>
+                    <div class="y">
+                        <span>£99</span>/yr
+                    </div>
+                </section>
             </div>
-            <p>Includes:</p>
-            <ul>
-                <li>Up to
-                    <b>50,000</b> API calls per annum</li>
-                <li>Unlimited end user API calls</li>
-                <li>Unlimited total consents</li>
-                <li>
-                    <b>2</b> Admin Accounts</li>
-                <li>Community Support</li>
-            </ul>
-            <a class="btn btn-green" href="{{ site.url }}/contact.html">Contact Sales</a>
+            <section class="plan-body">
+                <div class="m active">
+                    <p>Includes:</p>
+                    <ul>
+                        <li>Up to
+                            <b>4000</b> API calls per month</li>
+                        <li>Unlimited end user API calls</li>
+                        <li>Unlimited total consents</li>
+                        <li>
+                            <b>2</b> Admin Accounts</li>
+                        <li>Community Support</li>
+                    </ul>
+                    <a class="btn btn-green" href="https://pay.gocardless.com/AL0001PMK3Q5X0">Buy now</a>
+                </div>
+                <div class="y">
+                    <p>Includes:</p>
+                    <ul>
+                        <li>Up to
+                            <b>50,000</b> API calls per annum</li>
+                        <li>Unlimited end user API calls</li>
+                        <li>Unlimited total consents</li>
+                        <li>
+                            <b>2</b> Admin Accounts</li>
+                        <li>Community Support</li>
+                    </ul>
+                    <a class="btn btn-green" href="https://pay.gocardless.com/AL0001PMK41KM6">Buy now</a>
+                </div>
+            </section>
         </div>
-        <div class="plan">
+
+        <div class="plan standard">
             <div class="plan-header">
-                <h1>Plus</h1>
-                <span>£99</span>/mo
-                <br>
-                <span>£949</span>/yr
+                <h1>Standard</h1>
+                <div class="tabs">
+                    <button class="tab active" onclick="_tabChange('m', 'standard')">Monthly</button>
+                    <button class="tab" onclick="_tabChange('y', 'standard')">Yearly</button>
+                </div>
+                <section class="price">
+                    <div class="m active">
+                        <span>£99</span>/mo
+                    </div>
+                    <div class="y">
+                        <span>£949</span>/yr
+                    </div>
+                </section>
             </div>
-            <p>Includes:</p>
-            <ul>
-                <li>Up to
-                    <b>500,000</b> API calls per annum</li>
-                <li>Unlimited end user API calls</li>
-                <li>Unlimited total consents</li>
-                <li>
-                    <b>5</b> Admin Accounts</li>
-                <li>Community Support</li>
-            </ul>
-            <a class="btn btn-green" href="{{ site.url }}/contact.html">Contact Sales</a>
+            <section class="plan-body">
+                <div class="m active">
+                    <p>Includes:</p>
+                    <ul>
+                        <li>Up to
+                            <b>40,000</b> API calls per month</li>
+                        <li>Unlimited end user API calls</li>
+                        <li>Unlimited total consents</li>
+                        <li>
+                            <b>5</b> Admin Accounts</li>
+                        <li>Community Support</li>
+                    </ul>
+                    <a class="btn btn-green" href="https://pay.gocardless.com/AL0001PMK5GJSE">Buy now</a>
+                </div>
+                <div class="y">
+                    <p>Includes:</p>
+                    <ul>
+                        <li>Up to
+                            <b>500,000</b> API calls per annum</li>
+                        <li>Unlimited end user API calls</li>
+                        <li>Unlimited total consents</li>
+                        <li>
+                            <b>5</b> Admin Accounts</li>
+                        <li>Community Support</li>
+                    </ul>
+                    <a class="btn btn-green" href="https://pay.gocardless.com/AL0001PMK8ARS0">Buy now</a>
+                </div>
+            </section>
         </div>
-        <div class="plan">
+
+
+        <div class="plan pro">
             <div class="plan-header">
                 <h1>Pro</h1>
-                <span>£899</span>/mo
-                <br>
-                <span>£8999</span>/yr
+                <div class="tabs dark">
+                    <button class="tab active" onclick="_tabChange('m', 'pro')">Monthly</button>
+                    <button class="tab" onclick="_tabChange('y', 'pro')">Yearly</button>
+                </div>
+                <section class="price">
+                    <div class="m active">
+                        <span>£899</span>/mo
+                    </div>
+                    <div class="y">
+                        <span>£8999</span>/yr
+                    </div>
+                </section>
             </div>
-            <p>Includes:</p>
-            <ul>
-                <li>Up to
-                    <b>10,000,000</b> API calls per annum</li>
-                <li>Unlimited end user API calls</li>
-                <li>Unlimited total consents</li>
-                <li>
-                    <b>12</b> Admin Accounts</li>
-                <li>Office hour Support</li>
-            </ul>
-            <a class="btn btn-green" href="{{ site.url }}/contact.html">Contact Sales</a>
+            <section class="plan-body">
+                <div class="m active">
+                    <p>Includes:</p>
+                    <ul>
+                        <li>Up to
+                            <b>800,000</b> API calls per month</li>
+                        <li>Unlimited end user API calls</li>
+                        <li>Unlimited total consents</li>
+                        <li>
+                            <b>12</b> Admin Accounts</li>
+                        <li>Office hour Support</li>
+                    </ul>
+                    <a class="btn btn-green" href="https://pay.gocardless.com/AL0001PMKAWBY8">Buy Now</a>
+                </div>
+                <div class="y">
+                    <p>Includes:</p>
+                    <ul>
+                        <li>Up to
+                            <b>10,000,000</b> API calls per annum</li>
+                        <li>Unlimited end user API calls</li>
+                        <li>Unlimited total consents</li>
+                        <li>
+                            <b>12</b> Admin Accounts</li>
+                        <li>Office hour Support</li>
+                    </ul>
+                    <a class="btn btn-green" href="{{ site.url }}/contact.html">Contact Sales</a>
+                </div>
+            </section>
         </div>
     </div>
     <div id="enterprise">
@@ -181,3 +294,29 @@ nav: true
         <a class="btn" href="{{ site.url }}/contact.html">Contact sales</a>
     </div>
 </section>
+<script>
+    function _tabChange(x, y) {
+        let plan = document.getElementsByClassName(y)[0];
+        let price = plan.children[0].children[2].children,
+            tabs = plan.children[0].children[1].children,
+            body = plan.children[1].children;
+
+        for (let i = 0; i < price.length; i++) {
+            if (price[i].classList.contains(x)) {
+                if (price[i].classList.contains('active')) {
+                    //is active
+                } else {
+                    price[0].classList.remove('active');
+                    tabs[0].classList.remove('active');
+                    body[0].classList.remove('active');
+                    price[1].classList.remove('active');
+                    tabs[1].classList.remove('active');
+                    body[1].classList.remove('active');
+                    price[i].classList.add('active');
+                    tabs[i].classList.add('active');
+                    body[i].classList.add('active');
+                }
+            }
+        }
+    }
+</script>

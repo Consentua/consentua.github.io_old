@@ -1,7 +1,7 @@
 --- 
 layout: page 
 title: Demo 
-nav: false 
+nav: true 
 ---
 <style>
     body {
@@ -30,16 +30,20 @@ nav: false
     margin: 2rem 0;
     border-radius: 10px;
     overflow: hidden;
+    min-width: 400px;
     }
 
     #demoTxt {
         flex: 1;
         margin-left: 1rem;
+        /* min-width: 400px; */
     }
 
     #sdkDemo {
+        
         text-align: center;
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         align-items: center;
     }
@@ -54,7 +58,6 @@ nav: false
         flex: auto;
         border: none;
         width: 100%;
-        min-width: 50%;
         height: 80vh;
     }
 
@@ -62,6 +65,17 @@ nav: false
         font-weight: 600;
         color: var(--secondary-color);
     }
+    @media only screen and (max-width: 800px) {
+    body:after{
+        width: 210vw;
+    height: 100vh;
+    top: 0;
+    right: -500px;
+    bottom: -400px;
+    left: -90px;
+    }
+  }
+    
     </style>
 <section id="sdkDemo">
     <div id="consentuaCodepen">
@@ -73,13 +87,12 @@ nav: false
         <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
         </div>
         <span id="demoTxt">
-            <p>This demo demonstrates Consentua running in your website. It shows the obtaining of consent for
-            direct marketing purposes. Which is one of our most popular use cases.
+            <p>This demonstrates Consentua running in your website. It shows the obtaining of consent for direct marketing purposes, which is one of our most popular use cases.
             </p>
             <p>
                 You can click through the HTML, CSS & JS tabs, to see how simple Consentua is to embed into your site.
             </p>
-            <p>Any questions get in touch</p>
+            <p>Any questions, get in touch!</p>
             <a class="btn btn-accent" href="{{ site.url }}/contact.html">Contact Sales</a>
         </span>
 </section>
