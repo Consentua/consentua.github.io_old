@@ -106,6 +106,10 @@ body {
     -moz-font-smoothing: antialiased;
 }
 
+.hidden{
+    display: none !important;
+}
+
 .content{
     flex: 1 0 auto;
 }
@@ -141,6 +145,11 @@ a {
    form
    ========================================================================== 
 */
+input,
+textarea{
+    font-family: 'Open Sans', sans-serif;
+}
+
 input:focus,
 button:focus,
 textarea:focus{
@@ -190,6 +199,11 @@ textarea:focus{
     color: var(--white-2-color, #F6F6F6);
     background: var(--green-color, #4CAF50);
     border-color: var(--green-color, #4CAF50);
+}
+.btn.btn-grey {
+    color: var(--dark-2-color, #212121);
+    background: var(--grey-4-color, #c7c7c7);
+    border-color: var(--grey-4-color, #c7c7c7);
 }
 .btn.btn-black-line {
     color: var(--dark-2-color, #212121);

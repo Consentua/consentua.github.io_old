@@ -1,0 +1,656 @@
+--- 
+layout: page 
+title: Buy 
+nav: true 
+---
+<style>
+    body:after {
+        content: "";
+        display: block;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 520px;
+        right: 0;
+        bottom: 0;
+        left: -95px;
+        background-color: var(--main-color);
+        border: 80px solid var(--main-color);
+        border-radius: 50px;
+        -webkit-transform: rotate(-30deg);
+        transform: rotate(-30deg);
+        z-index: -1;
+    }
+
+    #buy {
+        background-color: var(--white-2-color, #F6F6F6);
+        max-width: 60%;
+        margin: 0rem auto 4rem auto;
+        padding: 1rem 2rem 0.2rem 2rem;
+        border-radius: 10px;
+    }
+
+    #buy .headline h1,
+    #buy h2 {
+        text-align: center;
+    }
+
+    #buy form#paymentForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 500px;
+    }
+
+    #buy .form-tab {
+        overflow: hidden;
+        transition: flex 0.3s ease-out;
+        height: auto;
+        flex: 0;
+        /* display: none; */
+    }
+
+    #buy fieldset {
+        padding: 0px;
+        /* margin: 1rem 0rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; */
+        border: none;
+    }
+
+    #buy fieldset>.form-row {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        padding-bottom: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 95%;
+    }
+
+    #buy fieldset>.form-row.multi input {
+        max-width: 27%;
+    }
+
+    #buy fieldset .form-row label {
+        font-weight: 500;
+        letter-spacing: normal;
+        line-height: 26px;
+        margin-right: 20px;
+        flex: 33%;
+    }
+
+    #buy #plan>div {
+        text-align: center;
+        padding: 1.2rem;
+        box-shadow: inset 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+        background-color: white;
+        margin-bottom: 1rem;
+    }
+
+    #buy #plan>div>h3,
+    #buy #plan>div>p {
+        margin: 0px
+    }
+
+    #buy #plan>div>img {
+        max-width: 40px;
+    }
+
+
+    #buy #plan>div#plan-basic {}
+
+    #buy #plan>div#planStandard {
+        background-color: var(--main-color);
+        color: #fff;
+        box-shadow: inset 0px 0px 13px 0px #fff;
+    }
+
+    #buy #plan>div#planPro {
+        color: #fff;
+        background: var(--dark-3-color, #373737);
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23ffc021' fill-opacity='0.09' fill-rule='evenodd'/%3E%3C/svg%3E");
+        box-shadow: inset 0px 0px 13px 0px #fff;
+    }
+
+    #buy #steps {
+        display: flex;
+        justify-content: center;
+    }
+
+    #buy .step {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbbbbb;
+        border: none;
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0.5;
+    }
+
+    /* Mark the active step: */
+
+    #buy .step.active {
+        opacity: 1;
+    }
+
+    /* Mark the steps that are finished and valid: */
+
+    #buy .step.finish {
+        background-color: #4CAF50;
+    }
+
+    #buy fieldset input,
+    #buy fieldset select,
+    #buy fieldset textarea,
+    .StripeElement {
+        flex: 45%;
+        padding: 10px 12px;
+        align-self: center;
+        border: 1px solid transparent;
+        box-shadow: 0 1px 3px 0 #e6ebf1;
+        -webkit-transition: box-shadow 150ms ease;
+        transition: box-shadow 150ms ease;
+        background-color: var(--grey-3-color);
+        border-radius: 5px;
+    }
+
+    #buy fieldset select:invalid {
+        color: gray;
+    }
+
+    #buy fieldset select {
+        flex: 65%;
+    }
+
+    #buy fieldset textarea {
+        height: 5rem;
+    }
+
+    #buy #cardErrors {
+        width: 80%;
+        display: none;
+        color: #fff;
+        background-color: var(--red-color);
+        padding: 1rem;
+        margin: 1.5rem auto;
+        text-align: center;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    #buy .btns-contain {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #buy .btn {
+        width: 100%;
+        max-width: 200px;
+        ;
+        display: block;
+        margin-top: 0.5rem;
+    }
+
+    #buy .StripeElement--focus {
+        box-shadow: 0 1px 3px 0 #cfd7df;
+    }
+
+    #buy .StripeElement--invalid, #buy input.invalid, #buy select.invalid{
+        border-color: var(--red-color);
+    }
+
+    #buy .StripeElement--webkit-autofill {
+        background-color: #fefde5 !important;
+    }
+
+    #buy #success {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        border: 0.6rem solid var(--green-color);
+        border-radius: 10px;
+        margin: 2rem 0rem;
+    }
+
+    #buy #success .fa-check-circle {
+        color: var(--green-color);
+    }
+
+    #buy .fa-stripe {
+        margin: 2rem auto 0px auto;
+        display: block;
+    }
+</style>
+<section id="buy">
+    <section id="buyform">
+    <div class="headline">
+        <h1>Buy Consentua</h1>
+    </div>
+    <section id="plan">
+        <div id="planNone" data-plan="none" class="hidden">
+            <i class="far fa-exclamation-triangle fa-5x"></i>
+            <h3>No Plan Selected</h3>
+            <p>Please use the menu below to select a plan.</p>
+        </div>
+        <div id="planBasic" data-plan="basic" class="hidden">
+            <img src="{{ site.url }}/imgs/logo/consentua-lock-pink.svg">
+            <h3>Consentua Basic</h3>
+            <p>£10/mo</p>
+            <p>£99/yr</p>
+        </div>
+        <div id="planStandard" data-plan="standard" class="hidden">
+            <img src="{{ site.url }}/imgs/logo/consentua-lock-white.svg">
+            <h3>Consentua Standard</h3>
+            <p>£99/mo</p>
+            <p>£949/yr</p>
+        </div>
+        <div id="planPro" data-plan="pro" class="hidden">
+            <img src="{{ site.url }}/imgs/logo/consentua-lock-white.svg">
+            <h3>Consentua Pro</h3>
+            <p>£899/mo</p>
+            <p>£8999/yr</p>
+        </div>
+    </section>
+    <!-- Circles which indicates the steps of the form: -->
+    <div id="steps">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+    </div>
+    <div id="cardErrors" role="alert"></div>
+    <form id="paymentForm" method="POST" enctype='application/json'>
+        <fieldset class="form-tab">
+            <div id="planSelect" class="form-row">
+                <label for="planInput">Plan</label>
+                <select id="planInput" onchange="switchPlan(this.value)">
+                    <option value="" disabled selected>Select your option</option>
+                    <option value="basic">Basic</option>
+                    <option value="standard">Standard</option>
+                    <option value="pro">Pro</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="periodInput">Billing period</label>
+                <select id="periodInput" name="period">
+                    <option value="" disabled selected>Select your option</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="annualy">Annualy</option>
+                </select>
+            </div>
+        </fieldset>
+        <fieldset class="form-tab">
+            <h3>Company Information</h3>
+            <div class="form-row">
+                <label for="companyNameInput">Company Name</label>
+                <input id="companyNameInput" name="companyName" type="text" placeholder="Consentua" required>
+            </div>
+            <div class="form-row">
+                <label for="privacyURLInput">Privacy Policy URL</label>
+                <input id="privacyURLInput" name="privacyPolicyURL" type="text" placeholder="consentua.com/privacy" required>
+            </div>
+            <div class="form-row">
+                <label for="DCemailIput">Data Controller Email</label>
+                <input id="DCemailIput" name="DCemail" type="email" placeholder="example@consentua.com" required>
+            </div>
+            <div class="form-row">
+                <label for="DCphoneInput">Data Controller Phone</label>
+                <input id="DCphoneInput" name="DCtel" type="tel" placeholder="07700 900957" required>
+            </div>
+            <div class="form-row">
+                <label for="DCaddrln1Input">Data Controller Address</label>
+                <input id="DCaddrln1Input" name="DC-addr-ln1" type="text" required placeholder="Address">
+            </div>
+            <div class="form-row multi">
+                <input name="DCaddrcity" type="text" required placeholder="City">
+                <input name="DCaddrstate" type="text" required placeholder="State">
+                <input name="DCaddrzip" type="text" required placeholder="Zip/Postcode">
+            </div>
+        </fieldset>
+        <fieldset class="form-tab">
+            <h3>Billing information</h3>
+            <div class="form-row">
+                <label for="nameInput">Name</label>
+                <input id="nameInput" name="name" type="text" placeholder="Jane Doe" required>
+            </div>
+            <div class="form-row">
+                <label for="emailIput">Email</label>
+                <input id="emailIput" name="email" type="email" placeholder="janedoe@gmail.com" required>
+            </div>
+            <div class="form-row">
+                <label for="phoneInput">Phone</label>
+                <input id="phoneInput" name="tel" type="tel" placeholder="07700 900957" required>
+            </div>
+            <div class="form-row">
+                <label for="addrLn1Input">Billing Address</label>
+                <input id="addrLn1Input" name="addrLn1Input" type="text" required placeholder="Address">
+            </div>
+            <div class="form-row multi">
+                <input name="addrCityInput" type="text" required placeholder="City">
+                <input name="addrStateInput" type="text" required placeholder="State">
+                <input name="addrZipInput" type="text" required placeholder="Zip/Postcode">
+            </div>
+            <div class="form-row">
+                <label for="countryInput">Country</label>
+                <select id="countryInput" name="country">
+                    <option value="AU">Australia</option>
+                    <option value="AT">Austria</option>
+                    <option value="BE">Belgium</option>
+                    <option value="BR">Brazil</option>
+                    <option value="CA">Canada</option>
+                    <option value="CN">China</option>
+                    <option value="DK">Denmark</option>
+                    <option value="FI">Finland</option>
+                    <option value="FR">France</option>
+                    <option value="DE">Germany</option>
+                    <option value="HK">Hong Kong</option>
+                    <option value="IE">Ireland</option>
+                    <option value="IT">Italy</option>
+                    <option value="JP">Japan</option>
+                    <option value="LU">Luxembourg</option>
+                    <option value="MX">Mexico</option>
+                    <option value="NL">Netherlands</option>
+                    <option value="NZ">New Zealand</option>
+                    <option value="NO">Norway</option>
+                    <option value="PT">Portugal</option>
+                    <option value="SG">Singapore</option>
+                    <option value="ES">Spain</option>
+                    <option value="SE">Sweden</option>
+                    <option value="CH">Switzerland</option>
+                    <option value="GB" selected="selected">United Kingdom</option>
+                    <option value="US">United States</option>
+                </select>
+            </div>
+            <!--
+        <div class="form-row">
+            <label for="nameInput">Promo code</label>
+            <input id="nameInput"type="text" placeholder="xxx-xxx" >
+        </div> -->
+            <div class="form-row">
+                <label for="cardInput">Credit or debit card</label>
+                <div id="cardInput"></div>
+            </div>
+        </fieldset>
+
+        <div class="btns-contain">
+            <button class="btn btn-grey" type="button" id="prevBtn" onclick="nextPrev(-1)">
+                <i class="far fa-caret-left"></i> Previous</button>
+            <button class="btn btn-green" type="button" id="nextBtn" onclick="nextPrev(1)">Next
+                <i class="far fa-caret-right"></i>
+            </button>
+            <button class="btn btn-accent hidden" type="submit" id="submitBtn">Checkout
+                <i class="far fa-shopping-cart"></i>
+            </button>
+        </div>
+
+        <div class="error hidden" role="alert">
+            <span class="message"></span>
+        </div>
+    </form>
+    <i class="fab fa-stripe fa-2x"></i>
+    </section>
+    <div id="success" class="hidden">
+        <i class="fal fa-check-circle fa-5x"></i>
+        <h3 class="title">Payment successful</h3>
+        <p>Welcome to Consentua, you have been subscribed to the plan: <span id="sucPlan"></span>.</p>
+        <button class="btn btn-accent">Create Admin Account</button>
+    </div>
+</section>
+
+<script>
+    //===plan switching===
+    var plan = 'none';
+
+    function switchPlan(e) {
+        plan = e;
+        let plans = document.getElementById('plan').getElementsByTagName('div');
+        for (let i = 0; i < plans.length; i++) {
+            plans[i].classList.add('hidden');
+            if (plans[i].dataset.plan == e) plans[i].classList.remove('hidden');
+        }
+    };
+
+    if (/plan=([^&]+)/.exec(window.location.href)) {
+        let p = /plan=([^&]+)/.exec(window.location.href)[1]
+        document.getElementById('planInput').value = p;
+        switchPlan(p);
+    } else {
+        switchPlan('none');
+    }
+    if(/period=([^&]+)/.exec(window.location.href)) document.getElementById('periodInput').value = /period=([^&]+)/.exec(window.location.href)[1];
+
+    
+    //===stripe===
+
+    var stripe = Stripe('pk_test_3guakkqScoO3ESpYG7YeDkyU');
+    var elements = stripe.elements();
+    var style = {
+        base: {
+            // Add your base input styles here. For example:
+            iconColor: '#000000',
+            color: '#000000',
+            fontWeight: 400,
+            fontFamily: 'Open Sans, sans-serif',
+            fontSize: '16px',
+            fontSmoothing: 'antialiased'
+        }
+    };
+    // Create an instance of the card Element.
+    var card = elements.create('card', {
+        style: style,
+        hidePostalCode: true
+    });
+    var form = document.getElementById('paymentForm');
+
+    // Add an instance of the card Element into the `card-element` <div>.
+    card.mount('#cardInput');
+
+    card.addEventListener('change', function (event) {
+        var displayError = document.getElementById('cardErrors');
+        if (event.error) {
+            displayError.style.display = 'block';
+            displayError.textContent = event.error.message;
+        } else {
+            displayError.style.display = 'none';
+            displayError.textContent = '';
+        }
+    });
+
+    // Create a source or display an error when the form is submitted.
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        let x = event.target;
+        var ownerInfo = {
+            owner: {
+                name: x['name'].value,
+                email: x['email'].value,
+                address: {
+                    line1: x['addrLn1Input'].value,
+                    city: x['addrCityInput'].value,
+                    state: x['addrStateInput'].value,
+                    postal_code: x['addrZipInput'].value,
+                    country: x['countryInput'].value,
+                }
+            },
+        };
+        console.log(ownerInfo);
+
+        stripe.createSource(card, ownerInfo).then(function (result) {
+            if (result.error) {
+                // Inform the user if there was an error
+                var errorElement = document.getElementById('card-errors');
+                errorElement.textContent = result.error.message;
+            } else {
+                // Send the source to your server
+                stripeSourceHandler(result.source);
+            }
+        });
+    });
+
+    function stripeSourceHandler(source) {
+        // Insert the source ID into the form so it gets submitted to the server
+        var form = document.getElementById('paymentForm');
+        var hiddenInput = document.createElement('input');
+        hiddenInput.setAttribute('type', 'hidden');
+        hiddenInput.setAttribute('name', 'stripeSource');
+        hiddenInput.setAttribute('value', source.id);
+        form.appendChild(hiddenInput);
+        var hiddenInputPlan = document.createElement('input');
+        hiddenInputPlan.setAttribute('type', 'hidden');
+        hiddenInputPlan.setAttribute('name', 'plan');
+        hiddenInputPlan.setAttribute('value', plan);
+        form.appendChild(hiddenInputPlan);
+        // Submit the form
+        // form.submit();
+        submitForm(form);
+
+    }
+
+    function toJSONString(form) {
+		var obj = {};
+		var elements = form.querySelectorAll( "input, select, textarea" );
+		for( var i = 0; i < elements.length; ++i ) {
+			var element = elements[i];
+			var name = element.name;
+			var value = element.value;
+
+			if( name ) {
+				obj[ name ] = value;
+			}
+		}
+		return JSON.stringify(obj);
+	}
+
+    function formRequest(opts) {
+    return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        var params = opts.params;
+        xhr.open(opts.method, opts.url);
+        xhr.onload = function () {
+            if (this.status >= 200 && this.status < 300) {
+                resolve(xhr.response);
+            } else {
+                reject({
+                    status: this.status,
+                    statusText: xhr.statusText
+                });
+            }
+        };
+        xhr.onerror = function () {
+            reject({
+                status: this.status,
+                statusText: xhr.statusText
+            });
+        };
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(params);
+
+    });
+}
+
+    function submitForm(form) {
+    var url = 'http://localhost:3000',
+        doc = document;
+        formdata = toJSONString(form);
+        opts = {
+            method: 'POST',
+            url: url + '/form',
+            params: formdata
+        };
+    formRequest(opts)
+        .then(function (cb) {
+            cb = JSON.parse(cb);
+            let suc = doc.getElementById('success');
+            doc.getElementById('buyform').classList.add('hidden');
+            doc.getElementById('sucPlan').innerHTML=cb.plan;
+            suc.classList.remove('hidden');
+        })
+        .catch(function (err) {
+            console.error('Augh, there was an error!', err);
+            doc.getElementById('cardErrors').innerHTML = "Error: " + err.statusText;
+        });
+    }
+
+    //===Tabs===
+
+
+    var currentTab = 0; // Current tab is set to be the first tab (0)
+    showTab(currentTab); // Display the current tab
+
+    function showTab(n) {
+        // This function will display the specified tab of the form ...
+        var x = document.getElementsByClassName("form-tab");
+        x[n].style.flex = 1;
+        // ... and fix the Previous/Next buttons:
+        if (n == 0) {
+            document.getElementById("prevBtn").classList.add('hidden');
+        } else {
+            document.getElementById("prevBtn").classList.remove('hidden');
+        }
+        if (n == (x.length - 1)) {
+            document.getElementById("nextBtn").classList.add('hidden');
+            document.getElementById("submitBtn").classList.remove('hidden');
+        } else {
+            document.getElementById("nextBtn").classList.remove('hidden');
+            document.getElementById("submitBtn").classList.add('hidden');
+        }
+        // ... and run a function that displays the correct step indicator:
+        fixStepIndicator(n)
+    }
+
+    function nextPrev(n) {
+        // This function will figure out which tab to display
+        var x = document.getElementsByClassName("form-tab");
+        // Exit the function if any field in the current tab is invalid:
+        if (n == 1 && !validateForm()) return false;
+        // Hide the current tab:
+        x[currentTab].style.flex = 0;
+        // Increase or decrease the current tab by 1:
+        currentTab = currentTab + n;
+        // if you have reached the end of the form... :
+        if (currentTab >= x.length) {
+            //...the form gets submitted:
+            document.getElementById("regForm").submit();
+            return false;
+        }
+        // Otherwise, display the correct tab:
+        showTab(currentTab);
+    }
+
+    function validateForm() {
+        // This function deals with validation of the form fields
+        var x, y, i, valid = true;
+        x = document.getElementsByClassName("form-tab");
+        y = x[currentTab].querySelectorAll("input, select");
+
+        // A loop that checks every input field in the current tab:
+        for (i = 0; i < y.length; i++) {
+            // If a field is empty...
+            if (y[i].value == "") {
+                // add an "invalid" class to the field:
+                if(y[i].className != " invalid") y[i].className += " invalid";
+                // and set the current valid status to false:
+                valid = false;
+            }
+        }
+        // If the valid status is true, mark the step as finished and valid:
+        if (valid) {
+            document.getElementsByClassName("step")[currentTab].className += " finish";
+        }
+        return valid; // return the valid status
+    }
+
+    function fixStepIndicator(n) {
+        // This function removes the "active" class of all steps...
+        var i, x = document.getElementsByClassName("step");
+        for (i = 0; i < x.length; i++) {
+            x[i].className = x[i].className.replace(" active", "");
+        }
+        //... and adds the "active" class to the current step:
+        x[n].className += " active";
+    }
+</script>

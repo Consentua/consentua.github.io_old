@@ -308,37 +308,47 @@ nav: true
     </div>
     <p id="errTxt"></p>
     <p id="consentuaStatus"></p>
-    <form id="contactForm" action="https://formspree.io/contact@consentua.com" method="POST">
-        <fieldset>
-            <input type="hidden" name="_subject" value="Sales enquiry form" required/>
-            <input type="hidden" name="_next" value="{{ site.url }}/contact-success.html" required/>
-            <div class="form-row">
-                <label for="name">Name</label>
-                <input type="text" name="name" placeholder="Sam" required/>
-            </div>
-            <div class="form-row">
-                <label>Email Address</label>
-                <input id="emailInput" type="email" name="_replyto" placeholder="Sam@example.com" required/>
-            </div>
-            <div class="form-row">
-                <label>Website</label>
-                <input type="text" name="website" placeholder="example.com" />
-            </div>
-            <div class="form-row">
-                <label>Message</label>
-                <textarea name="message" placeholder="Let us know how we can help." required></textarea>
-            </div>
-            <div class="consent-check-contain">
-                <label id="cbtestLab" for="cbtest" class="check-label"><p>I consent my email address to be added to the mailing list, for the purpose of receiving marketing emails.</p><label>
-                <input type="checkbox" id="cbtest" name="consent"/>
+    <form action='https://forms.zohopublic.eu/knownow/form/ContactForm/formperma/G2p-VtSNbxrAw8cWK9tFkuafHtdGaDE_uMp2O4oF3Qo/htmlRecords/submit' name='form' id='contactForm' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
+		<fieldset>
+	<input type="hidden" name="zf_referrer_name" value="consentua.com"><br>
+	<!-- To Track referrals , place the referrer name within the " " in the above hidden input field -->
+	<input type="hidden" name="zf_redirect_url" value="https://consentua.com/contact-success"><br>
+	<!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
+	<input type="hidden" name="zc_gad" value=""><br>
+	<!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
+	 <input type='text' style='display:none;' name='Source' value='consentua.com' />
+		</fieldset>
+		<fieldset>
+			<div class="form-row">
+				<label for="name">First Name</label>
+				<input type="text" name='Name_First' placeholder="Sam" required/>
+			</div>
+			<div class="form-row">
+				<label for="name">Last Name</label>
+				<input type="text" name='Name_Last' placeholder="Longbottom" required/>
+			</div>
+			<div class="form-row">
+				<label>Email Address</label>
+				<input id="emailInput" type="email" name="Email" placeholder="Sam@example.com" required/>
+			</div>
+			<div class="form-row">
+				<label>Website</label>
+				<input type="text" name="Website" placeholder="example.com" />
+			</div>
+			<div class="form-row">
+				<label>Message</label>
+				<textarea name="MultiLine" placeholder="Let us know how we can help." required></textarea>
+			</div>
+			<div class="consent-check-contain">
+				<label id="cbtestLab" for="cbtest" class="check-label"><p>I consent my email address to be added to the mailing list, for the purpose of recieving marketing emails</p><label>
+                <input type="checkbox" id="cbtest" name="Consent"/>
                 <label for="cbtest" class="check-box"></label>
-            </div>
-        </fieldset>
-        <button type="submit" class="btn btn-accent">
+			</div>
+		</fieldset>
+		<button type="submit" class="btn btn-accent">
             Send Message
-            <i class="fal fa-envelope"></i>
         </button>
-    </form>
+	</form>
     <div id="consentuaLabel">
         Powered by 
         <a href="{{ site.url }}"><img src="{{ site.url }}/imgs/logo/include.jpg"></a>

@@ -27,6 +27,9 @@
 		text-decoration: none;
 		cursor: pointer;
 	}
+	footer p > a {
+		text-decoration: underline;
+	}
 	footer>.cols>.col{
 		max-width: 200px;
 	}
@@ -55,12 +58,12 @@
 		margin: 0.5rem;
 	}
 	/* if page is not on home */
-   {% if  page.title == "Contact Sales" or page.title == "FAQ"%}
+   {% if  page.title == "Contact Sales" or page.title == "FAQ" %}
    footer {
 	   background: transparent;
    }
    {% endif %}
-   {% if page.title == "Pricing" or page.title == "Demo" %}
+   {% if page.title == "Pricing" or page.title == "Demo" or page.title == "Schools" %}
    footer, footer a{
 	   background: transparent;
 	   color: var(--dark-3-color);
@@ -108,7 +111,10 @@
 					<span class="col-tile">Developers</span>
 				</li>
 				<li>
-					<a href="http://test.consentua.com/swagger">API reference</a>
+					<a href="{{ site.url }}/docs">Docs</a>
+				</li>
+				<li>
+					<a href="http://api.consentua.com/swagger">API reference</a>
 				</li>
 				<li>
 					<a href="https://github.com/Consentua/Documentation">Guides</a>
@@ -147,7 +153,7 @@
 	</div>
 	<article class="container">
 		<div>
-			<p>© 2016-2018 KnowNow Information Limited.</p>
+			<p>© 2016-2018 <a href="http://www.kn-i.com/">KnowNow Information Limited.</a></p>
 			<p>Registered in England and Wales number 8781104.</p>
 			<p>Registered address: Halpern House, 1-2 Hampshire Terrace, Portsmouth, PO1 2QF</p>
 			<p>Consentua and the 'Consentua Choice and Control' logo are registered trademarks of KnowNow Information Limited.</p>

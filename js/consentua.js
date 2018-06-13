@@ -58,7 +58,7 @@ function generateToken(token) {
 
 document.getElementById("contactForm").addEventListener("submit", function (e) {
     e.preventDefault(); //stop form from submitting
-    var url = 'https://test.consentua.com',
+    var url = 'https://api.consentua.com',
         form = e.target,
         token = '',
         userId = '',
@@ -182,7 +182,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
         }).then(function (cb) {
             //consentua successfully setup, submit form
             status.innerHTML = "Consent set successfully, submitting form";
-            document.getElementById("contactForm").submit();
+            // document.getElementById("contactForm").submit();
         })
         .catch(function (err) {
             console.error('Augh, there was an error!', err);
