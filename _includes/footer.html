@@ -58,12 +58,12 @@
 		margin: 0.5rem;
 	}
 	/* if page is not on home */
-   {% if  page.title == "Contact Sales" or page.title == "FAQ" %}
+   {% if  page.title == "Contact Sales" %}
    footer {
 	   background: transparent;
    }
    {% endif %}
-   {% if page.title == "Pricing" or page.title == "Demo" or page.title == "Schools" %}
+   {% if page.title == "Pricing" or page.title == "Demo" or page.title == "Schools" or page.title == "FAQ" %}
    footer, footer a{
 	   background: transparent;
 	   color: var(--dark-3-color);
@@ -111,7 +111,7 @@
 					<span class="col-tile">Developers</span>
 				</li>
 				<li>
-					<a href="{{ site.url }}/docs">Docs</a>
+					<a href="https://consentua.com/docs">Docs</a>
 				</li>
 				<li>
 					<a href="http://api.consentua.com/swagger">API reference</a>
@@ -144,6 +144,9 @@
 				</li>
 				<li>
 					<a href="{{ site.url }}/contact.html">Contact</a>
+				</li>
+				<li>
+					<a href="{{ site.url }}/resources.html">Resources</a>
 				</li>
 				<li>
 					<a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a>

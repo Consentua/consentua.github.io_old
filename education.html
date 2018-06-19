@@ -4,33 +4,59 @@ title: Schools
 nav: false 
 ---
 <style>
-    body:after {
+  @keyframes bodyaferanim{
+    0% {
+        box-shadow: 200px 150px 0px 0px #dfbdca;
+        transform: rotate(-24deg);
+    }
+    25% {
+        box-shadow: 90px 20px 0px 0px #dfbdca;
+        transform: rotate(-23deg);
+    }
+    50% {
+        box-shadow: 60px 115px 0px 0px #dfbdca;
+        transform: rotate(-27deg);
+    }
+    75% {
+        box-shadow: 140px 30px 0px 0px #dfbdca;
+        transform: rotate(-25deg);
+    }
+    100% {
+        box-shadow: 250px 170px 0px 0px #dfbdca;
+        transform: rotate(-20deg);
+    }
+  }
+  body:after {
     content: "";
     display: block;
     position: fixed;
     width: 100vw;
     height: 100vh;
-    top: 741px;
+    top: 130vh;
     right: 0;
     bottom: 0;
-    left: -160px;
+    left: -15vw;
     border: 80px solid #fff;
     border-radius: 50px;
-    -webkit-transform: rotate(-30deg);
+    -webkit-transform: rotate(-24deg);
     transform: rotate(-24deg);
     z-index: -1;
     background-color: white;
     box-shadow: 200px 150px 0px 0px #dfbdca;
-    }
-    
-    #educaiton #heroSvg{
+    animation: bodyaferanim 40s ease-in-out infinite;
+    animation-direction: alternate;
+    transform-origin: 0 0;
+    animation-delay: 3s;
+  }
+
+  #educaiton #heroSvg , #educaiton #choose{
     position: absolute;
     left: 0;
     max-width: 48vw;
     margin: 2rem 1rem 1rem 2rem;
-    }
+  }
 
-    #educaiton #blurb {
+  #educaiton #blurb {
     max-width: 500px;
     min-height: 65vh;
     margin-left: auto;
@@ -45,58 +71,96 @@ nav: false
     -ms-flex-align: start;
     align-items: center;
     justify-content: center;
-    }
+  }
 
-  #educaiton #blurb .btn.accent{
+  #educaiton #blurb .btn.accent {
     margin-right: 1rem;
   }
-  #educaiton .info-cols{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin: 6rem 0px;
+
+  #educaiton .info-cols {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 6rem 0px;
   }
-  #educaiton .info-cols > .col{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        border-bottom: 2px solid var(--main-color);
-        padding: 1rem;
-        margin: 1rem;
+
+  #educaiton .info-cols>.col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-bottom: 2px solid var(--main-color);
+    padding: 1rem;
+    margin: 1rem;
+    min-width: 100px;
+    max-width: 250px;
   }
+  @media only screen and (max-width: 1000px) {
+    #educaiton #heroSvg {
+      position: relative;
+      display: block;
+      max-width: 70vw;
+      margin: -3rem auto -1rem 18%;
+    }
+    #educaiton #blurb {
+      max-width: 500px;
+      min-height: 30vh;
+      margin: 0px auto;
+    }
+  }
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+  #educaiton #heroSvg {
+    margin: 0rem auto -1rem 18%;
+  }
+}
 </style>
 <section id="educaiton">
-    {% include person-consenting-svg.html %}
-    <div id="blurb">
-    <h1>Consent for schools</h1>
-    <p>Consentua™ helps build trust. Giving users choice and control over their personal data. Enabling a more trusted and transparent
-        relationship between the customer and the service provider.</p>
-    <span>
-        <a class="btn btn-accent" href="{{ site.url }}/demo.html">View Demo
+	{% include person-consenting-svg.html %}
+	<div id="blurb">
+		<h1>Consent for Schools</h1>
+		<p>Consentua™ helps build trust. Giving users choice and control over their personal data. Enabling a more trusted and transparent
+			relationship between the customer and the service provider.</p>
+			<span>
+				<a class="btn btn-accent" href="{{ site.url }}/demo.html">View Demo
         <i class="far fa-laptop"></i>
-        </a>
-        <a class="btn btn-green" href="{{ site.url }}/pricing.html">Buy Now
+	</a>
+	<a class="btn btn-green" href="{{ site.url }}/pricing.html">Buy Now
         <i class="far fa-shopping-cart"></i>
-        </a>
+	</a>
     </span>
+</div>
+  <div class="container info-cols">
+	  <div class="col">
+	  <i class="fal fa-id-card fa-4x" data-fa-transform="flip-h"></i>
+      <p>Use Consentua to handle all consents and opt-ins under a single pupil identity record. As long as the pupil ID is consistent, any the change to the in data purpose over time will be added to the pupils consent record.</p>
     </div>
-    <div class="container info-cols">
-        <div class="col"><i class="far fa-id-badge fa-4x"></i><h2>col1</h2><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam sequi iure ipsum, esse quos dolorum accusantium rerum rem, incidunt et aspernatur, nisi dolore atque maxime facilis eaque doloribus obcaecati?</p></div>
-        <div class="col"><i class="fas fa-child fa-4x"></i><h2>col2</h2><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam sequi iure ipsum, esse quos dolorum accusantium rerum rem, incidunt et aspernatur, nisi dolore atque maxime facilis eaque doloribus obcaecati?</p></div>
-        <div class="col"><i class="far fa-plug fa-4x"></i><h2>col3</h2><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam sequi iure ipsum, esse quos dolorum accusantium rerum rem, incidunt et aspernatur, nisi dolore atque maxime facilis eaque doloribus obcaecati?</p></div>
+    <div class="col">
+		<i class="fal fa-school fa-4x"></i>
+      <p>Consentua provides the ability to have a really flexible consent management solution that allows the school/college to change the request to process personal data in the future seamlessly. </p>
     </div>
-    <div class="container">{% include hero-carousel.html %}</div>
-    <div class="container"><div style="padding:56.25% 0 0 0;position:relative;margin: 3rem 0px"><iframe src="https://player.vimeo.com/video/235892308?color=c7346a&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script></div>
-    <div class="container">
-            <div class="bottom-cta">
-              <span>
-                <h1>Ready to get started?</h1>
-                <h2>Get in touch</h2><!--, or view the web demo.</h2>-->
-              </span>
-              <span>
-                <a href="{{ site.url }}/contact.html" class="btn btn-black">Contact Sales</a>
-              </span>
-            </div>
-          </div>
+    <div class="col">
+		<i class="fal fa-shield-check fa-4x"></i>
+		<p>You can view by pupil and by purpose. It is easy and quick to check both at the human and machine to machine level. The consent receipt can be shared whilst still avoiding any doubts by maintaining one source of truth.</p>
+    </div>
+</div>
+<!-- <img src="{{ site.url }}/imgs/undraw_choose_80qg.svg"> -->
+<div class="container">
+	<div style="padding:56.25% 0 0 0;position:relative;margin: 3rem 0px">
+		<iframe src="https://player.vimeo.com/video/235892308?color=c7346a&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;"
+        frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+</div>
+  <div class="container">
+	  <div class="bottom-cta">
+		  <span>
+        <h1>Ready to get started?</h1>
+        <h2>Get in touch</h2>
+      </span>
+      <span>
+        <a href="{{ site.url }}/contact.html" class="btn btn-black">Contact Sales</a>
+      </span>
+    </div>
+  </div>
 </section>

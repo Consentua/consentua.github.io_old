@@ -5,23 +5,24 @@ order: 4
 nav: false 
 ---
 <style>
-body:after {
+  body:after {
     content: "";
     display: block;
     position: fixed;
     width: 100vw;
     height: 100vh;
-    top: 520px;
+    top: 741px;
     right: 0;
     bottom: 0;
-    left: -95px;
-    background-color: var(--main-color);
-    border: 80px solid var(--main-color);
+    left: -160px;
+    border: 80px solid #fff;
     border-radius: 50px;
     -webkit-transform: rotate(-30deg);
-    transform: rotate(-30deg);
+    transform: rotate(-24deg);
     z-index: -1;
-}
+    background-color: white;
+    box-shadow: 200px 150px 0px 0px #dfbdca;
+  }
 #faq{
     display: flex;
     flex-direction: column;
@@ -38,8 +39,10 @@ body:after {
     background-color: white;
     padding: 1rem;
     font-size: 1.2rem;
-    border-radius: 10px;
-    margin-bottom: 1.6rem;
+    border-radius: 50px;
+}
+#faq label:nth-child(odd){
+    background-color: var(--white-2-color, #f6f6f6);
 }
 #faq label:hover{
     background-color: var(--accent-color);
@@ -47,27 +50,28 @@ body:after {
 #faq input{
     display: none;
 }
-#faq .faq-img{
-    max-width: 500px;
+#faq .faq-link{
+    margin: 1rem auto;
 }
-{% for faq in site.data.faq %}
-#faq #expand{{ faq.id }} {
-  height: 0px;
-  overflow: hidden;
-  transition: all 0.5s ease;
-  background: white;
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 1rem;
+#faq .faq-expand {
+    height: 0px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    background: #fff;
+    width: 100%;
+    border-radius: 10px;
+    margin: 1rem;
+    max-width: 650px;
 }
-#faq #expand{{ faq.id }} section{
+#faq .faq-expand section{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
-#faq #expand{{ faq.id }} p{
+#faq .faq-expand p{
     padding: 0 1rem;
 }
+{% for faq in site.data.faq %}
 #faq #toggle{{ faq.id }}:checked ~ #expand{{ faq.id }} {
   height: 250px;
   overflow: auto;
@@ -85,14 +89,14 @@ body:after {
 {% for faq in site.data.faq %}
 <input id="toggle{{ faq.id }}" type="checkbox">
 <label for="toggle{{ faq.id }}">{{ faq.question }} <i class="far fa-chevron-right icon{{ faq.id }}"></i></label>
-<div id="expand{{ faq.id }}">
+<div id="expand{{ faq.id }}" class="faq-expand">
     <section>
         <p>{{ faq.p1 }}</p>
         <p>{{ faq.p2 }}</p>
         <img class="faq-img" src="{{ faq.imageURL }}"/>
-        <p>{{ faq.p3 }}</p>
-        <p>{{ faq.p4 }}</p>
-        <p>{{ faq.p5 }}</p>
+        {% if  faq.linkURL %}
+        <a class="btn btn-black-line faq-link" href="{{ faq.linkURL }}">{{ faq.linkText }}</a>
+        {% endif %}
     </section>
 </div>
 {% endfor %}

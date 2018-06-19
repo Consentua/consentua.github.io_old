@@ -1,0 +1,83 @@
+--- 
+layout: page 
+title: Resources 
+nav: false 
+---
+<style>
+  body:after {
+    content: "";
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 130vh;
+    right: 0;
+    bottom: 0;
+    left: -15vw;
+    border: 80px solid #fff;
+    border-radius: 50px;
+    -webkit-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+    z-index: -1;
+    background-color: white;
+    box-shadow: 200px 150px 0px 0px #dfbdca;
+  }
+  #resImgs{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  #resImgs a{
+    margin: 1rem;
+  }
+  #resImgs a:hover{
+    filter: brightness(85%);
+  }
+  #resImgs img {
+    padding: 1rem;
+    min-width: 200px;
+    max-width: 1000px;
+  }
+  #resImgs img.bg{
+    background: var(--main-color);
+  }
+</style>
+<section id="resources">
+    <h1>Resources</h1>
+    <p>Use these to promote and share Consentua.</p>
+    <p>Need something in particular? <a href="{{ site.url }}/contact">Contact us here</a></p>
+    <a download href="{{ site.url }}/documents/Consentua%20Branding%20Guidelines%20-%20ver%201.2.pdf">Download Consentua Branding Guidelines</a>
+    <div id="resImgs">
+      <a download href="{{ site.url }}/imgs/logo/consentua-logo-tm512x512.png">
+        <img src="{{ site.url }}/imgs/logo/consentua-logo-tm512x512.png">
+      </a>
+      <a download href="{{ site.url }}/imgs/logo/consentua-logo-min-white.svg">
+        <img class="bg" src="{{ site.url }}/imgs/logo/consentua-logo-min-white.svg">
+      </a>
+      <a download href="{{ site.url }}/imgs/avatar.png">
+        <img src="{{ site.url }}/imgs/avatar.png">
+      </a>
+      <a download href="{{ site.url }}/imgs/logo/include.jpg">
+        <img src="{{ site.url }}/imgs/logo/include.jpg">
+      </a>
+      <a download href="{{ site.url }}/imgs/logo/consentua-lock-black.svg">
+        <img src="{{ site.url }}/imgs/logo/consentua-lock-black.svg">
+      </a>
+      <a download href="{{ site.url }}/imgs/logo/consentua-lock-pink.svg">
+        <img src="{{ site.url }}/imgs/logo/consentua-lock-pink.svg">
+      </a>
+      <a download href="{{ site.url }}/imgs/logo/consentua-lock-white.svg">
+        <img class="bg" src="{{ site.url }}/imgs/logo/consentua-lock-white.svg">
+      </a>
+      <a download href="{{ site.url }}/imgs/consentua-sm-banner.png">
+        <img src="{{ site.url }}/imgs/consentua-sm-banner.png">
+      </a>
+      <a download href="{{ site.url }}/imgs/sticker.png">
+        <img src="{{ site.url }}/imgs/sticker.png">
+      </a>
+      <a download href="{{ site.url }}/imgs/sticker2.png">
+        <img src="{{ site.url }}/imgs/sticker2.png">
+      </a>
+    </div>
+</section>
