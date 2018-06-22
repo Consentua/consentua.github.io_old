@@ -22,7 +22,6 @@
     --dark-3-color: #373737;
 }
 
-
 /* 
    ==========================================================================
    selection styles
@@ -106,17 +105,19 @@ body {
     -moz-font-smoothing: antialiased;
 }
 
-.hidden{
+.hidden {
     display: none !important;
 }
 
-.content{
+.content {
     flex: 1 0 auto;
 }
+
 .container {
     max-width: 1000px;
     margin: auto;
 }
+
 /* 
    ==========================================================================
    text
@@ -145,25 +146,28 @@ a {
    form
    ========================================================================== 
 */
+
 input,
-textarea{
+textarea {
     font-family: 'Open Sans', sans-serif;
 }
 
 input:focus,
 button:focus,
-textarea:focus{
+textarea:focus {
     outline: none !important;
     border-color: var(--main-color, #9A1144);
     box-shadow: 0 0 0 1px var(--main-color, #9A1144)
 }
+
 /* 
    ==========================================================================
    site wide styles
    ========================================================================== 
 */
+
 .btn {
-    font-family:'Raleway', 'FontAwesome';
+    font-family: 'Raleway', 'FontAwesome';
     display: inline-block;
     padding: 0.8rem;
     color: var(--white-2-color, #F6F6F6);
@@ -176,11 +180,16 @@ textarea:focus{
     border-radius: 5px;
 }
 
+button.btn {
+    padding: 1rem;
+}
+
 .btn:hover {
     text-decoration: none;
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-1px);
 }
+
 .btn:focus {
     text-decoration: none;
     background: rgba(255, 255, 255, 0.1);
@@ -190,39 +199,47 @@ textarea:focus{
 .btn .fa {
     margin-left: 10px;
 }
+
 .btn.btn-black {
     color: var(--white-2-color, #F6F6F6);
     background: var(--dark-2-color, #212121);
     border-color: var(--dark-2-color, #212121);
 }
+
 .btn.btn-green {
     color: var(--white-2-color, #F6F6F6);
     background: var(--green-color, #4CAF50);
     border-color: var(--green-color, #4CAF50);
 }
+
 .btn.btn-grey {
     color: var(--dark-2-color, #212121);
     background: var(--grey-4-color, #c7c7c7);
     border-color: var(--grey-4-color, #c7c7c7);
 }
+
 .btn.btn-black-line {
     color: var(--dark-2-color, #212121);
     border-color: var(--dark-2-color, #212121);
 }
+
 .btn.btn-main {
     color: var(--white-2-color, #F6F6F6);
     background: var(--main-color, #9A1144);
     border-color: var(--main-color, #9A1144);
 }
+
 .btn.btn-accent {
     color: var(--dark-2-color, #212121);
     background: var(--accent-color, #FFC021);
     border-color: var(--accent-color, #FFC021);
 }
+
 .btn.btn-accent:hover {
     background: rgb(192, 142, 25);
     border-color: rgb(192, 142, 25);
 }
+
 @media only screen and (max-width: 800px) {
     .container {
         max-width: 94vw;
@@ -244,4 +261,4 @@ textarea:focus{
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-  }
+}

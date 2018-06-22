@@ -1,0 +1,18 @@
+<button class="btn btn-green" id="quizBtn">
+    Consent Quiz
+    <span class="fa-layers fa-fw">
+        <i class="fal fa-file"></i>
+        <i class="fas fa-question" data-fa-transform="shrink-6"></i>
+    </span>
+</button>
+<script src="https://embed.typeform.com/embed.js" type="text/javascript"></script>
+<script type="text/javascript">
+var popup1 = window.typeformEmbed.makePopup("https://knownow.typeform.com/to/yUrN5H", {
+    hideFooter: true,
+    hideHeaders: true,
+    mode: 'drawer_right'
+    });
+document.getElementById('quizBtn').addEventListener('click', function () {
+        popup1.open();
+    });
+</script>
