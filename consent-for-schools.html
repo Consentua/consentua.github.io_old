@@ -2,8 +2,8 @@
 layout: landing 
 title: Consent for Schools 
 nav: false 
+redirect_from: "/education"
 ---
-</script>
 <style>
   @keyframes bodyaferanim {
     0% {
@@ -25,6 +25,15 @@ nav: false
     100% {
       box-shadow: 250px 170px 0px 0px #dfbdca;
       transform: rotate(-20deg);
+    }
+  }
+
+  @keyframes loadBar {
+    0% {
+      left: -110%;
+    }
+    100% {
+      left: 110%;
     }
   }
 
@@ -51,6 +60,37 @@ nav: false
     animation-delay: 3s;
   }
 
+  @keyframes animatetop {
+    0% {
+      top: -300px;
+      opacity: 0;
+      transform: rotate(-10deg);
+    }
+    80% {
+      top: 20px;
+    }
+    100% {
+      top: 0;
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes animatefade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  #educaiton .logo {
+    max-width: 400px;
+    display: block;
+    margin: 6px auto;
+  }
+
   #educaiton #heroSvg,
   #educaiton #chooseSVG {
     position: absolute;
@@ -68,6 +108,7 @@ nav: false
   #educaiton #blurb {
     max-width: 500px;
     min-height: 65vh;
+    margin-top: 3rem;
     margin-left: auto;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -79,7 +120,44 @@ nav: false
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+  }
+
+  #educaiton #blurb ul {
+    font-size: 1.2rem;
+  }
+
+  #educaiton #blurb #eduTagline {
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: 2rem;
+    border: 4px solid rgba(154, 18, 69, 0.15);
+  }
+
+  #educaiton #blurb #eduTagline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: rgba(154, 18, 69, 0.15);
+  }
+
+  #educaiton #blurb #eduTagline:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: rgba(154, 18, 69, 0.15);
   }
 
   #educaiton #blurb .btn.accent {
@@ -91,7 +169,7 @@ nav: false
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: 6rem 0px;
+    margin: 1rem 0px;
   }
 
   #educaiton .info-cols>.col {
@@ -106,13 +184,27 @@ nav: false
     min-height: 290px;
   }
 
+  #educaiton .hero-carousel-container {
+    margin-bottom: 5rem;
+  }
+
   #educaiton #pageDemo {
     background: #fff;
+    position: relative;
     margin: 1rem -8rem 1rem auto;
     text-align: center;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.6);
     max-width: 750px;
     z-index: 1;
+  }
+
+  #educaiton #pageDemo img.logo {
+    display: block;
+    position: absolute;
+    width: 100px;
+    right: -45px;
+    top: 285px;
+    transform: rotate(13deg);
   }
 
   #educaiton #pageDemo>footer,
@@ -151,6 +243,72 @@ nav: false
     border: 0;
     width: 100%;
     height: 100vh;
+  }
+
+  #buyModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    animation-name: animatefade;
+    animation-duration: 0.4s;
+  }
+
+  #buyModal .plan {
+    min-width: 320px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    margin: 2rem 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 1rem;
+    max-width: 400px;
+    border-radius: 1rem;
+    box-shadow: inset 0 0 9px black;
+    text-align: center;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+  }
+
+  #buyModal .plan .plan-header {
+    border-radius: 10px 10px 0 0;
+    background: #fff;
+    padding-bottom: 0.6rem;
+  }
+
+  #buyModal .plan .plan-header .price>div {
+    font-size: 1.6rem;
+    margin: 1rem auto;
+  }
+
+  #buyModal .plan ul {
+    list-style: none;
+    padding: 0px 0.6rem 0.6rem 0.6rem;
+  }
+
+  #buyModal .plan .btn {
+    margin: 0.6rem;
   }
 
   @media only screen and (max-width: 1000px) {
@@ -200,25 +358,36 @@ nav: false
     }
   }
 </style>
-<d id="educaiton">
+<div id="educaiton">
+  <a href="{{ site.url }}">
+    <img class="logo" src="./imgs/logo/consentua-logo-tm.svg">
+  </a>
   {% include person-consenting-svg.html %}
   <div id="blurb">
     <h1>Consent for Schools</h1>
-    <p>Consentua™ helps build trust. Giving users choice and control over their personal data. Enabling a more trusted and transparent
-      relationship between the customer and the service provider.</p>
+    <p>Consentua™ helps build trust. Giving parents choice and control over their childrens personal data. Enabling a more trusted
+      and transparent relationship between the parents and the school.</p>
+    <ul>
+      <li>No installation fee</li>
+      <li>No consulting</li>
+      <li>Ready in minutes</li>
+    </ul>
     <span>
-      <a class="btn btn-accent" onclick="document.getElementById('pageDemo').scrollIntoView({behavior:'smooth',block: 'start', inline: 'start'});">View Demo
+      <a class="btn btn-accent" onclick="toDemo()">View Demo
         <i class="far fa-laptop"></i>
       </a>
-      <a class="btn btn-green" href="{{ site.url }}/pricing.html">Buy Now
+      <a class="btn btn-green" onclick="openModal()">
+        Buy Now
         <i class="far fa-shopping-cart"></i>
       </a>
     </span>
+    <h3 id="eduTagline" onclick="openModal()">Just $99 a year!</h3>
   </div>
   <div class="container info-cols">
     <div class="col">
       <i class="fal fa-id-card fa-4x" data-fa-transform="flip-h"></i>
-      <p>Use Consentua to handle all consents and opt-ins under a single user identity record. As long as the user ID is consistent, any change to the in data purpose over time will be added to the pupils consent record. </p>
+      <p>Use Consentua to handle all consents and opt-ins under a single user identity record. As long as the user ID is consistent,
+        any change to the in data purpose over time will be added to the pupils consent record. </p>
     </div>
     <div class="col">
       <i class="fal fa-school fa-4x"></i>
@@ -233,6 +402,7 @@ nav: false
   </div>
   {% include choose-svg.html %}
   <div id="pageDemo">
+    <img class="logo" src="./imgs/logo/consentua-lock.png">
     <h2>Consent for your child</h2>
     <ul>
       <li>
@@ -255,27 +425,84 @@ nav: false
     </footer>
   </div>
   <div class="container">
+    <div class="hero-carousel-container">{% include hero-carousel.html %}</div>
     <div class="bottom-cta">
       <span>
         <h1>Ready to get started?</h1>
-        <h2>Get in touch</h2>
+        <h2>Only $99/year for Schools</h2>
       </span>
       <span>
         <a href="{{ site.url }}/contact.html" class="btn btn-accent">Contact Sales</a>
-        <a class="btn btn-green" href="{{ site.url }}/pricing.html">Buy Now
+        <a class="btn btn-green" onclick="openModal()">Buy Now
           <i class="far fa-shopping-cart"></i>
         </a>
       </span>
     </div>
   </div>
   </section>
+  <div id="buyModal">
+    <div class="plan">
+      <div class="plan-header">
+        <h1>School's Yearly plan</h1>
+        <section class="price">
+          <div>
+            <span>£99</span>/yr
+          </div>
+        </section>
+      </div>
+      <section class="plan-body">
+        <div>
+          <p>Yearly licence for schools</p>
+          <p>Includes:</p>
+          <ul>
+            <li>Unlimited API calls per annum
+              <i>within reason</i>
+            </li>
+            <li>Unlimited end user API calls</li>
+            <li>Unlimited total consents</li>
+            <li>
+              <b>2</b> Admin Accounts</li>
+            <li>Community Support</li>
+          </ul>
+          <button class="btn btn-grey" onclick="closeModal()">Close</button>
+          <a class="btn btn-green" href="{{ site.url }}/contact.html">Contact sales</a>
+        </div>
+      </section>
+    </div>
+  </div>
   <script>
+    // Consentua
     let cid = '1', // Client ID
-        sid = '100', // Consentua service ID
-        skey = 'ffe76fbe-cc70-4b99-bbd9-69ff8098755d', // Consentua service key
-        tid = '76', // Template ID
-        uid = "user-consentuaWebsiteDemo",
-        cb = function(msg){console.log("Consent received from Consentua", msg)},
-        iframe = document.getElementById("consentua-widget"),
-        cwrap = new ConsentuaUIWrapper(iframe, cid, uid, tid, sid, skey, cb);
+      sid = '100', // Consentua service ID
+      skey = 'ffe76fbe-cc70-4b99-bbd9-69ff8098755d', // Consentua service key
+      tid = '76', // Template ID
+      uid = "user-consentuaWebsiteDemo",
+      cb = function (msg) {
+        console.log("Consent received from Consentua", msg)
+      },
+      iframe = document.getElementById("consentua-widget"),
+      cwrap = new ConsentuaUIWrapper(iframe, cid, uid, tid, sid, skey, cb);
+
+    // scroll to demo
+    function toDemo(e) {
+      document.getElementById('pageDemo').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'start'
+      });
+    }
+
+    function openModal(e) {
+      document.getElementById('buyModal').style.display = 'block';
+    }
+
+    function closeModal(e) {
+      document.getElementById('buyModal').style.display = 'none';
+    }
+    // close modal on modal bg click
+    window.onclick = function (e) {
+      if (e.target == document.getElementById('buyModal')) {
+        document.getElementById('buyModal').style.display = "none";
+      }
+    }
   </script>
