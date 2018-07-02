@@ -88,7 +88,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
                 method: 'GET',
                 url: url + '/serviceuser/GetServiceUser',
                 params: {
-                    "identifier": form['_replyto'].value,
+                    "identifier": form['emailInput'].value,
                     "serviceId": cb.Id,
                     "token": token
                 },
@@ -130,9 +130,9 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
             if (err.status == 404) {
                 let opts = {
                     method: 'POST',
-                    url: url + '/serviceuser/AddUserToService?identifier=' + form['_replyto'].value + '&serviceId=25&token=' + token,
+                    url: url + '/serviceuser/AddUserToService?identifier=' + form['emailInput'].value + '&serviceId=25&token=' + token,
                     params: {
-                        "identifier": form['_replyto'].value,
+                        "identifier": form['emailInput'].value,
                         "serviceId": '25',
                         "token": token
                     },
