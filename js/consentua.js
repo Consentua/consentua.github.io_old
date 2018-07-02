@@ -113,7 +113,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
                         "Purposes": [{
                             "ConsentTemplateId": "20",
                             "PurposeId": "97",
-                            "Consent": form['consent'].checked
+                            "Consent": form['cbtest'].checked
                         }]
                     },
                     "ClientId": 1,
@@ -163,7 +163,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
                             "Purposes": [{
                                 "ConsentTemplateId": "20",
                                 "PurposeId": "97",
-                                "Consent": form['consent'].checked
+                                "Consent": form['cbtest'].checked
                             }]
                         },
                         "ClientId": 1,
