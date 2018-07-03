@@ -29,19 +29,25 @@
 */
 
 ::-moz-selection {
+    background: #212121;
     background: var(--dark-2-color, #212121);
+    color: #9A1144;
     color: var(--main-color, #9A1144);
     /* WebKit/Blink Browsers */
 }
 
 ::selection {
+    background: #212121;
     background: var(--dark-2-color, #212121);
+    color: #9A1144;
     color: var(--main-color, #9A1144);
     /* WebKit/Blink Browsers */
 }
 
 ::-moz-selection {
+    background: #212121;
     background: var(--dark-2-color, #212121);
+    color: #9A1144;
     color: var(--main-color, #9A1144);
     /* Gecko Browsers */
 }
@@ -90,7 +96,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color: #212121;
     color: var(--dark-2-color, #212121);
+    background-color: #F6F6F6;
     background-color: var(--white-2-color, #F6F6F6);
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
@@ -138,6 +146,7 @@ b {
 }
 
 a {
+    color: #9A1144;
     color: var(--main-color, #9A1144);
 }
 
@@ -156,7 +165,9 @@ input:focus,
 button:focus,
 textarea:focus {
     outline: none !important;
+    border-color: #9A1144;
     border-color: var(--main-color, #9A1144);
+    box-shadow: 0 0 0 1px #9A1144;
     box-shadow: 0 0 0 1px var(--main-color, #9A1144)
 }
 
@@ -170,7 +181,9 @@ textarea:focus {
     font-family: 'Raleway', 'FontAwesome';
     display: inline-block;
     padding: 0.8rem;
+    color: #F6F6F6;
     color: var(--white-2-color, #F6F6F6);
+    border:color, #F6F6F6;
     border: 1px solid var(--white-2-color, #F6F6F6);
     -webkit-transition: 200ms;
     transition: 200ms;
@@ -201,37 +214,54 @@ button.btn {
 }
 
 .btn.btn-black {
+    color: #F6F6F6;
     color: var(--white-2-color, #F6F6F6);
+    background: #212121;
     background: var(--dark-2-color, #212121);
+    border-color: #212121;
     border-color: var(--dark-2-color, #212121);
 }
 
 .btn.btn-green {
+    color: #F6F6F6;
     color: var(--white-2-color, #F6F6F6);
+    background: #4CAF50;
     background: var(--green-color, #4CAF50);
+    border-color: #4CAF50;
     border-color: var(--green-color, #4CAF50);
 }
 
 .btn.btn-grey {
+    color: #212121;
     color: var(--dark-2-color, #212121);
+    background: #c7c7c7;
     background: var(--grey-4-color, #c7c7c7);
+    border-color: #c7c7c7;
     border-color: var(--grey-4-color, #c7c7c7);
 }
 
 .btn.btn-black-line {
+    color: #212121;
     color: var(--dark-2-color, #212121);
+    border-color: #212121;
     border-color: var(--dark-2-color, #212121);
 }
 
 .btn.btn-main {
+    color: #F6F6F6;
     color: var(--white-2-color, #F6F6F6);
+    background: #9A1144;
     background: var(--main-color, #9A1144);
+    border-color: #9A1144;
     border-color: var(--main-color, #9A1144);
 }
 
 .btn.btn-accent {
+    color: #212121;
     color: var(--dark-2-color, #212121);
+    background: #FFC021;
     background: var(--accent-color, #FFC021);
+    border-color: #FFC021;
     border-color: var(--accent-color, #FFC021);
 }
 
