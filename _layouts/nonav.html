@@ -6,7 +6,13 @@
       {{ content }}
     </main>
     {% include footer.html %}
-    {% include cookie-consent.html %}
+    <script>
+    // GA      
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-74260509-3');
+    </script>
     {% include linkedIn-insight-tag.html %}
   </body>
 </html>
