@@ -62,7 +62,7 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: transparent);
+    background-color: rgba(55, 55, 55, 0.61);
     -webkit-animation-name: animatefade;
             animation-name: animatefade;
     -webkit-animation-duration: 0.4s;
@@ -107,6 +107,16 @@
   }
   #consentua-cookie-widget{
       border: none;
+  }
+  @media only screen and (max-width: 550px), screen and (max-height: 660px) {
+    #consent{
+    min-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0px !important;
+    border-radius: 0px !important;
+    overflow: auto;
+    max-height: 100vh !important;
+  }
   }
 </style>
 <div id="consent">
