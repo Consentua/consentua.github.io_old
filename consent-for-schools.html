@@ -530,12 +530,12 @@ nav: false
       <a class="btn btn-accent" onclick="toDemo()">View Demo
         <i class="far fa-laptop"></i>
       </a>
-      <a class="btn btn-green" onclick="openModal()">
+      <a class="btn btn-green" onclick="openBuySchoolModal()">
         Buy Now
         <i class="far fa-shopping-cart"></i>
       </a>
     </span>
-    <h3 id="eduTagline" onclick="openModal()">Just £99 a year!</h3>
+    <h3 id="eduTagline" onclick="openBuySchoolModal()">Just £99 a year!</h3>
   </div>
   <div class="container info-cols">
     <div class="col">
@@ -583,7 +583,7 @@ nav: false
       </span>
       <span>
         <a href="{{ site.url }}/contact.html" class="btn btn-accent">Contact Sales</a>
-        <a class="btn btn-green" onclick="openModal()">Buy Now
+        <a class="btn btn-green" onclick="openBuySchoolModal()">Buy Now
           <i class="far fa-shopping-cart"></i>
         </a>
       </span>
@@ -614,8 +614,8 @@ nav: false
               <b>2</b> Admin Accounts</li>
             <li>Community Support</li>
           </ul>
-          <button class="btn btn-grey" onclick="closeModal()">Close</button>
-          <a class="btn btn-green" href="{{ site.url }}/buy-schools">Buy</a>
+          <button class="btn btn-grey" onclick="closeBuySchoolModal()">Close</button>
+          <a class="btn btn-green" onclick="toBuyPage()">Buy</a>
         </div>
       </section>
     </div>
@@ -633,6 +633,16 @@ nav: false
       iframe = document.getElementById("consentua-widget"),
       cwrap = new ConsentuaUIWrapper(iframe, cid, uid, tid, sid, skey, cb);
 
+
+    function toBuyPage(e) {
+      var imgtag1 = document.createElement('img');
+          imgtag1.height = '1';
+          imgtag1.width = '1';
+          imgtag1.style = 'border-style:none;';
+          imgtag1.alt = '';
+          imgtag1.src = 'https://dc.ads.linkedin.com/collect/?pid=400889&conversionId=479058&fmt=gif'
+      window.location.href = '{{ site.url }}/buy-schools';
+    }
     // scroll to demo
     function toDemo(e) {
       document.getElementById('pageDemo').scrollIntoView({
@@ -642,11 +652,11 @@ nav: false
       });
     }
 
-    function openModal(e) {
+    function openBuySchoolModal(e) {
       document.getElementById('buyModal').style.display = 'block';
     }
 
-    function closeModal(e) {
+    function closeBuySchoolModal(e) {
       document.getElementById('buyModal').style.display = 'none';
     }
     // close modal on modal bg click

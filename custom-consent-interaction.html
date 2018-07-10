@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>custom interaction</title>
+    <script src="https://websdk-test.consentua.com/websdk/consentua-interaction.js"></script>
+    <script src="https://websdk-test.consentua.com/websdk/comms.js"></script>
+    <style>
+        #loading {
+            font-family: 'Open Sans', sans-serif;
+            width: 80%;
+            display: block;
+            position: relative;
+            color: #fff;
+            background-color: #9A1144;
+            padding: 1rem;
+            margin: 1.5rem auto;
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #loading:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.4);
+            -webkit-animation: loadBar 2s cubic-bezier(.09, .89, .7, .71) infinite;
+            -moz-animation: loadBar 2s cubic-bezier(.09, .89, .7, .71) infinite;
+            animation: loadBar 2s cubic-bezier(.09, .89, .7, .71) infinite;
+        }
+
+        #err {
+            font-family: 'Open Sans', sans-serif;
+            width: 80%;
+            display: none;
+            color: #fff;
+            background-color: #F44336;
+            padding: 1rem;
+            margin: 1.5rem auto;
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #main {
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+            background: #eee;
+            padding: 1rem;
+            border-radius: 20px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.14);
+        }
+
+        ol#purposes {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0rem 0rem 0rem 1rem;
+            margin: 0.5rem 0rem;
+        }
+
+        ol#purposes>li {
+            margin-bottom: 1rem;
+        }
+
+        @keyframes loadBar {
+            0% {
+                left: -110%;
+            }
+            100% {
+                left: 110%;
+            }
+        }
+
+        @-moz-keyframes dothabottomcheck {
+            0% {
+                height: 0;
+            }
+            100% {
+                height: 50px;
+            }
+        }
+
+        @-webkit-keyframes dothabottomcheck {
+            0% {
+                height: 0;
+            }
+            100% {
+                height: 50px;
+            }
+        }
+
+        @keyframes dothabottomcheck {
+            0% {
+                height: 0;
+            }
+            100% {
+                height: 50px;
+            }
+        }
+
+        @keyframes dothatopcheck {
+            0% {
+                height: 0;
+            }
+            50% {
+                height: 0;
+            }
+            100% {
+                height: 120px;
+            }
+        }
+
+        @-webkit-keyframes dothatopcheck {
+            0% {
+                height: 0;
+            }
+            50% {
+                height: 0;
+            }
+            100% {
+                height: 120px;
+            }
+        }
+
+        @-moz-keyframes dothatopcheck {
+            0% {
+                height: 0;
+            }
+            50% {
+                height: 0;
+            }
+            100% {
+                height: 120px;
+            }
+        }
+
+        .consent-check-contain input[type=checkbox] {
+            display: none;
+        }
+
+        .consent-check-contain {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 1rem;
+            border-bottom: 2px solid #9A1144;
+        }
+
+        .consent-check-contain #toggle-assent-lbl {
+            max-width: 75%;
+            cursor: pointer;
+        }
+
+        .consent-check-contain .check-box {
+            transform: scale(0.3);
+            flex: initial !important;
+            height: 100px;
+            width: 100px;
+            background-color: transparent;
+            border: 10px solid #000;
+            border-radius: 5px;
+            position: relative;
+            display: inline-block;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -moz-transition: border-color ease 0.2s;
+            -o-transition: border-color ease 0.2s;
+            -webkit-transition: border-color ease 0.2s;
+            transition: border-color ease 0.2s;
+            cursor: pointer;
+        }
+
+        .check-box::before,
+        .check-box::after {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            position: absolute;
+            height: 0;
+            width: 20px;
+            background-color: #34b93d;
+            display: inline-block;
+            -moz-transform-origin: left top;
+            -ms-transform-origin: left top;
+            -o-transform-origin: left top;
+            -webkit-transform-origin: left top;
+            transform-origin: left top;
+            border-radius: 5px;
+            content: ' ';
+            -webkit-transition: opacity ease .5;
+            -moz-transition: opacity ease .5;
+            transition: opacity ease .5;
+        }
+
+        .check-box::before {
+            top: 72px;
+            left: 41px;
+            box-shadow: 0 0 0 5px #F6F6F6;
+            -moz-transform: rotate(-135deg);
+            -ms-transform: rotate(-135deg);
+            -o-transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+        }
+
+        .check-box::after {
+            top: 37px;
+            left: 5px;
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+        .consent-check-contain input[type=checkbox]:checked+.check-box,
+        .check-box.checked {
+            border-color: #34b93d;
+        }
+
+        .consent-check-contain input[type=checkbox]:checked+.check-box::after,
+        .check-box.checked::after {
+            height: 50px;
+            -moz-animation: dothabottomcheck 0.2s ease 0s forwards;
+            -o-animation: dothabottomcheck 0.2s ease 0s forwards;
+            -webkit-animation: dothabottomcheck 0.2s ease 0s forwards;
+            animation: dothabottomcheck 0.2s ease 0s forwards;
+        }
+
+        .consent-check-contain input[type=checkbox]:checked+.check-box::before,
+        .check-box.checked::before {
+            height: 120px;
+            -moz-animation: dothatopcheck 0.4s ease 0s forwards;
+            -o-animation: dothatopcheck 0.4s ease 0s forwards;
+            -webkit-animation: dothatopcheck 0.4s ease 0s forwards;
+            animation: dothatopcheck 0.4s ease 0s forwards;
+        }
+
+        #consentuaLabel {
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #consentuaLabel img {
+            margin-left: 1rem;
+            max-height: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading">
+        Please wait...
+    </div>
+    <div id="err"></div>
+    <main id="main">
+        <h3 id="explanation"></h3>
+        <ol id="purposes"></ol>
+        <div class="consent-check-contain" id="assent">
+            <label id="toggle-assent-lbl" for="toggle-assent" class="check-label">
+                <p>I agree that my personal data may be used for the purposes stated above.</p>
+            </label>
+            <input type="checkbox" id="toggle-assent" name="Consent" />
+            <label for="toggle-assent" class="check-box"></label>
+        </div>
+        <div id="consentuaLabel">
+            Powered by 🚀
+            <a href="https://consentua.com">
+                <img src="https://consentua.com/imgs/logo/include.jpg">
+            </a>
+        </div>
+    </main>
+    <script>
+        document.body.addEventListener("consentua-ready", function () {
+            console.log("Consentua is ready; setting up the simple interaction", window.consentua);
+            var pgs = window.consentua.template.PurposeGroups;
+            console.log("Purpose groups", pgs);
+            document.getElementById('explanation').innerHTML = window.consentua.template.Explanation;
+            for (let i in pgs) {
+                let pg = pgs[i];
+                let purposes = "";
+                console.log("PG " + i, pg.Purposes);
+                for (var j in pg.Purposes) {
+                    purposes += "<b>" + pg.Purposes[j].DataPurpose + "</b><br />" + pg.Purposes[j].DataPurposeText +
+                        ": " + pg.Purposes[j].DataUse;
+                }
+                let p = document.createElement('li');
+                p.innerHTML = purposes + "<br />";
+                document.getElementById('purposes').appendChild(p);
+            }
+            window.consentua.ready();
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('main').style.display = 'block';
+            document.getElementById('toggle-assent').addEventListener('change', (event) => {
+                var groups = window.consentua.template.PurposeGroups;
+                var groupids = [];
+                for (var i in groups) {
+                    groupids.push(i);
+                }
+                console.log("Toggle consent on purpose groups", groupids, event.target.checked);
+                window.consentua.setPgConsent(groupids, event.target.checked);
+            });
+            // window.consentua.addEventListener('error', (err) => {
+            //     console.error(err);
+            //     document.getElementById('err').innerHTML=err.msg;         
+            // });
+        }, false);
+    </script>
+</body>
+
+</html>

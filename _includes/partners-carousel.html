@@ -1,0 +1,37 @@
+<script src="{{ site.url}}/js/flickity.pkgd.min.js"></script>
+<link rel="stylesheet" href="{{ site.url}}/css/flickity.css" media="screen">
+<style>
+    .partner-carousel {
+        margin: 1rem auto;
+        /* margin: 1rem auto 5rem auto; */
+        max-width: 100vw;
+    }
+
+    .partner-carousel-cell {
+        width: 300px;
+        height: 200px;
+        padding: 1rem;
+        background: #fff;
+        border-radius: 1rem;
+        margin: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .partner-carousel-cell img {
+        max-width: 100%;
+        max-height: 200px;
+        height: auto;
+    }
+</style>
+<div class="partner-carousel" data-flickity='{"wrapAround": true, "imagesLoaded":true, "autoPlay": true, "freeScroll": true, "pageDots": false, "prevNextButtons": false, "contain": true}'>
+    <div class="partner-carousel-cell"><img src="{{ site.url }}/imgs/partners/kantara_logo_final_rgb.png"></div>
+    <div class="partner-carousel-cell"><img src="{{ site.url }}/imgs/partners/IAB_logo_2008.svg"></div>
+    <div class="partner-carousel-cell"><img src="{{ site.url }}/imgs/partners/logo_adaptant_R_transparent.png"></div>
+    <div class="partner-carousel-cell"><img src="{{ site.url }}/imgs/partners/Innovate UK logo.png"></div>
+    <div class="partner-carousel-cell"><img src="{{ site.url }}/imgs/partners/LOGO-BRUXELLES.jpg"></div>
+    <div class="partner-carousel-cell"><img src="{{ site.url }}/imgs/partners/cc2i.jpg"></div>
+    <div class="partner-carousel-cell"><img src="{{ site.url }}/imgs/partners/logo-PersonalDataTrustNetwork.png"></div>
+    <div class="partner-carousel-cell"><img src="{{ site.url }}/imgs/partners/VISION-Consultancy-logo.png"></div>
+</div>

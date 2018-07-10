@@ -388,6 +388,7 @@ nav: false
         <h3 class="title">Payment successful</h3>
         <p>Welcome to Consentua!</p>
         <p>We will contact you shortly to help you set up Consentua</p>
+        
         <!-- <button class="btn btn-accent">Create Admin Account</button> -->
     </div>
 </section>
@@ -529,11 +530,20 @@ nav: false
         };
     formRequest(opts)
         .then(function (cb) {
+            // PAYMENT SUCCESS
             cb = JSON.parse(cb);
             let suc = doc.getElementById('success');
             doc.getElementById('buyform').classList.add('hidden');
             document.getElementById('buyLoadbar').style.display = 'none';
             suc.classList.remove('hidden');
+            // linkedin payment success            
+            var imgtag = document.createElement('img');
+            imgtag.height = '1';
+            imgtag.width = '1';
+            imgtag.style = 'border-style:none;';
+            imgtag.alt = '';
+            imgtag.src = 'https://dc.ads.linkedin.com/collect/?pid=400889&conversionId=479042&fmt=gif'
+
         })
         .catch(function (err) {
             console.error('Augh, there was an error!', err);

@@ -35,6 +35,7 @@ nav: true
         text-align: center;
         margin-bottom: 4rem;
     }
+
     #contact #errTxt {
         width: 80%;
         display: none;
@@ -46,39 +47,7 @@ nav: true
         border-radius: 10px;
         overflow: hidden;
     }
-    #contact #consentuaStatus{
-        width: 80%;
-        display: none;
-        position: relative;
-        color: #fff;
-        background-color: var(--main-color);
-        padding: 1rem;
-        margin: 1.5rem auto;
-        text-align: center;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-    #contact #consentuaStatus:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.4);;
-        -webkit-animation: loadBar 2s cubic-bezier(.09,.89,.7,.71) infinite;
-        -moz-animation: loadBar 2s cubic-bezier(.09,.89,.7,.71) infinite;
-        animation: loadBar 2s cubic-bezier(.09,.89,.7,.71) infinite;
-    }
 
-    @keyframes loadBar {
-    0% {
-        left: -110%;
-    }
-    100% {
-        left: 110%;
-    }
-    }
     #contact fieldset {
         padding: 0px;
         display: flex;
@@ -121,174 +90,10 @@ nav: true
         margin-left: auto;
     }
 
-    @-moz-keyframes dothabottomcheck {
-        0% {
-            height: 0;
-        }
-        100% {
-            height: 50px;
-        }
+    #contact iframe {
+        border: none;
     }
 
-    @-webkit-keyframes dothabottomcheck {
-        0% {
-            height: 0;
-        }
-        100% {
-            height: 50px;
-        }
-    }
-
-    @keyframes dothabottomcheck {
-        0% {
-            height: 0;
-        }
-        100% {
-            height: 50px;
-        }
-    }
-
-    @keyframes dothatopcheck {
-        0% {
-            height: 0;
-        }
-        50% {
-            height: 0;
-        }
-        100% {
-            height: 120px;
-        }
-    }
-
-    @-webkit-keyframes dothatopcheck {
-        0% {
-            height: 0;
-        }
-        50% {
-            height: 0;
-        }
-        100% {
-            height: 120px;
-        }
-    }
-
-    @-moz-keyframes dothatopcheck {
-        0% {
-            height: 0;
-        }
-        50% {
-            height: 0;
-        }
-        100% {
-            height: 120px;
-        }
-    }
-
-    .consent-check-contain input[type=checkbox] {
-        display: none;
-    }
-
-    .consent-check-contain #cbtestLab {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .consent-check-contain .check-box {
-        transform: scale(0.3);
-        flex: initial !important;
-        height: 100px;
-        width: 100px;
-        background-color: transparent;
-        border: 10px solid #000;
-        border-radius: 5px;
-        position: relative;
-        display: inline-block;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        -moz-transition: border-color ease 0.2s;
-        -o-transition: border-color ease 0.2s;
-        -webkit-transition: border-color ease 0.2s;
-        transition: border-color ease 0.2s;
-        cursor: pointer;
-    }
-
-    .check-box::before,
-    .check-box::after {
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        position: absolute;
-        height: 0;
-        width: 20px;
-        background-color: #34b93d;
-        display: inline-block;
-        -moz-transform-origin: left top;
-        -ms-transform-origin: left top;
-        -o-transform-origin: left top;
-        -webkit-transform-origin: left top;
-        transform-origin: left top;
-        border-radius: 5px;
-        content: ' ';
-        -webkit-transition: opacity ease .5;
-        -moz-transition: opacity ease .5;
-        transition: opacity ease .5;
-    }
-
-    .check-box::before {
-        top: 72px;
-        left: 41px;
-        box-shadow: 0 0 0 5px #F6F6F6;
-        -moz-transform: rotate(-135deg);
-        -ms-transform: rotate(-135deg);
-        -o-transform: rotate(-135deg);
-        -webkit-transform: rotate(-135deg);
-        transform: rotate(-135deg);
-    }
-
-    .check-box::after {
-        top: 37px;
-        left: 5px;
-        -moz-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-        -o-transform: rotate(-45deg);
-        -webkit-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-    }
-
-    .consent-check-contain input[type=checkbox]:checked+.check-box,
-    .check-box.checked {
-        border-color: #34b93d;
-    }
-
-    .consent-check-contain input[type=checkbox]:checked+.check-box::after,
-    .check-box.checked::after {
-        height: 50px;
-        -moz-animation: dothabottomcheck 0.2s ease 0s forwards;
-        -o-animation: dothabottomcheck 0.2s ease 0s forwards;
-        -webkit-animation: dothabottomcheck 0.2s ease 0s forwards;
-        animation: dothabottomcheck 0.2s ease 0s forwards;
-    }
-
-    .consent-check-contain input[type=checkbox]:checked+.check-box::before,
-    .check-box.checked::before {
-        height: 120px;
-        -moz-animation: dothatopcheck 0.4s ease 0s forwards;
-        -o-animation: dothatopcheck 0.4s ease 0s forwards;
-        -webkit-animation: dothatopcheck 0.4s ease 0s forwards;
-        animation: dothatopcheck 0.4s ease 0s forwards;
-    }
-    #consentuaLabel{
-        margin-top: 3rem;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-    #consentuaLabel img{
-        margin-left:  1rem;
-    }
     @media only screen and (max-width: 900px) {
         #contact {
             max-width: 95%;
@@ -308,52 +113,66 @@ nav: true
     </div>
     <p id="errTxt"></p>
     <p id="consentuaStatus"></p>
-    <form action='https://forms.zohopublic.eu/knownow/form/ContactForm/formperma/G2p-VtSNbxrAw8cWK9tFkuafHtdGaDE_uMp2O4oF3Qo/htmlRecords/submit' name='form' id='contactForm' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
-		<fieldset>
-	<input type="hidden" name="zf_referrer_name" value="consentua.com"><br>
-	<!-- To Track referrals , place the referrer name within the " " in the above hidden input field -->
-	<input type="hidden" name="zf_redirect_url" value="https://consentua.com/contact-success"><br>
-	<!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
-	<input type="hidden" name="zc_gad" value=""><br>
-	<!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
-	 <input type='text' style='display:none;' name='Source' value='consentua.com' />
-		</fieldset>
-		<fieldset>
-			<div class="form-row">
-				<label for="name">First Name</label>
-				<input type="text" name='Name_First' placeholder="Sam" required/>
-			</div>
-			<div class="form-row">
-				<label for="name">Last Name</label>
-				<input type="text" name='Name_Last' placeholder="Longbottom" required/>
-			</div>
-			<div class="form-row">
-				<label>Email Address</label>
-				<input id="emailInput" type="email" name="Email" placeholder="Sam@example.com" required/>
-			</div>
-			<div class="form-row">
-				<label>Website</label>
-				<input type="text" name="Website" placeholder="example.com" />
-			</div>
-			<div class="form-row">
-				<label>Message</label>
-				<textarea name="MultiLine" placeholder="Let us know how we can help." required></textarea>
-			</div>
-			<div class="consent-check-contain">
-				<label id="cbtestLab" for="cbtest" class="check-label"><p>I consent my email address to be added to the mailing list, for the purpose of recieving marketing emails</p><label>
-                <input type="checkbox" id="cbtest" name="Consent"/>
-                <label for="cbtest" class="check-box"></label>
-			</div>
-		</fieldset>
-		<button type="submit" class="btn btn-accent">
+    <form action='https://forms.zohopublic.eu/knownow/form/ContactForm/formperma/G2p-VtSNbxrAw8cWK9tFkuafHtdGaDE_uMp2O4oF3Qo/htmlRecords/submit'
+        name='form' id='contactForm' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
+        <fieldset style="display: none;">
+            <input type="hidden" name="zf_referrer_name" value="consentua.com">
+            <input type="hidden" name="zf_redirect_url" value="https://consentua.com/contact-success">
+            <input type="hidden" name="zc_gad" value="">
+            <input type="hidden" name="consentua_uid" id="consentua_uid" value="">
+            <input type='hidden' name='Source' value='consentua.com' />
+        </fieldset>
+        <fieldset>
+            <div class="form-row">
+                <label for="name">First Name</label>
+                <input type="text" name='Name_First' placeholder="Sam" required/>
+            </div>
+            <div class="form-row">
+                <label for="name">Last Name</label>
+                <input type="text" name='Name_Last' placeholder="Longbottom" required/>
+            </div>
+            <div class="form-row">
+                <label>Email Address</label>
+                <input id="emailInput" type="email" name="Email" placeholder="Sam@example.com" required/>
+            </div>
+            <div class="form-row">
+                <label>Website</label>
+                <input type="text" name="Website" placeholder="example.com" />
+            </div>
+            <div class="form-row">
+                <label>Message</label>
+                <textarea name="MultiLine" placeholder="Let us know how we can help." required></textarea>
+            </div>
+            <iframe id="consentua-contact-widget" src="" style="width: 100%;"></iframe>
+        </fieldset>
+        <button type="submit" class="btn btn-accent">
             Send Message
         </button>
-	</form>
-    <div id="consentuaLabel">
-        Powered by 
-        <a href="{{ site.url }}"><img src="{{ site.url }}/imgs/logo/include.jpg"></a>
-    </div>
+    </form>
     </div>
 </section>
-
-<script src="{{ site.url }}/js/consentua.js"></script>
+<script>
+    var cid = '1'; // Customer ID
+    var sid = '25'; // Consentua service ID
+    var skey = '4d58ba73-1dec-4724-b040-df0b0caf38c5'; // Consentua service key
+    var tid = '20'; // Template ID
+    if (Cookies.get('cuid')) {
+        var uid = Cookies.get('cuid');
+    } else{
+        var uid = false;
+    }
+    var cb_ready = function (msg) {
+        console.log('UID is:' + msg.message.uid);
+        document.getElementById('consentua_uid').value = msg.message.uid;
+    }
+    var cb_set = function (msg) {
+        console.log("Consent received from Consentua", msg);
+    };
+    var iframe = document.getElementById('consentua-contact-widget');
+    // var cwrap = new ConsentuaUIWrapper(iframe, cid, uid, tid, sid, skey, function () {}, "fr", {        ix: "{{ site.url }}}/custom-consent-interaction.html"});
+    var cwrap = new ConsentuaUIWrapper(iframe, cid, uid, tid, sid, skey, function () {}, "fr", {
+        ix: "https://kni-test-node.herokuapp.com/custom-interaction.html"
+    });
+    cwrap.onset = cb_set;
+    cwrap.onready = cb_ready;
+</script>

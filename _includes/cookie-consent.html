@@ -1,0 +1,175 @@
+<section id="cookie-consent">
+<style>
+    @-webkit-keyframes animatetop {
+    0% {
+      top: -300px;
+      opacity: 0;
+      -webkit-transform: rotate(-10deg);
+              transform: rotate(-10deg);
+    }
+    80% {
+      top: 20px;
+    }
+    100% {
+      top: 0;
+      opacity: 1;
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+  }
+
+  @keyframes animatetop {
+    0% {
+      top: -300px;
+      opacity: 0;
+      -webkit-transform: rotate(-10deg);
+              transform: rotate(-10deg);
+    }
+    80% {
+      top: 20px;
+    }
+    100% {
+      top: 0;
+      opacity: 1;
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+  }
+
+  @-webkit-keyframes animatefade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes animatefade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+     #cookie-consent {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: transparent);
+    -webkit-animation-name: animatefade;
+            animation-name: animatefade;
+    -webkit-animation-duration: 0.4s;
+            animation-duration: 0.4s;
+  }
+
+  #cookie-consent #consent {
+    min-width: 320px;
+    width: 600px;
+    max-width: 80vw;
+    max-height: 530px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    margin: 2rem 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    -webkit-box-shadow: inset 0 0 9px black;
+            box-shadow: inset 0 0 9px black;
+    text-align: center;
+    -webkit-animation-name: animatetop;
+            animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+            animation-duration: 0.4s;
+  }
+  #consentua-cookie-widget{
+      border: none;
+  }
+</style>
+<div id="consent">
+<iframe id="consentua-cookie-widget" src=""></iframe>
+<button class="btn btn-grey" onclick="closeCookieModal()">No Thanks</button>
+</div>
+</section>
+
+<script>
+    var openCookieModal = function(e) {
+      document.getElementById('cookie-consent').style.display = 'block';
+    }
+    
+    var closeCookieModal = function(e) {
+      document.getElementById('cookie-consent').style.display = "none";
+    }
+    
+    var isConsented = function(e) {
+      //user consented do stuff      
+      // GA      
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-74260509-3');
+      
+      document.getElementById('cookie-consent').style.display = "none";
+    }
+
+    var ccid = '1'; // Customer ID
+    var csid = '25'; // Consentua service ID
+    var cskey = '4d58ba73-1dec-4724-b040-df0b0caf38c5'; // Consentua service key
+    var ctid = '1000001'; // Template ID
+    var cuid = false;
+    var ccb_ready = function (msg) {
+        console.log('UID is:' + msg.message.uid);
+        cuid = msg.message.uid;
+    };
+    var ccb_set = function (msg) {
+        console.log("Consent received from Consentua", msg);
+        let c = msg.message.consents || {};
+        Cookies.set('consents', c);
+        Cookies.set('cuid', cuid)
+        if (c["313"]) {
+          isConsented();
+        }
+    };
+    var ciframe = document.getElementById('consentua-cookie-widget');
+    var ccwrap = new ConsentuaUIWrapper(ciframe, ccid, cuid, ctid, csid, cskey, function () {} , 'en', {ix: 'https://kni-test-node.herokuapp.com/custom-interaction.html'});
+    // set cb
+    ccwrap.onset = ccb_set;
+    ccwrap.onready = ccb_ready;
+    // close modal on modal bg click
+    window.onclick = function (e) {
+      if (e.target == document.getElementById('cookie-consent')) {
+        closeCookieModal();
+      }
+    }
+    window.onload = function (e) {
+      let cooki = Cookies.getJSON('consents') || {};
+      if (!cooki["313"]) {
+        openCookieModal();
+      } else{
+        isConsented();
+      }
+    }
+</script>
