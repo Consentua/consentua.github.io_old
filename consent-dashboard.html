@@ -1,0 +1,65 @@
+--- 
+layout: page 
+title: Consent Dashboard 
+nav: false
+---
+<style>
+    #dashboard {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        background: #fff;
+        border-radius: 20px;
+    }
+
+    #dashboard iframe {
+        border: none;
+        max-width: 650px;
+        width: 100%;
+        margin: 2rem auto;
+    }
+</style>
+<section id="dashboard">
+    <h1>Consent Dashboard</h1>
+    <iframe id="consentua-db-cookie"></iframe>
+    <iframe id="consentua-db-contact"></iframe>
+</section>
+<script>
+    // Cookie Consent
+    var cuid = Cookies.get('cuid'),
+        cid= '1',
+        sid= '25',
+        skey= '4d58ba73-1dec-4724-b040-df0b0caf38c5',
+        cooki_cwrap = new ConsentuaUIWrapper(document.getElementById("consentua-db-cookie"), cid, cuid, '1000001', sid, skey);
+    var cooki_cb_ready = function (msg) {
+        console.log('UID is:' + msg.message.uid);
+        cuid = msg.message.uid;
+    };
+    var cooki_cb_set = function (msg) {
+        console.log("Consent received from Consentua", msg);
+        let c = msg.message.consents || {};
+        Cookies.set('consents', c);
+        Cookies.set('cuid', cuid)
+        if (c["313"]) {
+            isConsented();
+        }
+    };
+    // set cb
+    cooki_cwrap.onset = cooki_cb_set;
+    cooki_cwrap.onready = cooki_cb_ready;
+
+    // Contact consent
+    let cont_cwrap = new ConsentuaUIWrapper(document.getElementById("consentua-db-contact"), cid, cuid, '20', sid, skey);
+    var cont_cb_ready = function (msg) {
+        console.log('UID is:' + msg.message.uid);
+        cuid = msg.message.uid;
+    };
+    var cont_cb_set = function (msg) {
+        console.log("Consent received from Consentua", msg);
+        let c = msg.message.consents || {};
+    };
+    // set cb
+    cont_cwrap.onset = cont_cb_set;
+    cont_cwrap.onready = cont_cb_ready;
+</script>

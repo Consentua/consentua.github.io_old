@@ -70,10 +70,10 @@
   }
 
   #cookie-consent #consent {
-    min-width: 320px;
-    width: 600px;
-    max-width: 80vw;
-    max-height: 530px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flexbox;
@@ -88,13 +88,7 @@
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
     background-color: #fff;
-    margin: 10vh auto;
-    padding: 1rem;
     border-radius: 1rem;
     -webkit-box-shadow: inset 0 0 9px black;
             box-shadow: inset 0 0 9px black;
@@ -107,14 +101,15 @@
   #consentua-cookie-widget{
       border: none;
   }
-  @media only screen and (max-width: 550px), screen and (max-height: 660px) {
+  #consent .btn{
+    margin: 0.7rem;
+  }
+  @media only screen and (min-width: 550px), screen and (min-height: 660px) {
     #consent{
-    min-width: 100vw !important;
-    margin: 0 !important;
-    padding: 0px !important;
-    border-radius: 0px !important;
-    overflow: auto;
-    max-height: 100vh !important;
+    min-width: 320px;
+    max-width: 80vw;
+    max-height: calc(100vh - 2rem);
+    margin: 1rem auto;
   }
   }
 </style>
@@ -134,14 +129,17 @@
     }
     
     var isConsented = function(e) {
-      //user consented do stuff      
-      // GA      
+      //user consented, do stuff:      
+      // set google analytics cookie
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-74260509-3');
       gtag('set', {'user_id': cuid}); // Set the user ID
-      document.getElementById('cookie-consent').style.display = "none";
+      window.setTimeout(function() {
+        //wait 950ms before modal close, for animations to finish
+        document.getElementById('cookie-consent').style.display = "none"
+      }, 950);
     }
 
     var ccid = '1'; // Customer ID
@@ -150,10 +148,18 @@
     var ctid = '1000001'; // Template ID
     var cuid = false;
     var ccb_ready = function (msg) {
+        //When consentua is ready open/dont open modal
         console.log('UID is:' + msg.message.uid);
         cuid = msg.message.uid;
+        let cooki = Cookies.getJSON('consents') || {};
+        if (!cooki["313"]) {
+          openCookieModal();
+        } else{
+          isConsented();
+        }
     };
     var ccb_set = function (msg) {
+        //update cookie when consent is set
         console.log("Consent received from Consentua", msg);
         let c = msg.message.consents || {};
         Cookies.set('consents', c);
@@ -163,7 +169,7 @@
         }
     };
     var ciframe = document.getElementById('consentua-cookie-widget');
-    var ccwrap = new ConsentuaUIWrapper(ciframe, ccid, cuid, ctid, csid, cskey, function () {} , 'en', {ix: 'https://kni-test-node.herokuapp.com/custom-interaction.html'});
+    var ccwrap = new ConsentuaUIWrapper(ciframe, ccid, cuid, ctid, csid, cskey, function () {} , 'en', {ix: 'https://kni-test-node.herokuapp.com/custom-interaction.min.html'});
     // set cb
     ccwrap.onset = ccb_set;
     ccwrap.onready = ccb_ready;
@@ -171,14 +177,6 @@
     window.onclick = function (e) {
       if (e.target == document.getElementById('cookie-consent')) {
         closeCookieModal();
-      }
-    }
-    window.onload = function (e) {
-      let cooki = Cookies.getJSON('consents') || {};
-      if (!cooki["313"]) {
-        openCookieModal();
-      } else{
-        isConsented();
       }
     }
 </script>
