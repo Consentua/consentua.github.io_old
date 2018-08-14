@@ -62,12 +62,7 @@
 		margin: 0.5rem;
 	}
 	/* if page is not on home */
-   {% if  page.title == "Contact Sales" %}
-   footer {
-	   background: transparent;
-   }
-   {% endif %}
-   {% if page.title == "Pricing" or page.title == "Demo" or page.title == "Schools" or page.title == "FAQ" %}
+   {% if page.title == "Pricing" or page.title == "Demo" or page.title == "Schools" or page.title == "FAQ" or page.title == "Contact Sales %}
    footer, footer a{
 	   background: transparent;
 	   color: #373737;

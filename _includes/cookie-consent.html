@@ -20,7 +20,7 @@
 
   @keyframes animatetop {
     0% {
-      top: -300px;
+      top: -200vh;
       opacity: 0;
       -webkit-transform: rotate(-10deg);
               transform: rotate(-10deg);
@@ -33,6 +33,18 @@
       opacity: 1;
       -webkit-transform: rotate(0deg);
               transform: rotate(0deg);
+    }
+  }
+
+  @keyframes animateout {
+    0% {
+      top: 0;
+      opacity: 1;
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    100% {
+      top: 200vh;
     }
   }
 
@@ -54,11 +66,12 @@
     }
   }
      #cookie-consent {
-    display: none;
+    /* display: none; */
+    visibility: hidden;
     position: fixed;
     z-index: 1;
     left: 0;
-    top: 0;
+    top: -200vh;
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -70,10 +83,12 @@
   }
 
   #cookie-consent #consent {
+    max-height: 90vh;
     position: fixed;
     left: 0;
     right: 0;
-    top: 0;
+    top: -200vh;
+    padding-bottom: 0.5rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flexbox;
@@ -89,14 +104,14 @@
     -ms-flex-align: stretch;
     align-items: stretch;
     background-color: #fff;
-    border-radius: 1rem;
-    -webkit-box-shadow: inset 0 0 9px black;
-            box-shadow: inset 0 0 9px black;
+    border-radius: 1.3rem;
+    /* -webkit-box-shadow: inset 0 0 9px black;
+            box-shadow: inset 0 0 9px black; */
     text-align: center;
-    -webkit-animation-name: animatetop;
-            animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-            animation-duration: 0.4s;
+    /* -webkit-animation-name: animatetop; */
+            /* animation-name: animatetop; */
+    -webkit-animation-duration: 0.6s;
+            animation-duration: 0.6s;
   }
   #consentua-cookie-widget{
       border: none;
@@ -107,25 +122,32 @@
   @media only screen and (min-width: 550px), screen and (min-height: 660px) {
     #consent{
     min-width: 320px;
-    max-width: 80vw;
-    max-height: calc(100vh - 2rem);
+    max-width: 60vw;
+    max-height: 80vh;
     margin: 1rem auto;
   }
   }
 </style>
 <div id="consent">
-<iframe id="consentua-cookie-widget" src=""></iframe>
+<iframe  id="consentua-cookie-widget" src=""></iframe>
+<a href="{{ site.url }}/consent-dashboard.html">View my consent dashboard <i class="fal fa-external-link-alt"></i></a>
 <button class="btn btn-grey" onclick="closeCookieModal()">No Thanks</button>
 </div>
 </section>
 
 <script>
     var openCookieModal = function(e) {
-      document.getElementById('cookie-consent').style.display = 'block';
+      document.getElementById('cookie-consent').style.visibility = "visible";
+      document.getElementById('cookie-consent').style.top = 0;
+      document.getElementById('consent').style.animationName = "animatetop";
+      document.getElementById('consent').style.top = 0;
     }
     
     var closeCookieModal = function(e) {
-      document.getElementById('cookie-consent').style.display = "none";
+      document.getElementById('cookie-consent').style.visibility = "hidden";
+      document.getElementById('cookie-consent').style.top = "-200vh";
+      document.getElementById('consent').style.animationName = "animateout";
+      document.getElementById('consent').style.top = "-200vh";
     }
     
     var isConsented = function(e) {
@@ -138,7 +160,10 @@
       gtag('set', {'user_id': cuid}); // Set the user ID
       window.setTimeout(function() {
         //wait 950ms before modal close, for animations to finish
-        document.getElementById('cookie-consent').style.display = "none"
+        document.getElementById('cookie-consent').style.visibility = "hidden";
+        document.getElementById('cookie-consent').style.top = "-200vh";
+        document.getElementById('consent').style.animationName = "animateout";
+        document.getElementById('consent').style.top = "-200vh";
       }, 950);
     }
 
@@ -169,7 +194,7 @@
         }
     };
     var ciframe = document.getElementById('consentua-cookie-widget');
-    var ccwrap = new ConsentuaUIWrapper(ciframe, ccid, cuid, ctid, csid, cskey, function () {} , 'en', {ix: 'https://kni-test-node.herokuapp.com/custom-interaction.min.html'});
+    var ccwrap = new ConsentuaUIWrapper(ciframe, ccid, cuid, ctid, csid, cskey, function () {} , 'en', {ix: 'http://kni-test-node.herokuapp.com/custom-interaction.html'});
     // set cb
     ccwrap.onset = ccb_set;
     ccwrap.onready = ccb_ready;
