@@ -1,0 +1,172 @@
+--- 
+layout: page 
+title: Trial
+---
+<style>
+    body:after {
+        content: "";
+        display: block;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 520px;
+        right: 0;
+        bottom: 0;
+        left: -95px;
+        background-color: var(--main-color);
+        border: 80px solid var(--main-color);
+        border-radius: 50px;
+        -webkit-transform: rotate(-30deg);
+        transform: rotate(-30deg);
+        z-index: -1;
+    }
+
+    #contact {
+        background-color: var(--white-2-color, #F6F6F6);
+        max-width: 60%;
+        margin: 4rem 0;
+        padding: 2rem;
+        border-radius: 10px;
+    }
+
+    #contact .headline {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    #contact #errTxt {
+        width: 80%;
+        display: none;
+        color: #fff;
+        background-color: var(--red-color);
+        padding: 1rem;
+        margin: 1.5rem auto;
+        text-align: center;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    #contact fieldset {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        border: none;
+    }
+
+    #contact fieldset>.form-row {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        padding-bottom: 0.5rem;
+    }
+
+    #contact fieldset label {
+        font-weight: 500;
+        letter-spacing: normal;
+        line-height: 26px;
+        margin-right: 20px;
+        flex: 33%;
+    }
+
+    #contact fieldset input,
+    #contact fieldset textarea {
+        flex: 60%;
+        padding: 0.5rem;
+        align-self: center;
+        border: none;
+        background-color: var(--grey-3-color);
+        border-radius: 5px;
+    }
+
+    #contact fieldset textarea {
+        height: 5rem;
+    }
+
+    #contact .btn {
+        display: block;
+        margin-top: 0.5rem;
+        margin-left: auto;
+    }
+
+    #contact iframe {
+        border: none;
+    }
+
+    @media only screen and (max-width: 900px) {
+        #contact {
+            max-width: 95%;
+        }
+    }
+</style>
+<script src="{{ site.url }}/js/md5.js"></script>
+<section id="contact">
+    <div class="headline">
+        <h1>
+            Consentua Free Trial
+        </h1>
+        <p>
+            Enter your details below to start your free trial.
+        </p>
+    </div>
+    <p id="errTxt"></p>
+    <p id="consentuaStatus"></p>
+    <form action='https://forms.zohopublic.eu/knownow/form/ContactForm/formperma/G2p-VtSNbxrAw8cWK9tFkuafHtdGaDE_uMp2O4oF3Qo/htmlRecords/submit'
+        name='form' id='contactForm' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
+        <fieldset style="display: none;">
+            <input type="hidden" name="zf_referrer_name" value="consentua.com">
+            <input type="hidden" name="zf_redirect_url" value="https://consentua.com/get-started">
+            <input type="hidden" name="zc_gad" value="">
+            <input type="hidden" name="consentua_uid" id="consentua_uid" value="">
+            <input type='hidden' name='Source' value='consentua.com' />
+        </fieldset>
+        <fieldset>
+            <div class="form-row">
+                <label for="name">First Name</label>
+                <input type="text" name='Name_First' placeholder="Sam" required/>
+            </div>
+            <div class="form-row">
+                <label for="name">Last Name</label>
+                <input type="text" name='Name_Last' placeholder="Longbottom" required/>
+            </div>
+            <div class="form-row">
+                <label>Email Address</label>
+                <input id="emailInput" type="email" name="Email" placeholder="Sam@example.com" required/>
+            </div>
+            <div class="form-row">
+                <label>Company</label>
+                <input type="text" name="Website" placeholder="example.com" />
+            </div>
+            <iframe id="consentua-contact-widget" src="" style="width: 100%;"></iframe>
+        </fieldset>
+        <button type="submit" class="btn btn-accent">
+            Send Message
+        </button>
+    </form>
+    </div>
+</section>
+<script>
+    var cid = '1'; // Customer ID
+    var sid = '25'; // Consentua service ID
+    var skey = '4d58ba73-1dec-4724-b040-df0b0caf38c5'; // Consentua service key
+    var tid = '20'; // Template ID
+    if (Cookies.get('cuid')) {
+        var uid = Cookies.get('cuid');
+    } else{
+        var uid = false;
+    }
+    var cb_ready = function (msg) {
+        console.log('UID is:' + msg.message.uid);
+        document.getElementById('consentua_uid').value = msg.message.uid;
+    }
+    var cb_set = function (msg) {
+        console.log("Consent received from Consentua", msg);
+    };
+    var iframe = document.getElementById('consentua-contact-widget');
+    // var cwrap = new ConsentuaUIWrapper(iframe, cid, uid, tid, sid, skey, function () {}, "fr", {        ix: "{{ site.url }}}/custom-consent-interaction.html"});
+    var cwrap = new ConsentuaUIWrapper(iframe, cid, uid, tid, sid, skey, function () {}, "fr", {
+        ix: "https://kni-test-node.herokuapp.com/custom-interaction.min.html"
+    });
+    cwrap.onset = cb_set;
+    cwrap.onready = cb_ready;
+</script>
