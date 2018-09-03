@@ -16,25 +16,26 @@ title: Trial
         background-color: var(--main-color);
         border: 80px solid var(--main-color);
         border-radius: 50px;
-        -webkit-transform: rotate(-30deg);
-        transform: rotate(-30deg);
+        -webkit-transform: rotate(27deg);
+        transform: rotate(27deg);
         z-index: -1;
     }
 
-    #contact {
-        background-color: var(--white-2-color, #F6F6F6);
+    #trial-form {
+        background-color: var(--main-color);
+        color: #fff;
         max-width: 60%;
-        margin: 4rem 0;
-        padding: 2rem;
-        border-radius: 10px;
+        margin: 4rem auto;
+        padding: 3rem;
+        border-radius: 50px;
     }
 
-    #contact .headline {
+    #trial-form .headline {
         text-align: center;
         margin-bottom: 4rem;
     }
 
-    #contact #errTxt {
+    #trial-form #errTxt {
         width: 80%;
         display: none;
         color: #fff;
@@ -46,7 +47,7 @@ title: Trial
         overflow: hidden;
     }
 
-    #contact fieldset {
+    #trial-form fieldset {
         padding: 0px;
         display: flex;
         flex-direction: column;
@@ -54,14 +55,14 @@ title: Trial
         border: none;
     }
 
-    #contact fieldset>.form-row {
+    #trial-form fieldset>.form-row {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         padding-bottom: 0.5rem;
     }
 
-    #contact fieldset label {
+    #trial-form fieldset label {
         font-weight: 500;
         letter-spacing: normal;
         line-height: 26px;
@@ -69,38 +70,40 @@ title: Trial
         flex: 33%;
     }
 
-    #contact fieldset input,
-    #contact fieldset textarea {
+    #trial-form fieldset input,
+    #trial-form fieldset textarea {
         flex: 60%;
         padding: 0.5rem;
         align-self: center;
         border: none;
-        background-color: var(--grey-3-color);
+        background-color: var(--secondary-color);
         border-radius: 5px;
     }
-
-    #contact fieldset textarea {
+    #trial-form fieldset input::placeholder,
+    #trial-form fieldset textarea::placeholder{
+        color: var(--grey-4-color);
+    }
+    #trial-form fieldset textarea {
         height: 5rem;
     }
 
-    #contact .btn {
+    #trial-form .btn {
         display: block;
-        margin-top: 0.5rem;
-        margin-left: auto;
+        margin: 0px auto;
     }
 
-    #contact iframe {
+    #trial-form iframe {
         border: none;
     }
 
     @media only screen and (max-width: 900px) {
-        #contact {
+        #trial-form {
             max-width: 95%;
         }
     }
 </style>
 <script src="{{ site.url }}/js/md5.js"></script>
-<section id="contact">
+<section id="trial-form">
     <div class="headline">
         <h1>
             Consentua Free Trial
@@ -123,15 +126,15 @@ title: Trial
         </fieldset>
         <fieldset>
             <div class="form-row">
-                <label for="name">First Name</label>
+                <label for="name">First Name*</label>
                 <input type="text" name='First Name' placeholder="Sam" required/>
             </div>
             <div class="form-row">
-                <label for="name">Last Name</label>
+                <label for="name">Last Name*</label>
                 <input type="text" name='Last Name' placeholder="Longbottom" required/>
             </div>
             <div class="form-row">
-                <label>Email Address</label>
+                <label>Email Address*</label>
                 <input id="emailInput" type="Email" name="Email" placeholder="Sam@example.com" required/>
             </div>
             <div class="form-row">
@@ -141,7 +144,7 @@ title: Trial
             <iframe id="consentua-trail-form-widget" src="" style="width: 100%;"></iframe>
         </fieldset>
         <button type="submit" class="btn btn-accent">
-            Send Message
+            Get Started
         </button>
     </form>
     </div>
@@ -165,7 +168,7 @@ title: Trial
     };
     var iframe = document.getElementById('consentua-trail-form-widget');
     var cwrap = new ConsentuaUIWrapper(iframe, cid, uid, tid, sid, skey, function () {}, "en", {
-        ix: "https://ui.consentua.com/ui-onepurpose/ui-onepurpose.html"
+        ix: "https://ui.consentua.com/ui-onepurpose/ui-onepurpose.html?c=l"
     });
     cwrap.onset = cb_set;
     cwrap.onready = cb_ready;
