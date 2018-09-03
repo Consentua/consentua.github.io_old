@@ -69,6 +69,12 @@
 	   color: var(--dark-3-color, #373737);
    }
    {% endif %}
+   {% if page.title == "Trial" %}
+   footer{
+	   background-color: var(--main-color);
+	   background-image: none;
+   }
+   {% endif %}
 	@media only screen and (max-height: 900px){
 		footer, footer a{
 			/* margin-top: 2rem; */
