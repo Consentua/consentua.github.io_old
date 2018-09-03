@@ -111,14 +111,15 @@ title: Trial
     </div>
     <p id="errTxt"></p>
     <p id="consentuaStatus"></p>
-    <form action='https://crm.zoho.eu/crm/WebToLeadForm' name=WebToLeads97721000000633007 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory()' accept-charset='UTF-8'>
+    <form action='https://crm.zoho.eu/crm/WebToLeadForm' name=WebToLeads97721000000633007 method='POST' accept-charset='UTF-8'>
         <fieldset style="display: none;">
             <input type='text' style='display:none;' name='xnQsjsdp' value='1afce4d3f3f1cb45fd0d817a0e76abdaaeadd18f09c357a1bf0a2b37c84ee26d'/>
             <input type='hidden' name='zc_gad' id='zc_gad' value=''/>
             <input type='text' style='display:none;' name='xmIwtLD' value='c6bdfa65cb26fa1813b7dccd1e7f25ed5339001630493773180cd26eb048e79f'/>
             <input type='text' style='display:none;'  name='actionType' value='TGVhZHM='/>
             <input type='text' style='display:none;' name='returnURL' value='https&#x3a;&#x2f;&#x2f;consentua.com&#x2f;get-started' />
-            <input type="text" style='display:none;' name="consentua_uid" id="LEADCF9"> 
+            <input type="text" style='display:none;' id="consentua_uid" name="LEADCF9"> 
+            <input type="text" name='Lead Source' value="Free Trial">
         </fieldset>
         <fieldset>
             <div class="form-row">
@@ -157,7 +158,7 @@ title: Trial
     }
     var cb_ready = function (msg) {
         console.log('UID is:' + msg.message.uid);
-        document.getElementById('LEADCF9').value = msg.message.uid;
+        document.getElementById('consentua_uid').value = msg.message.uid;
     }
     var cb_set = function (msg) {
         console.log("Consent received from Consentua", msg);
