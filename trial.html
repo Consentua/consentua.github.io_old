@@ -111,33 +111,33 @@ title: Trial
     </div>
     <p id="errTxt"></p>
     <p id="consentuaStatus"></p>
-    <form action='https://forms.zohopublic.eu/knownow/form/ContactForm/formperma/G2p-VtSNbxrAw8cWK9tFkuafHtdGaDE_uMp2O4oF3Qo/htmlRecords/submit'
-        name='form' id='contactForm' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
+    <form action='https://crm.zoho.eu/crm/WebToLeadForm' name=WebToLeads97721000000633007 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory()' accept-charset='UTF-8'>
         <fieldset style="display: none;">
-            <input type="hidden" name="zf_referrer_name" value="consentua.com">
-            <input type="hidden" name="zf_redirect_url" value="https://consentua.com/get-started">
-            <input type="hidden" name="zc_gad" value="">
-            <input type="hidden" name="consentua_uid" id="consentua_uid" value="">
-            <input type='hidden' name='Source' value='consentua.com' />
+            <input type='text' style='display:none;' name='xnQsjsdp' value='1afce4d3f3f1cb45fd0d817a0e76abdaaeadd18f09c357a1bf0a2b37c84ee26d'/>
+            <input type='hidden' name='zc_gad' id='zc_gad' value=''/>
+            <input type='text' style='display:none;' name='xmIwtLD' value='c6bdfa65cb26fa1813b7dccd1e7f25ed5339001630493773180cd26eb048e79f'/>
+            <input type='text' style='display:none;'  name='actionType' value='TGVhZHM='/>
+            <input type='text' style='display:none;' name='returnURL' value='https&#x3a;&#x2f;&#x2f;consentua.com&#x2f;get-started' />
+            <input type="hidden" name="consentua_uid" id="LEADCF9" value=""> 
         </fieldset>
         <fieldset>
             <div class="form-row">
                 <label for="name">First Name</label>
-                <input type="text" name='Name_First' placeholder="Sam" required/>
+                <input type="text" name='First Name' placeholder="Sam" required/>
             </div>
             <div class="form-row">
                 <label for="name">Last Name</label>
-                <input type="text" name='Name_Last' placeholder="Longbottom" required/>
+                <input type="text" name='Last Name' placeholder="Longbottom" required/>
             </div>
             <div class="form-row">
                 <label>Email Address</label>
-                <input id="emailInput" type="email" name="Email" placeholder="Sam@example.com" required/>
+                <input id="emailInput" type="Email" name="Email" placeholder="Sam@example.com" required/>
             </div>
             <div class="form-row">
                 <label>Company</label>
-                <input type="text" name="Website" placeholder="example.com" />
+                <input type="text" name="Company" />
             </div>
-            <iframe id="consentua-contact-widget" src="" style="width: 100%;"></iframe>
+            <iframe id="consentua-trail-form-widget" src="" style="width: 100%;"></iframe>
         </fieldset>
         <button type="submit" class="btn btn-accent">
             Send Message
@@ -157,15 +157,14 @@ title: Trial
     }
     var cb_ready = function (msg) {
         console.log('UID is:' + msg.message.uid);
-        document.getElementById('consentua_uid').value = msg.message.uid;
+        document.getElementById('LEADCF9').value = msg.message.uid;
     }
     var cb_set = function (msg) {
         console.log("Consent received from Consentua", msg);
     };
-    var iframe = document.getElementById('consentua-contact-widget');
-    // var cwrap = new ConsentuaUIWrapper(iframe, cid, uid, tid, sid, skey, function () {}, "fr", {        ix: "{{ site.url }}}/custom-consent-interaction.html"});
-    var cwrap = new ConsentuaUIWrapper(iframe, cid, uid, tid, sid, skey, function () {}, "fr", {
-        ix: "https://kni-test-node.herokuapp.com/custom-interaction.min.html"
+    var iframe = document.getElementById('consentua-trail-form-widget');
+    var cwrap = new ConsentuaUIWrapper(iframe, cid, uid, tid, sid, skey, function () {}, "en", {
+        ix: "https://ui.consentua.com/ui-onepurpose/ui-onepurpose.html"
     });
     cwrap.onset = cb_set;
     cwrap.onready = cb_ready;
