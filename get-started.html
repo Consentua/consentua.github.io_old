@@ -14,11 +14,13 @@ body{
     align-items: center;
     justify-content: flex-start;
 }
-pre{
+#get-started pre{
     background: rgba(154, 17, 68, 0.15);
     margin: 1rem 0px;
     padding: 1rem;
     border-radius: 1rem;
+    max-width: 83vw;
+    overflow: auto;
 }
 #lockBG{
     position: fixed;
@@ -27,22 +29,34 @@ pre{
     z-index: -3;
     margin-left: 30%;
 }
+#gs-btn-contain{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#gs-btn-contain .btn{
+margin: 0.5rem;
+}
 </style>
 <section id="get-started">
 <h1>Getting started with Consentua</h1>
 <img id="lockBG" src="./imgs/logo/consentua-lock-pink.svg">
 <p>Use the api credentials below to test Consentua</p>
+<p><b>Please note:</b> These are test credentials for use with testing only, you will not be able to change or modify it's consent template, purpose groups or purposes.</p>
 <pre>
     <code>
 Customer ID: 2
 Consentua service ID: 1
 Consentua service key: 19fb13ab-d6f2-42dc-a41c-42249450b5b6
-Template ID: 4
+Template ID: 1
     </code>
 </pre>
-<div>
-    <a class="btn btn-main" href="https://websdk.consentua.com/">Consentua Websdk</a>
-    <a class="btn btn-main" href="https://codepen.io/collection/DVPJbB/">Consentua Websdk examples</a>
-    <a class="btn btn-main" href="https://consentua.com/docs/">Consentua API Documentation</a>
+<div id="gs-btn-contain">
+    <a class="btn btn-grey" href="https://websdk.consentua.com/">Consentua Websdk</a>
+    <a class="btn btn-grey" href="https://codepen.io/collection/DVPJbB/">Consentua Websdk examples</a>
+    <a class="btn btn-grey" href="https://consentua.com/docs/">Consentua API Documentation</a>
 </div>
+<h2>Need help?</h2>
+<a href="{{ site.url }}/contact.html" class="btn btn-accent">Contact us</a>
 </section>
