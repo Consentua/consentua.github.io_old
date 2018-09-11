@@ -1,0 +1,40 @@
+<style>
+    #consent-status{
+        display: flex;
+        position: fixed;
+        background: #e7e7e7;
+        bottom: 0;
+        right: 0;
+        padding: 1rem;
+        border-radius: 1rem 1rem 0px 0px;
+        margin-right: 2rem;
+        z-index: 1;
+    }
+    #consent-status iframe{
+        display: none;
+    }
+</style>
+<section id="consent-status">
+<h1>
+    Consent status
+</h1>
+<iframe id="consentua-db-cookie"></iframe>
+</section>
+<script>
+        // Cookie Consent
+        var cuid = Cookies.get('cuid'),
+            cid= '1',
+            sid= '25',
+            skey= '4d58ba73-1dec-4724-b040-df0b0caf38c5',
+            cooki_cwrap = new ConsentuaUIWrapper(document.getElementById("consentua-db-cookie"), cid, cuid, '1000001', sid, skey);
+        console.log(cooki_cwrap);
+        
+        var cooki_cb_ready = function (msg) {
+            cuid = msg.message.uid;
+        };
+        var cooki_cb_set = function (msg) {
+            let c = msg.message.consents || {};
+            console.log("AAAAAAAAAAAAAAAAA", c);
+            
+        };
+</script>

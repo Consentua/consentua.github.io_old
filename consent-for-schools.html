@@ -305,6 +305,16 @@ nav: false
     z-index: 1;
   }
 
+  #educaiton #pageDemo #demoTag{
+    text-align: center;
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 1rem;
+    padding: 1rem 0px;
+    background: var(--accent-color);
+    display: block;
+  }
+
   #educaiton #pageDemo img.logo {
     display: block;
     position: absolute;
@@ -324,6 +334,7 @@ nav: false
     display: block;
     padding: 1rem 0px;
     color: #fff;
+    margin: 0px;
   }
 
   #educaiton #pageDemo ul {
@@ -518,14 +529,6 @@ nav: false
   {% include person-consenting-svg.html %}
   <div id="blurb">
     <h1>Consent for Schools</h1>
-    <!-- <p>Consentua™ gives parents choice and control over how their and their children's personal data is used by schools. 
-      It helps schools build respectful and trusted relationships with parents and learners, and facilitates compliance 
-      with data protection laws. </p>
-    <ul>
-      <li>No installation fee</li>
-      <li>No consulting</li>
-      <li>Ready in minutes</li>
-    </ul> -->
     <p>Consentua™ solves the challenges schools leaders face dealing with pupils personal data.</p>
     <p>Better still it sits in your current website, is ready in minutes and requires no installation fee or consultancy to use.</p>
     <ul>
@@ -537,12 +540,11 @@ nav: false
       <a class="btn btn-accent" onclick="toDemo()">View Demo
         <i class="far fa-laptop"></i>
       </a>
-      <a class="btn btn-green" onclick="openBuySchoolModal()">
-        Buy Now
-        <i class="far fa-shopping-cart"></i>
+      <a class="btn btn-green" href="{{ site.url }}/trial.html">Free Trial
+        <i class="fal fa-play-circle fa-lg"></i>
       </a>
     </span>
-    <h3 id="eduTagline" onclick="openBuySchoolModal()">Just £99 a year!</h3>
+    <h3 id="eduTagline">Just £99 a year!</h3>
   </div>
   <div class="container info-cols">
     <div class="col">
@@ -565,7 +567,8 @@ nav: false
   {% include choose-svg.html %}
   <div id="pageDemo">
     <img class="logo" src="./imgs/logo/consentua-lock.png">
-    <h2>Consent for your child</h2>
+    <h2>Consent Demonstation for your child</h2>
+    <span id="demoTag">Click the consent toggles below to change your consents!</span>
     <ul>
       <li>
         <i class="fal fa-id-badge fa-3x"></i>
@@ -591,8 +594,8 @@ nav: false
       </span>
       <span>
         <a href="{{ site.url }}/contact.html" class="btn btn-accent">Contact Sales</a>
-        <a class="btn btn-green" onclick="openBuySchoolModal()">Buy Now
-          <i class="far fa-shopping-cart"></i>
+        <a class="btn btn-green" href="{{ site.url }}/trial.html">Free Trial
+          <i class="fal fa-play-circle fa-lg"></i>
         </a>
       </span>
     </div>
