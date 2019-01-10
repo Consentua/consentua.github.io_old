@@ -5,11 +5,11 @@ redirect_from: "/consent-for-schools"
 ---
 <style type="text/css" media="screen">
   body {
-    /* background-color: var(--main-color); */
+    background-color: var(--main-color);
   }
 
   body:after {
-    content: "";
+    /* content: "";
     display: block;
     position: fixed;
     width: 100vw;
@@ -25,7 +25,22 @@ redirect_from: "/consent-for-schools"
     -webkit-animation: spin 90s infinite linear;
     animation: spin 90s infinite linear;
     z-index: -1;
-    background: #fff;
+    background: #fff; */
+  }
+
+  #home>section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--white-1-color);
+    margin: 0px 1vw;
+    width: calc(100vw - 3vw);
+  }
+
+  .with-bg {
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: inset 0 40px var(--main-color);
   }
 
   #hero{
@@ -125,10 +140,6 @@ redirect_from: "/consent-for-schools"
     max-width: 40%;
   }
 
-  .with-bg {
-    background-color: var(--grey-1-color);
-  }
-
   .with-bg>.container>article {
     padding: 2rem 0;
   }
@@ -155,8 +166,8 @@ redirect_from: "/consent-for-schools"
 <section id="hero">
   <h1>Consentua</h1>
 </section> -->
-
-<section class="container splash">
+<section id="home">
+<section class=" splash with-bg">
   <div id="blurb">
     <h1>{{ site.tagline }}</h1>
     <p>Consentua™ helps build trust. Giving users choice and control over their personal data. Enabling a more trusted and transparent
@@ -173,7 +184,7 @@ redirect_from: "/consent-for-schools"
   {% include choose-svg.html %}
 </section>
 
-<section class="container splash">
+<section class=" splash">
   <div id="app-illustration">
     <video autoplay loop muted poster="{{ site.url }}/imgs/vid-poster.gif" preload="none">
       <source media="(max-width: 800px)" src="{{ site.url }}/video/android_demo.mp4" type="video/mp4">
@@ -198,7 +209,7 @@ redirect_from: "/consent-for-schools"
 
 
 <section>
-  <div class="container">
+  <div class="">
     <div class="bottom-cta">
       <span>
         <h1>Ready to get started?</h1>
@@ -211,4 +222,5 @@ redirect_from: "/consent-for-schools"
       </span>
     </div>
   </div>
+</section>
 </section>
