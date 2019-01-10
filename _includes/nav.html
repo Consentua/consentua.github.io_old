@@ -148,6 +148,7 @@
     </a>
   </div>
 	<nav id="widenav">
+  <a class="navbar-nav-item" href="http://cupshop.consentua.com">Demo</a>
   {% assign pages_list = site.pages | sort: 'order' %}
       {% for node in pages_list %}
         {% if node.title != null %}
@@ -158,7 +159,6 @@
           {% endif %}
         {% endif %}
       {% endfor %}
-  <a class="navbar-nav-item" href="http://cupshop.consentua.com">Demo</a>
   <a class="navbar-nav-item" href="{{ site.blogurl }}">Blog</a>
   <!-- <a class="navbar-nav-item" href="{{ site.dashboard.url }}">Sign in <i class="far fa-sign-in"></i></a> -->
 </nav>
