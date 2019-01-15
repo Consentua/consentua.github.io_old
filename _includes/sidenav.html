@@ -53,6 +53,7 @@
   <a id="closeSideNavBtn" onclick="closeSideNav()"><i class="fal fa-times"></i></a>
 	<nav id="sidenav">
   <a class="sidenavbar-nav-item" href="{{ site.baseurl }}/index.html">Home</a>
+  <a class="navbar-nav-item" href="http://cupshop.consentua.com">Demo</a>
   {% assign pages_list = site.pages | sort: 'order' %}
       {% for node in pages_list %}
         {% if node.title != null %}
