@@ -56,3 +56,13 @@ $ bundle exec jekyll serve
 ## How do I deploy?
 
 To deploy, just commit and push your changes to github pages (~~master~~ gh-pages branch of this repo).
+
+## Consentua Websdk
+where to find the consentua websdk's
+
+the websdk's are located in
+```
+_includes/cookie-consent.html
+contact.html
+consent-dashboard.html
+```
