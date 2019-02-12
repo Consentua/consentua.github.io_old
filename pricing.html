@@ -27,6 +27,13 @@ nav: true
         background-color: #fff;
     }
 
+    #pricing > article{
+        background: #fff;
+        padding: 1rem 0.3rem;
+        text-align: center;
+        border-radius: 1rem;
+    }
+
     #pricing .cols {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -79,20 +86,20 @@ nav: true
         margin: 1rem auto;
     }
 
-    #pricing .plan:nth-child(2) .plan-header {
+    #pricing .plan:nth-child(1) .plan-header {
         background: var(--accent-color);
     }
 
-    #pricing .plan:nth-child(2) {
+    #pricing .plan:nth-child(1) {
         border-color: var(--accent-color);
     }
 
-    #pricing .plan:nth-child(3) .plan-header {
+    #pricing .plan:nth-child(2) .plan-header {
         background: var(--main-color);
         color: #fff
     }
 
-    #pricing .plan:nth-child(3) {
+    #pricing .plan:nth-child(2) {
         border-color: var(--main-color);
     }
 
@@ -108,36 +115,11 @@ nav: true
     #pricing #enterprise {
         background: var(--dark-3-color);
         color: #fff;
-        max-width: 500px;
+        max-width: 700px;
         text-align: center;
         padding: 1rem;
         margin: 0 auto 3rem auto;
         border-radius: 10px;
-    }
-
-    #pricing .plan .tabs .tab {
-        width: 49%;
-        padding: 1rem 0px;
-        background: transparent;
-        border: none;
-    }
-
-    #pricing .plan .tabs .tab.active {
-        background: rgba(0, 0, 0, 0.15);
-    }
-
-    #pricing .plan .tabs.dark .tab {
-        color: #fff;
-    }
-
-    #pricing .plan .price>div,
-    #pricing .plan .plan-body>div {
-        display: none;
-    }
-
-    #pricing .plan .price>div.active,
-    #pricing .plan .plan-body>div.active {
-        display: initial;
     }
 
     @media only screen and (max-width: 800px) {
@@ -148,65 +130,16 @@ nav: true
 </style>
 
 <section id="pricing">
+    <article>
+    <h1>SaaS</h1>
+    <p>The software as a service (SaaS) comes with the following tiers, with one yearly price:</p>
+    </article>
     <div class="cols">
-        <div class="plan basic">
-            <div class="plan-header">
-                <h1>Basic</h1>
-                <div class="tabs">
-                    <button class="tab active" onclick="_tabChange('m', 'basic')">Monthly</button>
-                    <button class="tab" onclick="_tabChange('y', 'basic')">Yearly</button>
-                </div>
-                <section class="price">
-                    <div class="m active">
-                        <span>£10</span>/mo
-                    </div>
-                    <div class="y">
-                        <span>£99</span>/yr
-                    </div>
-                </section>
-            </div>
-            <section class="plan-body">
-                <div class="m active">
-                    <p>Includes:</p>
-                    <ul>
-                        <li>Up to
-                            <b>4000</b> API calls per month</li>
-                        <li>Unlimited end user API calls</li>
-                        <li>Unlimited total consents</li>
-                        <li>
-                            <b>2</b> Admin Accounts</li>
-                        <li>Community Support</li>
-                    </ul>
-                    <a class="btn btn-green" href="{{ site.url }}/contact.html">Contact sales</a>
-                </div>
-                <div class="y">
-                    <p>Includes:</p>
-                    <ul>
-                        <li>Up to
-                            <b>50,000</b> API calls per annum</li>
-                        <li>Unlimited end user API calls</li>
-                        <li>Unlimited total consents</li>
-                        <li>
-                            <b>2</b> Admin Accounts</li>
-                        <li>Community Support</li>
-                    </ul>
-                    <a class="btn btn-green" href="{{ site.url }}/contact.html">Contact sales</a>
-                </div>
-            </section>
-        </div>
-
         <div class="plan standard">
             <div class="plan-header">
                 <h1>Standard</h1>
-                <div class="tabs">
-                    <button class="tab active" onclick="_tabChange('m', 'standard')">Monthly</button>
-                    <button class="tab" onclick="_tabChange('y', 'standard')">Yearly</button>
-                </div>
                 <section class="price">
-                    <div class="m active">
-                        <span>£99</span>/mo
-                    </div>
-                    <div class="y">
+                    <div>
                         <span>£949</span>/yr
                     </div>
                 </section>
@@ -215,26 +148,12 @@ nav: true
                 <div class="m active">
                     <p>Includes:</p>
                     <ul>
-                        <li>Up to
-                            <b>40,000</b> API calls per month</li>
-                        <li>Unlimited end user API calls</li>
-                        <li>Unlimited total consents</li>
-                        <li>
-                            <b>5</b> Admin Accounts</li>
-                        <li>Community Support</li>
-                    </ul>
-                    <a class="btn btn-green" href="{{ site.url }}/contact.html">Contact sales</a>
-                </div>
-                <div class="y">
-                    <p>Includes:</p>
-                    <ul>
-                        <li>Up to
-                            <b>500,000</b> API calls per annum</li>
-                        <li>Unlimited end user API calls</li>
-                        <li>Unlimited total consents</li>
-                        <li>
-                            <b>5</b> Admin Accounts</li>
-                        <li>Community Support</li>
+                        <li>Up to <b>10,000</b> user entries</li>
+                        <li>Unlimited API calls</li>
+                        <li>10 consent templates & 10 consent services</li>
+                        <li><b>3</b> client consent service administrators</li>
+                        <li>Online support.</li>
+                        <li>1 x day of consulting to deploy </li>
                     </ul>
                     <a class="btn btn-green" href="{{ site.url }}/contact.html">Contact sales</a>
                 </div>
@@ -245,15 +164,8 @@ nav: true
         <div class="plan pro">
             <div class="plan-header">
                 <h1>Pro</h1>
-                <div class="tabs dark">
-                    <button class="tab active" onclick="_tabChange('m', 'pro')">Monthly</button>
-                    <button class="tab" onclick="_tabChange('y', 'pro')">Yearly</button>
-                </div>
                 <section class="price">
-                    <div class="m active">
-                        <span>£899</span>/mo
-                    </div>
-                    <div class="y">
+                    <div>
                         <span>£8999</span>/yr
                     </div>
                 </section>
@@ -262,26 +174,12 @@ nav: true
                 <div class="m active">
                     <p>Includes:</p>
                     <ul>
-                        <li>Up to
-                            <b>800,000</b> API calls per month</li>
-                        <li>Unlimited end user API calls</li>
-                        <li>Unlimited total consents</li>
-                        <li>
-                            <b>12</b> Admin Accounts</li>
-                        <li>Office hour Support</li>
-                    </ul>
-                    <a class="btn btn-green" href="{{ site.url }}/contact.html">Contact sales</a>
-                </div>
-                <div class="y">
-                    <p>Includes:</p>
-                    <ul>
-                        <li>Up to
-                            <b>10,000,000</b> API calls per annum</li>
-                        <li>Unlimited end user API calls</li>
-                        <li>Unlimited total consents</li>
-                        <li>
-                            <b>12</b> Admin Accounts</li>
-                        <li>Office hour Support</li>
+                        <li>Up to <b>100,000</b> user entries</li>
+                        <li>Unlimited API calls</li>
+                        <li>Unlimited templates & Unlimited services</li>
+                        <li><b>10</b> client consent service administrators</li>
+                        <li>Standard support Monday to Friday</li>
+                        <li>2 days of consulting to establish your client consent service</li>
                     </ul>
                     <a class="btn btn-green" href="{{ site.url }}/contact.html">Contact sales</a>
                 </div>
@@ -289,34 +187,12 @@ nav: true
         </div>
     </div>
     <div id="enterprise">
-        <h1>Enterprise</h1>
-        <p>Need more API calls or 24/7 support? Talk to us to see how we can meet your needs.</p>
+        <h1>Enterprise (On-Premise / Own Cloud)</h1>
+        <p>This comes in two offerings:</p>
+        <ul>
+            <li>Licence to deploy and host Consentua on your own premise servers or cloud service</li>
+            <li>Consentua organised cloud subscription which is billed monthly.  Available today on Azure and from next release any Docker compatible cloud provider.</li>                
+        </ul>
         <a class="btn" href="{{ site.url }}/contact.html">Contact sales</a>
     </div>
 </section>
-<script>
-    function _tabChange(x, y) {
-        let plan = document.getElementsByClassName(y)[0];
-        let price = plan.children[0].children[2].children,
-            tabs = plan.children[0].children[1].children,
-            body = plan.children[1].children;
-
-        for (let i = 0; i < price.length; i++) {
-            if (price[i].classList.contains(x)) {
-                if (price[i].classList.contains('active')) {
-                    //is active
-                } else {
-                    price[0].classList.remove('active');
-                    tabs[0].classList.remove('active');
-                    body[0].classList.remove('active');
-                    price[1].classList.remove('active');
-                    tabs[1].classList.remove('active');
-                    body[1].classList.remove('active');
-                    price[i].classList.add('active');
-                    tabs[i].classList.add('active');
-                    body[i].classList.add('active');
-                }
-            }
-        }
-    }
-</script>
